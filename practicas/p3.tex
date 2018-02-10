@@ -1,0 +1,237 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     enunciado.tex:    Enunciado de la práctica 2 de GIEAI-Informática
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[english,a4paper,11pt]{article}
+
+\usepackage[latin1]{inputenc}  % codificación de caracteres de este archivo
+\usepackage[spanish]{babel}    % Traducir: ``abstract'' ---> ``resumen''   etc.
+\usepackage{fancyhdr}          % páginas con cabecera y pie
+\usepackage{listings}          % listados de código fuente
+\usepackage{float}             % para que los listados floten como las figuras
+\usepackage{vmargin}           % ajuste de márgenes fácil de usar
+\usepackage[T1]{fontenc}       % meter fuentes vectoriales
+\usepackage{graphicx}          % figuras
+\usepackage{upquote}           % comilla recta con \textquotesingle
+\usepackage{placeins}          % orden \FloatBarrier para mantener figuras a raya
+
+\usepackage[implicit=false]{hyperref}  % enlaces web (el parámetro implicit=false
+                                       % evita problemas con el # de #include etc.)
+                                       % uso explícito: \href[options]{URL}{text}
+                                       %                \url{URL}
+
+% mis abreviaturas
+\newcommand{\C}{\texttt{C}}            % escribirá \C en lugar de \texttt{C}
+\newcommand{\Pascal}{\texttt{Pascal}}  % idem con \Pascal ...
+\newcommand{\fun}[1]{\texttt{#1()}}    % "\fun{main}" ---> "main()" en letra typewriter
+\newcommand{\hex}[1]{\texttt{#1}$_{hex}$}
+\newcommand{\bin}[1]{\texttt{#1}$_{bin}$}
+\newcommand{\enesimo}{\mbox{n-ésimo}}
+\newcommand{\muvision}{\textit{$\mu\!$Vision4}}
+\newcommand{\keilmuvision}{\textit{Keil}~\muvision}
+\newcommand{\codigo}[1]{\texttt{#1}}
+\newcommand{\menu}[1]{\textit{#1}}
+
+% Órdenes para alternar entre el estilo español (ligera separación extra
+% entre párrafos) y el estilo por defecto (párrafos junticos junticos)
+\newcommand{\parrafosjuntos}{\setlength{\parskip}{0pt}}
+\newcommand{\parrafosseparados}{\setlength{\parskip}{1.5ex plus 0.6ex minus 0.5ex}}
+
+% datos importantes del documento
+\newcommand{\titulo}{Data structures}     % <<--- TÍTULO
+\newcommand{\fecha}{Week 3}                         % <<--- TEMA
+%\newcommand{\asignatura}{Inteligencia Artificial en los Sistemas de Control Autónomo}
+\newcommand{\asignatura}{Assignment 3}
+\newcommand{\institucion}{UAH, Departamento de Automática, ATC-SOL}
+\newcommand{\paginaweb}{http://atc1.aut.uah.es}
+
+% portada
+\title{\asignatura \\ \titulo}
+\author{\institucion \\ \url{\paginaweb}}
+\date{\fecha}
+
+% márgenes un poco más finos
+\setmargrb{25mm}{20mm}{25mm}{20mm}    % left, top, right, bottom
+
+% encabezado y pie
+\pagestyle{fancy}
+\lhead{\footnotesize \parbox{11cm}{\asignatura}}
+\lfoot{\footnotesize \parbox{11cm}{\institucion}}
+\cfoot{}
+\rhead{\footnotesize \titulo}
+\rfoot{\footnotesize Página \thepage}
+\renewcommand{\headheight}{24pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+% listados de código fuente flotantes
+%\newfloat{floatlisting}{h}{}
+%\floatname{floatlisting}{Listado}
+
+% estilo de los listados de código
+\lstset{numbers=left,                 % números de línea
+        numberstyle=\tiny,            % tamaño de los num. de línea
+        extendedchars=true,           % acentos, eñes...
+        %frame=single,                 % marco que encuadra al listado
+        basicstyle=\footnotesize\ttfamily,   % tipo de letra
+        showstringspaces=false}       % no mostrar espacios de las cadenas
+
+\graphicspath{{figs/}}                % ruta de las figuras
+
+\begin{document} % ------------------ Aquí empieza el documento ----------------------
+
+% redefinir el nombre de algunas cosas
+\renewcommand{\tablename}{Tabla}                  % mejor "Tabla" que "Cuadro"
+\renewcommand{\listtablename}{Indice de tablas}
+% definidos originalmene en:
+%/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
+
+\maketitle              % montar el título aquí­ con los parámetros definidos arriba
+\thispagestyle{empty}   % no poner número de página ni nada de nada en la 1ª página
+
+\renewcommand{\abstractname}{}         % eliminar "Resumen"
+\begin{abstract}                       % resumen (sin la palabra "Resumen")
+\noindent \textbf{Objectives:}
+\begin{itemize}
+\item Manipulate lists
+\item Manipulate tuples
+\item Manipulate dictionaries
+\item Slice notation
+\item Handle complex data structures
+\end{itemize}
+\end{abstract}
+
+\sloppy              % hacer más flexible el cálculo del espacio entre palabras para
+                     % evitar errores de tipo "overfull box"
+                     % (lo contrario de \sloppy es \fussy)
+
+\parrafosseparados   % separación entre párrafos (por defecto saldrán pegados)
+
+%\subsection*{Comentarios iniciales}
+The following exercises have been collected from \url{http://introtopython.org/lists_tuples.html#exercises_list_introduction} and \url{http://introtopython.org/dictionaries.html}.
+
+\subsection*{Exercise 1}
+Store the first ten letters of the alphabet in a list. With this list, perform the following tasks:
+
+\begin{itemize}
+\item Use a slice to print out the first three letters of the alphabet.
+\item Use a slice to print out any three letters from the middle of your list.
+\item Use a slice to print out the letters from any point in the middle of your list, to the end.
+\end{itemize}
+
+\subsection*{Exercise 2}
+Your goal in this exercise is to prove that copying a list protects the original list.
+\begin{itemize}
+\item Make a list with three people's names in it.
+\item Use a slice to make a copy of the entire list.
+\item Add at least two new names to the new copy of the list.
+\item Make a loop that prints out all of the names in the original list, along with a message that this is the original list.
+\item Make a loop that prints out all of the names in the copied list, along with a message that this is the copied list.
+\end{itemize}
+
+\subsection*{Exercise 3}
+Store a sentence in a variable, making sure you use the word Python at least twice in the sentence.
+\begin{enumerate}
+\item Use the in keyword to prove that the word Python is actually in the sentence.
+\item Use the \texttt{find()} function to show where the word Python first appears in the sentence.
+\item Use the \texttt{rfind()} function to show the last place Python appears in the sentence.
+\item Use the \texttt{count()} function to show how many times the word Python appears in your sentence.
+\item Use the \texttt{split()} function to break your sentence into a list of words. Print the raw list, and use a loop to print each word on its own line.
+\item Use the \texttt{replace()} function to change Python to Ruby in your sentence.
+\end{enumerate}
+
+\subsection*{Exercise 4}
+A gymnast can earn a score between 1 and 10 from each judge; nothing lower, nothing higher. All scores are integer values; there are no decimal scores from a single judge.
+\begin{enumerate}
+\item Store the possible scores a gymnast can earn from one judge in a tuple.
+\item Print out the sentence, ``The lowest possible score is \_\_\_, and the highest possible score is \_\_\_.'' Use the values from your tuple.
+\item Print out a series of sentences, ``A judge can give a gymnast \_ points.''
+	\begin{itemize}
+	\item Don't worry if your first sentence reads ``A judge can give a gymnast 1 points.''
+	\item However, you get 1000 bonus internet points if you can use a for loop, and have correct grammar.
+	\end{itemize}
+\end{enumerate}
+
+\subsection*{Exercise 5}
+Create a dictionary to hold information about pets. Each key is an animal's name, and each value is the kind of animal.  For example, 'ziggy': 'canary'
+\begin{enumerate}
+\item Put at least 3 key-value pairs in your dictionary.
+\item Use a for loop to print out a series of statements such as ``Willie is a dog.''
+\end{enumerate}
+
+\subsection*{Exercise 6}
+Think of a question you could ask your friends. Create a dictionary where each key is a person's name, and each value is that person's response to your question.
+\begin{enumerate}
+\item Store at least three responses in your dictionary.
+\item Use a for loop to print out a series of statements listing each person's name, and their response.
+\end{enumerate}
+
+\subsection*{Exercise 7}
+Make a copy of your program from Pet Names.
+\begin{enumerate}
+\item Use a for loop to print out a series of statements such as ``Willie is a dog.''
+\item Modify one of the values in your dictionary. You could clarify to name a breed, or you could change an animal from a cat to a dog.
+	\begin{enumerate}
+	\item Use a for loop to print out a series of statements such as ``Willie is a dog.''
+	\end{enumerate}
+\item Add a new key-value pair to your dictionary.
+	\begin{enumerate}
+	\item Use a for loop to print out a series of statements such as ``Willie is a dog.''
+	\end{enumerate}
+\item Remove one of the key-value pairs from your dictionary.
+	\begin{enumerate}
+	\item Use a for loop to print out a series of statements such as ``Willie is a dog.''
+	\end{enumerate}
+\end{enumerate}
+Bonus: Use a function to do all of the looping and printing in this problem.
+
+\subsection*{Exercise 8}
+Make a dictionary where the keys are the names of weight lifting exercises, and the values are the number of times you did that exercise.
+\begin{enumerate}
+\item Use a for loop to print out a series of statements such as ``I did 10 bench presses''.
+\item Modify one of the values in your dictionary, to represent doing more of that exercise.
+	\begin{itemize}
+	\item Use a for loop to print out a series of statements such as ``I did 10 bench presses''.
+	\end{itemize}
+\item Add a new key-value pair to your dictionary. - - Use a for loop to print out a series of statements such as ``I did 10 bench presses''.
+\item Remove one of the key-value pairs from your dictionary. - - Use a for loop to print out a series of statements such as "I did 10 bench presses".
+\end{enumerate}
+Bonus: Use a function to do all of the looping and printing in this problem.
+
+\subsection*{Exercise 9}
+Wikipedia has a list of the tallest mountains in the world, with each mountain's elevation. Pick five mountains from this list.
+
+\begin{enumerate}
+\item Create a dictionary with the mountain names as keys, and the elevations as values.
+\item Print out just the mountains' names, by looping through the keys of your dictionary.
+\item Print out just the mountains' elevations, by looping through the values of your dictionary.
+\item Print out a series of statements telling how tall each mountain is: ``Everest is 8848 meters tall.''
+\item Revise your output, if necessary.
+	\begin{itemize}
+	\item Make sure there is an introductory sentence describing the output for each loop you write.
+	\item Make sure there is a blank line between each group of statements.
+	\end{itemize}
+\item Revise your final output so that the information is listed in alphabetical order by each mountain's name.
+\end{enumerate}
+
+\subsection*{Exercise 9}
+This is an extension of exercise 8. Make sure you save this program under a different filename so that you can go back to your original program if you need to.
+\begin{enumerate}
+\item The list of tallest mountains in the world provided all elevations in meters. Convert each of these elevations to feet, given that a meter is approximately 3.28 feet. You can do these calculations by hand at this point.
+\item Create a new dictionary, where the keys of the dictionary are still the mountains' names. This time however, the values of the dictionary should be a list of each mountain's elevation in meters, and then in feet: {'everest': [8848, 29029]}
+\item Print out just the mountains' names, by looping through the keys of your dictionary.
+\item Print out just the mountains' elevations in meters, by looping through the values of your dictionary and pulling out the first number from each list.
+\item Print out just the mountains' elevations in feet, by looping through the values of your dictionary and pulling out the second number from each list.
+\item Print out a series of statements telling how tall each mountain is: "Everest is 8848 meters tall, or 29029 feet."
+\end{enumerate}
+Bonus: Start with your original program from Mountain Heights. Write a function that reads through the elevations in meters, and returns a list of elevations in feet. Use this list to create the nested dictionary described above.
+
+\subsection*{Exercise 10}
+This is one more extension of exercise 8.  Create a new dictionary, where the keys of the dictionary are once again the mountains' names. This time, the values of the dictionary are another dictionary. This dictionary should contain the elevation in either meters or feet, and the range that contains the mountain. For example: {'everest': {'elevation': 8848, 'range': 'himalaya'}}.
+\begin{enumerate}
+\item Print out just the mountains' names.
+\item Print out just the mountains' elevations.
+\item Print out just the range for each mountain.
+\item Print out a series of statements that say everything you know about each mountain: ``Everest is an 8848-meter tall mountain in the Himalaya range.''
+\end{enumerate}
+\end{document}

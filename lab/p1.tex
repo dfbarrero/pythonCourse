@@ -1,0 +1,171 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     enunciado.tex:    Enunciado de la práctica 2 de GIEAI-Informática
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[english,a4paper,11pt]{article}
+
+\usepackage[latin1]{inputenc}  % codificación de caracteres de este archivo
+\usepackage[spanish]{babel}    % Traducir: ``abstract'' ---> ``resumen''   etc.
+\usepackage{fancyhdr}          % páginas con cabecera y pie
+\usepackage{listings}          % listados de código fuente
+\usepackage{float}             % para que los listados floten como las figuras
+\usepackage{vmargin}           % ajuste de márgenes fácil de usar
+\usepackage[T1]{fontenc}       % meter fuentes vectoriales
+\usepackage{graphicx}          % figuras
+\usepackage{upquote}           % comilla recta con \textquotesingle
+\usepackage{placeins}          % orden \FloatBarrier para mantener figuras a raya
+
+\usepackage[implicit=false]{hyperref}  % enlaces web (el parámetro implicit=false
+                                       % evita problemas con el # de #include etc.)
+                                       % uso explícito: \href[options]{URL}{text}
+                                       %                \url{URL}
+
+% mis abreviaturas
+\newcommand{\C}{\texttt{C}}            % escribirá \C en lugar de \texttt{C}
+\newcommand{\Pascal}{\texttt{Pascal}}  % idem con \Pascal ...
+\newcommand{\fun}[1]{\texttt{#1()}}    % "\fun{main}" ---> "main()" en letra typewriter
+\newcommand{\hex}[1]{\texttt{#1}$_{hex}$}
+\newcommand{\bin}[1]{\texttt{#1}$_{bin}$}
+\newcommand{\enesimo}{\mbox{n-ésimo}}
+\newcommand{\muvision}{\textit{$\mu\!$Vision4}}
+\newcommand{\keilmuvision}{\textit{Keil}~\muvision}
+\newcommand{\codigo}[1]{\texttt{#1}}
+\newcommand{\menu}[1]{\textit{#1}}
+
+% Órdenes para alternar entre el estilo español (ligera separación extra
+% entre párrafos) y el estilo por defecto (párrafos junticos junticos)
+\newcommand{\parrafosjuntos}{\setlength{\parskip}{0pt}}
+\newcommand{\parrafosseparados}{\setlength{\parskip}{1.5ex plus 0.6ex minus 0.5ex}}
+
+% datos importantes del documento
+\newcommand{\titulo}{Práctica 1: Ejercicios básicos de Python}     % <<--- TÍTULO
+\newcommand{\fecha}{Semana de laboratorio 1}                         % <<--- TEMA
+%\newcommand{\asignatura}{Inteligencia Artificial en los Sistemas de Control Autónomo}
+\newcommand{\asignatura}{Práctica 1}
+\newcommand{\institucion}{UAH, Departamento de Automática, ATC-SOL}
+\newcommand{\paginaweb}{http://atc1.aut.uah.es}
+
+% portada
+\title{\asignatura \\ \titulo}
+\author{\institucion \\ \url{\paginaweb}}
+\date{\fecha}
+
+% márgenes un poco más finos
+\setmargrb{25mm}{20mm}{25mm}{20mm}    % left, top, right, bottom
+
+% encabezado y pie
+\pagestyle{fancy}
+\lhead{\footnotesize \parbox{11cm}{\asignatura}}
+\lfoot{\footnotesize \parbox{11cm}{\institucion}}
+\cfoot{}
+\rhead{\footnotesize \titulo}
+\rfoot{\footnotesize Página \thepage}
+\renewcommand{\headheight}{24pt}
+\renewcommand{\footrulewidth}{0.4pt}
+%\renewcommand{\headrulewidth}{0pt}
+
+% listados de código fuente flotantes
+%\newfloat{floatlisting}{h}{}
+%\floatname{floatlisting}{Listado}
+
+% estilo de los listados de código
+\lstset{numbers=left,                 % números de línea
+        numberstyle=\tiny,            % tamaño de los num. de línea
+        extendedchars=true,           % acentos, eñes...
+        %frame=single,                 % marco que encuadra al listado
+        basicstyle=\footnotesize\ttfamily,   % tipo de letra
+        showstringspaces=false}       % no mostrar espacios de las cadenas
+
+\graphicspath{{figs/}}                % ruta de las figuras
+
+\begin{document} % ------------------ Aquí empieza el documento ----------------------
+
+% redefinir el nombre de algunas cosas
+\renewcommand{\tablename}{Tabla}                  % mejor "Tabla" que "Cuadro"
+\renewcommand{\listtablename}{Indice de tablas}
+% definidos originalmene en:
+%/usr/share/texmf-texlive/tex/generic/babel/spanish.ldf
+
+\maketitle              % montar el título aquí­ con los parámetros definidos arriba
+\thispagestyle{empty}   % no poner número de página ni nada de nada en la 1ª página
+
+\renewcommand{\abstractname}{}         % eliminar "Resumen"
+\begin{abstract}                       % resumen (sin la palabra "Resumen")
+\noindent \textbf{Objetivos:}
+\begin{itemize}
+\item Practicar la sintaxis básica de Python
+\item Habituarse al entorno de programación
+\item Utilizar operadores aritméticos y lógicos
+\item Utilizar operaciones con cadenas de caracteres
+\item Utilizar sentencias de control de flujo
+\end{itemize}
+\end{abstract}
+
+\sloppy              % hacer más flexible el cálculo del espacio entre palabras para
+                     % evitar errores de tipo "overfull box"
+                     % (lo contrario de \sloppy es \fussy)
+
+\parrafosseparados   % separación entre párrafos (por defecto saldrán pegados)
+
+\subsection*{Comentarios iniciales}
+Los siguientes ejercicios están obtenidos de \url{https://github.com/zhiwehu/Python-programming-exercises}, \url{ 
+http://www.ling.gu.se/~lager/python\_exercises.html} y ``Programación estructurada en Pascal'', por José María Valls y David Camacho, Ed. Prentice-Hall.
+
+\subsection*{Ejercicio 1}
+Crear tres variables, asignarles valores numéricos y cadenas; muéstrelos por pantalla tanto utilizando la función \texttt{print()} como sin ella.
+
+\subsection*{Ejercicio 2}
+Sume los cien primeros números y muéstre el resultado por pantalla.
+
+\subsection*{Ejercicio 3}
+Lea dos números por teclado, y muestre el mayor de ambos. Hágalo con y sin la función \texttt{max()}. Utilice la ayuda en caso necesario.
+
+\subsection*{Ejercicio 4}
+Repita el ejercicio anterior utilizando tres números en vez de dos.
+
+\subsection*{Ejercicio 5}
+Muestre por pantalla todos los números entre el 2000 y el 3200 que son divisibles por 7 pero no son múltiplos de 5.
+
+\subsection*{Ejercicio 6}
+En una empresa de seguros se quiere saber a qué conductores habrá que aplicarles descuento, según cumplan o no las condiciones necesarias. Se dispone de tre variables: Edad, número de años pasados desde el último parte y sexo (True=mujer, False=hombre). La empresa ofrece un descuento en las siguientes situaciones:
+
+\begin{itemize}
+\item Si tiene una edad igual o mayor a 27 años, es mujer y hace menos de un año que no da parte.
+\item Si tiene una edad mayor o igual a 27 años, es hombre y hace menos de dos años que no da parte.
+\item Si tiene menos de 27 años u hace al menos cinco años que no da parte.
+\end{itemize}
+
+Haga un programa que lea por teclado la edad, número de años sin parte y sexo de un cliente, y determine si le correspone o no un descuento.
+
+\subsection*{Ejercicio 7}
+Escribir un programa que lea una hora, introducida como tres números (hora, minuto y segundo) enteros independientes, y valide la fecha indicando si es correcta o no. Por ejemplo, la hora 28 12 32 es incorrecta mientras que 5 0 34 es correcta.
+
+\subsection*{Ejercicio 8}
+Escribir un programa que lea un número y visualice el triángulo de Floyd correspondiente a dicho número. Por ejemplo, dado el número 4, el triángulo de Floyd sería:
+
+\begin{verbatim}
+1
+2  3
+4  5  6
+7  8  9  10
+\end{verbatim}
+
+\subsection*{Ejercicio 9}
+Guarde en una lista los nombres de los miembros de su familia. Imprima el contenido de la lista mediante un bucle.
+
+\subsection*{Ejercicio 10}
+Modifique el ejercicio anterior para comprobar si algún miembro de su familia se llama ``Juan''.
+
+\subsection*{Ejercicio 11}
+Guarde dentro de una lista números leídos por teclado hasta que se introduzca un número negativo. Una vez creada la lista, ordenela en orden inverso usando la función \texttt{sorted()}.
+
+\subsection*{Ejercicio 12}
+Repita el ejercicio anterior ordenando manualmente la lista.
+
+\subsection*{Ejercicio 13}
+Lea una cadena por teclado y muestre por pantalla si contiene alguna vocal, o si, por el contrario, contiene exclusivamente consonantes.
+
+\subsection*{Ejercicio 14}
+Lea una cadena por teclado y verifique si contiene todas las vocales.
+
+\end{document}
