@@ -34,9 +34,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Presentation Info
 \title[An informal introduction to Python]{An informal introduction to Python}
-\author{}
-\institute{\asignatura}
-\date{}
+\author{\asignatura\\\carrera}
+\institute{}
+\date{Departamento de Automática}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -329,10 +329,10 @@
 
  	   \column{.50\textwidth}
     	\begin{block}{}
-		\begin{verbatim}
-		python script.py
-		./script.py
-		\end{verbatim}
+\begin{verbatim}
+python script.py
+./script.py
+\end{verbatim}
 		\end{block}
 	\end{columns}
 \end{frame}
@@ -372,8 +372,8 @@
  	   \column{.40\textwidth}
 	\begin{block}{Variables}
 	\begin{verbatim}
-	variable = value
-	\end{verbatim}
+variable = value
+\end{verbatim}
 	\end{block}
 	\end{columns}
 \end{frame}
@@ -385,18 +385,18 @@
    	\column{.50\textwidth}
 		\begin{block}{}
 		\begin{verbatim}
-		>>> integer = 4
-		>>> float = 2.3
-		>>> integer + float
-		6.3
-		>>> string = "Spam"
-		>>> boolean = True
-		>>> a = b = c = 0
-		>>> b
-		0
-		>>> type(integer)
-		<type 'int'>
-		\end{verbatim}
+>>> integer = 4
+>>> float = 2.3
+>>> integer + float
+6.3
+>>> string = "Spam"
+>>> boolean = True
+>>> a = b = c = 0
+>>> b
+0
+>>> type(integer)
+<type 'int'>
+\end{verbatim}
 		\end{block}
 	\end{columns}
 \end{frame}
@@ -411,12 +411,12 @@
 
  	   			\column{.40\textwidth}
 				\begin{block}{}
-				\begin{verbatim}
-				>>> num = 1+3j
-				>>> num
-				(1+3j)
-				\end{verbatim}
-				\end{block}
+\begin{verbatim}
+>>> num = 1+3j
+>>> num
+(1+3j)
+\end{verbatim}
+		\end{block}
 		\end{columns}
 
     \vspace{-0.2cm}
@@ -459,11 +459,11 @@
     	\column{.30\textwidth}
 		\begin{block}{}
 		\begin{verbatim}
-		>>> 'hello'
-		'hello'
-		>>> "hello"
-		'hello'
-		\end{verbatim}
+>>> 'hello'
+'hello'
+>>> "hello"
+'hello'
+\end{verbatim}
 		\end{block}
 
     	\column{.70\textwidth}
@@ -477,10 +477,10 @@
     			\column{.70\textwidth}
 		\begin{block}{}
 			\begin{verbatim}
-			>>> """hello
-			... there are multiple lines"""
-			'hello\nthere are multiple lines'
-			\end{verbatim}
+>>> """hello
+... there are multiple lines"""
+'hello\nthere are multiple lines'
+\end{verbatim}
 			\end{block}
 	\end{columns}
 	\bigskip
@@ -491,10 +491,10 @@
 	Of course, variables can contain strings.
 	\begin{block}{}
 		\begin{verbatim}
-		>>> text = "hello"
-		>>> print(text)
-		hello
-		\end{verbatim}
+>>> text = "hello"
+>>> print(text)
+hello
+\end{verbatim}
 	\end{block}
 
     New Python elements:
@@ -503,9 +503,6 @@
     \end{itemize}
 \end{frame}
 
-
-
-
 \begin{frame}[fragile]{An informal introduction}{Strings (III)}
 \vspace{-0.4cm}
 	\begin{columns}
@@ -513,31 +510,31 @@
 		Strings contatenation
 				\begin{block}{}
 				\begin{verbatim}
-				>>> "hello" + " there"
-				'hello there'
-				>>> "hello" "there"
-				'hellothere'
-				\end{verbatim}
+>>> "hello" + " there"
+'hello there'
+>>> "hello" "there"
+'hellothere'
+\end{verbatim}
 				\end{block}
 
  	   			\column{.30\textwidth}
 		Variables with strings
 				\begin{block}{}
 				\begin{verbatim}
-				>>> a = "hello"
-				>>> b = " there"
-				>>> a + b
-				'hello there'
-				\end{verbatim}
+>>> a = "hello"
+>>> b = " there"
+>>> a + b
+'hello there'
+\end{verbatim}
 				\end{block}
 
  	   			\column{.30\textwidth}
 		String length
 				\begin{block}{}
 				\begin{verbatim}
-				>>> len("hello")
-				5
-				\end{verbatim}
+>>> len("hello")
+5
+\end{verbatim}
 				\end{block}
 		\end{columns}
 
@@ -555,18 +552,18 @@
  	   			\column{.40\textwidth}
 				\begin{block}{}
 				\begin{verbatim}
-				>>> a = "hello"
-				>>> a[2]
-				'l'
-				>>> a[2:]
-				'llo'
-				>>> a[:2]
-				'he'
-				>>> a[2:] + a[:2]
-				'llohe'
-				>>> a[2:4]
-				'll'
-				\end{verbatim}
+>>> a = "hello"
+>>> a[2]
+'l'
+>>> a[2:]
+'llo'
+>>> a[:2]
+'he'
+>>> a[2:] + a[:2]
+'llohe'
+>>> a[2:4]
+'ll'
+\end{verbatim}
 				\end{block}
 		\end{columns}
 \end{frame}
@@ -584,8 +581,8 @@
    		\column{.70\textwidth}
 		\begin{block}{List initialization}
 		\begin{verbatim}
-		variable = [data1, data2, ..., dataN]
-		\end{verbatim}
+variable = [data1, data2, ..., dataN]
+\end{verbatim}
 		\end{block}
 	\end{columns}
 \end{frame}
@@ -598,10 +595,10 @@
    		\column{.60\textwidth}
 		\begin{block}{}
 		\begin{verbatim}
-		>>> a = ['spam', 'eggs', 123]
-		>>> a
-		['spam', 'eggs', 123]
-		\end{verbatim}
+>>> a = ['spam', 'eggs', 123]
+>>> a
+['spam', 'eggs', 123]
+\end{verbatim}
 		\end{block}
 	\end{columns}
 
@@ -612,13 +609,13 @@
    		\column{.60\textwidth}
 		\begin{block}{}
 		\begin{verbatim}
-		>>> a[2]
-		123
-		>>> a[1:]
-		['eggs', 123]
-		>>> a + a[2:len(a)]
-		['spam', 'eggs', 123, 123]
-		\end{verbatim}
+>>> a[2]
+123
+>>> a[1:]
+['eggs', 123]
+>>> a + a[2:len(a)]
+['spam', 'eggs', 123, 123]
+\end{verbatim}
 		\end{block}
 	\end{columns}
 \end{frame}
@@ -638,11 +635,11 @@
  	   	\column{.40\textwidth}
 	\begin{block}{\texttt{if} statement}
 		\begin{verbatim}
-		if condition:
-		    # Some code
-		else:
-		    # Some other code
-		\end{verbatim}
+if condition:
+    # Some code
+else:
+    # Some other code
+\end{verbatim}
 		\end{block}
 	\end{columns}
 
@@ -750,12 +747,7 @@
   M. Pilgrim.
     \newblock \emph{Dive into Python}.
     \newblock Ed. Prentice Hall, 2004.
-   
-    
- 
   \end{thebibliography}
 \end{frame}
-
-
 
 \end{document}
