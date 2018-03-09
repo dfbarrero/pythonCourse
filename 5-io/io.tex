@@ -36,9 +36,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Presentation Info
 \title[Input and output]{Input and output}
-\author{}
-\institute{\asignatura}
-\date{}
+\author{\asignatura\\\carrera}
+\institute{}
+\date{Departamento de Automática}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -138,15 +138,15 @@
 Enter data  by keyboard  (version 2.X)
 %(version 2.X works, in my 3.X does not):
 \begin{verbatim}
-	>>> x = raw_input('Introduzca un numero:   ')
-	64.5
-	>>> y = float(x) ** 2
+>>> x = raw_input('Introduzca un numero:   ')
+64.5
+>>> y = float(x) ** 2
 \end{verbatim}	
 	Enter data  by keyboard  (version 3.X)
 \begin{verbatim}	
-	>>> x = input('Introduzca un numero:   ')
-	64.5
-	>>> y = x ** 2
+>>> x = input('Introduzca un numero:   ')
+64.5
+>>> y = x ** 2
 \end{verbatim}
 \end{frame}
 
@@ -154,24 +154,24 @@ Enter data  by keyboard  (version 2.X)
 Print \textbf{not formatted} data (version 2.X):\\
 Needs () for version 3.X
 \begin{verbatim}
-	>>> print 'message', var1, var2, ..., vark
+>>> print 'message', var1, var2, ..., vark
 \end{verbatim}
 % las variables separadas por un blanco
 Prints on the screen: \alert{message var1 var2 vark}
 \begin{verbatim}
-	>>> name = 'John'
-	>>> age = 37
-	>>> print 'Name, age= ', name, age
-	Name, age= John 37
-	>>> print 'Name = ', name, ' age = ', age
-	Name = John age = 37
+>>> name = 'John'
+>>> age = 37
+>>> print 'Name, age= ', name, age
+Name, age= John 37
+>>> print 'Name = ', name, ' age = ', age
+Name = John age = 37
 \end{verbatim}
 \end{frame}
 
 \begin{frame}[fragile]{I/O interactive}{Data output (II)}
 Print \textbf{formatted} data (version 2.X):
 \begin{verbatim}
-	>>> print 'msg1 = %type1 msg2 = %type2' % (var1, var2)
+>>> print 'msg1 = %type1 msg2 = %type2' % (var1, var2)
 \end{verbatim}
 where \texttt{type1} and   \texttt{type2} indicate how to represent the variable:\\	
 \hspace{0.5cm}\%i and \%d: integer number.\\
@@ -180,10 +180,10 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 \hspace{0.5cm}\%g: remove not significant zeros.\\
 \hspace{0.5cm}\%s: string.\\
 \footnotesize{\begin{verbatim}
-	>>> name = 'John'
-	>>> daybal = 55.5
-	>>> print '%s earns per month %6.2f 	euros' % (name,  daybal *30.)
-    John earns per month 1515.00 euros
+>>> name = 'John'
+>>> daybal = 55.5
+>>> print '%s earns per month %6.2f euros' % (name,  daybal *30.)
+John earns per month 1515.00 euros
 \end{verbatim}
 }
 \end{frame}
@@ -258,39 +258,39 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 \begin{itemize}	
 \item Basic usage:
 	\begin{verbatim}
-	>>> print('{} and {}'.format('spam', 'eggs'))
-	spam and eggs
-	>>> print('{1} and {0}'.format('spam', 'eggs'))
-	eggs and spam
-	\end{verbatim}
+>>> print('{} and {}'.format('spam', 'eggs'))
+spam and eggs
+>>> print('{1} and {0}'.format('spam', 'eggs'))
+eggs and spam
+\end{verbatim}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{The \texttt{format()} method}{Use (II)}
 \begin{itemize}
 \item Additional formatting:
-	\begin{verbatim}
-	>>> import math
-	>>> math.pi
-	3.141592653589793
-	>>> print('PI values {0:.3f}'.format(math.pi))
-	PI values 3.142
-	\end{verbatim}
+\begin{verbatim}
+>>> import math
+>>> math.pi
+3.141592653589793
+>>> print('PI values {0:.3f}'.format(math.pi))
+PI values 3.142
+\end{verbatim}
 \item It's also possible to left or right justify data with the format method preceding the format with the options '$<$' (left justify) or '$>$' (right justify).\\
 \center{\alert{\href{http://www.python-course.eu/python3_formatted_output.php}{For more examples, \textit{Click Here}!}}}
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{The \texttt{format()} method}{Use (III)}
-	\begin{verbatim}
-	>>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
-	>>> for name, phone in table.items():
-	...     print('{0:10} ==> {1:10d}'.format(name, phone))
-	... 
-	Jack       ==>       4098
-	Dcab       ==>       7678
-	Sjoerd     ==>       4127
-	\end{verbatim}
+\begin{verbatim}
+>>> table = {'Sjoerd': 4127, 'Jack': 4098, 'Dcab': 7678}
+>>> for name, phone in table.items():
+...     print('{0:10} ==> {1:10d}'.format(name, phone))
+... 
+Jack       ==>       4098
+Dcab       ==>       7678
+Sjoerd     ==>       4127
+\end{verbatim}
 
 \end{frame}
 
@@ -300,21 +300,21 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 \begin{frame}[fragile]{Path}{}
 \begin{itemize}
 	\item On Linux, the path is denoted by: \\
-	\begin{verbatim}
-	path = '/tmp/prueba.txt'
-	\end{verbatim}
+\begin{verbatim}
+path = '/tmp/prueba.txt'
+\end{verbatim}
 	\item On Windows, the path is denoted by: \\
-	\begin{verbatim}
-	path = 'C:\Windows\Temp'
-	\end{verbatim}
+\begin{verbatim}
+path = 'C:\Windows\Temp'
+\end{verbatim}
 	And it is represented  in Python by:\\
-	\begin{verbatim}
-	path = 'C:\\Windows\\Temp'
-	\end{verbatim}
+\begin{verbatim}
+path = 'C:\\Windows\\Temp'
+\end{verbatim}
 	But by also using \textit{raw string}:
-	\begin{verbatim}
-		path = r'C:\Windows\Temp'
-	\end{verbatim}
+\begin{verbatim}
+    path = r'C:\Windows\Temp'
+\end{verbatim}
 \end{itemize}
 \end{frame}
 
@@ -327,9 +327,9 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 	\end{itemize}
 
 	\begin{block}{The \texttt{open()} function}
-	\begin{verbatim}
-	open(filename[, mode])	
-	\end{verbatim}
+\begin{verbatim}
+open(filename[, mode])	
+\end{verbatim}
 	\vspace{-0.2cm}
 	\textbf{Description}: The function returns an object file.\\
 	\vspace{-0.2cm}
@@ -348,9 +348,9 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 \subsection{Methods of file objects}
 \begin{frame}[fragile]{Methods of file objects}{Reading files (I)}
 	\begin{block}{The \texttt{read()} function}
-	\begin{verbatim}
-	f.read([size])
-	\end{verbatim}
+\begin{verbatim}
+f.read([size])
+\end{verbatim}
 
 	\vspace{-0.5cm}
 	\begin{itemize}
@@ -359,14 +359,14 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 	\end{itemize}
 	\end{block}
 \textbf{Option 1}: Read the entire file (\texttt{f.read()})
-	\begin{verbatim}
-	>>> f = open("/tmp/file", 'r+')
-	>>> f.read()
-	'This is the entire file.\\n'
-	>>> f.read()
-	''
-	>>> f.close()
-	\end{verbatim}
+\begin{verbatim}
+>>> f = open("/tmp/file", 'r+')
+>>> f.read()
+'This is the entire file.\\n'
+>>> f.read()
+''
+>>> f.close()
+\end{verbatim}
 	
 \end{frame}
 
@@ -374,44 +374,44 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 	
 
 	\textbf{Option 2}: Read a single line (\texttt{f.readline()})
-	\begin{verbatim}
-	>>> f = open("/tmp/file2", 'r+')
-	>>> f.readline()
-	'This is the first line of the file.\n'
-	>>> f.readline()
-	'This is the second line of the file\n'
-	>>> f.readline()
-	''
-	>>> f.close()
-	\end{verbatim}
+\begin{verbatim}
+>>> f = open("/tmp/file2", 'r+')
+>>> f.readline()
+'This is the first line of the file.\n'
+>>> f.readline()
+'This is the second line of the file\n'
+>>> f.readline()
+''
+>>> f.close()
+\end{verbatim}
 
 \end{frame}
 
 \begin{frame}[fragile]{Methods of file objects}{Reading files (III)}
 	\textbf{Option 3}: Read lines as list (\texttt{f.readlines()})
-	\begin{verbatim}
-	>>> f = open("/tmp/file2", 'r+')
-	>>> f.readlines()
-	['This is the first line of the file.\n',
-	'This is the second line of the file\n']
-	>>> f.close()
-	\end{verbatim}
+\begin{verbatim}
+>>> f = open("/tmp/file2", 'r+')
+>>> f.readlines()
+['This is the first line of the file.\n',
+'This is the second line of the file\n']
+>>> f.close()
+\end{verbatim}
 
 	\textbf{Option 4}: Read in a loop
-	\begin{verbatim}
-	f = open("/tmp/file2", 'r+')
-	for line in f:
-	    print(line, end='')
-	f.close()
-	\end{verbatim}
+\begin{verbatim}
+f = open("/tmp/file2", 'r+')
+for line in f:
+    print(line, end='')
+f.close()
+\end{verbatim}
 \end{frame}
 
 
 \begin{frame}[fragile]{Methods of file objects}{Writing files (I)}
 	\begin{block}{The \texttt{write()} function}
-	\begin{verbatim}
-	f.write(string)
-	\end{verbatim}
+\begin{verbatim}
+f.write(string)
+\end{verbatim}
 
 	\vspace{-0.5cm}
 	\begin{itemize}
@@ -424,13 +424,13 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 	 % si el archivo se crea con modo w+: se sobrescribe lo que hubiera al estar ya creado.
 	 % no se lee luego nada porque el puntero está posicionado al final y no hay más.
 	\begin{verbatim}
-	>>> f = open("/tmp/file", 'w+')
-	>>> f.write('This is a test\n')
-	15
-	>>> f.read()
-	'' 
-	>>> f.close()
-	\end{verbatim}
+>>> f = open("/tmp/file", 'w+')
+>>> f.write('This is a test\n')
+15
+>>> f.read()
+'' 
+>>> f.close()
+\end{verbatim}
 
 
 \end{frame}
@@ -439,12 +439,12 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 	
 
 	\textbf{Example 2}: Write a number % se tiene que pasar a string el número
-	\begin{verbatim}
-	>>> f = open("/tmp/file", 'w+')
-	>>> f.write(str(42))
-	2
-	>>> f.close()
-	\end{verbatim}
+\begin{verbatim}
+>>> f = open("/tmp/file", 'w+')
+>>> f.write(str(42))
+2
+>>> f.close()
+\end{verbatim}
 \end{frame}
 
 \subsection{Useful methods}
@@ -457,15 +457,15 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
   	\texttt{f.close()} & Closes a file. Use it always! \\\hline
   	\end{tabular}
 
-	\begin{verbatim}
-	>>> f = open("/tmp/file", 'rb+')
-	>>> f.write(b'0123456789abcdef')
-	16
-	>>> f.seek(5)
-	5
-	>>> f.read(1)
-	b'5'
-	\end{verbatim}
+\begin{verbatim}
+>>> f = open("/tmp/file", 'rb+')
+>>> f.write(b'0123456789abcdef')
+16
+>>> f.seek(5)
+5
+>>> f.read(1)
+b'5'
+\end{verbatim}
 \end{frame}
 % que hagan: obtener el número de bytes de un archivo, el archivo es muy, muy largo: léalo no completo sino en fragmentos de 64 bytes, leer de línea en línea (lo más frecuente), 
 % o todas las líneas de una vez, bucles sobre, directamente, las líneas del archivo. Escribir usando write y writelines (porporcionar finales de línea adecuadamente). Copia de un archivo (del todo o por líneas), de 1024 en 1024, 
@@ -478,8 +478,6 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 	\lstinputlisting[basicstyle=\scriptsize, numbers=left]{code/char_average_line.py}
 	\vspace{-0.2cm}
 	\end{block}
-
-	
 \end{frame}
 
 \begin{frame}[fragile]{Example 2}{}
@@ -515,10 +513,10 @@ where \texttt{type1} and   \texttt{type2} indicate how to represent the variable
 		\item \textit{Unpickling}: Reconstruct an object from its string representation.
 		\item Given an object \texttt{x} and a file object \texttt{f}.
 	\end{itemize}
-	\begin{verbatim}
-	>>> pickle.dump(x, f)
-	>>> x = pickle.load(f)
-	\end{verbatim}
+\begin{verbatim}
+>>> pickle.dump(x, f)
+>>> x = pickle.load(f)
+\end{verbatim}
 \end{frame}
 % byte of p. 93 -- cPickle más rápido
 
