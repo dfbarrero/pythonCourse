@@ -16,6 +16,10 @@ Contents:
 
 7.- [Object-Oriented Programming in Python](7-oop/oop.pdf)
 
+Bonus track:
+
+* [Scientific programming in Python](scipy/scipy.pdf)
+
 # Compilation
 
 Compile slides with xelatex or lualatex. Custom UAH fonts are needed to properly compile the project.
