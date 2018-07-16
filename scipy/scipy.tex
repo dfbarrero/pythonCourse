@@ -185,7 +185,7 @@
 
 \subsection{Python IDEs for Data Science}
 \begin{frame}{Data Science}{Python IDEs for Data Science (I)}
-    \begin{columns}
+    \begin{columns}[t]
  	   \column{.25\textwidth}
 	   \centering \textbf{iPython}\\
 	   iPython = Interactive Python
@@ -214,236 +214,117 @@
 		\includegraphics[width=0.8\textwidth]{figs/jupyter.png}	
 
  	\column{.25\textwidth}
-	   \centering \textbf{Spyder}\\
-		Matlab-like IDE
-
-		\includegraphics[width=0.8\textwidth]{figs/spyder-ide.png}	
-
- 	\column{.25\textwidth}
 	   \centering \textbf{Rodeo}\\
 		Python version of RStudio
 		\begin{itemize}
 			\item Good for R developers
+			\item Not included in Anaconda
 			\item Uses iPython
 		\end{itemize}
+        
+        \bigskip
 
 		\includegraphics[width=0.8\textwidth]{figs/rodeo.png}	
+
+ 	\column{.25\textwidth}
+	   \centering \textbf{Spyder}\\
+		Matlab-like IDE
+
+        \bigskip
+
+		\includegraphics[width=0.8\textwidth]{figs/spyder-ide.png}	
+
 	\end{columns}
 \end{frame}
 
 \begin{frame}{Data Science}{Python IDEs for Data Science (II)}
     \begin{block}{Exercises}
-		Write a Python script that shows the multiplication table of the number 5 with each one of the following environments:
+		Write a Python script that shows the multiplication table of the number 5. Write the script using each one of the following environments:
    		\begin{enumerate}
    		\item iPython + text editor of your choice.
-		\item Jupiter. Bonus track: Publish the notebook in GitHub.
+		\item Jupiter. 
+            \begin{itemize}
+                \item Bonus track: Publish the notebook in GitHub.
+            \end{itemize}
 		\item Spyder.
 		\item Rodeo.
 		\end{enumerate}
 	\end{block}
 \end{frame}
 
-\section{iPython}
+\section{Basics}
+\begin{frame}{iPython}{Basics (I)}
+    In regular Python ...
+    \begin{itemize}
+        \item most objects come with a docstring attribute
+        \item docstring accesible thorugh \texttt{help()}
+    \end{itemize}
+    iPython provides `\texttt{?}', a shortcut to \texttt{help()}
+    \begin{itemize}
+        \item \texttt{len?}, \texttt{list?}, \texttt{list.append?}
+        \item Try to type just `\texttt{?}'
+    \end{itemize}
+    Easy access to source code with `\texttt{??}'
+    \begin{itemize}
+        \item Does not work with most buildin functions!
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{iPython}{Basics (II)}
+    Press \texttt{<tab>} to complete almost everything
+    \begin{itemize}
+        \item Object contents\\
+	\includegraphics[width=0.45\textwidth]{figs/tab.png} 
+        \item Packages\\
+	\includegraphics[width=0.36\textwidth]{figs/tab2.png}	
+        \item Wildcards\\
+	\includegraphics[width=0.45\textwidth]{figs/tab3.png}	
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{iPython}{Basics (III): Keyboard shortcuts}
+    \footnotesize{
+        Navigation\\
+        \begin{tabular}{ll}\hline
+       \textbf{Keystroke} &  \textbf{Action}\\ \hline
+	   \texttt{Ctrl-a} & Move cursor to the beginning of the line  \\
+	   \texttt{Ctrl-e} & Move cursor to the end of the line  \\
+	   \texttt{Ctrl-b} & Move cursor back one character  \\
+	   \texttt{Ctrl-f} & Move cursor forward one character  \\\hline
+        \end{tabular}
+
+
+    \bigskip
+     History\\
+       \begin{tabular}{ll}\hline
+       \textbf{Keystroke} &  \textbf{Action}\\ \hline
+       \texttt{Ctrl-p ($\uparrow$)} & Previous command  \\
+       \texttt{Ctrl-n ($\downarrow$)} & Next command  \\
+	   \texttt{Ctrl-r} & Reverse-search  \\\hline
+    \end{tabular}
+
+
+    \bigskip
+
+        Text entry\\
+        \begin{tabular}{ll}\hline
+       \textbf{Keystroke} &  \textbf{Action}\\ \hline
+	   \texttt{Ctrl-d} & Delete next character in line  \\
+	   \texttt{Ctrl-k} & Cut text from cursor to end of line  \\
+	   \texttt{Ctrl-u} & Cut text from beginning of line to cursor  \\
+       \texttt{Ctrl-y} & Yank (paste) previously cut text  \\\hline
+       \end{tabular}
+   }
+\end{frame}
+
+
+
+
 \section{Numpy}
 \section{Pandas}
 \section{Matplotlib}
 \section{Seaborn}
 
-\begin{frame}{The data scientist working environment}
-	\begin{block}{Imperative programming}
-		Describes, by a set of instructions that change the \alert{program state}, \alert{how} the task should be implemented.  
-  	\end{block}
-  	\begin{itemize}
-  		\item \textbf{Procedural}: organizes the program using collections of subroutines related by means of invocations (\textit{C, Python}).
-  		\begin{itemize}
-  			\item Example: \textit{The cooking process consists of 20 lines of code. When it is used, it only calls the function (1 line).} 
-  		\end{itemize}
-  		\item \textbf{Structural}: is based on nesting, loops, conditionals and subroutines. \texttt{GOTO} command is forbidden 				 \textit{(C, Pascal)}.
-  		\begin{itemize}
-  			\item Example: \textit{reviewing products of a shopping list and add the item X to the shopping if it is available.} 
-  		\end{itemize}
-  	\end{itemize}
-\end{frame}
-
-\begin{frame}{Programming paradigms types (III)}{}
-	\begin{block}{Object-Oriented Programming}
-		Evolves from imperative programming. It is based on \alert{objects} that allow express the \alert{characteristics} and \alert{behavior} in a closer way to real life (Java, Python, C++). 
-  	\end{block}
-  	\begin{itemize}
-  		\item \textbf{Main characteristics}: abstraction, encapsulation, polymorphism, inheritance, modularity, etc.
-		\item Example: \textit{a car has a set of properties (color, fuel type, model) and a functionality (speed up, shift gears, braking).} 
-  	\end{itemize}
-  	
-\textit{\alert{There are many other paradigms such as Event-Driven programming, Concurrent, Reactive, Generic, etc.}}
-\end{frame}
-
-\begin{frame}{Programming paradigms types (IV)}{Classification}
-	\includegraphics[scale=0.4]{figs/paradigmas}
-	%\caption{http://www.computer.org/csdl/mags/it/2011/05/mit2011050030-abs.html}
-	
-	\centering\textit{\alert{Python supports the three major paradigms, although it stands out for the OOP and Imperative paradigms.}
-}\end{frame}
-
-\section[Object-Oriented Programming]{Object-Oriented Programming}
-
-\subsection{Objectives}
-
-\begin{frame}{Object-Oriented Programming}{Objectives}
-\begin{itemize}
-  	\item \textbf{Reusability}: Ability of software elements to serve for the construction of many different applications.
-  	\item \textbf{Extensibility}: Ease of adapting software products to specification changes.
-  	\item \textbf{Maintainability}: Amount of effort necessary for a product to maintain its normal functionality.   
-  	\item \textbf{Usability}: Ease of using the tool.
-  	\item \textbf{Robustness}: Ability of software systems to react appropriately to exceptional conditions.   
-  	\item \textbf{Correction}: Ability of software products to perform their tasks accurately, as defined in their specifications.
-  	\end{itemize} 	
-\end{frame}
-
-\subsection{Basic concepts}
-
-\begin{frame}{Object-Oriented Programming}{Concepts (II)}
-	\vfill\begin{block}{Atribute}
-		Individual characteristics that determine the qualities of an object. 
-  	\end{block}	
-		\begin{figure}
-			\includegraphics[scale=0.5]{figs/atributo}
-		\end{figure}				
-\end{frame}
-
-\begin{frame}{Object-Oriented Programming}{Concepts (III)}
-	\vfill\begin{block}{Method}
-		 Function responsible for performing operations according to input parameters. 
-  	\end{block}	
-		\begin{figure}
-			\includegraphics[scale=0.5]{figs/metodo}
-		\end{figure}				
-\end{frame}
-
-\begin{frame}{Object-Oriented Programming}{Concepts (IV)}
-	\vfill\begin{block}{Object or instance}
-		 Specific representation of a class, namely, a class member with their corresponding attributes.
-  	\end{block}	  	
-		\begin{figure}
-			\includegraphics[scale=0.5]{figs/instancia}
-		\end{figure}				
-\end{frame}
-
-\begin{frame}{Object-Oriented Programming}{Concepts(V)}
-	\begin{block}{Constructor}
-		 Method called when an object is created. It allows the initialization of attributes. 
-  	\end{block}	
-		\begin{figure}
-			\includegraphics[scale=0.5]{figs/constructor}
-		\end{figure}				
-\end{frame}
-
-\begin{frame}{Object-Oriented Programming}{Synthesizing OOP terminology}
-    \begin{columns}
- 	   \column{.6\textwidth}
- 		  \begin{itemize}
-			\item \small{Software objects mimics physical objects.} % un  individuo o ejemplar de una clase 
-		   	\begin{itemize}
-				\item \footnotesize{An object contains \textit{attributes} (state) and a \textit{behaviour}}. % behavior u operaciones
-				\item \footnotesize{Example: A dog has a name (state) and may be a bit (behaviour).}
-		  	\end{itemize}
-		  %	\item Objects are grouped into classes.
-		  	\item \small{A \alert{class} is a set of objects with common characteristics and behaviour.}
-		  	\item \small{An \alert{object} is called an \alert{Instance} of a class.}
-		  	% It can also be described as a pattern or template that is used to create objects.
-			\item \textit{Members} of a class:
-		    	\begin{itemize}
-				\item \footnotesize{\alert{Properties}: Data describing an object.}
-				\item \footnotesize{\alert{Methods}: What an object can do.}%Something that can be done to object. % o procedimiento perteneciente a un objeto.
-					% modo en que se comunican los objetos entre síi. 
-		  	    \end{itemize}
-			% \item Property = Member, attribute, variable, etc.
-		  \end{itemize}
- 		\column{.4\textwidth}
-	  	 	\begin{figure}[t]
-			\begin{center}
-			    \includegraphics[width=0.97\linewidth]{figs/object2}\\
-				\tiny{Source: http://www.teachitza.com/delphi/oop.htm}
-			\end{center}
-  	 		\end{figure}
-    \end{columns}
-\end{frame}
-
-
-%Diapositiva del Main
-%\begin{frame}{Programación Orientada a Objetos(I) - Definiciones (VI)}{}
-%	\begin{block}{Main}
-%		 \justifying Módulo principal muy util para la realización de pruebas. Permite incluir solamente los fragmentos de código que quieran ser probados.
-%  	\end{block}	
-%		\vspace{1cm}
-%		\centering\includegraphics[scale=0.1]{figs/main}
-%\end{frame}
-
-
-\subsection{Characteristics}
-
-\begin{frame}{Characteristics}{Inheritance}
-\vspace{-0.2cm}
-	\begin{block}{Concept}
-	Mechanism of \alert{reusing} code in OOP. Consists of generating child classes from other existing (\alert{super-class}) allowing the use and adaptation of the attributes and methods of the parent class to the child class. 
-  	\end{block}	
-\vspace{-0.2cm}
-\begin{block}{}
-\begin{itemize}
-		\item \small{\textit{Superclass}: ``Father'' of a class.}
-		\item \small{\textit{Subclass}: ``Child'' of a class.}
-		\item \small{A subclass inherits all the fields and methods from its superclass.}
-		\begin{itemize}
-		\item \footnotesize \textit{Fields}: Variable that is part of an object.
-		\end{itemize}
-		\item \small{A subclass has \alert{one} superclass.}
-		\item \small{A superclass has \alert{at least one} subclass.}
-		\item \small{\textit{Class hierarchy}: A set of classes related by inheritance.}
-\end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}{Characteristics}{Inheritance (II)}
-
-	\begin{block}{Types of inheritance}
-	\begin{itemize}
-		\item If the child class inherits from a single class is called \alert{single inheritance}.
-		\item if it inherits from more classes is \alert{multiple inheritance}.
-	\end{itemize}
-	\end{block}
-	\medskip
-	   \textit{Python allows both; simple and multiple inheritance.}
-\end{frame}
-
-\begin{frame}{Characteristics}{Examples of simple inheritance (I)}
-    \begin{columns}
-    % cambiar figura poniendo fields y methods también
- 	   \column{.40\textwidth}
-	    \centering\includegraphics[width=0.9\linewidth]{figs/concepts-bicycleObject2}
-	  
-	    \column{.60\textwidth}
-	  \centering \includegraphics[width=0.9\linewidth]{figs/concepts-bikeHierarchy2}\\
-	
-    \end{columns}
-    \bigskip
-	\centering \tiny{Source: http://docs.oracle.com/javase/tutorial/java/concepts/object.html}\\
-	\centering \tiny{Source: http://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html}\\
-\end{frame}
-
-\begin{frame}{Characteristics}{Examples of simple inheritance (II)}
-	\begin{figure}
-		\includegraphics[scale=0.33]{figs/herencia1}
-		\caption{{\scriptsize Example of simple Inheritance in OOP. Obtained from: \url{http://android.scenebeta.com}}}
-	\end{figure}
-\end{frame}
-
-
-
-\begin{frame}{Characteristics}{Multiple Inheritance}
-	\begin{figure}
-		\includegraphics[scale=0.5]{figs/herencia2}
-		\caption{{\scriptsize Example of multiple Inheritance in OOP. Obtained from: \url{http://www.avizora.com}}}
-	\end{figure}
-\end{frame}
 
 \begin{frame}{Characteristics}{Polymorphism (I)}
 \vspace{-0.2cm}
