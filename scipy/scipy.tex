@@ -293,7 +293,6 @@
 	   \texttt{Ctrl-f} & Move cursor forward one character  \\\hline
         \end{tabular}
 
-
     \bigskip
      History\\
        \begin{tabular}{ll}\hline
@@ -303,9 +302,7 @@
 	   \texttt{Ctrl-r} & Reverse-search  \\\hline
     \end{tabular}
 
-
     \bigskip
-
         Text entry\\
         \begin{tabular}{ll}\hline
        \textbf{Keystroke} &  \textbf{Action}\\ \hline
@@ -317,8 +314,261 @@
    }
 \end{frame}
 
+\subsection{Magic commands}
+\begin{frame}{iPython}{iPython magic commands}
+	Magic commands: iPython extension of Python syntax
+	\begin{itemize}
+	\item Not valid in regular Python
+	\item Provides handly features
+	\item Widely used in DS and ML
+	\end{itemize}
+	Two flavours
+	\begin{itemize}
+	\item \% prefix: Line magics - single line
+	\item \%\% prefix: Cell magics - several lines
+	\end{itemize}
+	Help available
+	\begin{itemize}
+		\item \texttt{\%magic}: Magic commands
+		\item \texttt{\%lsmagic}: List of magic commands
+	\end{itemize}
+\end{frame}
+
+\subsection{Pasting code blocks}
+\begin{frame}[fragile]{iPython}{Pasting code blocks: \texttt{\%paste} and \texttt{\%cpaste}}
+    \begin{columns}
+ 	   \column{.5\textwidth}
+	   Pasting code in Python is troublesome
+		\begin{itemize}
+			\item \texttt{\%paste}: Paste one time
+			\item \texttt{\%\%cpaste}: Paste several times
+		\end{itemize}
+ 	   \column{.5\textwidth}
+	       %\begin{block}{}
+		   %    \vspace{-0.2cm}
+		   %    \lstinputlisting{code/donothing.py}
+		   %    \vspace{-0.2cm}
+		   %\end{block}
+	   \begin{exampleblock}{}
+	   \vspace{-0.2cm}
+	   \begin{verbatim}
+def donothing(x):
+    return x
+	   \end{verbatim}
+	   \vspace{-0.2cm}
+	   \end{exampleblock}
+
+	   \vspace{-0.2cm}
+	\end{columns}
+
+	\footnotesize{
+    \begin{columns}
+ 	   \column{.4\textwidth}
+		 \begin{exampleblock}{\%paste}
+	   \vspace{-0.2cm}
+	   \begin{verbatim}
+In [20]: %paste
+   def donothing(x):
+ 	  return x
+
+## -- End pasted text --
+\end{verbatim}
+	   \vspace{-0.2cm}
+	   \end{exampleblock}
+
+	   \vspace{-0.2cm}
+
+ 	   \column{.6\textwidth}
+
+	 	\begin{exampleblock}{\%cpaste}
+	   \vspace{-0.2cm}
+	   \begin{verbatim}
+In [25]: %cpaste
+Pasting code; enter '--' alone on the line
+to stop or use Ctrl-D.
+:       def donothing(x):
+            return x:
+:--
+	   \end{verbatim}
+	   \vspace{-0.2cm}
+	   \end{exampleblock}
+	   \end{columns}
+	   }
+\end{frame}
+
+\subsection{Running external code}
+\begin{frame}[fragile]{iPython}{Running external code: \texttt{\%run} and \texttt{\%timeit}}
+    \begin{columns}
+ 	   \column{.4\textwidth}
+	   \texttt{\%run}: Execute script
+		\begin{itemize}
+			\item Many optional arguments
+			\item Checkout \texttt{\%run?}
+		\end{itemize}
+		\footnotesize{
+	   \begin{exampleblock}{}
+	   \vspace{-0.2cm}
+	   \begin{verbatim}
+In [40]: %run donothing.py
+
+In [41]: donothing(10)
+Out[41]: 10
+	   \end{verbatim}
+	   \vspace{-0.2cm}
+	   \end{exampleblock}
+		}
+
+ 	   \column{.6\textwidth}
+	   \texttt{\%timeit}: Computes execution time
+		\begin{itemize}
+			\item Executes a single line
+			\item Automatic adjustment of runs
+			\item Shows basic statistics
+		\end{itemize}
+
+		\footnotesize{
+	   \begin{exampleblock}{}
+	   \vspace{-0.2cm}
+	   \begin{verbatim}
+In [33]: %timeit [n ** 2 for n in range(200)]
+71.6 µs ± 1.84 µs per loop 
+(mean ± std. dev. of 7 runs, 10000 loops each)
+
+In [34]: %timeit [n ** 2 for n in range(2000)]
+753 µs ± 16.2 µs per loop 
+(mean ± std. dev. of 7 runs, 1000 loops each)
+\end{verbatim}
+	   \vspace{-0.2cm}
+	   \end{exampleblock}
+		}
+
+		\normalsize{
+	   \texttt{\%\%timeit}: Several lines\\
+	   }
+	\end{columns}
+
+\end{frame}
+
+\subsection{Input and output history}
+\begin{frame}[fragile]{iPython}{Input and output history (I)}
+	\begin{columns}
+ 	   \column{.6\textwidth}
+	iPython stores its history as objects
+	\begin{itemize}
+		\item \texttt{In}: Input commands
+			\begin{itemize}
+			\item List storing commands
+			\end{itemize}
+		\item \texttt{Out}: Commands output
+			\begin{itemize}
+			\item Dictionary storing outputs
+			\item Not all commands have outputs
+			\end{itemize}
+	\end{itemize}
+
+	\vspace{-0.2cm}
+
+ 	   \column{.4\textwidth}
+	\begin{exampleblock}{}
+In [1]: import math
+
+In [2]: math.sin(2)
+
+Out[2]: 0.9092974268256817
+
+In [3]: math.cos(2)
+
+Out[3]: -0.4161468365471424
+
+In [4]: Out[2] ** 2 + Out[3] ** 2
+
+Out[4]: 1.0
+	\end{exampleblock}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{iPython}{Input and output history (II)}
+	Fast access to history: Underscore (\_)
+	\begin{itemize}
+		\item Variable containing the last output
+		\item Example: \texttt{print(\_)}
+	\end{itemize}
+	Double and triple underscores
+	\begin{itemize}
+		\item Example: \texttt{print(\_\_)}
+		\item Example: \texttt{print(\_\_\_)}
+	\end{itemize}
+	Trick: Shortcut to access ($\_n$)
+	\begin{itemize}
+		\item Out[n] = \_n, with n=number
+		\item Example: \texttt{print(\_2)}
+	\end{itemize}
+	Magic command to show history
+		\begin{itemize}
+		\item \texttt{\%history}
+		\end{itemize}
+	Supressing command output (\texttt{;})
+		\begin{itemize}
+		\item Example: \texttt{4 * 2;}
+		\end{itemize}
+\end{frame}
+
+\subsection{iPython shell commands}
+\begin{frame}{iPython}{iPython shell commands}
+	iPython provides easy interaction with the shell
+	\begin{itemize}
+		\item Execution of shell commands from iPython
+		\item Use prefix `\texttt{!}'
+		\item Example: \texttt{!ls}, \texttt{!pwd}
+	\end{itemize}
+	Save shell output in Python variables
+	\begin{itemize}
+		\item Example: \texttt{files = !ls}
+	\end{itemize}
+	Use Python variables in shell
+	\begin{itemize}
+		\item Example: \texttt{!echo \{files\}}
+	\end{itemize}
+\end{frame}
+
+\subsection{Automagic}
+
+\begin{frame}[fragile]{iPython}{Automagic}
+	\begin{columns}
+ 	   \column{.4\textwidth}
+	Problems with some shell commands
+	\begin{exampleblock}{}
+In [23]: !pwd
+
+/repositorios/pythonCourse
 
 
+In [24]: !cd ..
+
+
+In [25]: !pwd
+
+/repositorios/pythonCourse
+	\end{exampleblock}
+	Some magic commands here to help
+	\begin{itemize}
+		\item \texttt{\%cd}, \texttt{\%ls}, \texttt{\%mkdir}, \texttt{\%pwd}, ...
+	\end{itemize}
+
+ 	   \column{.4\textwidth}
+	Those magics are regularly used ...
+	\begin{itemize}
+		\item ... so common that \% is no longer required (automagic)
+		\item Working with iPython is almost like working with a Unix-like shell
+	\end{itemize}
+
+	\begin{block}{Automagic commands}
+\texttt{cat}, \texttt{cp}, \texttt{env}, \texttt{ls}, \texttt{man}, \texttt{mkdir}, \texttt{more}, \texttt{mb}, \texttt{pwd}, \texttt{rm} and \texttt{rmdir}
+	\end{block}
+
+	\end{columns}
+
+\end{frame}
 
 \section{Numpy}
 \section{Pandas}
@@ -326,467 +576,19 @@
 \section{Seaborn}
 
 
-\begin{frame}{Characteristics}{Polymorphism (I)}
-\vspace{-0.2cm}
-	\begin{block}{Polymorphism}
-		Mechanism of object-oriented programming that allows to invoke a method whose implementation will depend on the object that does it.
-  	\end{block}	
-% TIPOS DE POLIMORFISMO
-%		\begin{itemize}
-%			\item \justifying\textbf{Polimorfismo de sobrecarga}: mismo nombre y tipos de 						  datos en diferentes clases.
-%			\item \justifying\textbf{Polimorfismo paramétrico}: mismo nombre diferentes 							  tipos de datos. 
-%			\item \justifying\textbf{Polimorfismo de subtipado}: Permite invocar un método 						  de una clase especializada a partir de la clase padre.
-%		\end{itemize}
-	\begin{figure}
-	  \vspace{-0.2cm}
-		\includegraphics[width=4.6cm]{figs/polimorfismo1}
-		\vspace{-0.2cm}
-		\caption{\scriptsize{Example of polymorphism. Obtained from: \url{http://virtual.uaeh.edu.mx}}}
-	\end{figure}
-\end{frame}
 
-\begin{frame}{Characteristics}{Polymorphism (II)}
-	\begin{figure}
-		\includegraphics[scale=0.57]{figs/polimorfismo2}
-		\vspace{-0.1cm}
-		\caption{{\scriptsize Example of polymorphism. Obtained from: \url{http://datateca.unad.edu.co}}}
-	\end{figure}
-\end{frame}
-
-
-\begin{frame}{Characteristics}{Abstraction and encapsulation (I)}
-	\begin{block}{Abstraction}
-		Mechanism that allows the isolation of the not relevant information to a level of knowledge.
-  	\end{block}	
-	
-	\begin{itemize}
-		\item \textit{A driver does not need to know how the carburetor works.} 
-		\item \textit{To talk on the phone does not need to know how the voice is transferred.} 
-		\item \textit{To use a computer do not need to know the internal composition of their materials}. 							  
-		
-%		\vfill\item \textit{\alert{En Python no existen de manera nativa las clases 					abstractas pero si mediante el módulo ABC \cite{PythonTeam}.}}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Characteristics}{Abstraction and encapsulation (II)}
-	\begin{block}{Encapsulation}
-		Mechanism use to provide an access level to methods and attributes for avoiding unexpected state changes. This mechanism is used to limit the visibility of the attributes and to create methods controlling them (\texttt{set()} y \texttt{get()}).
-  	\end{block}	
-	
-The most common access levels are:
-	
-	\begin{itemize}
-		\item \textbf{public}: visible for everyone  [default level in Python].
-		\item \textbf{private}: visible for the creator class [start with a double underscore and does not end in the same manner].
-		\item \textbf{protected}: visible for the creator class and its descendents \alert{[not exist in Python]}. 
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{Characteristics}{Abstraction and encapsulation (III). Example 1}
-	\begin{figure}
-		\includegraphics[scale=0.4]{figs/abstraccion1}
-		\caption{{\scriptsize Example of abstraction and encapsulation.Obtained from: \url{https://binalparekh.wordpress.com}}}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{Characteristics(III)}{Abstraction and encapsulation (IV). Example 2}
-	\begin{figure}
-		\includegraphics[scale=0.45]{figs/abstraccion2}
-		\caption{{\scriptsize Example of abstraction and encapsulation. Obtained from: \url{http://www.onlinebuff.com}}}
-	\end{figure}
-\end{frame}
-
-\section{Classes in Python}
-   \subsection{Sintax}
-%Sintaxis básica
-%\begin{frame}{Nomeclatura de Python}{Sintaxis(I)}
-%	\begin{itemize}
-%		\item \justifying \textbf{Impresión por pantalla}: \texttt{print}. Por defecto solo admite la codificación inglesa (sin tildes ni ñ). 
-%		\begin{itemize}
-%			\item Para que las admita, se escribe antes: \# -*- coding: utf-8 -*-
-%			\item Para imprimir texto se escribe entre comillas dobles.
-%		\end{itemize}
-%		\item \justifying\textbf{Indentación}: Python utiliza espacios o tabulaciones para definir los distintos niveles en el código, por lo tanto si un 													   fragmento se encuentra a la derecha del superior indica que está contenido en la instrucción anterior.
-%		\item \justifying \textbf{Comentarios}: Comienzan con \#.
-%	\end{itemize}
-%    \begin{columns}
-% 	   \column{0.8\textwidth}
-%			\begin{block}{holaMundo.py}
-%			\vspace{-0.3cm} 
-%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/holaMundo.py} % contar elementos
-%			\end{block}
-%	\end{columns}			
-
-%\end{frame}
-
-%\begin{frame}{Nomeclatura de Python}{Sintaxis(II)}
-%	\begin{itemize}
-%		\item \justifying \textbf{Asignación}: Se expresa mediante un igual.
-%		\item \justifying \textbf{Atributo}: sustantivo expresado con minúscula.
-%		\item \justifying \textbf{Condiciones}: \texttt{if/elif/else + condición:}. Permiten expresar que hacer si se satisface o no una condición. Para 														expresar una condición de igualdad se utiliza \texttt{==}
-%    \begin{columns}
-% 	   \column{0.8\textwidth}
-%			\begin{block}{semaforo.py}
-%			\vspace{-0.3cm} 
-%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/semaforo.py} % contar elementos
-%			\end{block}
-%	\end{columns}			
-%	\end{itemize}
-%\end{frame}
-
-
-%\begin{frame}{Nomeclatura de Python}{Sintaxis(III)}
-%	\begin{itemize}
-%		\item \justifying \textbf{Estructuras iterativas}: \texttt{while/for + condición:}. Permiten expresar el mismo código mientras se cumpla la condición.	
-%	\end{itemize}
-%    \begin{columns}
-% 	   \column{0.8\textwidth}
-%			\begin{block}{provincias.py}
-%			\vspace{-0.3cm} 
-%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/provincias.py} % contar elementos
-%			\end{block}
-%	\end{columns}				 
-%\end{frame}
-
-
-\begin{frame}{Classes in Python}{Syntax (I)}
-\vspace{-0.2cm}
-\begin{itemize}			
-		\item \small{\textbf{Class}: Start with the word \alert{class} followed by class name written in \alert{capital letter} and a colon [Substantives].}
-		\item \small{\textbf{Attributes}: A lowercase noun.}
-		\begin{itemize}
-		\item \footnotesize{There is no need to declare attributes.}
-		\end{itemize}
-		
-		\item \small{\textbf{Inherited class}: Similar to a class but the class name followed by the class father in brackets.}
-		\item \small{\textbf{Instance}: Object in lower case followed by the class assignment.}
-			\vspace{-0.2cm} 
-  	   \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{\small{coche.py}}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/coche.py} % contar elementos
-				\vspace{-0.2cm} 
-			\end{block}
-	\end{columns}		
-\end{itemize}			
-\end{frame}
-
-\begin{frame}{Classes in Python}{Syntax (II)}
-\begin{itemize}
-		\item \textbf{Method}: Start with the word \alert{def}, and later the method, a verb, in lower case is written. Next, the parameter in brackets and a colon (\texttt{print\_name()}).
-   \begin{itemize}
-   \item Methods receive automatically a reference to the object (usually named \texttt{self}).
-   \end{itemize}
-		\item \textbf{Constructor}: Method whose name is \texttt{\_\_init\_\_()}, the first attribute is \texttt{self} and then the class attributes are written.
-
-		\item \textbf{main}: Method defined with \texttt{def main():}. In it, the wished commands are specified and after it, an exit condition is created. The \texttt{sys} module  is required to be imported at the beginning. 
-		\item All methods and attributes are public.
-			\begin{itemize}
-				\item By convention, private members begin with double underscore (\texttt{\_\_varName}, \texttt{\_\_method\_name()})
-			\end{itemize}
-\end{itemize}			
-\end{frame}
-
-
-\begin{frame}{Classes in Python}{Syntax (III). Example 1}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{main.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/main.py} % contar elementos
-			\end{block}
-	\end{columns}				 	
-\end{frame}
-
-\begin{frame}{Classes in Python}{Syntax (IV). Example 2}
-\vspace{-0.2cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{bicicleta.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/bicicleta.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}				 	
-\end{frame}
-
-\begin{frame}{Classes in Python}{Syntax (V). Example 3}
-	\vspace{-0.2cm}
-	\begin{block}{Time.py}
-	\vspace{-0.3cm}
-		\lstinputlisting{code/Time.py}
-	\vspace{-0.3cm} 
-	\end{block}
-\end{frame}
-
-\subsection{Class objects}
-\begin{frame}[fragile]{Classes in Python}{Class objects}
-	\centering {Two operations on classes}
-    \begin{columns}
- 	   \column{.50\textwidth}
-	   		\begin{block}{Attribute references}
-			Accesses an attribute value\\
-			Standard dot syntax\\
-			\bigskip
-			\centering{\texttt{obj.name}}\\
-	   		\end{block}
-	   		\begin{exampleblock}{Example}
-\begin{verbatim}
-time.hour = 4
-print(time.hour)
-hour = time.hour
-\end{verbatim}
-	   		\end{exampleblock}
-
- 	   \column{.50\textwidth}
-	   		\begin{block}{Instantiation}
-			Creates a new object\\
-			Standard functional notation\\
-			\bigskip
-			\centering{\texttt{x = MyClass()}}\\
-	   		\end{block}
-	   		\begin{exampleblock}{Example}
-\begin{verbatim}
-time = Time()
-\end{verbatim}
-	   		\end{exampleblock}
-	\end{columns}
-\end{frame}
-
-\subsection{Constructors}
-\begin{frame}{Constructors (I)}
-		Instantiation creates empty objects
-		\begin{itemize}
-			\item We usually need to initialize attributes
-			\item Initialization operations
-		\end{itemize}
-		\alert{Constructor}: Method called when an object is created
-		\begin{itemize}
-			\item In Python, it is the \texttt{\_\_init\_\_()}
-			\item A constructor can get arguments
-		\end{itemize}
-\end{frame}
-
-\begin{frame}[plain]{Constructors (II)}
-	\vspace{-0.3cm}
-	\begin{block}{Time.py with constructor}
-	\vspace{-0.3cm}
-		\lstinputlisting{code/Time2.py}
-	\end{block}
-\end{frame}
-
-\subsection{More about methods}
-
-\begin{frame}{Other special methods}
-In addition to special method \texttt{\_\_init\_\_}, there are several others, including:\\
-	\begin{block}{}
-		\vspace{-0.15cm}
-		\begin{itemize}
-		\item \footnotesize{\texttt{\_\_str\_\_(self)} It should return a string with \texttt{self} information.  When \texttt{print()} is invoked with the object, if the method \texttt{\_\_str\_\_()} is defined, Python shows the result of running this method on the object.}
-		\item \footnotesize{\texttt{\_\_len\_\_(self)} It should return the length or ``size'' of object (number of elements if is a \textit{set} or \textit{queue}).}
-		\item \footnotesize{\texttt{\_\_add\_\_(self, otro\_obj)} It allows to apply the addition operator (+) to objects of the class in which it is defined.}
-		\item \footnotesize{\texttt{\_\_mul\_\_(self, otro\_obj)} It allows to apply the multiplication operator (*) to objects of the class in which it is defined.}
-		\item \footnotesize{\texttt{\_\_comp\_\_(self, otro\_obj)} It allows to apply the comparison operators (<, >, <=, >=, ==, !=) to objects of the class in which it is defined. It should return 0 if they are equal, -1 if \texttt {self} is smaller than \texttt{other\_obj} and 1 if \texttt{self} is greater than \texttt{other\_obj}.}
-		\end{itemize}
-		\vspace{-0.2cm}
-	\end{block}	
-\end{frame}
-
-
-\begin{frame}[shrink]{Overriding methods (I)}
-	Often we need to adapt an inheritanced method: \alert{Overriding}
-
-	\begin{block}{Overriding example}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/Overriding.py}
-		\vspace{-0.2cm}
-	\end{block}
-\end{frame}
-	
-\begin{frame}{Overriding methods (II)}
-		Still possible to get superclass' method with \texttt{super()}
-
-	\begin{block}{\texttt{super()} example}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/Overriding2.py}
-		\vspace{-0.2cm}
-	\end{block}
-\end{frame}
-
-\subsection{Solved exercises}
-
-\begin{frame}{Exercise statement}{\texttt{Animal} class}
-	\begin{enumerate}
-		\item Create the \texttt{animal} class. 
-		\item Create the constructor. The class will have the attributes \texttt{tipo} and \texttt{patas}.
-		%con las variables tipo de animal y número de 		patas.
-		\item Create the get methods from both attributes which receive like own parameter the animal through \texttt{self} and return respectively the \texttt{tipo} and \texttt{patas}. 
-		\item Create two instances of animals using the constructor.
-		\item Print the attributes of both instances.
-	\end{enumerate}	
-\end{frame}
-
-\begin{frame}{Solved exercise}{\texttt{Animal} class}
-	\vspace{-0.2cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{animales.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animales.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}
-\end{frame}
-
-\begin{frame}{Solved exercise}{\texttt{Animal} class}
-	\begin{enumerate}
-		\item Create a \texttt{gato} class in the same file which inherits from the \texttt{animal} class. 
-		\item Create the constructor and add the \texttt{sonido} attribute. 
-		\item Create the method \texttt{maullar} which prints the sound MIAU. 
-		\item Create a instance and check the methods.
-	\end{enumerate}	
-\end{frame}
-
-\begin{frame}{Solved exercise}{Class \texttt{Animals}}
-	\vspace{-0.4cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{animales.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/gato.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}
-\end{frame}
-% añadir otro ejemplo de clases GIS , pickle de clases y más referencias
-\begin{frame}{Exercise statement}{Class \texttt{Parcela}}
-	\begin{enumerate}
-		\item Create a script containing the class \texttt{Parcela}. 
-		\item Create the constructor. The class will have the attributes \texttt{uso\_suelo} and \texttt{valor}.
-		%con las variables tipo de animal y número de 		patas.
-		\item Create the \texttt{valoracion} method to calculate the tax associated with the parcel as follows: 
-		\begin{itemize}
-		\item For single-family residential: \textit{tasa = 0.05 * valor}
-		\item For multifamily residential: \textit{tasa = 0.04 * valor}
-		\item For all other land uses: \textit{tasa = 0.02 * valor}
-		\end{itemize}
-		\item Use the class from another \textit{script} named \texttt{tasaparcela.py} which you create una instance of \texttt{Parcela} named \texttt{miparcela} using the constructor.
-		\item Print the attribute  \texttt{uso\_suelo} of the instance.
-		\item Use the method \texttt{valoracion} of \texttt{Parcel} to calculate the assessment of \texttt{miparcela}.
-	\end{enumerate}	
-\end{frame}
-
-\begin{frame}{Solved exercise}{Class \texttt{Parcela}}
-	\vspace{-0.26cm}
-  %  \begin{columns}
- %	   \column{0.8\textwidth}
-			\begin{block}{claseparcela.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/claseparcela.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-%	\end{columns}
-%	\tiny{\href{http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=276&moduleID=0}{Source}}
-\end{frame}
-
-\begin{frame}{Solved exercise}{Use of \texttt{Parcela}}
-	\vspace{-0.4cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{tasaparcela.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}
-		\tiny{\href{http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=276&moduleID=0}{Source}}
-\end{frame}
-
-\begin{frame}[plain]{Solved exercise. Serializando objetos \texttt{Parcela}}{}
+%\begin{frame}[plain]{Solved exercise. Serializando objetos \texttt{Parcela}}{}
 %	\vspace{-0.4cm}
   %  \begin{columns}
  %	   \column{0.8\textwidth}
-			\begin{block}{\footnotesize{tasaparcela\_pickle.py}}
-			\vspace{-0.2cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela_pickle.py} % contar elementos
-			\vspace{-0.2cm} 
-			\end{block}
+%			\begin{block}{\footnotesize{tasaparcela\_pickle.py}}
+%			\vspace{-0.2cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela_pickle.py} % contar elementos
+%			\vspace{-0.2cm} 
+%			\end{block}
 %	\end{columns}
 	
-\end{frame}
+%\end{frame}
 
-\subsection{Approach to a final problem}
-\begin{frame}{Exercise statement}{\texttt{Rio} class}
-\vspace{-0.24cm}
-	\begin{enumerate}
-		\item Create the \texttt{Rio} class. 
-		\item Create the constructor and add the \texttt{nombre} and \texttt{longitud} attributes.
-		\item \texttt{Longitud} attribute must be private.
-		\item Create the \texttt{setLongitud} method which receives self and \texttt{longitudR} and allows the set of any value for \texttt{longitud}.
-		\item Create the \texttt{getNombre} method which obtains the name of the river.
-		\item Create the \texttt{getLongitud} method which obtains the river length.		 
-		\item Create an instance and check the methods.
-		\item Try to do an assignment of \texttt{rio.nombre} and other assignment with  \texttt{rio.longitud} What happen? It is correct  to invoke the method named \texttt{rio.getLongitud()} out of the classes? How do you explain that?
-	\end{enumerate}	
-\end{frame}
-
-\begin{frame}{Exercise statement}{Establishment of hierarchies from \texttt{Rio} class}
-\vspace{-0.24cm}
-	\begin{enumerate}
-		\item Add to the \texttt{Rio} class the attribute \texttt{caudal} and the method \texttt{trasvasar} which receives two rivers and transfers 5 liters from the first to the second.
-		\item Create the \texttt{Afluente} class which inherits from \texttt{Rio}.		
-		\item Create the method \texttt{\_\_init\_\_} of \texttt{Afluente} which initializes its \texttt{nombre} and \texttt{longitud} and, also,  \texttt{afluenteDeRio}, new attribute initialized with the name of the river which the affluent starts.
-		\item Is there any polymorphism in this sample?
-		\item Create the main and exit condition and try it. Does the main position affect to the application? 
-		\item Experiment now with conditions and iterative structures limiting when a river can transfer water or try to do some transfer at the same time.
-
-	\end{enumerate}	
-\end{frame}
-
-\begin{frame}{Y más\dots}{}
-Aprende más: \cite{Dusty}
-\end{frame}
-
-
-\appendix
-\section<Bibliographic references>*{\appendixname}
-\subsection<Bibliographic references>*{Bibliographic references}
-
-\begin{frame}[t, allowframebreaks, plain]
-  \frametitle<presentation>{Bibliographic references}
-
-  \begin{thebibliography}{2}
-  
-  \beamertemplatebookbibitems
-  % libro
-  
-   \bibitem{Dpto-CCIA-U.A}[1]
-    Lenguajes de programacion, capítulo 1.
-    \newblock \emph{Lenguajes de programacion}.
-  \newblock \url{http://rua.ua.es/dspace/bitstream/10045/4030/1/tema01.pdf}
-  
-  % libro
-   \bibitem{Downey}[2]
-   Downey, A and Elkner, J and MEYER, C.
-    \newblock \emph{Aprenda a Pensar como un Programador con Python, capitulos 14 y 16}.
-    \newblock Green Tea Press, 2002.
-    
-    \bibitem{vanRossum}[3]
-    G. van Rossum, Jr. Fred L. Drake.
-    \newblock \emph{Python Tutorial Release 3.2.3, chapter 9}.
-    \newblock Python Software Foundation, 2012. 
-    
-     \bibitem{Dusty}[4]
-    Dusty Phillips
-    \newblock \emph{Python 3 Object Oriented Programming}.
-    \newblock Packt Publishing, 2010.
-   
-   % \bibitem{Swaroop}[Swaroop, 2008]
-   %  C. H. Swaroop.
-   % \newblock \emph{A byte of Python}.
-   % \newblock Creative Commons Atribucion-NoComercial 3.0, 2008.
-  \end{thebibliography}
-\end{frame}
 
 \end{document}
