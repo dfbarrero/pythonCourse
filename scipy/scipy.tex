@@ -88,11 +88,10 @@
 \begin{frame}[plain]{}
 	\begin{block}{Objectives}
 		\begin{enumerate}
-		\item Motivate the need of efficient matrix representations.
-		\item Introduce some Python scientific tools.
-		\item Handle data representations in Python.
+		\item Introduce some Python tools for scientific programming.
+		\item Motivate the need of efficient matrix manipulation.
+		\item Handle matrices and dataframes in Python.
 		\item Basic data visualization with Python.
-		\item Provide a background for scientific programming.
 		\end{enumerate}
 	\end{block}
 
@@ -570,7 +569,214 @@ In [25]: !pwd
 
 \end{frame}
 
-\section{Numpy}
+\section{NumPy}
+\subsection{Understanding Data Types in Python}
+
+\begin{frame}{NumPy}{Understanding Data Types in Python (I)}
+    %Python supports matrices by default
+    %\begin{itemize}
+    %    \item Why do we need additional support?
+	%\end{itemize}
+
+    \begin{columns}
+ 	   \column{0.5\textwidth}
+			
+			\begin{block}{\footnotesize{Static typing}}
+			\vspace{-0.2cm} 
+				\lstinputlisting[basicstyle=\ttfamily\scriptsize,language=C]{code/static.c}
+			\vspace{-0.2cm} 
+			\end{block}
+
+			\begin{itemize}
+				\item Data types must be declared
+				\item Data types cannot change
+				\item Error detection in compilation
+				\item Variables names are, basicly, labels
+			\end{itemize}
+			
+ 	   \column{0.5\textwidth}
+			\begin{block}{\footnotesize{Dynamic typing}}
+			\vspace{-0.2cm} 
+				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dynamic.py}
+			\vspace{-0.2cm} 
+			\end{block}
+
+			\begin{itemize}
+				\item Data types are not declared
+				\item Data types can change
+				\item Error detection in run-time
+				\item Variables are complex data structures (even for simple types)
+			\end{itemize}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{NumPy}{Understanding Data Types in Python (II)}
+    %Python supports matrices by default
+    %\begin{itemize}
+    %    \item Why do we need additional support?
+	%\end{itemize}
+
+	Dynamic typing must be implemented somewhere ...
+
+    \begin{columns}
+ 	   \column{0.5\textwidth}
+			\begin{block}{\footnotesize{Python 3.4 source code}}
+			\vspace{-0.2cm} 
+				\lstinputlisting[basicstyle=\ttfamily\scriptsize, language=C]{code/long.c}
+			\vspace{-0.2cm} 
+			\end{block}
+
+ 	   \column{0.5\textwidth}
+			\includegraphics[width=\textwidth]{figs/cint_vs_pyint.png}	
+	\end{columns}
+
+\end{frame}
+
+\begin{frame}[fragile]{NumPy}{Understanding Data Types in Python (III)}
+	\begin{columns}
+ 	   \column{0.5\textwidth}
+			A Python list may contain different types
+
+ 	   \column{0.5\textwidth}
+	   \begin{exampleblock}{}
+			\vspace{-0.2cm} 
+			\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/lists.txt}
+			\vspace{-0.2cm} 
+		\end{exampleblock}
+	\end{columns}
+
+	\bigskip
+
+	\centering \includegraphics[width=0.8\textwidth]{figs/array_vs_list.png}	
+\end{frame}
+
+\begin{frame}[fragile]{NumPy}{Understanding Data Types in Python (IV)}
+	Standard Python data types are powerful and flexible
+	\begin{itemize}
+		\item Flexibility has a price: Reduced performance
+		\item Not an big issue in generic programming
+		\item A big issue in scientific programming
+		\item We require efficient data manipulation mechanisms: NumPy
+	\end{itemize}
+	NumPy: Python package for numeric computation
+	\begin{itemize}
+		\item Efficient array implementation
+		\item Fast mathematical functions
+		\item Random numbers generation
+		\item Static data types: Less flexibility
+	\end{itemize}
+	Most Python modules for AI/ML depend on NumPy, in particular
+	\begin{itemize}
+		\item Pandas (dataframes), Scikit-learn (ML), Seaborn (data visualization)
+	\end{itemize}
+\end{frame}
+
+\subsection{Introduction}
+\begin{frame}[fragile]{NumPy}{Introduction}
+	\begin{columns}
+ 	   \column{0.6\textwidth}
+		NumPy must be imported in order to be available
+		\begin{itemize}
+			%\item By convention, \texttt{import numpy as np}
+			\item Remember, you can use \texttt{np?} or \texttt{np.<TAB>}
+		\end{itemize}
+
+		The main component of NumPy is \alert{ndarray}
+		\begin{itemize}
+			\item Python object
+			\item Efficient matrix representation
+			\item Homogeneus elements
+		\end{itemize}
+
+ 	   \column{0.4\textwidth}
+		\begin{block}{\footnotesize{Convention}}
+		\vspace{-0.2cm} 
+			\begin{lstlisting}
+			import numpy as np
+			\end{lstlisting}
+		\vspace{-0.2cm} 
+		\end{block}
+
+		\begin{exampleblock}{\footnotesize{Convention}}
+		\vspace{-0.2cm} 
+			\begin{lstlisting}
+			In [1]: array = np.array([1,2,3])
+			In [2]: array
+			Out[1]: array([1, 2, 3])
+			\end{lstlisting}
+		\vspace{-0.2cm} 
+		\end{exampleblock}
+	\end{columns}
+\end{frame}
+
+\subsection{Matrix creation}
+\begin{frame}[fragile]{NumPy}{Matrix creation}
+	NumPy functions for array creation from lists
+	\begin{itemize}
+		\item Lists must contain the same type, NumPy will upcast if needed
+		\item \texttt{np.array([1, 4, 2, 5, 3])}
+		\item \texttt{np.array([1, 2, 3, 4], dtype='float32')}: Explicit data type
+		\item \texttt{np.array([3.14, 4, 2, 3])}: Upcast
+	\end{itemize}
+	NumPy functions for array creation from scratch
+	\begin{itemize}
+		\item \texttt{np.zeros(10, dtype=int)}: All zeros
+		\item \texttt{np.ones((3, 5), dtype=float)}: All ones
+		\item \texttt{np.full((3, 5), 3.14)}: Fill matrix
+		\item \texttt{np.arange(0, 20, 2)}: Similar to Python's range()
+		\item \texttt{np.linspace(0, 1, 5)}: Evenly spaced numbers
+		\item \texttt{np.random.random((3, 3))}: Random numbers
+		\item \texttt{np.random.normal(0, 1, (3, 3))}: Random normal numbers
+		\item \texttt{np.random.randint(0, 10, (3, 3))}: Random integers
+		\item \texttt{np.eye(3)}: Identity matrix
+		\item \texttt{np.empty(3)}: Empty matrix
+	\end{itemize}
+\end{frame}
+
+\subsection{NumPy data types}
+\begin{frame}[fragile]{NumPy}{NumPy data types}
+	\begin{columns}
+ 	   \column{0.4\textwidth}
+	   Python is implemented in C
+	   \begin{itemize}
+	   	\item Data types in NumPy are based on those in C
+	   \end{itemize}
+	   Two styles to declare types
+	   \begin{itemize}
+	   	\item String:\\ \texttt{np.zeros(10, dtype='int16')}
+		\item NumPy object: \texttt{np.zeros(10, dtype=np.int16)}
+	   \end{itemize}
+
+ 	   \column{0.6\textwidth}
+	\footnotesize{
+    \begin{tabular}{ll}\hline
+       \textbf{Data type} &  \textbf{Description}\\ \hline
+	   \texttt{bool\_} & Boolean (True or False) stored as a byte  \\
+	   \texttt{int\_} & Default integer type  \\
+	   \texttt{intc} & Identical to C  \\
+	   \texttt{intp} & Integer used for indexing  \\
+	   \texttt{int8} & Byte  \\
+	   \texttt{int16} & Integer  \\
+	   \texttt{int32} & Integer  \\
+	   \texttt{int64} & Integer  \\
+	   \texttt{uint8} & Unsigned integer  \\
+	   \texttt{uint16} & Unsigned integer  \\
+	   \texttt{uint32} & Unsigned integer  \\
+	   \texttt{uint64} & Unsigned integer  \\
+	   \texttt{float\_} & Shorthand for float64  \\
+	   \texttt{float16} & Half precision float  \\
+	   \texttt{float32} & Single precision float  \\
+	   \texttt{float64} & Double precision float  \\
+	   \texttt{complex\_} & Shorthand for complex128  \\
+	   \texttt{complex64} & Complex number  \\
+	   \texttt{complex128} & Complex number  \\\hline
+    \end{tabular}
+	}
+	\end{columns}
+\end{frame}
+
+
+
 \section{Pandas}
 \section{Matplotlib}
 \section{Seaborn}
