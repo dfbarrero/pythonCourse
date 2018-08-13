@@ -2828,7 +2828,6 @@ C       7
 \begin{frame}[fragile]{Visualization}{Seaborn datasets (I)}
 	Seaborn comes with several dummy datasets
 	\begin{itemize}
-		\item Pretty handy
 		\item \texttt{sns.load\_dataset('name')}
 	\end{itemize}
 	We will use two datasets
@@ -2859,8 +2858,8 @@ C       7
 \begin{frame}[fragile]{Visualization}{Seaborn datasets (II)}
 	\footnotesize{
 	\begin{exampleblock}{\footnotesize{Iris dataset}}
-	>>> tips = sns.load\_dataset('tips')\\
-	>>> print(tips.head())\\
+	>>> iris = sns.load\_dataset('iris')\\
+	>>> print(iris.head())\\
 	\begin{tabular}{lrrrrl}
 	\hline
 	{} &  sepal\_length &  sepal\_width &  petal\_length &  petal\_width & species \\
@@ -2968,7 +2967,7 @@ C       7
 
 	\end{columns}
 
-	Pandas >= 0.9
+	Seaborn >= 0.9
 \end{frame}
 
 \begin{frame}[fragile]{Visualization}{Seaborn: Relationships (II)}
@@ -3088,12 +3087,93 @@ C       7
  	 \column{0.5\textwidth}
 	\centering \includegraphics[width=0.7\textwidth]{figs/violin_plots.png}\\
 	\tiny \centering \href{https://xkcd.com/1967/}{(Source)}
-
 	\end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Visualization}{Seaborn: Barplots}
+	\begin{columns}
+    \column{0.5\textwidth}
+	\includegraphics[width=\textwidth]{figs/sns-barplot.png}\\
+	\begin{exampleblock}{\footnotesize{Barplot}}
+	\vspace{-0.2cm} 
+	\begin{lstlisting}[basicstyle=\tiny]
+	sns.barplot(x="day", y="total_bill", hue="sex", data=tips)
+	\end{lstlisting}
+	\vspace{-0.2cm} 
+	\end{exampleblock}
 
+    \column{0.5\textwidth}
+	\includegraphics[width=\textwidth]{figs/sns-barplot2.png}\\
+	\begin{exampleblock}{\footnotesize{Barplot}}
+	\vspace{-0.2cm} 
+	\begin{lstlisting}[basicstyle=\tiny]
+	sns.barplot(x="total_bill", y="day", hue="sex", data=tips, ci=None)
+	\end{lstlisting}
+	\vspace{-0.2cm} 
+	\end{exampleblock}
+	\end{columns}
+\end{frame}
 
+\begin{frame}[fragile]{Visualization}{Seaborn: Continuity}
+	\begin{columns}
+    \column{0.5\textwidth}
+		\includegraphics[width=0.9\textwidth]{figs/sns-line.png}\\
+		\begin{exampleblock}{\footnotesize{}}
+		\vspace{-0.2cm} 
+		\begin{lstlisting}[basicstyle=\tiny]
+		fmri = sns.load_dataset("fmri")
+		sns.relplot(x="timepoint", y="signal", kind="line", data=fmri)
+		\end{lstlisting}
+		\vspace{-0.2cm} 
+		\end{exampleblock}
+
+ 	\column{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figs/sns-line2.png}\\
+		\begin{exampleblock}{\footnotesize{}}
+		\vspace{-0.2cm} 
+		\begin{lstlisting}[basicstyle=\tiny]
+		sns.relplot(x="timepoint", y="signal", hue="event", kind="line", data=fmri)
+		\end{lstlisting}
+		\vspace{-0.2cm} 
+		\end{exampleblock}
+	\end{columns}
+	Seaborn >= 0.9
+\end{frame}
+
+\begin{frame}[fragile]{Visualization}{Seaborn: \texttt{FacetGrid}}
+	\begin{columns}
+    \column{0.5\textwidth}
+		\includegraphics[width=0.9\textwidth]{figs/sns-facethist.png}\\
+		\begin{exampleblock}{\footnotesize{}}
+		\vspace{-0.2cm} 
+		\begin{lstlisting}[basicstyle=\tiny]
+		fmri = sns.load_dataset("fmri")
+		sns.relplot(x="timepoint", y="signal", kind="line", data=fmri)
+		\end{lstlisting}
+		\vspace{-0.2cm} 
+		\end{exampleblock}
+
+		Seaborn >= 0.9
+
+ 	\column{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figs/sns-facethist2.png}\\
+		\begin{exampleblock}{\footnotesize{}}
+		\vspace{-0.2cm} 
+		\begin{lstlisting}[basicstyle=\tiny]
+		g = sns.FacetGrid(tips, col="time", row="sex")
+		g.map(sns.distplot, "tip")
+		\end{lstlisting}
+		\vspace{-0.2cm} 
+		\end{exampleblock}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figs/self_description.png}\\
+		\tiny \href{https://xkcd.com/688/}{(Source)}
+	\end{center}
+\end{frame}
 
 %\begin{frame}[plain]{Solved exercise. Serializando objetos \texttt{Parcela}}{}
 %	\vspace{-0.4cm}
