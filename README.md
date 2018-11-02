@@ -18,7 +18,7 @@ Bonus track:
 
 * [Scientific programming in Python](scipy/)
 
-# Practical assignments
+# Practical assignments
 
 * [Práctica 1: Ejercicios básicos de Python](assignments/p1.pdf)
 
