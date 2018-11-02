@@ -1,4 +1,4 @@
-# Contents
+## Contents
 
 1.- [Introduction to Python](1-introduction/)
 
@@ -18,7 +18,7 @@ Bonus track:
 
 * [Scientific programming in Python](scipy/)
 
-# Practical assignments
+## Practical assignments
 
 * [Práctica 1: Ejercicios básicos de Python](assignments/p1.pdf)
 
@@ -32,10 +32,10 @@ Bonus track:
 
 * [Práctica 6: Programación Orientada a Objetos en Python](assignments/p5.pdf)
 
-# Compilation
+## Compilation
 
 Compile slides with xelatex or lualatex. Custom UAH fonts are needed to properly compile the project.
 
-# Credits
+## Credits
 
 This course is based on "[The Python Tutorial](https://docs.python.org/3/tutorial/index.html)".
