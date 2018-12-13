@@ -36,9 +36,9 @@ Bonus track:
 
 * [Dataviz with Matplotlib](scipy/p5.pdf)
 
-* [Dataviz with Matplotlib](scipy/Dataviz with Matplotlib.ipynb)
+* [Dataviz with Matplotlib](scipy/DatavizWithMatplotlib.ipynb)
 
-* [Dataviz with Seaborn](scipy/Dataviz with Seaborn.ipynb)
+* [Dataviz with Seaborn](scipy/DatavizWithSeaborn.ipynb)
 
 ## Compilation
 
