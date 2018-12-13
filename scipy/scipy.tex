@@ -2592,9 +2592,9 @@ C       7
 	\end{itemize}
 	Three operation modes
 	\begin{itemize}
-		\item Scripts. \\Must use \texttt{plt.show()} to enter event loop
+		\item Scripts. \\Must use \texttt{plt.show()} to enter event loop. Use it once!
 		\item IPython shell. \\Must use \texttt{\%matplotlib}
-		\item IPython notebool. Two modes
+		\item IPython notebook. Two modes
 		\begin{itemize}
 			\item \texttt{\%matplotlib inline}
 			\item \texttt{\%matplotlib notebook}
@@ -2631,6 +2631,57 @@ C       7
 \end{frame}
 
 \begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (II)}
+	Matplotlib comes with two interfaces
+	\begin{itemize}
+		\item Matlab-like. Old-fashioned function-oriented API.
+		\item Object-oriented. Object-oriented and more powerfull API.
+	\end{itemize}
+
+	\begin{columns}
+    \column{0.5\textwidth}
+	\begin{exampleblock}{Matlab API}
+	\vspace{-0.2cm} 
+	\begin{lstlisting}
+	plt.figure()  # create a plot
+
+	# create the first of two panels and set current axis
+	plt.subplot(2, 1, 1) # (rows, columns, panel number)
+	plt.plot(x, np.sin(x))
+
+	# create the second panel and set current axis
+	plt.subplot(2, 1, 2)
+	plt.plot(x, np.cos(x));
+	\end{lstlisting}
+	\vspace{-0.2cm} 
+	\end{exampleblock}
+
+    \column{0.5\textwidth}
+	\begin{exampleblock}{OO API}
+	\vspace{-0.2cm} 
+	\begin{lstlisting}
+	plt.figure()  # create a plot
+
+	# create the first of two panels and set current axis
+	plt.subplot(2, 1, 1) # (rows, columns, panel number)
+	plt.plot(x, np.sin(x))
+
+	# create the second panel and set current axis
+	plt.subplot(2, 1, 2)
+	plt.plot(x, np.cos(x));
+	\end{lstlisting}
+	\vspace{-0.2cm} 
+	\end{exampleblock}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (III)}
+	\begin{columns}
+    \column{0.5\textwidth}
+		\includegraphics[width=\textwidth]{figs/api.png}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (IV)}
 	\begin{columns}
     \column{0.5\textwidth}
 	\includegraphics[width=\textwidth]{figs/matplotlib-sin.png}\\
@@ -2659,7 +2710,7 @@ C       7
 	\end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (III)}
+\begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (V)}
 	\begin{columns}
     \column{0.5\textwidth}
 	\includegraphics[width=\textwidth]{figs/matplotlib-scatterplot2.png}\\
@@ -2696,7 +2747,7 @@ C       7
 	\end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (IV)}
+\begin{frame}[fragile]{Visualization}{Introduction to Matplotlib (VI)}
 	\begin{columns}
     \column{0.5\textwidth}
 	\begin{exampleblock}{}
