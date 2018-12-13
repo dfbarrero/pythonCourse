@@ -34,8 +34,6 @@ Bonus track:
 
 ## Notebooks
 
-* [Dataviz with Matplotlib](scipy/p5.pdf)
-
 * [Dataviz with Matplotlib](scipy/DatavizWithMatplotlib.ipynb)
 
 * [Dataviz with Seaborn](scipy/DatavizWithSeaborn.ipynb)
