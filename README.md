@@ -32,6 +32,12 @@ Bonus track:
 
 * [Práctica 6: Programación Orientada a Objetos en Python](assignments/p5.pdf)
 
+## Notebooks
+
+* [Dataviz with Matplotlib](scipy/Dataviz with Matplotlib.ipynb)
+
+* [Dataviz with Seaborn](scipy/Dataviz with Seaborn.ipynb)
+
 ## Compilation
 
 Use xelatex or lualatex as latex processors, otherones would raise a compilation error. Custom UAH fonts are needed to properly compile the project. The original template used to format the slides, including the fonts, can be downloaded from [this repository](https://github.com/dfbarrero/UAH-beamer-template). By default, the theme will use UAH fonts installed in the system, edit the theme to easily change this behaviour.
