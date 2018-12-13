@@ -120,9 +120,16 @@
 
 \subsection{Data Science}
 
-\begin{frame}{Overview}{Data Science}
+\begin{frame}{Overview}{Data Science (I)}
 	\begin{figure}
 		\includegraphics[scale=0.35]{figs/Data_Science_VD.png}	
+	\end{figure}				
+\end{frame}
+
+\begin{frame}{Overview}{Data Science (II)}
+	\begin{figure}
+		\includegraphics[scale=0.5]{figs/venn-ml.png}\\
+		\centering \tiny \href{https://ai6forums.nurture.ai/t/discuss-artificial-intelligence-machine-learning-deep-learning-data-science/781}{(Source)}
 	\end{figure}				
 \end{frame}
 
@@ -149,6 +156,7 @@
 \begin{frame}{Data Science}{The data scientist tookit (II)}
    \begin{tabular}{cll}\hline
        \textbf{Tool}& \textbf{Type} & \textbf{Description}\\ \hline
+	   \texttt{conda} 	& Software & Python environments and package management \\
 	   \texttt{iPython} & Software & Advaced Python interpreter \\
 	   \texttt{Jupiter} & Software & Python notebooks (Python interpreter) \\
 	   \texttt{Numpy}   & Package  & Efficient array operations \\
@@ -164,27 +172,50 @@
 \begin{frame}{Data Science}{Anaconda}
     \begin{columns}
  	   \column{.6\textwidth}
-   All those tools are packaged in \texttt{Anaconda}
+   All those tools are packaged in \textit{Anaconda}
    \begin{itemize}
    		\item Python distribution for Data Science
+		\item Environment management for Python
+		\item Package management system
 	\end{itemize}
 
-	Anaconda provides \texttt{Spyder}
+	Anaconda provides \texttt{conda}
+	\begin{itemize}
+		\item Packages management tool
+		\item Environment management for Python
+	\end{itemize}
+
+	In addition, Anaconda provides \texttt{Spyder}
 	\begin{itemize}
 		\item Python IDE designed for Data Science
 	\end{itemize}
 
-	Other tools provided by Anaconda
-	\begin{itemize}
-		\item Conda: Packages management tool
-		\item TensorFlow: Deep Learning 
-		\item Many others
-	\end{itemize}
-
  		\column{.4\textwidth}
-			\includegraphics[width=0.6\textwidth]{figs/Anaconda_Logo.png} \\\bigskip
-			\includegraphics[width=0.6\textwidth]{figs/spyder.png}	
-			%\includegraphics[width=0.6\textwidth]{figs/spyder-ide.png}	
+		\includegraphics[width=0.6\textwidth]{figs/Anaconda_Logo.png} \\\bigskip
+		\includegraphics[width=0.5\textwidth]{figs/spyder.png}	
+		%\includegraphics[width=0.6\textwidth]{figs/spyder-ide.png}	
+	\end{columns}
+\end{frame}
+
+\subsection{Conda}
+\begin{frame}{Data Science}{Conda crush introduction}
+    \begin{columns}
+ 	   \column{.5\textwidth}
+	   \begin{block}{Conda environment for Data Science}
+	   	\begin{enumerate}
+			\item \texttt{conda create --name ml seaborn=0.9.0}
+			\item \texttt{source activate ml}
+			\item \texttt{conda install ipython}
+			\item \texttt{conda install nb\_conda}
+		\end{enumerate}
+	   \end{block}
+
+ 		\column{.5\textwidth}
+		List environments: \\ \quad \texttt{conda info --envs}\\
+		Activate environment: \\ \quad \texttt{source activate <env>}\\
+		Install package: \\ \quad \texttt{conda install <package>}\\
+		List packages: \\ \quad \texttt{conda list}\\
+		Exit environment (Linux): \\ \quad \indent \texttt{deactivate}
 	\end{columns}
 \end{frame}
 
@@ -219,6 +250,17 @@
 		\includegraphics[width=0.8\textwidth]{figs/jupyter.png}	
 
  	\column{.25\textwidth}
+	   \centering \textbf{Spyder}\\
+		Matlab-like IDE
+		\begin{itemize}
+			\item Default IDE in Anaconda
+			\item Uses iPython
+		\end{itemize}
+        \bigskip
+
+		\includegraphics[width=0.8\textwidth]{figs/spyder-ide.png}	
+
+ 	\column{.25\textwidth}
 	   \centering \textbf{Rodeo}\\
 		Python version of RStudio
 		\begin{itemize}
@@ -230,15 +272,6 @@
         \bigskip
 
 		\includegraphics[width=0.8\textwidth]{figs/rodeo.png}	
-
- 	\column{.25\textwidth}
-	   \centering \textbf{Spyder}\\
-		Matlab-like IDE
-
-        \bigskip
-
-		\includegraphics[width=0.8\textwidth]{figs/spyder-ide.png}	
-
 	\end{columns}
 \end{frame}
 
@@ -247,12 +280,12 @@
 		Write a Python script that shows the multiplication table of the number 5. Write the script using each one of the following environments:
    		\begin{enumerate}
    		\item iPython + text editor of your choice.
-		\item Jupiter. 
+		\item Jupyter. 
             \begin{itemize}
                 \item Bonus track: Publish the notebook in GitHub.
             \end{itemize}
 		\item Spyder.
-		\item Rodeo.
+		\item Rodeo (optional).
 		\end{enumerate}
 	\end{block}
 \end{frame}
