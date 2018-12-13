@@ -34,7 +34,7 @@ Bonus track:
 
 ## Notebooks
 
-* [Práctica 5: Entrada/Salida](assignments/p5.pdf)
+* [Dataviz with Matplotlib](scipy/p5.pdf)
 
 * [Dataviz with Matplotlib](scipy/Dataviz with Matplotlib.ipynb)
 
