@@ -32,7 +32,7 @@ Bonus track:
 
 * [Práctica 6: Programación Orientada a Objetos en Python](assignments/p5.pdf)
 
-## Notebooks
+## Notebooks
 
 * [Dataviz with Matplotlib](scipy/Dataviz with Matplotlib.ipynb)
 
