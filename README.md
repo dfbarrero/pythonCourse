@@ -14,10 +14,6 @@
 
 7.- [Object-Oriented Programming in Python](7-oop/)
 
-Bonus track:
-
-* [Scientific programming in Python](scipy/)
-
 ## Practical assignments
 
 * [Práctica 1: Ejercicios básicos de Python](assignments/p1.pdf)
@@ -31,12 +27,6 @@ Bonus track:
 * [Práctica 5: Entrada/Salida](assignments/p5.pdf)
 
 * [Práctica 6: Programación Orientada a Objetos en Python](assignments/p5.pdf)
-
-## Notebooks
-
-* [Dataviz with Matplotlib](scipy/DatavizWithMatplotlib.ipynb)
-
-* [Dataviz with Seaborn](scipy/DatavizWithSeaborn.ipynb)
 
 ## Compilation
 
