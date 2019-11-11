@@ -33,7 +33,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Presentation Info
-\title[Crash Python course]{Crash Python course}
+\title[Python crash course]{Python crash course}
 \author{\asignatura\\\carrera}
 \institute{}
 \date{Departamento de Automática}
@@ -88,9 +88,13 @@
 \begin{frame}[plain]{}
 	\begin{block}{Objectives}
 		\begin{enumerate}
-		\item Overview the main Python statements
+		\item Overview the Python syntax
 		\item Being able to program na\"ive Python scripts
 		\end{enumerate}
+	\end{block}
+
+	\begin{block}{Bibliography}
+        \href{https://docs.python.org/3/tutorial/}{The Python Tutorial}
 	\end{block}
 \end{frame}
 
@@ -98,7 +102,14 @@
 \disableNavigation{white}
 \begin{frame}[shrink]{Table of Contents}
  \frametitle{Table of Contents}
- \tableofcontents
+     \begin{columns}[t]
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={1-3}]
+        \end{column}
+        \begin{column}{.5\textwidth}
+            \tableofcontents[sections={4-7}]
+        \end{column}
+    \end{columns}
   % You might wish to add the option [pausesections]
 \end{frame}
 }
@@ -116,8 +127,9 @@
 				\item \textit{Interpreted}: No need to compile.
 				\end{itemize}
 
- 	   \column{.20\textwidth}
-		\centering \hspace{-2cm} \includegraphics[width=1.8\linewidth]{figs/python.png}
+ 	   \column{.30\textwidth}
+
+	        \centering \includegraphics[width=\linewidth]{figs/python.png}
 	\end{columns}
 	\bigskip
 			It emphasizes code \textbf{readibility} and programmer's productivity\\
@@ -904,9 +916,18 @@ $ pip3 install SomePackage
 	\vspace{-0.2cm}
 	\begin{block}{browser.py}
 	\vspace{-0.2cm}
-	\lstinputlisting{code/brower.py}
+	\lstinputlisting{code/browser.py}
 	\vspace{-0.2cm}
 	\end{block}
+
+    also 
+
+	\begin{block}{browser2.py}
+	\vspace{-0.2cm}
+	\lstinputlisting{code/browser2.py}
+	\vspace{-0.2cm}
+	\end{block}
+
 \end{frame}
 
 \begin{frame}[plain]{Modules}{Example 2: Create a thumbnail}
