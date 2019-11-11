@@ -1,6 +1,6 @@
 # Customize these two lines
-TARGETS=mcyte muii # Courses to compile
-NAME=introduction
+TARGETS=muii # Courses to compile
+NAME=crash
 
 # Do not touch
 TEX=xelatex -interaction nonstopmode -halt-on-error -file-line-error

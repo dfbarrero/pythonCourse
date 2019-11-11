@@ -1,5 +1,7 @@
 ## Contents
 
+0.- [Crash Python course](crash/)
+
 1.- [Introduction to Python](1-introduction/)
 
 2.- [Control flow](2-controlflow/)
