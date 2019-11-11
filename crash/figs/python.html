@@ -1,0 +1,753 @@
+	<!DOCTYPE html><!--[if lt IE 8]>	 <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-US"> <![endif]--><!--[if IE 8]>	  <html class="no-js lt-ie9" lang="en-US"> <![endif]--><!--[if IE 9]>	<html class="no-js ie-9" lang="en-US"> <![endif]--><!--[if gt IE 9]><!--> <html class="no-js" lang="en-US"> <!--<![endif]--><!-- THIS IS OVERLORD --><head><meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=EDGE" /><script async type="text/javascript" src="http://kinja.com/api/profile/assets/javascripts/sso.js"></script>
+	<script type="text/javascript">
+		var _sf_startpt=(new Date()).getTime();
+		if (typeof(performance) !== 'undefined' && typeof performance.now === 'function') {
+			var _kinjaperf_start = performance.now();
+		}
+	</script>
+		
+	<script type="text/javascript">
+		(function () {
+		  var w = typeof window != 'undefined' ? window : exports,
+			  marks = [];
+		  w.performance || (w.performance = {});
+		  w.performance.now || (
+			w.performance.now = performance.now || performance.webkitNow ||
+									 performance.msNow || performance.mozNow);
+		  if (!w.performance.now){
+			var s = Date.now ? Date.now() : +(new Date());
+			if (performance.timing && performance.timing)
+			  s = performance.timing.navigationStart
+			w.performance.now = (function(){
+			  var n = Date.now ? Date.now() : +(new Date());
+			  return n-s;
+			});
+		  }
+		  w.performance.mark || (
+		  w.performance.mark =
+			w.performance.webkitMark ? w.performance.webkitMark :
+			(function (l) {
+			  marks.push({'name': l, 'entryType': 'mark', 'startTime': w.performance.now(), 'duration':0 });
+			}));
+		  w.performance.getEntriesByType || (
+		  w.performance.getEntriesByType =
+			w.performance.webkitGetEntriesByType ? w.performance.webkitGetEntriesByType :
+			(function (t) {
+			  return t == 'mark' ? marks : [];
+			}));
+		  w.performance.clearMarks || (
+			w.performance.clearMarks = w.performance.webkitClearMarks ? w.performance.webkitClearMarks :
+			(function () {
+			  marks = [];
+			}));
+		  w.markUserTime = function(l) {
+			setTimeout(function() {
+				if (typeof w.performance.mark === 'function') {
+					w.performance.mark(l);
+				}
+				if (w.console && w.console.timeStamp) {
+					w.console.timeStamp(l);
+				}
+			}, 0);
+		  };
+
+		}());
+	</script>
+		<script>
+	window.Krux || ((Krux = function () {
+		Krux.q.push(arguments);
+	}).q = []);
+	(function () {
+		function retrieve(n) {
+			var m, k = 'kx' + n;
+			if (window.localStorage) {
+				return window.localStorage[k] || "";
+			} else if (navigator.cookieEnabled) {
+				m = document.cookie.match(k + '=([^;]*)');
+				return (m && unescape(m[1])) || "";
+			} else {
+				return '';
+			}
+		}
+		Krux.user = retrieve('user');
+		Krux.segments = retrieve('segs') && retrieve('segs').split(',') || [];
+	})();
+	</script><!-- Included CSS Files --><!--[if IE 9]><link rel="stylesheet" href="http://c.kinja-static.com/assets/stylesheets/tiger-split-c12c6901b4d720e89f9d302e1dd9ca37.css"><![endif]--><!--[if !IE]>--><link rel="stylesheet" href="http://c.kinja-static.com/assets/stylesheets/tiger-145b46cd23d9fe76a474a3b029ed8505.css"><!--<![endif]--><meta name="dynamic-stylesheet" id="editor-css-url" content="http://c.kinja-static.com/assets/stylesheets/editor-ab386b481fe3bdcb256e8a79655d317c.css"><!-- Site specific colors -->	<style type="text/css">
+				a, a:hover, a:focus { color: #709602; }
+			</style><meta name="google-site-verification" content="R0yw_jwnGWbokA2qgkupaWGVFJnF6qGtlgbSJEMdQkw" /><!-- IE Fix for HTML5 Tags --><!--[if lte IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--><meta charset="utf-8" /><!-- Set the viewport width to device width for mobile --><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=10.0" /><!-- robots are not welcome now --><meta name="ROBOTS" content="INDEX, FOLLOW" /><title>Five Best Programming Languages for First-Time Learners</title><!-- favicon and touch icons --><link rel="shortcut icon" href="http://i.kinja-img.com/gawker-media/image/upload/s--rqDhe7s2--/c_fill,fl_progressive,g_center,h_80,q_80,w_80/192oza44hceztpng.png" /><link rel="apple-touch-icon" href="http://i.kinja-img.com/gawker-media/image/upload/s--bBeYJ-7Z--/c_fill,fl_progressive,g_center,h_200,q_80,w_200/192oza44hceztpng.png" /><meta name="msapplication-square70x70logo" content="http://i.kinja-img.com/gawker-media/image/upload/s--rqDhe7s2--/c_fill,fl_progressive,g_center,h_80,q_80,w_80/192oza44hceztpng.png" /><meta name="msapplication-square150x150logo" content="http://i.kinja-img.com/gawker-media/image/upload/s--bBeYJ-7Z--/c_fill,fl_progressive,g_center,h_200,q_80,w_200/192oza44hceztpng.png" /><!-- rss --><link rel="alternate" type="application/rss+xml" title="Lifehacker - All stories" href="http://feeds.gawker.com/lifehacker/full" /><!-- Open Graph/Facebook headers --><meta name="keywords" content="hive five, code, programming, programming languages, developers, software, development, feature, java, javascript, c, c++, ruby, python, microsoft, mozilla, oracle, open source, Lifehacker" /><meta name="news_keywords" content="hive five, code, programming, programming languages, developers, software, development, feature, java, javascript, c, c++, ruby, python, microsoft, mozilla, oracle, open source, Lifehacker" /><link rel="canonical" href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" /><meta name="twitter:url" content="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" /><meta property="og:title" content="Five Best Programming Languages for First-Time Learners" /><meta property="og:type" content="article" /><meta name="twitter:image" content="http://i.kinja-img.com/gawker-media/image/upload/s--7Ds777cH--/oaroblubaytkfjmcb02w.jpg" /><meta property="og:image" content="http://i.kinja-img.com/gawker-media/image/upload/s--7Ds777cH--/oaroblubaytkfjmcb02w.jpg" /><meta name="author" content="Alan Henry" /><meta property="og:url" content="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" /> <!-- permalink --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@lifehacker"><meta name="twitter:title" content="Five Best Programming Languages for First-Time Learners"><meta name="twitter:description" content="If you&#39;re thinking of learning to code, the language you decide to pick up first has a lot to do with what you&#39;re trying to learn, what you want to do with the skill, and where you want to eventually go from there. Still, some languages are easier to pick up than others, have a community dedicated to teaching, or offer more useful skills once you learn them. Here are five of the best, based on your nominations."><meta name="twitter:creator"><meta property="og:description" content="If you&#39;re thinking of learning to code, the language you decide to pick up first has a lot to do with what you&#39;re trying to learn, what you want to do with the skill, and where you want to eventually go from there. Still, some languages are easier to pick up than others, have a community dedicated to teaching, or offer more useful skills once you learn them. Here are five of the best, based on your nominations." /><meta name="description" content="If you&#39;re thinking of learning to code, the language you decide to pick up first has a lot to do with what you&#39;re trying to learn, what you want to do with the skill, and where you want to eventually go from there. Still, some languages are easier to pick up than others, have a community dedicated to teaching, or offer more useful skills once you learn them. Here are five of the best, based on your nominations." /><meta property="og:locale" content="en_US" /><meta property="og:site_name" content="Lifehacker" /><meta property="fb:app_id" content="37418175030"/><meta name="kinja:mode" content="live" /><meta name="kinja:page-type" content="permalink" /><script async type="text/javascript" src="http://c.kinja-static.com/assets/javascripts//kinjaembed.js"></script></head><body class="lifehacker custom-skin permalink en-US f_ads_controller_on f_amazon_matchbuy_on f_amazon_selective_clientside_render_on f_analyticstracking_on f_biztools_blogname_on f_black_search_icon_on f_cda_on_hash_on f_cedexis_on f_comment_annotation_template_merge_on f_coredecorators_on f_coreinsets_on f_crossdomainanalytics_on f_disable_ads_portrait_on f_dynamic_ad_slots_on f_dynamic_leftrail_ad_on f_editor_layout_on f_editor_timezone_fix_on f_engine_agnostic_link_modal_on f_extendedflag_on f_featuretestnew_on f_foobar_foo f_footer_new_chartbeat_on f_gnc_on f_gns_on f_gnx_on f_grecaptcha_on f_groupchats_rendering_performance_on f_hide_pending_replies_on f_ie9_no_dynamic_ad_on f_iframe_defer_on f_insetmetrics_on f_large_post_performance_on f_leftrail_contained_on f_limit_draft_controls_on f_marionette_biz_tool_on f_moatads_headertag_on f_moatads_promoted_on f_mobile_ad_prototypes_on f_mobile_ad_prototypes_permalink_on f_multioauth_on f_new_editor_css_on f_new_editor_message_on f_newbuttons_on f_no_more_privateview_index_on f_no_more_privateview_index_again_on f_pinterest_on f_pinterest_hoverbutton_on f_postflagging_on f_postlistclickmetrics_on f_postlisttracking_on f_posttoolsview_optimalization_on f_promoted_touch_on f_raven_on f_recommended_footer_on f_redactor_on f_remove_spinner_on f_scan_for_companies_on f_sha_amazon_links_subtags_on f_simplereach_expanded_on f_textannotation_on f_throttle_on f_throttle_measuring_off f_throttle_test_foo_lorem f_uidimages_on f_unify_amazon_insets_editor_on f_unify_amazon_insets_permalink_on f_universalanalytics_on f_userstats_on f_viewstats_via_service_on k_liveblog_appRevision_1 k_liveblog_pollIntervalMillis_10000 k_maintenance_off" data-timezone-offset="-28800000">	
+	<script type="text/javascript">
+		var readOnlyRequest;
+		var cn = "read-only";
+		var cacheBusterParam = "?cb=" + Math.floor(Date.now() / 60000); // update every minute
+		var setReadOnly = function () {
+			document.body.className = (document.body.className === '') ? cn : document.body.className + ' ' + cn;
+		};
+		if (window.XMLHttpRequest) {
+			readOnlyRequest = new XMLHttpRequest();
+		} else if (window.ActiveXObject) {
+			readOnlyRequest = new ActiveXObject("Microsoft.XMLHTTP");
+		}
+		readOnlyRequest.onreadystatechange = function() {
+			if (readOnlyRequest.readyState == 4 && readOnlyRequest.status >= 500 && readOnlyRequest.status < 600) {
+				setReadOnly();
+			}
+		};
+    	readOnlyRequest.open('GET', "/ajax/readOnlyMode" + cacheBusterParam);
+    	readOnlyRequest.send();
+	</script>
+	<div id="js_off-canvas-wrap" class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu show-for-medium-down proxima nav-dropdown main-menu">	<div id="js_blogmenu--offcanvas"><div class="search show-for-medium-down">	<form method="GET" class="search search-simple" action="/search" onsubmit="window.ga('send', 'event', 'Search', 'Submit', 'permalink');"><div class="input-with-icon"><span class="icon icon-search"></span><input type="text" placeholder="Search" name="q" class="mbn" data-focus-on-display/></div></form></div><div class="divider show-for-medium-down"></div><div class="js_login-links show-for-medium-down"></div><ul class="about-kinja"><li class="nohighlight"><span class="">Powered by</span><a href="http://kinja.com" class="logo-kinja" data-ga="[Kinja Menu, Kinja.com Click, js_pageType]"><h1 class="kinja-title proxima">Kinja</h1></a></li></ul><div class="divider"></div>	<ul class="show-for-medium-down"><li class="add js_follow-controls js_follow-buttons follow-controls--blog-menu" data-blogid="17"><a href="#" class="js_followforuser proxima"><span class="icon icon-plus"></span> <span>Follow Lifehacker</span></a><a href="#" class="js_unfollowforuser proxima hide"><span class="icon icon-checkmark"></span> <span>Followed</span></a></li><li></li></ul><ul><li class="title">Related blogs</li>	<li><a href="http://hackerspace.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Hackerspace]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Hackerspace</a></li><li><a href="http://afterhours.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, After Hours]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>After Hours</a></li><li><a href="http://twocents.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Two Cents]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Two Cents</a></li><li><a href="http://workshop.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Workshop]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Workshop</a></li><li><a href="http://vitals.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Vitals]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Vitals</a></li><li><a href="http://shoptalk.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Shop Talk]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Shop Talk</a></li></ul><div class="divider"></div><ul><li class="title">Blogs you may like</li>	<li><a href="http://deadspin.com" data-ga="[Kinja Menu, Blogs You May Like Click, Deadspin]"><span class="icon icon-prepend icon-sprite site-icon site-icon-deadspin"></span>Deadspin</a></li><li><a href="http://gawker.com" data-ga="[Kinja Menu, Blogs You May Like Click, Gawker]"><span class="icon icon-prepend icon-sprite site-icon site-icon-gawker"></span>Gawker</a></li><li><a href="http://gizmodo.com" data-ga="[Kinja Menu, Blogs You May Like Click, Gizmodo]"><span class="icon icon-prepend icon-sprite site-icon site-icon-gizmodo"></span>Gizmodo</a></li><li><a href="http://io9.com" data-ga="[Kinja Menu, Blogs You May Like Click, io9]"><span class="icon icon-prepend icon-sprite site-icon site-icon-io9"></span>io9</a></li><li><a href="http://jalopnik.com" data-ga="[Kinja Menu, Blogs You May Like Click, Jalopnik]"><span class="icon icon-prepend icon-sprite site-icon site-icon-jalopnik"></span>Jalopnik</a></li><li><a href="http://jezebel.com" data-ga="[Kinja Menu, Blogs You May Like Click, Jezebel]"><span class="icon icon-prepend icon-sprite site-icon site-icon-jezebel"></span>Jezebel</a></li><li><a href="http://kotaku.com" data-ga="[Kinja Menu, Blogs You May Like Click, Kotaku]"><span class="icon icon-prepend icon-sprite site-icon site-icon-kotaku"></span>Kotaku</a></li><li><a href="http://lifehacker.com" data-ga="[Kinja Menu, Blogs You May Like Click, Lifehacker]"><span class="icon icon-prepend icon-sprite site-icon site-icon-lifehacker"></span>Lifehacker</a></li><li><a href="http://sploid.gizmodo.com/" data-ga="[Kinja Menu, Blogs You May Like Click, Sploid]"><span class="icon icon-prepend icon-sprite site-icon site-icon-sploid"></span>Sploid</a></li></ul></div><div class="divider"></div></aside><aside class="right-off-canvas-menu show-for-medium-down proxima nav-dropdown">	<dl class="tabs row" data-tab><dd class="js_username-tab tab-title active small-6 columns"><a href="#js_usermenu--offcanvas" class="js_username">Username</a></dd><dd class="js_notif-tab tab-title small-6 columns"><a href="#js_notifications--offcanvas">Notifications</a></dd></dl><div class="tabs-content"><div class="content active" id="js_usermenu--offcanvas"><div class="divider"></div></div><div class="content notif-menu js_notif-panel" id="js_notifications--offcanvas"><div class="divider"></div></div></div></aside><a class="exit-off-canvas"></a>	<!--  md5!  --><div class="js_top-nav-wrap top-nav fixed shadow-bottom"><nav class="js_top-nav row proxima"><div class="header flex-container horizontal-nowrap"><div class="flex-item off-canvas-toggle__wrapper show-for-medium-down"><a class="left-off-canvas-toggle menu-square" data-ga="[Kinja Menu, Menu Click, js_pageType]"><span class="icon-hamburger"><span></span><span></span><span></span></span></a></div><div class="flex-item kinja-title__wrapper hide-for-medium-down"><a data-dropdown="global-blog" class="js_menu-button"><span class="menu-square menu-square--desktop" data-ga="[Kinja Menu, Menu Click, js_pageType]"><span class="icon-hamburger--black icon-hamburger"><span></span><span></span><span></span></span></span><span class="menu-label js_globalnav-menu-label" data-ga="[Kinja Menu, Menu Click, js_pageType]">Discover more</span></a></div><div class="blog-title-region js_blog-title-region flex-item flex-grow" data-logo-src="http://i.kinja-img.com/gawker-media/image/upload/s--TBjOdHcL--/c_fit,fl_progressive,q_80,w_600/bwiqhbo45ulldozwchb0.png" data-image-asset-path="http://c.kinja-static.com/assets/images/"></div><div class="flex-item header-right"><div class="right user-bar js_right-user-bar"></div></div></div><div class="proxima f-dropdown content nav-dropdown main-menu hide-for-medium-down" id="global-blog" data-dropdown-content><div id="js_blogmenu--dropdown"><div class="search show-for-medium-down">	<form method="GET" class="search search-simple" action="/search" onsubmit="window.ga('send', 'event', 'Search', 'Submit', 'permalink');"><div class="input-with-icon"><span class="icon icon-search"></span><input type="text" placeholder="Search" name="q" class="mbn" data-focus-on-display/></div></form></div><div class="divider show-for-medium-down"></div><div class="js_login-links show-for-medium-down"></div><ul class="about-kinja"><li class="nohighlight"><span class="">Powered by</span><a href="http://kinja.com" class="logo-kinja" data-ga="[Kinja Menu, Kinja.com Click, js_pageType]"><h1 class="kinja-title proxima">Kinja</h1></a></li></ul><div class="divider"></div>	<ul class="show-for-medium-down"><li class="add js_follow-controls js_follow-buttons follow-controls--blog-menu" data-blogid="17"><a href="#" class="js_followforuser proxima"><span class="icon icon-plus"></span> <span>Follow Lifehacker</span></a><a href="#" class="js_unfollowforuser proxima hide"><span class="icon icon-checkmark"></span> <span>Followed</span></a></li><li></li></ul><ul><li class="title">Related blogs</li>	<li><a href="http://hackerspace.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Hackerspace]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Hackerspace</a></li><li><a href="http://afterhours.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, After Hours]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>After Hours</a></li><li><a href="http://twocents.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Two Cents]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Two Cents</a></li><li><a href="http://workshop.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Workshop]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Workshop</a></li><li><a href="http://vitals.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Vitals]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Vitals</a></li><li><a href="http://shoptalk.lifehacker.com" data-ga="[Kinja Menu, Related Blog Click, Shop Talk]"><span class="icon icon-sprite site-icon site-icon-default icon-prepend"></span>Shop Talk</a></li></ul><div class="divider"></div><ul><li class="title">Blogs you may like</li>	<li><a href="http://deadspin.com" data-ga="[Kinja Menu, Blogs You May Like Click, Deadspin]"><span class="icon icon-prepend icon-sprite site-icon site-icon-deadspin"></span>Deadspin</a></li><li><a href="http://gawker.com" data-ga="[Kinja Menu, Blogs You May Like Click, Gawker]"><span class="icon icon-prepend icon-sprite site-icon site-icon-gawker"></span>Gawker</a></li><li><a href="http://gizmodo.com" data-ga="[Kinja Menu, Blogs You May Like Click, Gizmodo]"><span class="icon icon-prepend icon-sprite site-icon site-icon-gizmodo"></span>Gizmodo</a></li><li><a href="http://io9.com" data-ga="[Kinja Menu, Blogs You May Like Click, io9]"><span class="icon icon-prepend icon-sprite site-icon site-icon-io9"></span>io9</a></li><li><a href="http://jalopnik.com" data-ga="[Kinja Menu, Blogs You May Like Click, Jalopnik]"><span class="icon icon-prepend icon-sprite site-icon site-icon-jalopnik"></span>Jalopnik</a></li><li><a href="http://jezebel.com" data-ga="[Kinja Menu, Blogs You May Like Click, Jezebel]"><span class="icon icon-prepend icon-sprite site-icon site-icon-jezebel"></span>Jezebel</a></li><li><a href="http://kotaku.com" data-ga="[Kinja Menu, Blogs You May Like Click, Kotaku]"><span class="icon icon-prepend icon-sprite site-icon site-icon-kotaku"></span>Kotaku</a></li><li><a href="http://lifehacker.com" data-ga="[Kinja Menu, Blogs You May Like Click, Lifehacker]"><span class="icon icon-prepend icon-sprite site-icon site-icon-lifehacker"></span>Lifehacker</a></li><li><a href="http://sploid.gizmodo.com/" data-ga="[Kinja Menu, Blogs You May Like Click, Sploid]"><span class="icon icon-prepend icon-sprite site-icon site-icon-sploid"></span>Sploid</a></li></ul></div></div><div class="proxima f-dropdown nav-dropdown content notif-menu" id="js_notifications--dropdown" data-dropdown-content></div><div class="js_global-user scrollable-container noskimlinks noskimwords"><div class="proxima f-dropdown nav-dropdown content user-menu user-menu--mobile" id="js_usermenu--dropdown" data-dropdown-content></div></div></nav></div><div id="ad-970x90-container" class="js_ad-top row ad-wide ad-top show-for-xlarge-up"><div class="column">		<div class="ad-unit ad-970x90 default desktop js_ad-unit" data-cb-ad-id="ad_970x90_default"><div class="ad-container js_ad-container"style="display: none;"id="ad-container-25910423" data-size="970x90" data-random="25910423" data-slot="default" data-zone-class="Zone_970x90" data-dfp-sz="970x90,728x90"></div></div></div></div><div class="row page js_page"><div class="large-4 columns sidebar hide-for-medium-down"><div class="sidebar-container js_sidebar-actual-container">		<div class="sidebar-content js_sidebar-container js_sidebar"><section id="js_leftrailmodule--trending" class="leftrailmodule js_leftrailmodule leftrailmodule--trending">	<div class="strapline proxima text-upper text-micro strapline--leftrail"><span class="strapline-bg">Trending on Kinja</span></div><div class="js_related-module "><ol class="leftrail-list leftrail-list--trending js_leftrail-list">	<li class="row leftrail-item leftrail-item--trending js_leftrail-item"><div class="large-1 columns"><div class="leftrail-marker">1.</div></div><div class="large-5 columns"><a href="http://gizmodo.com/terrifying-medical-instruments-found-on-blackbeards-sun-1682119834" data-ga="[Trending module click, position 1, js_pageType]"><img class="leftrail-image" src="http://i.kinja-img.com/gawker-media/image/upload/s--HT5oTogy--/c_fill,fl_progressive,g_north,h_180,q_80,w_320/lxlm1xvguk1wn7fslbis.jpg" alt="Terrifying Medical Instruments Found on Blackbeard&amp;#39;s Sunken Ship" /></a></div><div class="large-6 columns"><h6 class="headline"><a href="http://gizmodo.com/terrifying-medical-instruments-found-on-blackbeards-sun-1682119834" data-ga="[Trending module click, position 1, js_pageType]">Terrifying Medical Instruments Found on Blackbeard&apos;s Sunken Ship</a></h6><div class="byline proxima text-small"> <a href="//gizmodo.com" class="text-light byline__source">on Gizmodo</a></div></div></li>	<li class="row leftrail-item leftrail-item--trending js_leftrail-item"><div class="large-1 columns"><div class="leftrail-marker">2.</div></div><div class="large-11 columns"><h6 class="headline"><a href="http://truckyeah.jalopnik.com/watch-what-happens-when-you-sledgehammer-an-aluminum-20-1681799569" data-ga="[Trending module click, position 2, js_pageType]">Watch What Happens When You Sledgehammer An Aluminum 2015 Ford F-150</a></h6><div class="byline proxima text-small"> <a href="//truckyeah.jalopnik.com" class="text-light byline__source">on Truck Yeah</a></div></div></li>	<li class="row leftrail-item leftrail-item--trending js_leftrail-item"><div class="large-1 columns"><div class="leftrail-marker">3.</div></div><div class="large-11 columns"><h6 class="headline"><a href="http://kotaku.com/the-secret-douglas-adams-rpg-people-have-been-playing-f-1681986562" data-ga="[Trending module click, position 3, js_pageType]">The Secret Douglas Adams RPG People Have Been Playing for 15 Years</a></h6><div class="byline proxima text-small"> <a href="//kotaku.com" class="text-light byline__source">on Kotaku</a></div></div></li></ol></div></section>	<section id="js_leftrailmodule--preloadedad" class="js_contained-ad-container contained-ad-container leftrailmodule js_leftrailmodule invisible"><div class="contained-ad-wrapper js_contained-ad-wrapper">		<div class="ad-unit ad-300x600 default desktop js_ad-unit" data-cb-ad-id="ad_300x600_default"><div class="ad-container js_ad-container"style="display: none;"id="ad-container-18748767" data-size="300x600" data-random="18748767" data-slot="default" data-zone-class="Zone_300x" data-dfp-sz="300x250,300x600"></div></div></div></section><section id="js_leftrailmodule--popular" class="leftrailmodule js_leftrailmodule leftrailmodule--popular invisible">	<div class="strapline proxima text-upper text-micro strapline--leftrail"><span class="strapline-bg">Written by <a href="//alanhenry.kinja.com/">Alan Henry</a></span></div><div class="js_related-module "><ol class="leftrail-list leftrail-list--popular js_leftrail-list">	<li class="row leftrail-item leftrail-item--popular js_leftrail-item recommended"><div class="row"><div class="large-12 columns leftrail-image-wrap"><a href="http://lifehacker.com/change-where-screenshots-are-saved-on-your-mac-with-a-t-1681819838" data-ga="[Popular stories click, position 1, js_pageType]"><img class="leftrail-image" src="http://i.kinja-img.com/gawker-media/image/upload/s--n-pShVUG--/c_fill,fl_progressive,g_center,h_180,q_80,w_320/yufy4gu4w7ndysbbmrnm.png" alt="Change Where Screenshots Are Saved on Your Mac with a Terminal Command" /></a></div></div><div class="row"><div class="large-12 columns"><h6 class="headline"><a href="http://lifehacker.com/change-where-screenshots-are-saved-on-your-mac-with-a-t-1681819838" data-ga="[Popular stories click, position 1, js_pageType]">Change Where Screenshots Are Saved on Your Mac with a Terminal Command</a></h6></div></div><div class="row"><div class="large-12 columns"><div class="leftrail-separator"></div></div></div></li>	<li class="row leftrail-item leftrail-item--popular js_leftrail-item recommended"><div class="row"><div class="large-12 columns leftrail-image-wrap"><a href="http://lifehacker.com/ublock-the-memory-friendly-ad-blocker-is-now-availabl-1681818949" data-ga="[Popular stories click, position 2, js_pageType]"><img class="leftrail-image" src="http://i.kinja-img.com/gawker-media/image/upload/s--lTUvYEFG--/c_fill,fl_progressive,g_center,h_180,q_80,w_320/qkt7xk4qvzi22voomsgf.jpg" alt="uBlock, the Memory-Friendly Ad-Blocker, Is Now Available for Firefox" /></a></div></div><div class="row"><div class="large-12 columns"><h6 class="headline"><a href="http://lifehacker.com/ublock-the-memory-friendly-ad-blocker-is-now-availabl-1681818949" data-ga="[Popular stories click, position 2, js_pageType]">uBlock, the Memory-Friendly Ad-Blocker, Is Now Available for Firefox</a></h6></div></div><div class="row"><div class="large-12 columns"><div class="leftrail-separator"></div></div></div></li>	<li class="row leftrail-item leftrail-item--popular js_leftrail-item recommended"><div class="row"><div class="large-12 columns leftrail-image-wrap"><a href="http://lifehacker.com/the-best-pandora-or-spotify-stations-for-great-music-1681794343" data-ga="[Popular stories click, position 3, js_pageType]"><img class="leftrail-image" src="http://i.kinja-img.com/gawker-media/image/upload/s--rIGa0qvD--/c_fill,fl_progressive,g_center,h_180,q_80,w_320/phyqhotak9t0ivvvmcwo.jpg" alt="The Best Pandora (or Spotify) Stations for Great Music While You Work" /></a></div></div><div class="row"><div class="large-12 columns"><h6 class="headline"><a href="http://lifehacker.com/the-best-pandora-or-spotify-stations-for-great-music-1681794343" data-ga="[Popular stories click, position 3, js_pageType]">The Best Pandora (or Spotify) Stations for Great Music While You Work</a></h6></div></div><div class="row"><div class="large-12 columns"><div class="leftrail-separator"></div></div></div></li></ol></div></section></div></div></div><script>markUserTime('Content - Before main column');</script><div class="large-8 columns main-column">	<div id="fb-root"></div><div class="row content-header"><div class="js_site-header site-header medium-7 hide-for-medium-down columns"><a href="/" class="site-logo mln" title="Lifehacker"><img class="logo" src="http://i.kinja-img.com/gawker-media/image/upload/s--TBjOdHcL--/c_fit,fl_progressive,q_80,w_600/bwiqhbo45ulldozwchb0.png" alt="" /></a></div><div class="hide-for-medium-down medium-4 small-2 columns pln"><div class="add js_follow-controls js_follow-buttons follow-controls right header-action" data-blogid="17"><a href="#" class="js_followforuser follow-controls__link proxima hide" title="Follow Lifehacker"><span class="icon icon-plus"></span> <span class="hide-for-medium-down">Follow</span></a><a href="#" class="js_unfollowforuser proxima follow-controls__link hide" title="Unfollow Lifehacker"><span class="icon icon-checkmark"></span> <span class="hide-for-medium-down">Followed</span></a></div></div></div>		<section class="branch-wrapper ">	<div id="foreplay" class="reveal-modal js_foreplay foreplay proxima noskimlinks noskimwords" data-reveal><div id="jwPlayerVideo"></div><a href="#" class="close js_foreplay-close">In 5 seconds, click here to continue reading...</a>	<div class="ad-unit ad-16x9 default desktop js_ad-unit" data-cb-ad-id="ad_16x9_default"><div class="ad-container js_ad-container"style="display: none;"id="ad-container-45626661" data-size="16x9" data-random="45626661" data-slot="default" data-zone-class="Zone_16x9" data-dfp-sz="16x9" data-post-id="1494256243" data-post-headline="Five Best Programming Languages for First-Time Learners" data-forced-ad-zone="collapse" data-tags="hive-five,code,programming,programming-languages,developers,software,development,feature,java,javascript,c,c,ruby,python,microsoft,mozilla,oracle,open-source"></div></div></div>	<div class="js_ie-message hide"></div><div id="editorplaceholder" class="editorplaceholder"></div><div class="post-wrapper js_post-wrapper "  >	<article class="post hentry js_post_item status-published post-item-permalink commented js_amazon_module marquee-post" data-id="1494256243" id="post_1494256243" data-model="%7B%22id%22%3A1494256243%2C%22permalink%22%3A%22http%3A%2F%2Flifehacker.com%2Ffive-best-programming-languages-for-first-time-learners-1494256243%22%2C%22permalinkPath%22%3A%22%2Ffive-best-programming-languages-for-first-time-learners-1494256243%22%2C%22isBlip%22%3Afalse%2C%22isRecommended%22%3Atrue%2C%22publishTimeMillis%22%3A1388934000406%2C%22publishTime%22%3A%7B%22timestamp%22%3A1388934000406%2C%22timezone%22%3A%22America%2FLos_Angeles%22%2C%22MdyHm%22%3A%2201%2F05%2F2014%2007%3A00%22%2C%22MdyatHm%22%3A%2201%2F05%2F2014%20at%2007%3A00%22%2C%22rfc822%22%3A%22Sun%2C%205%20Jan%202014%2015%3A00%3A00%20GMT%22%2C%22yMdHmsZ%22%3A%222014-01-05T07%3A00%3A00-08%3A00%22%2C%22hmma%22%3A%227%3A00am%22%2C%22day%22%3A%22Sunday%22%2C%22Mddyyhmma%22%3A%221%2F05%2F14%207%3A00am%22%2C%22fullDate%22%3A%22January%205%2C%202014%22%2C%22relative%22%3A%7B%22amount%22%3Anull%2C%22type%22%3A%22greaterthanweek%22%7D%7D%2C%22status%22%3A%22PUBLISHED%22%2C%22author%22%3A%7B%22id%22%3A%225716553178370339807%22%2C%22screenName%22%3A%22alanhenry%22%2C%22displayName%22%3A%22Alan%20Henry%22%2C%22defaultBlogId%22%3A762%2C%22defaultBlog%22%3Anull%2C%22avatar%22%3A%7B%22id%22%3A%22183aibc9tgpejjpg%22%2C%22format%22%3A%22jpg%22%7D%7D%2C%22authorId%22%3A%225716553178370339807%22%2C%22byline%22%3A%22%22%2C%22isStarter%22%3Atrue%2C%22blogId%22%3A%5B762%2C17%5D%2C%22defaultBlogId%22%3A17%2C%22authorBlogId%22%3A762%2C%22authorBlogName%22%3A%22alanhenry%22%2C%22allowReplies%22%3Atrue%2C%22isBillboardPost%22%3Afalse%2C%22liveBlog%22%3Afalse%2C%22headline%22%3A%22Five%20Best%20Programming%20Languages%20for%20First-Time%20Learners%22%2C%22adZone%22%3A%22collapse%22%2C%22tagUrlNames%22%3A%22hive-five%2Ccode%2Cprogramming%2Cprogramming-languages%2Cdevelopers%2Csoftware%2Cdevelopment%2Cfeature%2Cjava%2Cjavascript%2Cc%2Cc%2Cruby%2Cpython%2Cmicrosoft%2Cmozilla%2Coracle%2Copen-source%22%2C%22replyCount%22%3A313%2C%22sharedPostId%22%3Anull%2C%22images%22%3A%5B%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--88SHTDxu--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Foaroblubaytkfjmcb02w.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg2tz64pfrsjpg%2Foriginal.jpg%22%2C%22id%22%3A%22oaroblubaytkfjmcb02w%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Atrue%7D%2C%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--NYY7q4BL--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Fqs7bvemsulivp5ipvz7s.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg30lwyv3onjpg%2Foriginal.jpg%22%2C%22id%22%3A%22qs7bvemsulivp5ipvz7s%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Afalse%7D%2C%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--5WtJZtf5--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Ft032zmlbe4zghnrywhij.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg36h1bemaujpg%2Foriginal.jpg%22%2C%22id%22%3A%22t032zmlbe4zghnrywhij%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Afalse%7D%2C%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--rRt0ykg9--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Fjk3oqtl9qdcykpjticsb.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg3xjqffd8zjpg%2Foriginal.jpg%22%2C%22id%22%3A%22jk3oqtl9qdcykpjticsb%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Afalse%7D%2C%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--sRKNGZnQ--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Flweigmiiiurlmfpyeeak.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg3lzexjac1jpg%2Foriginal.jpg%22%2C%22id%22%3A%22lweigmiiiurlmfpyeeak%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Afalse%7D%2C%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--nd5KUk8O--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Fpbtjrebfyvzm9dgr9efd.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg3php4d7bgjpg%2Foriginal.jpg%22%2C%22id%22%3A%22pbtjrebfyvzm9dgr9efd%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Afalse%7D%5D%2C%22videos%22%3A%5B%5D%2C%22parentId%22%3Anull%2C%22parentAuthorId%22%3Anull%2C%22starterId%22%3A1494256243%7D">	<div class="row content-wrapper"><div class="column"><div class="row js_kinja-share-wrapper hide"><div class="column post-tools-above"><a href="#" class="js_kinja-share replywithshare inline-block"><span class="icon icon-reload"></span></a></div></div><header class=""><h1 class="headline hover-highlight entry-title"><a href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" data-id="" onClick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - post header', 'standard');">Five Best Programming Languages for First-Time Learners</a></h1></header>	<div class="meta-container without-dropdown">	<div class="meta-avatar js_author" data-blogid="762">	<span class="meta-tools"><div class="view-count-container"></div><a href="#" class="js_like button-recommend-post hover-icon" title="Recommend"><span class="js_like_count">38</span><span class="icon icon-star icon-append js_like_icon"></span></a><div class="js_like-list-container"></div></span><div class="floated-container img-30" data-dropdownhover-container>	<div id="1494256243-hovercard" class="f-dropdown author-hovercard content small whitelisted-links js_avatar-popover" data-dropdownhover-content><span class="floated-container img-60 avatar-container js_avatar-container"><span class="avatar"><span class="icon icon-checkmark icon-followed"></span><img data-src="http://i.kinja-img.com/gawker-media/image/upload/s--ywzcE45e--/c_fill,fl_progressive,g_center,h_120,q_80,w_120/183aibc9tgpejjpg.jpg" alt="alanhenry" /></span><div class="js_follow-controls" data-blogid="762"><h4>Alan Henry</h4><a href="http://alanhenry.kinja.com" class="button tiny secondary mrs" target="_blank" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Hover card - profile button click');">Profile</a><a href="#" class="button tiny secondary js_followforuser mrs" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Hover card - follow button click');">Follow</a><a href="#" class="button tiny secondary js_unfollowforuser mrs hide">Unfollow</a></div></div>	<div class="avatar avatar-container js_avatar-container" data-dropdownhover="1494256243-hovercard"><span class="icon icon-checkmark icon-followed"></span><a href="http://alanhenry.kinja.com"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--QGZdIYrZ--/c_fill,fl_progressive,g_center,h_80,q_80,w_80/183aibc9tgpejjpg.jpg" /></span></a></div><div class="txt">	<span class="display-name author vcard"><a href="http://alanhenry.kinja.com" target="_self"   data-dropdownhover-anchor="1494256243-hovercard" class="fn url">Alan Henry</a></span><div class="second-line">Filed to: 	<a class="first-tag " href="/tag/hive-five" data-urlname="hive-five" data-dropdown="taglist" data-options="is_hover:true">hive five</a>	<div id="taglist" class="tiny f-dropdown text-upper" data-dropdown-content><div><ul>	<li class=""><a href="/tag/code" data-urlname="code">code</a></li>	<li class=""><a href="/tag/programming" data-urlname="programming">programming</a></li>	<li class=""><a href="/tag/programming-languages" data-urlname="programming-languages">programming languages</a></li>	<li class=""><a href="/tag/developers" data-urlname="developers">developers</a></li>	<li class=""><a href="/tag/software" data-urlname="software">software</a></li>	<li class=""><a href="/tag/development" data-urlname="development">development</a></li>	<li class=""><a href="/tag/feature" data-urlname="feature">feature</a></li>	<li class=""><a href="/tag/java" data-urlname="java">java</a></li>	<li class=""><a href="/tag/javascript" data-urlname="javascript">javascript</a></li>	<li class=""><a href="/tag/c" data-urlname="c">c</a></li>	<li class=""><a href="/tag/c" data-urlname="c">c++</a></li>	<li class=""><a href="/tag/ruby" data-urlname="ruby">ruby</a></li>	<li class=""><a href="/tag/python" data-urlname="python">python</a></li>	<li class=""><a href="/tag/microsoft" data-urlname="microsoft">microsoft</a></li>	<li class=""><a href="/tag/mozilla" data-urlname="mozilla">mozilla</a></li>	<li class=""><a href="/tag/oracle" data-urlname="oracle">oracle</a></li>	<li class=""><a href="/tag/open-source" data-urlname="open-source">open source</a></li></ul></div></div>	<span class="publish-time js_publish_time" data-publishtime="1388934000406"><a class="hover-switch" href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" target="_self" >		<span class="show-on-hover published updated">1/05/14 7:00am</span><span class="hide-on-hover">	1/05/14 7:00am</span></a></span></div></div></div></div><div class="post-dropdown-ct js_post-dropdown-ct js_post-dropdown-ct-sticky">	<ul id="dropdown-1494256243" class="f-dropdown proxima js_post-dropdown js_follow-controls whitelisted-links" data-postid="1494256243" data-starterid="1494256243" data-blogid="762" data-sourceblogid="17" data-dropdown-content><li class="js_edit-post hover-icon hide readonly-hide"><a href="#" rel="nofollow"><i class="icon icon-pencil-alt icon-prepend"></i>Edit</a></li><li class="js_delete-post hover-icon hide readonly-hide"><a href="#" rel="nofollow"><i class="icon icon-x-circle icon-prepend"></i>Delete</a></li>	<li class="js_invite-to-post hover-icon hide" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Drop down - invite click');"><a href="#" rel="nofollow"><i class="icon icon-twitter icon-prepend"></i>Invite</a></li><li class="js_invite-to-post-manually hover-icon hide"><a href="#" rel="nofollow"><i class="icon icon-mail icon-prepend"></i>Invite manually</a></li><li class="js_promote hover-icon hide readonly-hide"><a href="#" rel="nofollow"><i class="icon icon-star-circle icon-prepend"></i>Promote</a></li><li class="js_dismiss hover-icon hide readonly-hide"><a href="#" class="dismiss" rel="nofollow" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Dismiss click');"><i class="icon icon-prepend notranslate">X</i>Dismiss</a><a href="#" class="undismiss" rel="nofollow" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Undismiss click');"><i class="icon icon-prepend notranslate">X</i>Undismiss</a></li><li class="js_block hover-icon hide disabled readonly-hide" data-blogid="17" data-targetblogid="762" data-targetblogname="Lifehacker"><a href="#" rel="nofollow"><i class="icon icon-not-circle icon-prepend"></i><span>Block for Lifehacker</span></a></li><li class="js_hide-post hover-icon hide readonly-hide"><a href="#" rel="nofollow"><i class="icon icon-prepend icon-not-circle"></i>Hide</a></li><li class="js_kinja-share-block readonly-hide"><a class="js_kinja-share hover-icon" href="#" rel="nofollow"><i class="icon icon-share icon-prepend"></i>Share to Kinja</a></li><li class="js_external-share"><a class="js_share-post-item facebook hover-icon" rel="nofollow" href="http://facebook.com/sharer.php?u=http%3A%2F%2Flifehacker.com%2Ffive-best-programming-languages-for-first-time-learners-1494256243" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Drop down - Share to Facebook click');"><i class="icon icon-facebook icon-prepend"></i>Share to Facebook</a></li><li class="js_external-share"><a class="js_share-post-item pinterest hover-icon" rel="nofollow" href="http://www.pinterest.com/pin/create/api_other/?url=http%3A%2F%2Flifehacker.com%2Ffive-best-programming-languages-for-first-time-learners-1494256243&media=http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--7Ds777cH--%2Foaroblubaytkfjmcb02w.jpg&description=If%20you%27re%20thinking%20of%20learning%20to%20code%2C%20the%20language%20you%20decide%20to%20pick%20up%20first%20has%20a%20lot%20to%20do%20with%20what%20you%27re%20trying%20to%20learn%2C%20what%20you%20want%20to%20do%20with%20the%20skill%2C%20and%20where%20you%20want%20to%20eventually%20go%20from%20there.%20Still%2C%20some%20languages%20are%20easier%20to%20pick%20up%20than%20others%2C%20have%20a%20community%20dedicated%20to%20teaching%2C%20or%20offer%20more%20useful%20skills%20once%20you%20learn%20them.%20Here%20are%20five%20of%20the%20best%2C%20based%20on%20your%20nominations." onclick="window.ga('send', 'event', 'Share to Pinterest', 'click', 'Drop down');"><i class="icon icon-pinterest icon-prepend"></i>Share to Pinterest</a></li><li class="js_external-share"><a class="js_share-post-item twitter hover-icon" rel="nofollow" href="http://twitter.com/share?url=http%3A%2F%2Flifehacker.com%2Ffive-best-programming-languages-for-first-time-learners-1494256243&amp;text=POST_TITLE" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Drop down - Share to Twitter click');"><i class="icon icon-twitter icon-prepend"></i>Share to Twitter</a></li><li class="js_go-to-permalink"><a class="hover-icon" href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Drop down - Go to permalink click');"><i class="icon icon-link-alt icon-prepend"></i>Go to permalink</a></li><li class="repostblock js_repostblock hide"></li></ul><a href="#" target="_self" class="button dropdown secondary transparent toggle-30 js_post-menu-toggler post-dropdown-trigger" data-dropdown="dropdown-1494256243" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Drop down click');"></a></div></div><div class="post-content entry-content "><p class="has-media media-640" data-textannotation-id="ab4a02c035f730797008a9ba8da60281"><span class="lightBoxWrapper"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--88SHTDxu--/c_fit,fl_progressive,q_80,w_636/oaroblubaytkfjmcb02w.jpg" width="636" height="357" alt="Five Best Programming Languages for First-Time Learners" data-chomp-id="oaroblubaytkfjmcb02w" data-asset-url="http://i.kinja-img.com/gawker-media/image/upload/s--88SHTDxu--/c_fit,fl_progressive,q_80,w_636/oaroblubaytkfjmcb02w.jpg" data-format="jpg" /></span><span class="magnifier lightBox hide"><span class="icon icon-white icon-search-plus"></span></span></span></p><div id="js_adsense-container"></div><script>
+
+window.google_analytics_uacct = 'UA-142218-1';
+var google_adnum = 0; /* only insert this line for your first ad unit */
+// conditional adsense core decorated
+function google_ad_request_done(google_ads) {
+	var domain = '';
+	var domainParts = document.referrer.split("/");
+	if (domainParts.length > 2) {
+		domainParts = domainParts[2].split(".");
+		domain = domainParts[domainParts.length - 2];
+	}
+	var companions = document.querySelectorAll('.js_ad300-companion');
+	var blockHeight = 0;
+	if (companions.length > 0) {
+		var companion = companions[0];
+		blockHeight = companion.offsetHeight;
+	}
+	var onKinja = location.host.substr(-1 * "kinja.com".length) === "kinja.com";
+	var fromSearch = (domain == "google") || (domain == "bing") || (domain == "yahoo") || (domain == "ask");
+	var cookieString = "fromSearch=1";
+	if (fromSearch) {
+		document.cookie = cookieString;
+	}
+	var inSearchSession = document.cookie.indexOf(cookieString) != -1;
+	var shouldShowAds = !onKinja && (fromSearch || inSearchSession);// &&  blockHeight > 400);
+	if (shouldShowAds) {
+		var s = '';
+		var i;
+		if (google_ads.length == 0) {
+			return;
+		}
+		s += '<aside class="referenced-wide google-adsense twelve columns">';
+		s += '<div class="container proxima">';
+		s += '<a href="' + google_info.feedback_url + '" class="by-google">Ads by Google</a><div class="google-ads ptm">' +
+			'<a href="' + google_ads[0].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' + google_ads[0].visible_url + '\';return true" class="google-headline">' +
+			'<span> <b>' +google_ads[0].line1 +	'</b><br /></span></a> <span>' +
+			google_ads[0].line2 + ' ' + google_ads[0].line3 + '<br /></span>' +
+			'<a href="' + google_ads[0].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' + google_ads[0].visible_url + '\';return true" class="google-link"><span>' + google_ads[0].visible_url + '</span></a><br /><br/>';
+		if (google_ads.length == 2) {
+			/* the XML parser chokes on a for loop, so we have to do it explicitly */
+			s += '<a href="' + google_ads[1].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' + google_ads[1].visible_url + '\';return true" class="google-headline">' +
+				'<span> <b>' + google_ads[1].line1 +	'</b><br /></span></a> <span style="">' +
+				google_ads[1].line2 + ' ' + google_ads[1].line3 + '<br /></span>' +
+				'<a href="' + google_ads[1].url + '" onmouseout="window.status=\'\'" onmouseover="window.status=\'go to ' + google_ads[1].visible_url + '\';return true" class="google-link"><span>' + google_ads[1].visible_url + '</span></a><br />';
+		}
+		s += '</div></div></aside>';
+		if (google_ads[0].bidtype == 'CPC') { /* insert this snippet for each ad call */
+			google_adnum = google_adnum + google_ads.length;
+		}
+		document.write(s);
+	}
+}
+google_ad_client = 'ca-pub-0457527031304647';
+google_ad_output = 'js';
+google_max_num_ads = '1';
+google_ad_type = 'text';
+google_feedback = 'on';
+google_skip = google_adnum;
+google_ad_channel = '1102379497';
+</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+
+
+
+
+
+
+
+
+
+<p class="first-text" data-textannotation-id="00d2e552f441f9fbec478bcfc715e575">If you're thinking of learning to code, the language you decide to pick up first has a lot to do with what you're trying to learn, what you want to do with the skill, and where you want to eventually go from there. Still, some languages are easier to pick up than others, have a community dedicated to teaching, or offer more useful skills once you learn them. Here are five of the best, based on your nominations. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="d5d803ae452ad95d78a78843ffec9fa1">Let's be clear—we're not trying to absolutely settle the question of which language you should learn first if you're trying to code. Everyone has different opinions and depending on your specific reasons for learning, perhaps none of these would be appropriate. <a x-inset="1" href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749">You offered up way more suggestions in our Call for Contenders thread</a> than we could possibly highlight here, with much more description and rationale for each. That said, here are the five most popular of your nominees, in no particular order. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+<aside class="referenced-wide referenced-fullwidth js_inset tmpl_referencedGroupFullWidth clearfix core-decorated-inset">
+    <div class="container">
+        
+        
+            
+    <div class="referenced-item  " data-inset-id="1555987950">
+        
+            
+    <div class="columns small-4 medium-3 referenced-item-image referenced-item-processed">
+        <a href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749" onclick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - inset photo');" target="_blank">
+            <span class="img-border ">
+            
+                <img src="http://i.kinja-img.com/gawker-media/image/upload/s--7BIWThf3--/c_fill,fl_progressive,g_center,h_77,q_80,w_137/19bb5vry4cwi7jpg.jpg" />
+                
+            </span>
+        </a>
+    </div>
+
+        
+         
+    <h6 class="headline" onclick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - inset headline');">
+        <span class="full-headline">
+            <a href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749" target="_blank">
+                What's the Best Programming Language for First-Time Learners?
+            </a>
+        </span>
+        <span class="medium-headline">
+            <a href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749" target="_blank">
+                What's the Best Programming Language for First-Time Learners?
+            </a>
+        </span>
+        <span class="small-headline">
+            <a href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749" target="_blank">
+                What's the Best Programming Language for First
+            </a>
+        </span>
+    </h6>
+ 
+        
+    
+        <p class="text  small-offset-3 ">
+            
+                <span class="referenced-item-excerpt hide-for-small">Thinking about learning to code? There are plenty of places to help you get started, and many of…</span>
+            
+            <a href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749" class="js_readmore readmore-referenced" onclick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - inset read more link');" target="_blank">
+                Read more <span class="js_external-text hide">Read more</span>
+            </a>
+        </p>
+    
+
+    </div>
+
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="221d0ede3d025e9fb68794a9ddb5a312"><em>The polls are closed and the votes are counted! To see which of these five programming languages you thought is the best to start with if you're a beginner, head over to <a href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243/1497409477/@alanhenry">our hive five followup post</a> to check out the winner and discuss the results!</em></p>
+
+
+
+
+
+
+
+
+
+
+<h3 data-textannotation-id="5b4292bf068d89c898e870ecc6160277"><a href="http://www.oracle.com/technetwork/java/index.html" target="_blank">Java</a></h3>
+
+
+
+
+
+
+
+
+
+
+<p class="has-media media-640" data-textannotation-id="4ebff809af03b28f137916397c93f12a"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--NYY7q4BL--/c_fit,fl_progressive,q_80,w_636/qs7bvemsulivp5ipvz7s.jpg" width="636" height="357" alt="Five Best Programming Languages for First-Time Learners" data-chomp-id="qs7bvemsulivp5ipvz7s" data-asset-url="http://i.kinja-img.com/gawker-media/image/upload/s--NYY7q4BL--/c_fit,fl_progressive,q_80,w_636/qs7bvemsulivp5ipvz7s.jpg" data-format="jpg" /></span></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="9110e2bfbe2b34c570c89be0c180ac09">Oracle's Java is one of the web's <a href="http://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">longest standing, persistent, and influential programming languages</a>. You'll find Java at the core of applications on and off the web, on all platforms, operating systems, and devices. It's a deeply featured class-based, object-oriented programming language that's designed to be portable and workable on as many platforms as possible. For that reason, it's also one of the world's most popular programming languages, which makes it incredibly valuable to learn if you're interested in learning to program. The flip-side to Java is that for all of its portability and applicability, it can be quite difficult to grasp, and quite difficult to program effectively and efficiently. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="0e5ffe846798a9e2c011437cd88236a7">Java isn't a perfect programming language though—many schools and classes start with C or C++ because Java gets a lot of its syntax from those earlier languages. Those of you who championed Java as a good first language noted that Java forces you to think like a programmer—to think logically and analytically, and really grasp how a computer will process information in order to be successful. It's a fundamental set of core concepts that will help you as you move to other languages and technologies. For more reasons why it's a good choice, take a look back <a href="http://lifehacker.com/java-i-think-that-the-most-important-thing-for-buddin-1493295622">at its nomination thread</a>.</p>
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+<h3 data-textannotation-id="3df8a23773ffd0c4c7302bc9479d2133"><a href="https://www.ruby-lang.org/en/" target="_blank">Ruby</a></h3>
+
+
+
+
+
+
+
+
+
+
+<p class="has-media media-640" data-textannotation-id="1352b1874b738fd661ca1eea95b0407a"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--5WtJZtf5--/c_fit,fl_progressive,q_80,w_636/t032zmlbe4zghnrywhij.jpg" width="636" height="357" alt="Five Best Programming Languages for First-Time Learners" data-chomp-id="t032zmlbe4zghnrywhij" data-asset-url="http://i.kinja-img.com/gawker-media/image/upload/s--5WtJZtf5--/c_fit,fl_progressive,q_80,w_636/t032zmlbe4zghnrywhij.jpg" data-format="jpg" /></span></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="c8d06d98ad1c5d5e686a9fa0d58cce07">Ruby is a dynamic, open-source, object-oriented programming language developed by computer scientist <a href="http://en.wikipedia.org/wiki/Yukihiro_Matsumoto" target="_blank">Yukihiro Matsumoto</a> back in the 90s, which makes it one of the youngest languages in broad use, much less in this roundup. It was designed to have syntax that was easy to read and to write by mere humans, without necessarily needing to learn a massive base of commands and specialized &quot;vocabulary&quot; in order to get started. While the language itself is object-oriented, it also supports procedural, functional, and imperative programming, one of the factors that makes it remarkably flexible. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="0f510dd3f764e233494d284af4f7a8bb">Ruby has a reputation for being relatively easy to learn, with a <a href="https://www.ruby-lang.org/en/documentation/quickstart/" target="_blank">20 minute quick start guide</a> available on the language's official website that can get you up and familiar with some of its basics in a really short period. Fans of languages like Perl and Python will find some similarities to enjoy. Those of you who nominated Ruby praised it for being easy to understand and easy to learn, easy to read when you have to, and for having a large, active, passionate developer community that's committed to the success of the language. For more, check out <a href="http://lifehacker.com/vote-ruby-why-the-syntax-is-simple-to-learn-and-makes-1493311976">its nomination threads here</a> and <a href="http://lifehacker.com/vote-ruby-why-ruby-is-really-easy-to-read-which-mak-1493490327">here</a>.</p>
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+<h3 data-textannotation-id="b92ecaebf1a8c0783e049427a322ef98"><a href="http://www.python.org/" target="_blank">Python</a></h3>
+
+
+
+
+
+
+
+
+
+
+<p class="has-media media-640" data-textannotation-id="04c3d21d8e9560573ece96da2e78e761"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--rRt0ykg9--/c_fit,fl_progressive,q_80,w_636/jk3oqtl9qdcykpjticsb.jpg" width="636" height="357" alt="Five Best Programming Languages for First-Time Learners" data-chomp-id="jk3oqtl9qdcykpjticsb" data-asset-url="http://i.kinja-img.com/gawker-media/image/upload/s--rRt0ykg9--/c_fit,fl_progressive,q_80,w_636/jk3oqtl9qdcykpjticsb.jpg" data-format="jpg" /></span></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="e26801f9c71ffebe433c3572b59ffacb">When people discuss first programming languages and which languages are easier for people to pick up quickly, Python inevitably comes up. It was developed in the 80s by <a href="http://en.wikipedia.org/wiki/Guido_van_Rossum" target="_blank">Guido van Rossum</a>, who then handed the language over to the non-profit Python Software Foundation, which serves as the language's administrator, and the language is open source and free to use, even for commercial applications. Python is usually used and referred to as a scripting language, allowing programmers to churn out large quantities of easily readable and functional code in short periods of time, but it's also dynamic, and supports object-oriented, procedural, and functional programming styles, among others. Thanks to its flexibility, Python is one of the most widely used high-level programming languages today. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="12478e1a0b8472c7f38e7e7c40ea1080">Python doesn't exactly start you at the basics, but it does teach some useful things like indentation, modularity, and the importance of naming conventions that will help you as you learn and work with other languages. In the nominations thread, I referenced <a href="http://www.reddit.com/r/changemyview/comments/1cyk99/i_think_python_is_the_best_first_programming/" target="_blank">this reddit thread</a> as a great place to read pros and cons for the language as a first language. Those of you who nominated Python also highlighted the fact that Python's developer community is more than happy with the language being used as a teaching language, so they have a ton of learning tools and documentation available to help first-time coders get their arms around it. The official tutorials are easy to follow, useful, and practical. For more pros and cons, check out <a href="http://lifehacker.com/vote-phython-why-okay-this-is-hard-for-me-specifica-1493293011">the nomination thread here</a>. </p>
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+<h3 data-textannotation-id="1f2604664c99b9a610aebc4e1884f778"><a href="http://en.wikipedia.org/wiki/C_%28programming_language%29" target="_blank">C</a>/<a href="http://en.wikipedia.org/wiki/C%2B%2B" target="_blank">C++</a></h3>
+
+
+
+
+
+
+
+
+
+
+<p class="has-media media-640" data-textannotation-id="8fbcaccae9c524c968f3fc1e475c939b"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--sRKNGZnQ--/c_fit,fl_progressive,q_80,w_636/lweigmiiiurlmfpyeeak.jpg" width="636" height="357" alt="Five Best Programming Languages for First-Time Learners" data-chomp-id="lweigmiiiurlmfpyeeak" data-asset-url="http://i.kinja-img.com/gawker-media/image/upload/s--sRKNGZnQ--/c_fit,fl_progressive,q_80,w_636/lweigmiiiurlmfpyeeak.jpg" data-format="jpg" /></span></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="642eb8f27314a50e349b3a74e123f036">While strictly your nominations were for the C programming language and less C++, we decided to go ahead and toss C++ next to it anyway since it's the natural step up from C. Without getting too much into the rich and detailed history of C, and then of C++ (which started off as a set of improvements and updates to bring C into modern applications), let's just say that both languages have been around since the 1970s and early 80s, respectively (you can read more at the Wikipedia links above). C, for its part, is an extremely widely-used, general purpose, imperative programming language that's heavily influenced almost every language that's followed it. C++ on the other hand took things a step further, added object-oriented features like classes to the language, along with virtual functions and templates. C++ is another of the world's most popular programming languages, and is still in wide use today in everything from video games to productivity software. C++ is a bit more difficult to pick up than C, although many people would argue that there's no reason to start with C anymore at all. That's a debate we're not about to settle. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="510d69d9286f98d13eaebb9a338f31cb">One thing that's important about C and C++: They're both some of the most foundational languages in computer science and programming. If you learn them, they'll benefit you, even if you wind up not using them later. They'll give you insight into the beginnings and roots of computer science and computer programming, and while many people point out that learning either is like learning to drive by first learning to assemble a car, both languages have their pros and cons. Those of you who praised them as first-time languages noted this, and said you'll have a richer understanding of programming if you start with them, and one of you pointed to <a href="http://www.joelonsoftware.com/articles/ThePerilsofJavaSchools.html" target="_blank">this great article about how the languages can separate good from great programmers pretty easily</a>. Now, if you're not aiming to code professionally, it may not be an issue to you, but it may still be worth considering. After all, a number of you nominated different flavors and variations of C and C++ that are applicable to specific applications, like <a href="http://en.wikipedia.org/wiki/ANSI_C" target="_blank">ANSI C</a>, which is used to program Arduino microprocessors, <a href="http://www.robotc.net/" target="_blank">Robot C</a>, specifically used in robotics. Many of you also said that starting with the hard stuff like C and C++ makes other stuff (Java, for example) not so hard. For more, check out <a href="http://lifehacker.com/vote-c-programming-language-why-still-the-best-la-1493358006">the nominations threads here</a> and <a href="http://lifehacker.com/vote-cwhy-so-many-other-languages-are-based-on-c-if-1493361556">here</a>.</p>
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+<h3 data-textannotation-id="176743e74b89978a56e7ca609072b09a"><a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a></h3>
+
+
+
+
+
+
+
+
+
+
+<p class="has-media media-640" data-textannotation-id="9b862179358c92e193c7314ab04f8300"><span class="img-border"><img src="http://i.kinja-img.com/gawker-media/image/upload/s--nd5KUk8O--/c_fit,fl_progressive,q_80,w_636/pbtjrebfyvzm9dgr9efd.jpg" width="636" height="357" alt="Five Best Programming Languages for First-Time Learners" data-chomp-id="pbtjrebfyvzm9dgr9efd" data-asset-url="http://i.kinja-img.com/gawker-media/image/upload/s--nd5KUk8O--/c_fit,fl_progressive,q_80,w_636/pbtjrebfyvzm9dgr9efd.jpg" data-format="jpg" /></span></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="4833560e05aa46ab6eefd2d3c185ceae">JavaScript, not to be confused with Java, is a scripting language that was developed in the 90s by <a href="http://en.wikipedia.org/wiki/Brendan_Eich" target="_blank">Brendan Eich</a>, formerly of Netscape Communications and now of the Mozilla Foundation. JavaScript is one of the fundamental technologies on which the web as we know it is based. Don't be fooled though—JavaScript exists outside of the browser as well, but largely in the context of connected applications and services. The language itself is dynamic, and gives programmers the flexibility to use object-oriented programming styles (as the language itself is mostly object oriented) as well as functional and imperative ones. It derives much of its syntax from C, and if you plan to do any development for the web in any fashion, learning JavaScript should be on your list. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="03d53fffc3f6a1e7e3a41be76d5cbabd">Fortunately, JavaScript is relatively easy to learn, is already right there in your browser for you to play with, and even though it's been around for a while, it's rapidly gaining popularity. Many of you who nominated it noted that your bang for the buck when learning JavaScript is huge, because you can start using it right away to build things for the web—which may very well be what many people are learning to code for. Some of you even noted that you have a headstart on more complicated languages like C and Java by picking up JavaScript first (but don't be fooled—there are few similarities between JavaScript and Java.) Plus, if you're looking to code professionally, JavaScript is in extremely high demand these days. To read more, head over to <a href="http://lifehacker.com/vote-javascript-ecmascript-why-javascript-is-quickl-1493315866">the nominations thread here</a>. </p>
+
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="4f96af591e42fbe60df553c4d2000c7b">There you have it! Now it's time to put these five to an all out vote to determine what you, the Lifehacker community, would most encourage a first-time learner to pick up: </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="f4832dccee17f988f9947746ea7e73db"><script src="http://static.polldaddy.com/p/7689440.js"></script></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="2482b1acd626ed7cee42cfd48dd7095a">We don't nearly have enough space to offer honorable mentions to every language that just missed the cut or were also great contenders. We will however give a special nod to <strong><a href="http://en.wikipedia.org/wiki/C_Sharp_%28programming_language%29" target="_blank">C# .NET</a></strong>, which <a href="http://lifehacker.com/vote-c-net-why-this-was-tough-everybody-tends-to-1493364012">reader wakers01 made a very convincing argument for</a> in the nominations thread. C# and the .NET Framework were designed and developed by Microsoft, who also <a href="http://msdn.microsoft.com/en-us/library/z1zx9t92.aspx" target="_blank">is more than happy to encourage you to learn them</a>. The return on your time is solid too, since once you're familiar with the language and its syntax, you have a skillset that's more than portable if you need to move on, and applicable if you want to keep developing for the framework. </p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="58bcdb71590511c04a7603a7fbb2e2b9">It's worth noting that we <a x-inset="1" href="http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665">covered this topic on our own before</a>, which may offer some guidance to those of you who are looking for a more structured approach to the question as opposed to the community sentiment. Whatever you prefer, good luck with your coding endeavors!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<aside class="referenced-wide referenced-fullwidth js_inset tmpl_referencedGroupFullWidth clearfix core-decorated-inset">
+    <div class="container">
+        
+        
+            
+    <div class="referenced-item  " data-inset-id="1555984873">
+        
+            
+    <div class="columns small-4 medium-3 referenced-item-image referenced-item-processed">
+        <a href="http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665" onclick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - inset photo');" target="_blank">
+            <span class="img-border ">
+            
+                <img src="http://i.kinja-img.com/gawker-media/image/upload/s--T8DKNtSo--/c_fill,fl_progressive,g_center,h_77,q_80,w_137/198h7u6gnyt4fjpg.jpg" />
+                
+            </span>
+        </a>
+    </div>
+
+        
+         
+    <h6 class="headline" onclick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - inset headline');">
+        <span class="full-headline">
+            <a href="http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665" target="_blank">
+                Which Programming Language Should I Learn First?
+            </a>
+        </span>
+        <span class="medium-headline">
+            <a href="http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665" target="_blank">
+                Which Programming Language Should I Learn First?
+            </a>
+        </span>
+        <span class="small-headline">
+            <a href="http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665" target="_blank">
+                Which Programming Language Should I Learn First?
+            </a>
+        </span>
+    </h6>
+ 
+        
+    
+        <p class="text  small-offset-3 ">
+            
+                <span class="referenced-item-excerpt hide-for-small">Dear Lifehacker, With all the buzz about learning to code, I've decided to give it a try. The…</span>
+            
+            <a href="http://lifehacker.com/which-programming-language-should-i-learn-first-1477153665" class="js_readmore readmore-referenced" onclick="window.ga('send', 'event', 'Permalink page click', 'Permalink page click - inset read more link');" target="_blank">
+                Read more <span class="js_external-text hide">Read more</span>
+            </a>
+        </p>
+    
+
+    </div>
+
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="58c858bf0f7c6e8579a61423f4456695">Have something to say about one of the contenders? Want to make the case for your personal favorite, even if it wasn't included in the list? <em>Remember, the top five are based on <a href="http://lifehacker.com/whats-the-best-programming-language-for-first-time-lea-1493135749">your most popular nominations from the call for contenders thread from earlier in the week</a>.</em> Don't just complain about the top five, let us know what your preferred alternative is—and make your case for it—in the discussions below.</p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="5ac09089139ccbf91742694268829dfa"><em><small>The Hive Five is based on reader nominations. As with most Hive Five posts, if your favorite was left out, it didn't get the nominations required in the call for contenders post to make the top five. We understand it's a bit of a popularity contest. Have a suggestion for the Hive Five? Send us an email at tips+hivefive@lifehacker.com!</small></em></p>
+
+
+
+
+
+
+
+
+
+
+<p data-textannotation-id="51309e34ba758b889cd5b422125cb10f"><em><small>Title photo by <a href="http://www.flickr.com/photos/riebart/4466482623/" target="_blank">Michael Himbeault</a>.</small></em></p><!-- core-decorated --></div><div class="row"><div class="post-bottom column"><a name="replies"></a><div class="post-tools-wrapper right" data-forpost="1494256243">	<a href="#" class="js_like button-recommend-post text-small proxima hover-icon" title="Recommend"><span class="js_like_count">38</span><span class="icon icon-star oversized icon-append js_like_icon"></span></a>	<span id="js_reply-count" class="proxima text-small mlm mrn" style="display: none">313<span class="icon icon-bubble-round oversized"></span></span><script>document.getElementById('js_reply-count').style.display = 'inline';</script><a id="js_reply-to-post" href="#" class="reply-to-post reply-count hover-icon proxima js_reply-to-post text-small readonly-hide" rel="nofollow" disabled>Reply</a><noscript>	<span id="js_reply-count" class="proxima text-small mlm mrn">313<span class="icon icon-bubble-round oversized"></span></span><script>document.getElementById('js_reply-count').style.display = 'inline';</script><a href="#" class="reply-to-post reply-count hover-icon proxima text-small" rel="nofollow">Discuss<span class="icon icon-bubble-round oversized"></span></a></noscript><div class="js_like-list-bottom-container"></div></div>	<div class="fb-like" data-href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div></div></div></div></div></article></div></section><section class="js_replies " data-authorblogname=alanhenry data-replycount=313>	<div class="replies-wrapper fade"><div class="js_replycol js_ad300-companion">	<dl class="reply-filters-tabbed sub-nav-tabbed js_reply-filters"><dd class="js_reload-groupchats reload-groupchats"><a href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" class="tab-author" onclick="window.ga(&#39;send&#39;, &#39;event&#39;, &#39;Group Chats&#39;, &#39;click&#39;, &#39;Author Chat click&#39; );"><span class="js_author-name">Alan Henry</span>’s Discussions</a></dd><dd  class="js_allview allview"><a href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243/all" data-currentview="" onclick="window.ga(&#39;send&#39;, &#39;event&#39;, &#39;Group Chats&#39;, &#39;click&#39;, &#39;All Replies click&#39;);" title="View all 313 replies">All replies</a></dd></dl><div class="js_permalink-place permalink-place row" style="display: none;"><div class="row"><div class="twelve columns center"><a class="button secondary js_collapse-branch">Show all threads</a></div></div></div><div class="js_reply-form-container row"></div><div data-view="permalink" class="js_branch-permalink permalink-branch-list branch-list"></div><div data-view="author" class="js_branch-authorchat js_branch-list branch-list branch-authorchat"></div><div data-view="follower" class="js_branch-followchat branch-list"></div><div data-view="popular" class="js_branch-scorechat branch-list"></div><div data-view="user" class="js_branch-userchat branch-list"></div><div class="js_branch-grid other-threads"><h6 class="section-header js_header hide">Hosts of other popular chats</h6><div class="row js_grid"></div></div><div class="js_replymessage hide createnewreply"></div><div class="js_reply-loading-progress reply-spinner hide">	<span class="spinner bounce"><span class="one"></span><span class="two"></span><span class="three"></span></span></div><div class="js_discussionlinks discussionlinks row hide"></div><div class="js_load-more"></div>	<div class="text-right reply-views js_reply-views"><a class="js_reload-groupchats hide" href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'Popular Chat click' );">View Alan Henry's discussions</a><a class="js_allview hide" href="http://lifehacker.com/five-best-programming-languages-for-first-time-learners-1494256243/all" onclick="window.ga('send', 'event', 'Group Chats', 'click', 'All Replies click' );">View all 313 replies</a></div></div></div><div class="js_loading-layer row hide"><div class="column"><div class="row"><div class="loading-layer"><div class="large-8 large-offset-4 columns"><div class="loading-layer-main-column">	<span class="spinner bounce"><span class="one"></span><span class="two"></span><span class="three"></span></span></div></div></div></div></div></div></section><script type="text/javascript">(function () {window.kinja = window.kinja || {}; window.kinja.postMeta = JSON.parse(decodeURIComponent( '%7B%22post%22%3A%7B%22id%22%3A1494256243%2C%22headline%22%3A%22Five%20Best%20Programming%20Languages%20for%20First-Time%20Learners%22%2C%22permalink%22%3A%22http%3A%2F%2Flifehacker.com%2Ffive-best-programming-languages-for-first-time-learners-1494256243%22%2C%22first100Characters%22%3A%22If%20you%27re%20thinking%20of%20learning%20to%20code%2C%20the%20language%20you%20decide%20to%20pick%20up%20first%20has%20a%20lot%20to%20do%20wit%22%2C%22firstSentence%22%3A%22If%20you%27re%20thinking%20of%20learning%20to%20code%2C%20the%20language%20you%20decide%20to%20pick%20up%20first%20has%20a%20lot%20to%20do%20wit%22%2C%22facebookImage%22%3A%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--88SHTDxu--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2Foaroblubaytkfjmcb02w.jpg%22%2C%22uri%22%3A%22http%3A%2F%2Fimg.gawkerassets.com%2Fimg%2F19bg2tz64pfrsjpg%2Foriginal.jpg%22%2C%22id%22%3A%22oaroblubaytkfjmcb02w%22%2C%22width%22%3A636%2C%22height%22%3A357%2C%22format%22%3A%22jpg%22%2C%22recommended%22%3Atrue%7D%2C%22twitterCardType%22%3A%22summary_large_image%22%2C%22plaintext%22%3A%22If%20you%27re%20thinking%20of%20learning%20to%20code%2C%20the%20language%20you%20decide%20to%20pick%20up%20first%20has%20a%20lot%20to%20do%20with%20what%20you%27re%20trying%20to%20learn%2C%20what%20you%20want%20to%20do%20with%20the%20skill%2C%20and%20where%20you%20want%20to%20eventually%20go%20from%20there.%20Still%2C%20some%20languages%20are%20easier%20to%20pick%20up%20than%20others%2C%20have%20a%20community%20dedicated%20to%20teaching%2C%20or%20offer%20more%20useful%20skills%20once%20you%20learn%20them.%20Here%20are%20five%20of%20the%20best%2C%20based%20on%20your%20nominations.%22%2C%22authorScreenName%22%3A%22alanhenry%22%2C%22tags%22%3A%5B%7B%22id%22%3A1191180789%2C%22name%22%3A%22hive%20five%22%2C%22desc%22%3A%22hive%20five%22%2C%22urlName%22%3A%22hive-five%22%7D%2C%7B%22id%22%3A1187822461%2C%22name%22%3A%22code%22%2C%22desc%22%3A%22code%22%2C%22urlName%22%3A%22code%22%7D%2C%7B%22id%22%3A1232592446%2C%22name%22%3A%22programming%22%2C%22desc%22%3A%22programming%22%2C%22urlName%22%3A%22programming%22%7D%2C%7B%22id%22%3A323496342%2C%22name%22%3A%22programming%20languages%22%2C%22desc%22%3A%22programming%20languages%22%2C%22urlName%22%3A%22programming-languages%22%7D%2C%7B%22id%22%3A471243361%2C%22name%22%3A%22developers%22%2C%22desc%22%3A%22developers%22%2C%22urlName%22%3A%22developers%22%7D%2C%7B%22id%22%3A1192467220%2C%22name%22%3A%22software%22%2C%22desc%22%3A%22software%22%2C%22urlName%22%3A%22software%22%7D%2C%7B%22id%22%3A1451216972%2C%22name%22%3A%22development%22%2C%22desc%22%3A%22development%22%2C%22urlName%22%3A%22development%22%7D%2C%7B%22id%22%3A1183885761%2C%22name%22%3A%22feature%22%2C%22desc%22%3A%22feature%22%2C%22urlName%22%3A%22feature%22%7D%2C%7B%22id%22%3A3784316%2C%22name%22%3A%22java%22%2C%22desc%22%3A%22java%22%2C%22urlName%22%3A%22java%22%7D%2C%7B%22id%22%3A10016698%2C%22name%22%3A%22javascript%22%2C%22desc%22%3A%22javascript%22%2C%22urlName%22%3A%22javascript%22%7D%2C%7B%22id%22%3A992603%2C%22name%22%3A%22c%22%2C%22desc%22%3A%22c%22%2C%22urlName%22%3A%22c%22%7D%2C%7B%22id%22%3A1494256250%2C%22name%22%3A%22c%22%2C%22desc%22%3A%22c%2B%2B%22%2C%22urlName%22%3A%22c%22%7D%2C%7B%22id%22%3A1494256251%2C%22name%22%3A%22ruby%22%2C%22desc%22%3A%22ruby%22%2C%22urlName%22%3A%22ruby%22%7D%2C%7B%22id%22%3A1185474%2C%22name%22%3A%22python%22%2C%22desc%22%3A%22python%22%2C%22urlName%22%3A%22python%22%7D%2C%7B%22id%22%3A1178384777%2C%22name%22%3A%22microsoft%22%2C%22desc%22%3A%22microsoft%22%2C%22urlName%22%3A%22microsoft%22%7D%2C%7B%22id%22%3A487430406%2C%22name%22%3A%22mozilla%22%2C%22desc%22%3A%22mozilla%22%2C%22urlName%22%3A%22mozilla%22%7D%2C%7B%22id%22%3A1371201462%2C%22name%22%3A%22oracle%22%2C%22desc%22%3A%22oracle%22%2C%22urlName%22%3A%22oracle%22%7D%2C%7B%22id%22%3A1347568370%2C%22name%22%3A%22open%20source%22%2C%22desc%22%3A%22open%20source%22%2C%22urlName%22%3A%22open-source%22%7D%5D%2C%22publishTimeMillis%22%3A1388934000406%2C%22adZone%22%3A%22collapse%22%2C%22sponsored%22%3Afalse%2C%22blogs%22%3A%5B%7B%22id%22%3A17%2C%22name%22%3A%22lifehacker%22%2C%22displayName%22%3A%22Lifehacker%22%2C%22canonicalHost%22%3A%22lifehacker.com%22%2C%22hosts%22%3A%5B%22us.lifehacker.com%22%2C%22es.lifehacker.com%22%2C%22pl.lifehacker.com%22%2C%22blog.lifehacker.com%22%2C%22au.lifehacker.com%22%2C%22fetch.lifehacker.com%22%2C%22m.lifehacker.com%22%2C%22nl.lifehacker.com%22%2C%22www.lifehacker.com%22%2C%22assets.lifehacker.com%22%2C%22ca.lifehacker.com%22%2C%22br.lifehacker.com%22%2C%22ru.lifehacker.com%22%2C%22de.lifehacker.com%22%2C%22uk.lifehacker.com%22%5D%2C%22applicationHost%22%3A%22kinja.com%22%2C%22status%22%3A%22ENABLED%22%2C%22createTimeMillis%22%3Anull%2C%22lastUpdateTimeMillis%22%3Anull%2C%22createdById%22%3Anull%2C%22ownerId%22%3Anull%2C%22description%22%3Anull%2C%22descriptionHtml%22%3Anull%2C%22properties%22%3A%22%7B%5C%22template%5C%22%3A%20%5C%22lifehacker%5C%22%2C%20%5C%22googleSiteVerification%5C%22%3A%20%5C%22R0yw_jwnGWbokA2qgkupaWGVFJnF6qGtlgbSJEMdQkw%5C%22%7D%22%2C%22adminProperties%22%3A%22%7B%5C%22fbAppId%5C%22%3A%5C%2237418175030%5C%22%2C%5C%22metaTitle%5C%22%3A%5C%22tips%20and%20downloads%20for%20getting%20things%20done%5C%22%2C%20%5C%22GANJA_IGNORE_GEO%5C%22%3A%5B%5C%22us.lifehacker.com%5C%22%5D%2C%20%5C%22blogGroup%5C%22%3A%20%5C%22lifehacker%5C%22%2C%20%5C%22googleAnalyticsID%5C%22%3A%20%5C%22UA-142218-1%5C%22%2C%20%5C%22isGmgBlog%5C%22%3Atrue%2C%20%5C%22aboutPostId%5C%22%3A%205732066%2C%20%5C%22kruxId%5C%22%3A%5C%22JO5Ggjkf%5C%22%7D%22%2C%22showLikesInLatest%22%3Anull%2C%22showRepliesInLatest%22%3Anull%2C%22timezone%22%3A%22America%2FLos_Angeles%22%2C%22timezoneOffset%22%3A-28800000%2C%22timezoneShortname%22%3A%22PST%22%2C%22avatar%22%3Anull%2C%22logo%22%3Anull%2C%22groupBlog%22%3Anull%2C%22noindex%22%3Afalse%7D%2C%7B%22id%22%3A762%2C%22name%22%3A%22alanhenry%22%2C%22displayName%22%3A%22Alan%20Henry%22%2C%22canonicalHost%22%3A%22alanhenry.kinja.com%22%2C%22hosts%22%3A%5B%5D%2C%22applicationHost%22%3A%22kinja.com%22%2C%22status%22%3A%22ENABLED%22%2C%22createTimeMillis%22%3Anull%2C%22lastUpdateTimeMillis%22%3Anull%2C%22createdById%22%3Anull%2C%22ownerId%22%3Anull%2C%22description%22%3Anull%2C%22descriptionHtml%22%3Anull%2C%22properties%22%3Anull%2C%22adminProperties%22%3Anull%2C%22showLikesInLatest%22%3Anull%2C%22showRepliesInLatest%22%3Anull%2C%22timezone%22%3A%22America%2FNew_York%22%2C%22timezoneOffset%22%3A-18000000%2C%22timezoneShortname%22%3A%22EST%22%2C%22avatar%22%3Anull%2C%22logo%22%3Anull%2C%22groupBlog%22%3Anull%2C%22noindex%22%3Afalse%7D%5D%2C%22sharedPostId%22%3Anull%2C%22defaultBlogId%22%3A17%7D%2C%22starterId%22%3A1494256243%2C%22tags%22%3A%22hive%20five%2Ccode%2Cprogramming%2Cprogramming%20languages%2Cdevelopers%2Csoftware%2Cdevelopment%2Cfeature%2Cjava%2Cjavascript%2Cc%2Cc%2Cruby%2Cpython%2Cmicrosoft%2Cmozilla%2Coracle%2Copen%20source%22%2C%22postId%22%3A1494256243%2C%22authors%22%3A%22Alan%20Henry%22%2C%22postAuthorBlogName%22%3A%22alanhenry%22%7D' ));}());</script>		<div class="ad-unit ad-300x250 default mobile js_ad-unit hide-contents" data-cb-ad-id="ad_300x250_default"><div class="ad-container js_ad-container"style="display: none;"id="ad-container-78008751" data-size="300x250" data-random="78008751" data-slot="default" data-zone-class="Zone_Mobile" data-dfp-sz="300x250,320x50"></div></div><div class="js_recommended-footer recommended-footer show-for-small-only"></div>	
+		<!-- Begin SimpleReach for sponsored posts -->
+		<script>
+			__reach_config = {
+				pid: '5266d09097b0c95740000002',   // The SimpleReach assigned Publisher ID (pid)
+				title: 'Five Best Programming Languages for First-Time Learners',  //(remember that they should be escaped, not HTML or URL encoded)
+				url: 'http:\/\/lifehacker.com\/five-best-programming-languages-for-first-time-learners-1494256243',
+				date: new Date(1388934000406),
+				authors: ['alanhenry'],
+				channels: [],
+				tags: ['hive five','code','programming','programming languages','developers','software','development','feature','java','javascript','c','c','ruby','python','microsoft','mozilla','oracle','open source'],
+				iframe: true,		     // Send event through iframe
+				domain: 'lifehacker.com'
+			};
+			(function(){
+				var s = document.createElement('script');
+				s.async = true;
+				s.type = 'text/javascript';
+				s.src = document.location.protocol + '//d8rk54i4mohrb.cloudfront.net/js/reach.js';
+				  (document.getElementsByTagName('head')[0] ||
+				   document.getElementsByTagName('body')[0]).appendChild(s);
+			})();
+		</script>
+		<!-- End SimpleReach for sponsored posts -->
+		<div class="js_stats" style="display: none;" data-trackurl="http://kinja.com/api/analytics/stats/track.gif?&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=permalinkTag&objectType=post&objectId=1191180789&objectId=1187822461&objectId=1232592446&objectId=323496342&objectId=471243361&objectId=1192467220&objectId=1451216972&objectId=1183885761&objectId=3784316&objectId=10016698&objectId=992603&objectId=1494256250&objectId=1494256251&objectId=1185474&objectId=1178384777&objectId=487430406&objectId=1371201462&objectId=1347568370&objectId=1494256243&blogId=17&authorId=5716553178370339807"></div><div id="analytics-permalink-view" style="display: none;" data-analytics-api-root-url="http://kinja.com/api/analytics/" data-post-id="1494256243" data-blog-id="17" data-author-id="5716553178370339807"></div></div></div><div class="row ad-wide ad-bottom pbs show-for-xlarge-up" id="ad-970x250-container"><div class="column">		<div class="ad-unit ad-970x250 default desktop js_ad-unit" data-cb-ad-id="ad_970x250_default"><div class="ad-container js_ad-container"style="display: none;"id="ad-container-60142255" data-size="970x250" data-random="60142255" data-slot="default" data-zone-class="Zone_970x250" data-dfp-sz="970x250,728x90"></div></div></div></div><div id="trackers" style="display: none;"></div><noscript><img src="http://pubads.g.doubleclick.net/activity;dc_iu=/4246/DFP_Audience_Pixel;dc_seg=22540930;blog=lifehacker;ord=1?" width="1" height="1" border="0" /></noscript><script type="text/javascript">
+		Date.now = Date.now || function() { return +new Date; };
+		window.statsdTicks = [{
+			ms: Date.now(),
+			message: "JS init reached",
+			reporting: false
+		}];
+		</script><script>markUserTime("JS - Before Require load");</script><script type="text/javascript" src="http://c.kinja-static.com/assets/javascripts//lib/require.js?2"></script><script type="text/javascript">(function () {window.kinja = window.kinja || {}; window.kinja.meta = JSON.parse(decodeURIComponent( '%7B%22cloudinaryRequest%22%3A%7B%22default%22%3A%7B%22eager%22%3A%22c_fill%2Cfl_progressive%2Cg_center%2Ch_180%2Cq_80%2Cw_320%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_600%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_100%2Cq_80%2Cw_100%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_77%2Cq_80%2Cw_137%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_600%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_264%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_358%2Cq_80%2Cw_636%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_264%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_120%2Cq_80%2Cw_120%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_636%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_358%2Cq_80%2Cw_636%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_80%2Cq_80%2Cw_80%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_180%2Cq_80%2Cw_320%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_180%2Cq_80%2Cw_320%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_320%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_120%2Cq_80%2Cw_120%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_200%2Cq_80%2Cw_200%7Cc_fill%2Cfl_progressive%2Cg_faces%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_faces%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_80%2Cq_80%2Cw_80%7C%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_358%2Cq_80%2Cw_636%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_100%2Cq_80%2Cw_100%7Cc_fit%2Cfl_progressive%2Ch_100%2Cq_80%2Cw_75%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_200%2Cq_80%2Cw_200%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_636%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_320%7Cc_fit%2Cfl_progressive%2Ch_100%2Cq_80%2Cw_75%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_358%2Cq_80%2Cw_636%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_180%2Cq_80%2Cw_320%7C%22%2C%22timestamp%22%3A%221422450054%22%2C%22signature%22%3A%22b51dc3458bbb1aec68fb19f4e9fe5a827c46a03a%22%2C%22api_key%22%3A%22196565315244936%22%2C%22eager_async%22%3A%22true%22%7D%2C%22gif%22%3A%7B%22eager%22%3A%22c_fill%2Cfl_progressive%2Cg_center%2Ch_180%2Cq_80%2Cw_320%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_600%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_100%2Cq_80%2Cw_100%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_77%2Cq_80%2Cw_137%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_600%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_264%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_358%2Cq_80%2Cw_636%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_264%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_120%2Cq_80%2Cw_120%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_636%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_358%2Cq_80%2Cw_636%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_80%2Cq_80%2Cw_80%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_180%2Cq_80%2Cw_320%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_180%2Cq_80%2Cw_320%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_320%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_120%2Cq_80%2Cw_120%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_200%2Cq_80%2Cw_200%7Cc_fill%2Cfl_progressive%2Cg_faces%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_faces%2Ch_77%2Cq_80%2Cw_137%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_80%2Cq_80%2Cw_80%7C%7Cc_fill%2Cfl_progressive%2Cg_north%2Ch_358%2Cq_80%2Cw_636%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_470%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_100%2Cq_80%2Cw_100%7Cc_fit%2Cfl_progressive%2Ch_100%2Cq_80%2Cw_75%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_200%2Cq_80%2Cw_200%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_636%7Cc_fit%2Cfl_progressive%2Cq_80%2Cw_320%7Cc_fit%2Cfl_progressive%2Ch_100%2Cq_80%2Cw_75%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_358%2Cq_80%2Cw_636%7Cc_fill%2Cfl_progressive%2Cg_center%2Ch_180%2Cq_80%2Cw_320%7C%22%2C%22timestamp%22%3A%221422450054%22%2C%22tags%22%3A%22gif%22%2C%22signature%22%3A%2213db658a9046b931bcfcde138c9860dcdc44d994%22%2C%22api_key%22%3A%22196565315244936%22%2C%22eager_async%22%3A%22true%22%7D%7D%2C%22syncFeatures%22%3Anull%2C%22featuresLastUpdate%22%3A1422447850852%2C%22killswitches%22%3A%7B%22liveblog.pollIntervalMillis%22%3A%7B%22name%22%3A%22liveblog.pollIntervalMillis%22%2C%22value%22%3A%2210000%22%2C%22defaultValue%22%3A%2210000%22%2C%22meta%22%3Anull%7D%2C%22liveblog.appRevision%22%3A%7B%22name%22%3A%22liveblog.appRevision%22%2C%22value%22%3A%221%22%2C%22defaultValue%22%3A%221%22%2C%22meta%22%3Anull%7D%2C%22maintenance%22%3A%7B%22name%22%3A%22maintenance%22%2C%22value%22%3A%22off%22%2C%22defaultValue%22%3A%22off%22%2C%22meta%22%3Anull%7D%7D%2C%22mode%22%3A%22live%22%2C%22pageType%22%3A%22permalink%22%2C%22currentUrl%22%3A%22%2Ffive-best-programming-languages-for-first-time-learners-1494256243%22%2C%22locale%22%3A%22en-US%22%2C%22localeWithUnderscore%22%3A%22en_US%22%2C%22imageSizes%22%3A%7B%22KinjaCenteredMedium%22%3A%7B%22width%22%3A320%2C%22height%22%3A180%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22blg-logo%22%3A%7B%22width%22%3A600%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22blg-avt-%22%3A%7B%22width%22%3A100%2C%22height%22%3A100%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22kc-small%22%3A%7B%22width%22%3A137%2C%22height%22%3A77%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22BlogLogo%22%3A%7B%22width%22%3A600%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22k-large%22%3A%7B%22width%22%3A470%2C%22height%22%3A264%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22kc-xlarge%22%3A%7B%22width%22%3A636%2C%22height%22%3A358%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaLarge%22%3A%7B%22width%22%3A470%2C%22height%22%3A264%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaCenteredSmall%22%3A%7B%22width%22%3A137%2C%22height%22%3A77%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22k-small%22%3A%7B%22width%22%3A137%2C%22height%22%3A77%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22AvatarMedium%22%3A%7B%22width%22%3A120%2C%22height%22%3A120%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22ku-xlarge%22%3A%7B%22width%22%3A636%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaSmall%22%3A%7B%22width%22%3A137%2C%22height%22%3A77%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaExtraLarge%22%3A%7B%22width%22%3A636%2C%22height%22%3A358%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22ku-large%22%3A%7B%22width%22%3A470%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22avt-small%22%3A%7B%22width%22%3A80%2C%22height%22%3A80%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22k-medium%22%3A%7B%22width%22%3A320%2C%22height%22%3A180%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaMedium%22%3A%7B%22width%22%3A320%2C%22height%22%3A180%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22ku-medium%22%3A%7B%22width%22%3A320%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22avt-medium%22%3A%7B%22width%22%3A120%2C%22height%22%3A120%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22avt-large%22%3A%7B%22width%22%3A200%2C%22height%22%3A200%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22k-thumb%22%3A%7B%22width%22%3A137%2C%22height%22%3A77%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22faces%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaThumb%22%3A%7B%22width%22%3A137%2C%22height%22%3A77%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22faces%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22AvatarSmall%22%3A%7B%22width%22%3A80%2C%22height%22%3A80%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22original%22%3A%7B%7D%2C%22k-xlarge%22%3A%7B%22width%22%3A636%2C%22height%22%3A358%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22north%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaUncroppedLarge%22%3A%7B%22width%22%3A470%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22BlogAvatar%22%3A%7B%22width%22%3A100%2C%22height%22%3A100%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22ku-inset%22%3A%7B%22width%22%3A75%2C%22height%22%3A100%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22AvatarLarge%22%3A%7B%22width%22%3A200%2C%22height%22%3A200%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaUncroppedExtraLarge%22%3A%7B%22width%22%3A636%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaUncroppedMedium%22%3A%7B%22width%22%3A320%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaUncroppedInset%22%3A%7B%22width%22%3A75%2C%22height%22%3A100%2C%22crop%22%3A%22fit%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22KinjaCenteredExtraLarge%22%3A%7B%22width%22%3A636%2C%22height%22%3A358%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22kc-medium%22%3A%7B%22width%22%3A320%2C%22height%22%3A180%2C%22crop%22%3A%22fill%22%2C%22gravity%22%3A%22center%22%2C%22flags%22%3A%22progressive%22%2C%22quality%22%3A80%7D%2C%22Original%22%3A%7B%7D%7D%2C%22blog%22%3A%7B%22id%22%3A17%2C%22name%22%3A%22lifehacker%22%2C%22displayName%22%3A%22Lifehacker%22%2C%22canonicalHost%22%3A%22lifehacker.com%22%2C%22applicationHost%22%3A%22kinja.com%22%2C%22status%22%3A%22ENABLED%22%2C%22description%22%3A%22Tips%20and%20downloads%20for%20getting%20things%20done%22%2C%22descriptionHtml%22%3A%22%3Cp%3ETips%2C%20tricks%2C%20and%20downloads%20for%20getting%20things%20done.%3C%2Fp%3E%3Cp%3E%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Fthe-lifehacker-app-directory-curates-the-best-apps-for-5803257%5C%22%20rel%3D%5C%22nofollow%5C%22%3EAPP%20DIRECTORY%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fdownloads%5C%22%20rel%3D%5C%22nofollow%5C%22%3EDOWNLOADS%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fproductivity%5C%22%20rel%3D%5C%22nofollow%5C%22%3EPRODUCTIVITY%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fdiy%5C%22%20rel%3D%5C%22nofollow%5C%22%3EDIY%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fmoney%5C%22%20rel%3D%5C%22nofollow%5C%22%3EMONEY%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fsecurity%5C%22%20rel%3D%5C%22nofollow%5C%22%3ESECURITY%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fdealhacker%5C%22%20rel%3D%5C%22nofollow%5C%22%3ELIFEHACKER%20DEALS%3C%2Fa%3E%20-%20%3Ca%20href%3D%5C%22http%3A%2F%2Flifehacker.com%2Ftag%2Fnightschool%5C%22%20rel%3D%5C%22nofollow%5C%22%3ENIGHT%20SCHOOL%3C%2Fa%3E%3C%2Fp%3E%22%2C%22showLikesInLatest%22%3Afalse%2C%22showRepliesInLatest%22%3Afalse%2C%22timezone%22%3A%22America%2FLos_Angeles%22%2C%22timezoneOffset%22%3A-28800000%2C%22timezoneShortname%22%3A%22PST%22%2C%22locale%22%3A%22en-US%22%2C%22robotsAllowed%22%3Atrue%2C%22fbAppId%22%3A%2237418175030%22%2C%22googleSiteVerification%22%3A%22R0yw_jwnGWbokA2qgkupaWGVFJnF6qGtlgbSJEMdQkw%22%2C%22googleAnalyticsID%22%3A%22UA-142218-1%22%2C%22kruxId%22%3A%22JO5Ggjkf%22%2C%22template%22%3A%22lifehacker%22%2C%22blogGroup%22%3A%22lifehacker%22%2C%22isGmgBlog%22%3Atrue%2C%22groupBlog%22%3Atrue%2C%22showInsets%22%3Atrue%2C%22hasTouchIcon%22%3Afalse%2C%22avatar%22%3A%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--I5Hl1NTc--%2Fc_fit%2Cfl_progressive%2Cq_80%2Cw_636%2F192oza44hceztpng.png%22%2C%22uri%22%3Anull%2C%22id%22%3A%22192oza44hceztpng%22%2C%22width%22%3A636%2C%22height%22%3Anull%2C%22format%22%3A%22png%22%2C%22recommended%22%3Anull%7D%2C%22logo%22%3A%7B%22src%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Fs--eu04ih5c--%2Fbwiqhbo45ulldozwchb0.png%22%2C%22uri%22%3A%22http%3A%2F%2Fi.kinja-img.com%2Fgawker-media%2Fimage%2Fupload%2Ft_k-xlarge2%2Fbwiqhbo45ulldozwchb0.png%22%2C%22id%22%3A%22bwiqhbo45ulldozwchb0%22%2C%22width%22%3A636%2C%22height%22%3A358%2C%22format%22%3A%22png%22%2C%22recommended%22%3Anull%7D%2C%22noindex%22%3Afalse%7D%2C%22blogOwner%22%3A%7B%22id%22%3A%225716509846451982265%22%2C%22screenName%22%3A%22whitsongordon%22%2C%22displayName%22%3A%22Whitson%20Gordon%22%2C%22superUser%22%3Afalse%2C%22createTimeMillis%22%3A1353309392676%2C%22lastUpdateTimeMillis%22%3A1398276474650%2C%22defaultBlogId%22%3A768%2C%22defaultBlog%22%3Anull%2C%22avatar%22%3A%7B%22id%22%3A%2217z00h8twlstpjpg%22%2C%22format%22%3A%22jpg%22%7D%7D%2C%22blogSales%22%3A%7B%22blogId%22%3A17%2C%22amazonInsetsEnabled%22%3Atrue%2C%22amazonAffiliateTag%22%3A%22lifehackeramzn-20%22%2C%22adsEnabled%22%3Atrue%2C%22adNetworkId%22%3A4246%2C%22adSiteName%22%3A%22gm.lifehacker%22%2C%22tagsExcludedFromPartnerRss%22%3A%5B%5D%2C%22tagsForceSynced%22%3A%5B%22dyson%22%2C%22health%22%2C%22app%20directory%22%5D%2C%22adSlotsDisabled%22%3A%5B%5D%2C%22stored%22%3Atrue%7D%2C%22imgassets%22%3A%22http%3A%2F%2Fc.kinja-static.com%2Fassets%2Fimages%2F%22%7D' ));}());</script><script type="text/javascript">(function () {/* This AMD configuration is used in these contexts:1) in-browser2) build process3) tests*/(function () {'use strict';/*globals requirejs, document */requirejs.config({bundles: {'lib/scribe/scribe': ['scribe']},paths: (function () {var paths = {'html-janitor': 'lib/html-janitor',jquery: 'lib/jquery',underscore: 'lib/underscore',backbone: 'lib/backbone','backbone.marionette': 'lib/backbone.marionette','backbone.stickit': 'lib/backbone.stickit',moment: 'lib/amd-wrapped/momentjs/moment','moment-timezone': 'lib/amd-wrapped/momentjs/moment-timezone','jquery.tap': 'lib/amd-wrapped/tap.js/jquery.tap',ace: 'lib/ace','scribe-plugin-heading-command': 'lib/scribe/plugins/scribe-plugin-heading-command','scribe-plugin-smart-lists': 'lib/scribe/plugins/scribe-plugin-smart-lists','scribe-plugin-blockquote-command': 'lib/scribe/plugins/scribe-plugin-blockquote-command','scribe-plugin-intelligent-unlink-command': 'lib/scribe/plugins/scribe-plugin-intelligent-unlink-command','scribe-plugin-formatter-html-ensure-semantic-elements': 'lib/scribe/plugins/scribe-plugin-formatter-html-ensure-semantic-elements','scribe-plugin-inline-styles-to-elements': 'lib/scribe/plugins/scribe-plugin-inline-styles-to-elements','scribe-plugin-keyboard-shortcuts': 'lib/scribe/plugins/scribe-plugin-keyboard-shortcuts','scribe-plugin-sanitizer': 'lib/scribe/plugins/scribe-plugin-sanitizer','scribe-plugin-code-command': 'lib/scribe/plugins/scribe-plugin-code-command','scribe-plugin-curly-quotes': 'lib/scribe/plugins/scribe-plugin-curly-quotes'};if (typeof document !== 'undefined') {paths.templates = 'templates/closure/' + (document.getElementsByTagName('html')[0].getAttribute('lang') || 'en-US');}return paths;}())});}());var modules = {"BaseApp": "-be28d3a23efd6d627b700b577ed2d70a","TagPageApp": "-74f7976e1bb5c32a31b4139c802fd74c","FrontPageApp": "-1ca5e63f4e033ac44b36729d30918f1c","Main": "-7c24e6fd58b9991d816c48e877be41d9","PromotedPostPreview": "-aae1d1888f1bcf90647e023e8ea63b92","SettingsPageApp": "-547ffa0eb5f0b5f808ce1bab3bc4d664","RuleSystem": "-728ad594e4c87eca9e0c507010a6abd3","ImagePlaceholder": "-a006bdcfa95a783d4eff179caa434feb","ace": "-a486a39565033c80d86a498ff172dad1","AmazonStats": "-2263562d6f07127f2bd5fc1aa5ee6c2d","GroupchatsModule": "-2df627487e5ee0bd74b034692e7e8044","KindrApp": "-079fe9137b5b7bd1d5f7288797f0a3f9","FeaturesPageApp": "-7dfcbff4360e1d05805173f689222ad4","Commerce": "-bbddce56119684e33436bcc38a20675f","LeaderboardStatsPageApp": "-46885d331fc9d8829b26f9faaf363236","ScribeEditor": "-c8d5e070e5ebf2dd6f94cf1b00c667fa","PrivatePageApp": "-4ab746cf52c25cd9fe483884e263f606","PostDebugPageApp": "-667c0a8e1abe30856ccd0ed36f20e630","PostApp": "-e185de441592849cb51724ba85a262bf","StatsPageApp": "-fd8c03b4c93b1a0032401beeacb02d42","FlaggedRepliesApp": "-8aa5db4c5cd20b677e1d01251b1f6580","MarionetteEditor": "-40d9dbef6409172fbbd89078c9b05047","AccountModalsModule": "-f387f8d6444a977383412375831de35e","BlacklistPageApp": "-dce96b398a07af713f5a679ae237ed96","JWPlayer": "-bcb2726c49022f1b0a79203da422279b","GmgFeaturesPageApp": "-74f28c0ff422238a1e05a72997cac923","DiscussionModule": "-8f3e73f218dc7d99fb8c8abb7c1fadf3","ErrorPageApp": "-4e49818fdd24c609c7af41c89fe6cd43","NotificationsPageApp": "-a7a6d903a794d5c438719fe8a8e23f15","TipsApp": "-54a22541a6e559a6c018c03e1e18bce8","KinjaAnalytics": "-ab5076a5c52b59dee82d4a7dbfe18d1a","KinjaFeedApp": "-6577a6ddc6d2b953fa0206a8c689e020","AmazonInsetsModule": "-02880f49742d6d4d5e6a5b17b49205b1","SearchPageApp": "-739f9692f5f23791401f2a5f0d2bc1b8","Raven": "-3467f3aed7fecb0be39f14c0d7095e44","BusinessModule": "-bbbff3453736f0c57bdede585e23ec4b","UIKitApp": "-16e78ee5c6431d82b04bccb6387b84c2","BlogSettingsModule": "-3717b36de7a8d768d50183f6a443445d","StatsPerformanceApp": "-48bbad2de208cce2d18b42d543bfd0bf"}, paths = {}, baseUrl = "http://c.kinja-static.com/assets/javascripts-min/", modulePath = "layer/"; for (var module in modules) {if (modules.hasOwnProperty(module)) {paths["module/" + module] = "module/" + module + "-en-US" + modules[module]; paths["layer/" + module] = "layer/" + module + "-en-US" + modules[module];}}require.config({waitSeconds: 0, baseUrl: baseUrl, paths: paths, map: {"*": {"config": "config"}}});markUserTime("JS - Before preload"); var mainModules = [modulePath + "Main", modulePath + "PostApp"];require(mainModules, function () {markUserTime("JS - After preload"); require(["module/Main"], function () {markUserTime("JS - After app init");});});}());</script><!--[if gte IE 9]> --><script>require(["module/Raven"]);</script><!-- <![endif]--><div class="reveal-modal-bg"></div><div class="ad-background"></div><div id="modalplaceholder"></div></div><div class="footer-kinja"><div class="footer-kinja__top">	<footer class="row site-footer js_site-footer"><div class="large-8 large-offset-4 columns text-center"><ul class="list list-text text-light proxima"><li><a href="/about">About</a></li><li><a href="http://help.gawker.com/" target="_blank">Help</a></li><li><a href="http://legal.kinja.com/kinja-terms-of-use-90161644">Terms of Use</a></li><li><a href="http://legal.kinja.com/privacy-policy-90190742">Privacy</a></li><li><a href="http://advertising.gawker.com/">Advertising</a></li><li><a href="http://advertising.gawker.com/about/index.php#contact">Permissions</a></li><li><a href="http://legal.kinja.com/content-guidelines-90185358">Content Guidelines</a></li><li><a href="http://feeds.gawker.com/lifehacker/full">RSS</a></li><li><a href="http://grnh.se/2ctqpi">Jobs</a></li></ul></div></footer>	
+	<!-- Begin comScore Tag -->
+	<noscript>
+		<img src="http://b.scorecardresearch.com/p?c1=2&c2=6770184&cv=2.0&cj=1" />
+	</noscript>
+	<!-- End comScore Tag -->
+	</div><div class="footer-kinja__bottom"><div class="row"><div class="column"><div class="logo-wrapper"><span>Powered by</span><a href="http://kinja.com" data-ga="[Kinja Footer, Kinja.com Click, js_pageType]"><h1 class="kinja-title kinja-title--white">Kinja</h1></a></div></div></div></div></div></div>	<div style="display:none;" id="read-only-warning"><div class="row"><div class="column small-12">Kinja is in read-only mode. We are working to restore service.</div></div></div><div id="matchbuy-placeholder"></div></body></html>
