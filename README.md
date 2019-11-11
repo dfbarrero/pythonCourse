@@ -1,6 +1,6 @@
 ## Contents
 
-0.- [Crash Python course](crash/)
+0.- [Python crash course](crash/)
 
 1.- [Introduction to Python](1-introduction/)
 
