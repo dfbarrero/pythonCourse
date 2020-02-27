@@ -120,12 +120,12 @@
 
 	\vspace{-0.2cm}
     \begin{columns}
-    \column{.70\textwidth}
-		\begin{block}{}
+    \column{.80\textwidth}
+		\begin{exampleblock}{}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/if.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 	\begin{center} \alert{Good practice: The usage of \texttt{else} is optional, try to avoid it!}\end{center}
 \end{frame}
@@ -154,11 +154,11 @@
 \begin{frame}{Conditions and loops}{if Statements (III)}
     \begin{columns}
     \column{.80\textwidth}
-		\begin{block}{Complex if Statement}
+		\begin{exampleblock}{Complex if Statement}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/if-complex.py}
 		\vspace{-0.3cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
@@ -171,7 +171,7 @@
 			\item Other languages iterate over a condition
 			\item For instance, in C: \texttt{for (i=0; i<10; i++)}
 			\end{itemize}
-		\item Two loop statements in python: \texttt{while} and \texttt{for}
+		\item Two loop statements in Python: \texttt{while} and \texttt{for}
 		\item In Python, for iterates over a sequence (lists or strings)
 			\begin{itemize}
 			\item In each iteration, it assigns a sequence value to a variable
@@ -241,25 +241,25 @@
 \end{frame}
 
 \begin{frame}{Conditions and loops}{Branching statements (II)}
+	\begin{exampleblock}{Break example}
+	\vspace{-0.2cm}
+	\lstinputlisting[basicstyle=\scriptsize]{code/break.py}
+	\vspace{-0.2cm}
+	\end{exampleblock}
 
- 
-		\begin{block}{Break example}
-		\vspace{-0.2cm}
-		\lstinputlisting[basicstyle=\scriptsize]{code/break.py}
-		\vspace{-0.2cm}
-		\end{block}
-	
+    New Python feature
+	\begin{itemize}
+		\item The \textit{format} method
+	\end{itemize}
+
 \end{frame}
 
 \begin{frame}{Conditions and loops}{Branching statements (III)}
-	
- 
-		\begin{block}{What this is doing?}
-		\vspace{-0.2cm}
-		\lstinputlisting[basicstyle=\scriptsize]{code/pseudobreak.py}
-		\vspace{-0.2cm}
-		\end{block}
-	
+	\begin{exampleblock}{What this is doing?}
+	\vspace{-0.2cm}
+	\lstinputlisting[basicstyle=\scriptsize]{code/pseudobreak.py}
+	\vspace{-0.2cm}
+	\end{exampleblock}
 \end{frame}
 
 \subsection{pass Statements}
@@ -267,8 +267,8 @@
 	\textit{pass}: A statement that does nothing ...
 		\begin{itemize}
 		\item ... yes, nothing
-		\item It is used to avoid compilation errors
-		\item Code bodies that do nothing
+		\item It is used to avoid interpreter errors
+		\item Code blocks doing nothing
 		\end{itemize}
     \begin{columns}
     \column{.3\textwidth}
@@ -330,9 +330,26 @@
 	\centering \alert{Hint: If you have to use code more than once, place it in a function}
 \end{frame}
 
-% grados farenheit y centígrados definición de funciones
+\begin{frame}{Functions}{Defining functions (I)}
+	Python functions can return values
+    
+		\begin{exampleblock}{Conversion of degrees}
+		\vspace{-0.2cm}
+		\lstinputlisting{code/conversion-grados.py}
+		\vspace{-0.2cm}
+		\end{exampleblock}
 
-
+	\vspace{0.2cm}
+	New Python features
+	\begin{itemize}
+		\item The \textit{return} statement
+	\end{itemize}
+    Function invocation 
+	\begin{itemize}
+        \item \textit{centigrados\_farenheit(100)}
+        \item \textit{temp = farenheit\_centigrados(100)}
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{Functions}{Defining functions (II)}
 	A function may be as complex as needed
@@ -341,16 +358,19 @@
 		\vspace{-0.2cm}
 		\begin{block}{Fibonacci series function}
 		\vspace{-0.2cm}
-		\lstinputlisting{code/fibo.py}
+		\lstinputlisting{code/fibo2.py}
 		\end{block}
 	\end{columns}
-	\vspace{0.3cm}
-	\hspace{1cm} \small \textit{\alert{How it works? Example: Calculation of fib(4)}}\\
 	\medskip
 	New Python elements:
 	\begin{itemize}
 		\item \small \textit{docstrings}, for automatic documentation
-		\item \small Keywords arguments
+		\item \small Adding elements to a list
+	\end{itemize}
+
+    Function invocation 
+	\begin{itemize}
+        \item \textit{fib(10)}
 	\end{itemize}
 \end{frame}
 
@@ -358,43 +378,12 @@
 	Boring (albeit useful) fact: A function is just another variable
     \begin{columns}
     \column{.6\textwidth}
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/funcionvariable.txt}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
-\end{frame}
-
-\begin{frame}{Functions}{Defining functions (IV)}
-	Python functions can return values
-  \begin{columns}
-    \column{.8\textwidth}
-		\begin{block}{Return Fibonacci series}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/fibo2.py}
-		\vspace{-0.2cm}
-		\end{block}
- \end{columns}
-
-	\vspace{0.2cm}
-	New Python features
-	\begin{itemize}
-		\item The \textit{return} statement
-		\item Adding elements to a list
-	\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Functions}{Defining functions (V)}
-Example:
-    
-		\begin{block}{Conversion of degrees}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/conversion-grados.py}
-		\vspace{-0.2cm}
-		\end{block}
-
 \end{frame}
 
 \subsection{Global and local variables}
@@ -413,8 +402,8 @@ Example:
 		\end{itemize}
 		%\item \small Parameters on the function call involve the passing of \textit{a reference} to the objects pointed by them.
 		\end{itemize}
-		\vspace{-0.2cm}
-   
+
+        \alert{Hint: Try to avoid global variables}
    \column{.4\textwidth}
 		\begin{block}{Example}
 		\vspace{-0.2cm}
@@ -424,72 +413,30 @@ Example:
 	\end{columns}
 \end{frame}
 
-
-\begin{frame}{Functions}{Global and local variables (II)}
-It is possible to modify the \textit{global object} within a function?
-    \begin{columns}
-    \column{.5\textwidth}
-		\begin{block}{Example 1}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/globalvariables-write1.py}
-		\vspace{-0.2cm}
-		\end{block}
-	\column{.5\textwidth}
-	
-		\begin{block}{Example 2}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/globalvariables-write2.py}
-		\vspace{-0.2cm}
-		\end{block}
-	\end{columns}
-\end{frame}
-
-
 \begin{frame}{Functions}{Global and local variables (III)}
 
     \begin{columns}
     \column{.5\textwidth}
-		\begin{block}{Example 3}
+		\begin{exampleblock}{Example 3}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/globalvariables-write3.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 
 \end{frame}
-
 
 \begin{frame}{Functions}{Global and local variables (IV)}
-\vspace{-0.2cm}
-	To modify a global object in a function, it must be declared using the statement \texttt{global}.
-    \begin{columns}
-    % ejemplo 65
-    \column{.8\textwidth}
-		\begin{block}{use of \textit{global} statement}
-		\vspace{-0.4cm}
-		\lstinputlisting{code/globalvariables-writeglobal.py}
-		\vspace{-0.4cm}
-		\end{block}
-	\end{columns}
-
-%		\vspace{-0.1cm}
-	Write-protection:
-	\begin{itemize}
-		\item The \textit{immutable variables} (numbers, strings, tuples) $\rightarrow$ \textbf{\emph{yes}}.
-		\item The \textit{mutable variables} (lists, dictionaries) $\rightarrow$ \alert{\textbf{\emph{no}}}.
-	\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Functions}{Global and local variables (V)}
 Examples:
     \begin{columns}
     \column{.5\textwidth}
 		\begin{block}{Example 1}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/globalvariables-write-global-mutable.py}
-		
+	    % Imprime 
+        % ['Juan', 'Pepe']
+        % ['Juan']
+	
 		\end{block}
 		\vspace{0.8cm}
 	\column{.5\textwidth}
@@ -497,12 +444,16 @@ Examples:
 		\begin{block}{Ejemplo 2}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/globalvariables-write-global-mutable2.py}
+	    % Imprime 
+        % ['Juan', 'Pepe']
+        % ['Juan', 'Pepe']
 		\vspace{-0.2cm}
 		\end{block}
 		What will happen if the list \textit{lista} is declared as \textit{global}?
 	\end{columns}
 
 \end{frame}
+
 % con reservas lo siguiente
 \begin{frame}{Functions}{Global and local variables (VI)}
 \textbf{Parameter passing in Phyton}
@@ -547,23 +498,23 @@ Examples:
 \end{block}
 \end{frame}
 
-\begin{frame}{Functions}{Global and local variables (VIII)}
-Summary:
-\begin{itemize}
-\item \textbf{Global objects}: Objects defined outside the function.
-\item \textbf{Local objects}: Objects defined within the function.
-\item \alert{Global objects} can always be read within a function.
-\item Modification of a global object, \texttt{object}, within a function:
-\begin{itemize}
-\item If \texttt{object} \alert{is immutable} $\rightarrow$ Use \texttt{global object} within the function.
-\item If \texttt{object} \alert{is mutable} $\rightarrow$
-\begin{itemize}
-\item If you want to change by an assignment $\rightarrow$ Use \texttt{global object} within the function.
-\item If you want to chanbe \textbf{using methods} $\rightarrow$ It is not necessary to use \texttt{global object} within the function.
-\end{itemize}
-\end{itemize}
-\end{itemize}
-\end{frame}
+%\begin{frame}{Functions}{Global and local variables (VIII)}
+%Summary:
+%\begin{itemize}
+%\item \textbf{Global objects}: Objects defined outside the function.
+%\item \textbf{Local objects}: Objects defined within the function.
+%\item \alert{Global objects} can always be read within a function.
+%\item Modification of a global object, \texttt{object}, within a function:
+%\begin{itemize}
+%\item If \texttt{object} \alert{is immutable} $\rightarrow$ Use \texttt{global object} within the function.
+%\item If \texttt{object} \alert{is mutable} $\rightarrow$
+%\begin{itemize}
+%\item If you want to change by an assignment $\rightarrow$ Use \texttt{global object} within the function.
+%\item If you want to chanbe \textbf{using methods} $\rightarrow$ It is not necessary to use \texttt{global object} within the function.
+%\end{itemize}
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
 
 \subsection{Default argument values}
 \begin{frame}{Functions}{Default argument values (I)}
@@ -648,11 +599,11 @@ Summary:
 	\vspace{-0.2cm}
   %  \column{\textwidth}
 		\scriptsize{
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.4cm}
 		\lstinputlisting{code/function-doc.txt}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 		}
 %	\end{columns}
 \end{frame}

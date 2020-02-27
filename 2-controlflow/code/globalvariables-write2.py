@@ -6,4 +6,4 @@ def f():
     return
 
 f()
-print(a) 
+print(a) # 4

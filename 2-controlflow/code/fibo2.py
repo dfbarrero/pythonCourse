@@ -1,4 +1,4 @@
-def fib2(n):
+def fib(n):
     """Print a Fibonacci series up to n """
     result = [] # Declare a new list
     a, b = 0, 1
