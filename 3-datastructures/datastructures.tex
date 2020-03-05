@@ -122,7 +122,65 @@
 	We need powerful mechanisms to store information: Data structures.
 \end{frame}
 
-\subsection{Data structures}
+\subsection{Array}
+\begin{frame}[fragile]{Java Collections}{Array}
+    \begin{columns}
+ 	   \column{.50\textwidth}
+		\begin{center}
+		Vector (1-D array)
+
+		\vspace{-0.2cm}
+
+		\begin{tikzpicture} [nodes in empty cells, 
+			nodes={minimum width=0.5cm, minimum height=0.5cm}, 
+			row sep=-\pgflinewidth, column sep=-\pgflinewidth]
+		border/.style={draw}
+		\matrix(vector)[matrix of nodes, 
+		row 1/.style={nodes={draw=none, minimum width=0.3cm}},
+		nodes={draw}]
+{
+   	\tiny{0} & \tiny{1} & \tiny{2} & \tiny{3}\\
+ 	$a_{0}$ & $a_{1}$ & $a_{2}$ & $a_{3}$\\
+};
+		\end{tikzpicture}
+
+		\bigskip
+
+		Matrix (2-D array)
+		\vspace{-0.2cm}
+
+		\begin{tikzpicture} [nodes in empty cells, 
+			nodes={minimum width=0.5cm, minimum height=0.5cm}, 
+			row sep=-\pgflinewidth, column sep=-\pgflinewidth]
+		border/.style={draw}
+\matrix (matrix)[matrix of nodes, column 1/.style={nodes={draw=none, minimum width=0.3cm,  minimum height=0.3cm}}, 
+		row 1/.style={nodes={draw=none, minimum width=0.3cm}},
+		nodes={draw}]
+{
+   	& \tiny{0} & \tiny{1} & \tiny{2} & \tiny{3}\\
+ \tiny{0} & $a_{0,0}$ & $a_{0,1}$ & $a_{0,2}$ & $a_{0,3}$\\
+ \tiny{1} & $a_{1,0}$ & $a_{1,1}$ & $a_{1,2}$ & $a_{1,3}$\\
+ \tiny{2} & $a_{2,0}$ & $a_{2,1}$ & $a_{2,2}$ & $a_{2,3}$\\
+};
+
+		\end{tikzpicture}
+		\end{center}
+
+  		\column{.50\textwidth}
+		Advantajes:
+		\begin{itemize}
+			\item Very fast
+		\end{itemize}
+
+		Disadvantajes:
+		\begin{itemize}
+			\item Fixed size
+            \item Nor supported in Python \textit{by default}
+		\end{itemize}
+	\end{columns}
+\end{frame}
+
+\subsection{Stack and queue}
 \begin{frame}{Data structures}{Data structures (I): Stack and queue}
     \begin{columns}
  	   \column{.15\textwidth}
@@ -172,21 +230,25 @@
 	\begin{itemize}
 		\item \texttt{push(value)} and \texttt{pop(value)}
 	\end{itemize}
+    Implemented as lists in python
 \end{frame}
 
-\subsection{Data structures}
-\begin{frame}{Data structures}{Data structures (II): Lists and hash tables}
+\subsection{lists and hash tables}
+\begin{frame}{Data structures}{Lists and hash tables}
     \begin{columns}
  		\column{.1\textwidth}
  	   	\column{.35\textwidth}
 	   	\centering Lists\\ \bigskip
+
 			\begin{tikzpicture}[every node/.style={rectangle split, rectangle split parts=2, rectangle split horizontal,minimum height=14pt}, node distance=1em, start chain,
 				 every join/.style={->, shorten <=-4.5pt}]
 
 		  		\node[draw, on chain, join] {   };
 		  		\node[draw, on chain, join] {   };
 		  		\node[draw, on chain, join] {};
+
 		  	\end{tikzpicture} 
+
 
 		\begin{flushleft}
 		Operations:
@@ -218,7 +280,9 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Data structures}{Data structures (III): Trees}
+\subsection{Trees}
+
+\begin{frame}{Data structures}{Trees (I)}
 	\begin{center}Trees
 	\end{center}
 
@@ -273,26 +337,74 @@
 		\end{columns}
 \end{frame}
 
-\begin{frame}{Data structures}{Data structures (IV): Trees}
+\begin{frame}{Data structures}{Trees (II)}
     \begin{columns}
  	   \column{.50\textwidth}
 	   	\begin{center}
 		\vspace{-0.2cm}
-		\includegraphics[width=\linewidth]{figs/tree4.png}
+		\includegraphics[width=0.9\linewidth]{figs/tree4.png}
+
+		\bigskip
+
+		\vspace{-0.2cm}
+		\includegraphics[width=0.9\linewidth]{figs/tree5.png}\\
+		\tiny
+		Source: Ian Millington, John Funge. ``\textit{Artificial Intelligence for Games}''. Ed. Morgan-Kaufmann. 2009.
 		\end{center}
 
   		\column{.50\textwidth}
-		\begin{center}
-		\vspace{-0.2cm}
-		\includegraphics[width=\linewidth]{figs/tree5.png}
-		\end{center}
+	   	\begin{center}
+		\includegraphics[width=\linewidth]{figs/raya.png}\\
+		\tiny{\href{http://www.ocf.berkeley.edu/~yosenl/extras/alphabeta/alphabeta.html}{(Source)}}
+	   	\end{center}
 		\end{columns}
+\end{frame}
 
-	\bigskip
-	\tiny
+\subsection{Graphs}
+
+\begin{frame}{Data structures}{Graphs}
 	\begin{center}
-	Source: Ian Millington, John Funge. ``\textit{Artificial Intelligence for Games}''. Ed. Morgan-Kaufmann. 2009.
+	Graphs
 	\end{center}
+
+    \begin{columns}
+ 	   \column{.50\textwidth}
+		\vspace{-0.2cm}
+		\centering 
+
+		\begin{tikzpicture}[scale=0.4]
+    	\tikzstyle{node_style} = [circle,draw=black]
+	    \tikzstyle{edge_style} = [draw=black]
+		    \node[node_style] (v1) at (-2,2) {2};
+		    \node[node_style] (v2) at (2,2) {3};
+		    \node[node_style] (v3) at (4,0) {6};
+		    \node[node_style] (v4) at (2,-2) {4};
+		    \node[node_style] (v5) at (-2,-2) {5};
+		    \node[node_style] (v6) at (-4,0) {1};
+		    \draw[edge_style]  (v1) edge (v2);
+		    \draw[edge_style]  (v2) edge (v3);
+		    \draw[edge_style]  (v3) edge (v4);
+		    \draw[edge_style]  (v4) edge (v5);
+		    \draw[edge_style]  (v5) edge (v6);
+		    \draw[edge_style]  (v6) edge (v1);
+		    \draw[edge_style]  (v5) edge (v1);
+		    \draw[edge_style]  (v5) edge (v2);
+		    \draw[edge_style]  (v4) edge (v2);
+	    \end{tikzpicture}
+		\bigskip
+
+		\includegraphics[width=\linewidth]{figs/fsm-pacman.png}\\
+		\centering \tiny \href{http://bits.citrusbyte.com/state-design-pattern-with-ruby/}{(Source)}
+
+  		\column{.50\textwidth}
+
+		\includegraphics[width=\linewidth]{figs/layout2.png}\\
+		\centering \tiny \href{https://gephi.org/features/}{(Source)}
+
+
+		\normalsize \href{https://www.youtube.com/watch?v=tH9dNESH4ic}{(Video Path-Planning)}
+
+		\end{columns}
 \end{frame}
 
 \section{Data structures in Python}
@@ -308,13 +420,14 @@
 \end{frame}
 
 \subsection{Lists}
+
 \begin{frame}[fragile]{Data structures in Python}{Lists (I)}
     \begin{columns}
  	   \column{.50\textwidth}
 	   \begin{block}{List initialization}
 	   	\begin{verbatim}
-		list = [item1, ..., itemN]
-		\end{verbatim}
+list = [item1, ..., itemN]
+\end{verbatim}
 	   \end{block}
 	   Lists are objects
  	   \column{.50\textwidth}
@@ -332,57 +445,59 @@
    \end{columns}
 \end{frame}
 
-\begin{frame}[shrink]{Data structures in Python}{Lists (II)}
-\scriptsize{
-		\begin{block}{}
+\begin{frame}[fragile]{Data structures in Python}{Lists (II)}
+		\begin{exampleblock}{}
 		\vspace{-0.4cm}
 		\lstinputlisting{code/lists.txt}
 		\vspace{-0.2cm}
-		\end{block}
-		}
+		\end{exampleblock}
 \end{frame}
 
 % uso de len(lista)
 % uso de rodajas o slices
-\begin{frame}[shrink]{Data structures in Python}{Lists (III)}
-Just as strings
-\scriptsize{
-		\begin{block}{slices.py}
+\begin{frame}[fragile]{Data structures in Python}{Lists (III)}
+    \begin{columns}
+ 	   \column{.50\textwidth}
+		\begin{exampleblock}{Slice notation in lists}
 		\vspace{-0.4cm}
 		\lstinputlisting{code/list-slices.py}
 		\vspace{-0.2cm}
-		\end{block}
-		}
+		\end{exampleblock}
+   \end{columns}
 \end{frame}
 
 % uso de split() y join()
-\begin{frame}[shrink]{Data structures in Python}{Lists (IV)}
+\begin{frame}[fragile]{Data structures in Python}{Lists (IV)}
 Sometimes it is useful to \texttt{split} a string to build a list (split) and, conversely, \texttt{join} the elements of a list to build a string
 \scriptsize{
-		\begin{block}{join-split.py}
+		\begin{exampleblock}{join-split.py}
 	%	\vspace{-0.4cm}
 		\lstinputlisting{code/join-split.py}
 %		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 		}
 \end{frame}
 % no sé si se han puesto ejemplo de métodos upper(),lower(), find(), strip(), replace(), ...
 
 
 \subsection{Lists as stacks}
-\begin{frame}[shrink]{Data structures in Python}{Lists as stacks}
+\begin{frame}[fragile]{Data structures in Python}{Lists as stacks}
 	Just use two methods: \texttt{append()} and \texttt{pop()}
+    
+    \begin{columns}
+ 	   \column{.50\textwidth}
 \scriptsize{
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.4cm}
 		\lstinputlisting{code/stack.txt}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 		}
+    \end{columns}
 \end{frame}
 
 \subsection{Lists as queues}
-\begin{frame}[shrink]{Data structures in Python}{Lists as queues}
+\begin{frame}[fragile]{Data structures in Python}{Lists as queues}
 	Queues with lists is not very efficient
 	\begin{itemize}
 	\item Use instead the \texttt{deque} module from the \texttt{collections} library.
@@ -416,12 +531,13 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 \subsection{Tuples}
 \begin{frame}{Other data structures in Python}{Tuples (I)}
 
-	\textbf{Tuple}: A sequence of items, very similar to lists.
+	\textbf{Tuple}: A sequence of \textit{ordered} items, very similar to lists.
 		\begin{itemize}
 		\item \small However they are not the same.
 		\item \small Lists are \textit{mutable}, tuples are \textit{inmutable}.
 		\item \small Tuples use to contain, \textbf{usually}, heterogeneus items.
 		\item \small Lists use to contain, \textbf{usually}, homogeneus items, used to iterate.
+        \item Lists and tuples are ordered
 		\end{itemize}
 	
 	    \begin{columns}
@@ -494,10 +610,6 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 		\vspace{0.3cm}
 		}
 	\end{columns}
-	\vspace{0.1cm}
-\small{\textbf{Sequence}: All types that behaves like sequences: Strings, lists and tuples.}
-
-
 \end{frame}
 
 %\begin{frame}{Other data structures in Python}{Sets (II)}
@@ -536,6 +648,9 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 		
 		\end{block}
    }
+
+	\vspace{0.1cm}
+    \normalsize \textbf{Sequence}: All types that behaves like sequences: Strings, lists and tuples.
 \end{frame}
 
 \subsection{Dictionaries}
@@ -643,6 +758,7 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 		== & Equal to 	 \\
 		!= & Not equal to \\
 		<> & Similar to != \\
+           & (deprecated in 3.x)\\
 		>  &Greater than \\
 		<  &Less than \\
 		>= &Less or eq. to\\
@@ -668,10 +784,13 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 		\item Truth tables represent the conditional operators
 		\end{itemize}
 
+        \bigskip
+
 		\centering \textit{Truth tables}
 		\smallskip
     	\begin{columns}
-    	\column{.5\textwidth}
+    	\column{.1\textwidth}
+    	\column{.4\textwidth}
 		\footnotesize{
 		\centering \begin{tabular}{|c|c|}\hline
 		A	   &TTFF \\
@@ -679,7 +798,7 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 		A and B &TFFF \\\hline
 		\end{tabular}
 		}
-    	\column{.5\textwidth}
+    	\column{.4\textwidth}
 		\footnotesize{
 		\centering \begin{tabular}{|c|c|}\hline
 		A	 &TTFF \\
@@ -687,16 +806,17 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 		A or B &TTTF \\\hline
 		\end{tabular}
 		}
+    	\column{.1\textwidth}
 		\end{columns}
 	\end{columns}
 \end{frame}
 
 \begin{frame}{Other data structures in Python}{More on conditions (II)}
-	\begin{block}{Example}
+	\begin{exampleblock}{Example}
 		\vspace{-0.2cm}
 		\lstinputlisting[language=python, basicstyle=\ttfamily\scriptsize]{code/ComparisonDemo.py}
 		\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 \end{frame}
 
 \begin{frame}{Other data structures in Python}{More on conditions (III)}
@@ -740,14 +860,14 @@ Sometimes it is useful to \texttt{split} a string to build a list (split) and, c
 \section{Summary}
 \begin{frame}{Summary}
 	
-\centering \begin{tabular}{l|l}
+\centering \begin{tabular}{l|c|c|l}
 \hline
-\sc Data structure & \sc Initialization  \\\hline
-List   & \texttt{li = [1, 2, 3]} \\
-Tuple  & \texttt{tu = (1, 2, 3)} \\
-	   & \texttt{tu = 1, 2, 3} \\
-Set    & \texttt{se = \{1, 2, 3\}} \\
-Dictionary& \texttt{dic = \{'abc' : 1, 'bca' : 2\}} \\\hline
+\sc    & \sc{Mutable} & \sc{Ordered} & \sc Initialization  \\\hline
+List   & Yes & Yes & \texttt{li = [1, 2, 3]} \\
+Tuple  & No  & Yes & \texttt{tu = (1, 2, 3)} \\
+	   & & & \texttt{tu = 1, 2, 3} \\
+Set    & No & No & \texttt{se = \{1, 2, 3\}} \\
+Dictionary& Yes & No & \texttt{dic = \{'abc' : 1, 'bca' : 2\}} \\\hline
 \end{tabular}
 \end{frame}
 
