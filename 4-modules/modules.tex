@@ -146,11 +146,11 @@
 	A module is just a Python script with \texttt{.py} extension
 	\vspace{-0.2cm}
 	%creo que está mal fibo.py
-	\begin{block}{fibo.py}
+	\begin{exampleblock}{fibo.py}
 	\vspace{-0.2cm}
 	\lstinputlisting[basicstyle=\scriptsize,numbers=left]{code/fibo.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 \end{frame}
 
 \begin{frame}{Using modules}{Where is it stored?}
@@ -165,17 +165,17 @@
 \begin{frame}[fragile]{Using modules}{How do I use them? (I)}
 	\begin{block}{}
 	\begin{verbatim}
-	>>> import fibo
-	>>> fibo.fib(1000)
-	1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
-	>>> fibo.fib2(100)
-	[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-	>>> fibo.__name__
-	'fibo'
-	>>> fib = fibo.fib
-	>>> fib(100)
-	1 1 2 3 5 13 21 34 55 89
-	\end{verbatim}
+>>> import fibo
+>>> fibo.fib(1000)
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+>>> fibo.fib2(100)
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+>>> fibo.__name__
+'fibo'
+>>> fib = fibo.fib
+>>> fib(100)
+1 1 2 3 5 13 21 34 55 89
+\end{verbatim}
 	\vspace{-0.2cm}
 	\end{block}
 \end{frame}
@@ -193,13 +193,13 @@
 		\item It uses the global symbol table (no need to use the modname)
 			\end{itemize}
 	
-	\begin{block}{}
+	\begin{exampleblock}{}
 	\begin{verbatim}
-	>>> from fibo import fib, fib2
-	>>> fib(100)
-	1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
-	\end{verbatim}
-	\end{block}
+>>> from fibo import fib, fib2
+>>> fib(100)
+1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
+\end{verbatim}
+	\end{exampleblock}
 \end{frame}
 
 \begin{frame}[fragile]{Using modules}{How do I use them?  (III)}
@@ -227,7 +227,7 @@
 	\begin{itemize}
 	\item \texttt{echo \$PYTHONPATH}
 	\item \texttt{import sys}\\
-	\texttt{print sys.path}
+	\texttt{print(sys.path)}
 	\end{itemize}
 	\item If it still does not find, it then searches in the installation directories of Python.
 	\end{enumerate}
@@ -249,21 +249,21 @@
 
 \begin{frame}[shrink,plain,fragile]{Executing modules}{Modules as scripts (II)}
 	\vspace{-0.3cm}
-	\begin{block}{fibo2.py}
+	\begin{exampleblock}{fibo2.py}
 	\vspace{-0.2cm}
 	\lstinputlisting[numbers=left]{code/fibo2.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 
-	\begin{block}{}
+	\begin{exampleblock}{}
 	\vspace{-0.2cm}
 	\begin{verbatim}
-    (python3 version)	
-	$ python3 fibo2.py 50
-	1 1 2 3 5 8 13 21 34
-	\end{verbatim}
+    (In Linux console)
+$ python3 fibo2.py 50
+1 1 2 3 5 8 13 21 34
+\end{verbatim}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 \end{frame}
 
 \subsection{Compiled Python files}
@@ -294,15 +294,15 @@
 	\end{itemize}
 	\begin{block}{}
 	\begin{verbatim}
-	>>> import fibo, sys
-	>>> dir(fibo)
-	['__name__', 'fib', 'fib2']
-	>>> dir()
-	['__builtins__', ... , '__spec__']
-	>>> variable = 'Hello'
-	>>> dir()
-	['__builtins__', ... , '__spec__', 'variable']
-	\end{verbatim}
+>>> import fibo, sys
+>>> dir(fibo)
+['__name__', 'fib', 'fib2']
+>>> dir()
+['__builtins__', ... , '__spec__']
+>>> variable = 'Hello'
+>>> dir()
+['__builtins__', ... , '__spec__', 'variable']
+\end{verbatim}
 	\vspace{-0.2cm}
 	\end{block}
 \end{frame}
@@ -382,16 +382,20 @@
 		\end{itemize}
 
 	\begin{block}{pip usage}
+	\vspace{-0.2cm}
 	\begin{verbatim}
-		$ python -m pip install SomePackage
-	\end{verbatim}
-	\end{block}
+$ python -m pip install SomePackage
+\end{verbatim}
+	\vspace{-0.2cm}
+\end{block}
 
 	\begin{block}{pip alternative usage}
+	\vspace{-0.2cm}
 	\begin{verbatim}
-		$ pip3 install SomePackage
-	\end{verbatim}
-	\end{block}
+$ pip3 install SomePackage
+\end{verbatim}
+	\vspace{-0.2cm}
+\end{block}
 	Example of the PIL  installation:\\
 	\texttt{\$ pip3 install Pillow}\\
 \alert{\href{http://recursospython.com/guias-y-manuales/instalacion-y-utilizacion-de-pip-en-windows-linux-y-os-x/}{(More info)}}
@@ -480,7 +484,7 @@ It provides access to some variables maintained by the interpreter (at execution
 \footnotesize{
 \begin{itemize}			
 \item \textbf{Current time}: \texttt{time()}
-\item \textbf{Time elapsed since the start of the execution}. \texttt{clock()}
+\item \textbf{Time elapsed since the start of the execution}. \texttt{process\_time()}
 \item \textbf{Pause n seconds}. \texttt{sleep()}
 \item \textbf{GMT}. \texttt{gmtime()}
 \item \textbf{Local time}. \texttt{localtime()}
@@ -504,7 +508,7 @@ It provides access to some variables maintained by the interpreter (at execution
 
 	\end{block}
 Output:\\
-\small{\texttt{Local current time: Fri Nov 20 20:45:34 2015}}
+\small{\texttt{Local current time : time.struct_time(tm_year=2020, tm_mon=3, tm_mday=9, tm_hour=18, tm_min=16, tm_sec=49, tm_wday=0, tm_yday=69, tm_isdst=0)}}
 \end{frame}
 
 
