@@ -91,8 +91,8 @@
 	\begin{block}{Objectives}
 		\begin{enumerate}
 		\item Understand the relevance to use modules and packages.
-		\item Be able to install some widely used Python packages about  geospatial software.
-		\item Be able to apply some modules and packages of both Python Standard Library and others Python Geospatial Libraries.
+		\item Be able to install some widely used Python packages% about  geospatial software.
+		\item Be able to apply some modules and packages of both Python Standard Library% and others Python Geospatial Libraries.
 		\end{enumerate}
 	\end{block}
 \end{frame}
@@ -225,14 +225,14 @@
 	\item By default, it searches in the current directory.
 	\item If it does not find it here, it then searches in the directories of the environment variable \texttt{PYTHONPATH}.
 	\begin{itemize}
-	\item \texttt{echo \$PYTHONPATH}
+	\item \texttt{echo \$PYTHONPATH} (from Linux/Windows console)
 	\item \texttt{import sys}\\
 	\texttt{print(sys.path)}
 	\end{itemize}
 	\item If it still does not find, it then searches in the installation directories of Python.
 	\end{enumerate}
-	\item How can I troubleshoot it?
 	\end{itemize}
+    Warning: \texttt{PYTHONPATH} is not \texttt{PATH}
 \end{frame} 
 	
 \subsection{Executing modules}
@@ -248,6 +248,7 @@
 \end{frame}
 
 \begin{frame}[shrink,plain,fragile]{Executing modules}{Modules as scripts (II)}
+    \small
 	\vspace{-0.3cm}
 	\begin{exampleblock}{fibo2.py}
 	\vspace{-0.2cm}
@@ -255,6 +256,9 @@
 	\vspace{-0.2cm}
 	\end{exampleblock}
 
+	\vspace{-0.5cm}
+	\begin{columns}
+ 	   \column{0.5\textwidth}
 	\begin{exampleblock}{}
 	\vspace{-0.2cm}
 	\begin{verbatim}
@@ -264,6 +268,20 @@ $ python3 fibo2.py 50
 \end{verbatim}
 	\vspace{-0.2cm}
 	\end{exampleblock}
+
+ 	   \column{0.5\textwidth}
+	\begin{exampleblock}{}
+	\vspace{-0.2cm}
+	\begin{verbatim}
+    (In Python interpreter)
+>>> import fibo2
+>>> fibo2.fib(50)
+1 1 2 3 5 8 13 21 34
+\end{verbatim}
+	\vspace{-0.2cm}
+	\end{exampleblock}
+
+    \end{columns}
 \end{frame}
 
 \subsection{Compiled Python files}
@@ -292,7 +310,7 @@ $ python3 fibo2.py 50
 		\item It returns the names defined in a module
 		\item Without arguments, it returns your names
 	\end{itemize}
-	\begin{block}{}
+	\begin{exampleblock}{}
 	\begin{verbatim}
 >>> import fibo, sys
 >>> dir(fibo)
@@ -304,7 +322,7 @@ $ python3 fibo2.py 50
 ['__builtins__', ... , '__spec__', 'variable']
 \end{verbatim}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 \end{frame}
 
 \section{Packages}
@@ -376,29 +394,30 @@ $ python3 fibo2.py 50
 
 \subsection{Installing packages}
 \begin{frame}[fragile]{Packages}{Installing packages}
-	Command-line automatic tool:\texttt{pip} 
+	Command-line automatic tool: \texttt{pip} (sometimes \texttt{pip3})
 		\begin{itemize}
 			\item Very similar to \texttt{apt-get} in Linux
 		\end{itemize}
 
-	\begin{block}{pip usage}
+	\begin{block}{pip usage (from OS terminal)}
 	\vspace{-0.2cm}
 	\begin{verbatim}
 $ python -m pip install SomePackage
 \end{verbatim}
-	\vspace{-0.2cm}
-\end{block}
-
-	\begin{block}{pip alternative usage}
-	\vspace{-0.2cm}
+or
 	\begin{verbatim}
-$ pip3 install SomePackage
+$ pip install SomePackage
 \end{verbatim}
 	\vspace{-0.2cm}
 \end{block}
-	Example of the PIL  installation:\\
-	\texttt{\$ pip3 install Pillow}\\
-\alert{\href{http://recursospython.com/guias-y-manuales/instalacion-y-utilizacion-de-pip-en-windows-linux-y-os-x/}{(More info)}}
+
+	\begin{exampleblock}{}
+	\vspace{-0.2cm}
+	\begin{verbatim}
+$ pip install Pillow
+\end{verbatim}
+	\vspace{-0.2cm}
+\end{exampleblock}
 \end{frame}
 
 \subsection{What has been developed about Python packages?}
@@ -418,7 +437,7 @@ $ pip3 install SomePackage
 \vspace{-0.15cm}
 
 \begin{itemize}			
-\item \textbf{Functions for managing files and paths}: \texttt{os.path}
+\item \textbf{Functions for managing files and paths}: \texttt{dir(os.path)}
 \item \textbf{Create directories}. Example: \texttt{os.mkdir('data')}
 \item \textbf{Current working directory}: \texttt{os.getcwd()}
 \item \textbf{Moving to a certaing directory}. Example: \texttt{os.chdir('data')}
@@ -433,13 +452,20 @@ $ pip3 install SomePackage
 
 \end{block}	
 }
+
+Warning!: Linux and Windows use different path separator (\texttt{os.path.sep})
+    \begin{itemize}
+        \item Linux: \texttt{myscripts/script.py}
+        \item Windows: \texttt{myscripts\textbackslash script.py}
+    \end{itemize}
+
 \end{frame}
 
 \subsection{\texttt{sys} module}
 
 \begin{frame}{\texttt{sys} module}
 \vspace{-0.2cm}
-It provides access to some variables maintained by the interpreter (at execution environment) and the functions that interact with the interpreter.\\
+It provides access to some variables maintained by the interpreter at run-time.\\
 \begin{block}{}
 \footnotesize{
 \begin{itemize}			
@@ -499,17 +525,17 @@ It provides access to some variables maintained by the interpreter (at execution
 \end{block}	
 \end{frame}
 
-\begin{frame}{\texttt{time} module (III)}{Example}
+%\begin{frame}{\texttt{time} module (III)}{Example}
 
-\vspace{-0.2cm}
-	\begin{block}{example\_time.py}
+%\vspace{-0.2cm}
+%	\begin{block}{example\_time.py}
 
-	\lstinputlisting{code/time_formatted.py}
+%	\lstinputlisting{code/time_formatted.py}
 
-	\end{block}
-Output:\\
-\small{\texttt{Local current time : time.struct_time(tm_year=2020, tm_mon=3, tm_mday=9, tm_hour=18, tm_min=16, tm_sec=49, tm_wday=0, tm_yday=69, tm_isdst=0)}}
-\end{frame}
+%	\end{block}
+%Output:\\
+%\small{\texttt{Local current time : time.struct_time(tm_year=2020, tm_mon=3, tm_mday=9, tm_hour=18, tm_min=16, tm_sec=49, tm_wday=0, tm_yday=69, tm_isdst=0)}}
+%\end{frame}
 
 
 
