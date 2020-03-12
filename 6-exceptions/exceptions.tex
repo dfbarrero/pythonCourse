@@ -110,15 +110,18 @@
 \end{frame}
 }
 
-\section{Definition}
-\begin{frame}[fragile]{Exceptions}{Exception definition (I)}
-	\begin{itemize}
-	\item Errors happen
+\section{Motivation}
+\begin{frame}[fragile]{Exceptions}{Motivation}
+	Errors happen
 	\begin{itemize}
 		\item We need a mechanism to handle errors
-	\end{itemize}
-	\item Some errors happen before execution (\textit{syntax errors})
+	    \item Some errors happen before execution (\textit{syntax errors})
+
 		\item Others are only detected in execution (\textit{runtime errors})
+        \begin{itemize}
+        \item We need tools to handle errors: Exceptions
+        \end{itemize}
+    \end{itemize}
 \begin{verbatim}
 >>> while True print('Hello world')
   File "<stdin>", line 1
@@ -126,19 +129,27 @@
                    ^
   SyntaxError: invalid syntax
 \end{verbatim}
-	\item \alert{Exception}: An error that disrupts the normal execution flow
+
+\begin{verbatim}
+>>> int("hola")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: 'hola'
+\end{verbatim}
+\end{frame}
+
+\section{Definition}
+
+\begin{frame}[fragile]{Exceptions}{Exception definition (II)}
+	\alert{Exception}: An error that disrupts the normal execution flow
 	\begin{itemize}
 		\item File not found, division by zero, invalid argument, etc
 		\item Code cannot be executed
 		\item Elegant solution to handle errors
 	\end{itemize}
-		%\begin{itemize}
-		%\item They are objects (whatever it means)
-		%\end{itemize}
-	\end{itemize}
 \end{frame}
 
-\begin{frame}{Exceptions}{Exception definition (II)}
+\begin{frame}{Exceptions}{Exception definition (III)}
     \begin{columns}
  	   \column{.50\textwidth}
 		\centering Call stack
@@ -192,11 +203,11 @@
 \begin{frame}{Exceptions}{Handling exceptions (II)}
     \begin{columns}
  	   \column{.90\textwidth}
-	\begin{block}{try-catch example}
+	\begin{exampleblock}{try-catch example}
 	\vspace{-0.2cm}
 		\lstinputlisting[numbers=left]{code/try-example.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 	\end{columns}
 	\bigskip
 	The exception type contains the error
@@ -206,16 +217,17 @@
 	\vspace{-0.2cm}
     \begin{columns}
  	   \column{.90\textwidth}
-	\begin{block}{try-catch example}
+	\begin{exampleblock}{try-catch example}
 	\vspace{-0.2cm}
 		\lstinputlisting[numbers=left]{code/try-example2.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 	\end{columns}
 	\bigskip
-	New Python element
+	New Python elements
 		\begin{itemize}
 		\item Raise
+        \item Exception as object
 		\end{itemize}
 \end{frame}
 
@@ -224,23 +236,22 @@
 	\vspace{-0.2cm}
 	\textit{Exception arguments}: When we need more info
 
-
 	\vspace{-0.2cm}
     \begin{columns}
  	   \column{.70\textwidth}
-	\begin{block}{}
+	\begin{exampleblock}{}
 	\vspace{-0.2cm}
 		\lstinputlisting[numbers=left]{code/try-arg.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 
 	\vspace{-0.3cm}
 
-	\begin{block}{}
+	\begin{exampleblock}{}
 	\vspace{-0.2cm}
 		\lstinputlisting[numbers=left]{code/try-arg-res.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 
 	\end{columns}
 \end{frame}
