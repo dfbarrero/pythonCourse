@@ -26,6 +26,7 @@
 \usepackage{xstring}
 \usepackage{listings}
 \usepackage{tikz}
+\usepackage{tikz-uml}
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,shapes}
 
 \usetheme{UAH}
@@ -194,29 +195,30 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 
 \begin{frame}{Object-Oriented Programming}{Concepts (I)}
 	\begin{block}{Class}
-		 Generic entity that groups the properties and functions of an entity \cite{Downey}, \cite{vanRossum}.     
+		 Generic entity that groups attributes and functions
   	\end{block}	
-		\begin{figure}
-			\includegraphics[scale=0.5]{figs/clase}	
-		\end{figure}				
-\end{frame}
 
-\begin{frame}{Object-Oriented Programming}{Concepts (II)}
-	\vfill\begin{block}{Atribute}
-		Individual characteristics that determine the qualities of an object. 
-  	\end{block}	
-		\begin{figure}
-			\includegraphics[scale=0.5]{figs/atributo}
-		\end{figure}				
-\end{frame}
 
-\begin{frame}{Object-Oriented Programming}{Concepts (III)}
-	\vfill\begin{block}{Method}
-		 Function responsible for performing operations according to input parameters. 
-  	\end{block}	
+    \begin{columns}[t]
+ 	   \column{.5\textwidth}
+
+	    \begin{block}{Atribute}
+		Individual characteristics that determine the qualities of an object
+  	    \end{block}	
+
 		\begin{figure}
-			\includegraphics[scale=0.5]{figs/metodo}
+			\includegraphics[width=0.8\linewidth]{figs/clase}	
 		\end{figure}				
+
+ 	   \column{.5\textwidth}
+
+	    \begin{block}{Method}
+		 Function responsible for performing operations
+  	    \end{block}	
+		\begin{figure}
+			\includegraphics[width=0.8\linewidth]{figs/metodo}
+		\end{figure}				
+   \end{columns}
 \end{frame}
 
 \begin{frame}{Object-Oriented Programming}{Concepts (IV)}
@@ -224,11 +226,12 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 		 Specific representation of a class, namely, a class member with their corresponding attributes.
   	\end{block}	  	
 		\begin{figure}
-			\includegraphics[scale=0.5]{figs/instancia}
+			\includegraphics[scale=0.5]{figs/instancia}\hfill
+			\includegraphics[width=0.5\linewidth]{figs/laika}
 		\end{figure}				
 \end{frame}
 
-\begin{frame}{Object-Oriented Programming}{Concepts(V)}
+\begin{frame}{Object-Oriented Programming}{Concepts (V)}
 	\begin{block}{Constructor}
 		 Method called when an object is created. It allows the initialization of attributes. 
   	\end{block}	
@@ -237,67 +240,100 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 		\end{figure}				
 \end{frame}
 
-\begin{frame}{Object-Oriented Programming}{Synthesizing OOP terminology}
-    \begin{columns}
- 	   \column{.6\textwidth}
- 		  \begin{itemize}
-			\item \small{Software objects mimics physical objects.} % un  individuo o ejemplar de una clase 
-		   	\begin{itemize}
-				\item \footnotesize{An object contains \textit{attributes} (state) and a \textit{behaviour}}. % behavior u operaciones
-				\item \footnotesize{Example: A dog has a name (state) and may be a bit (behaviour).}
-		  	\end{itemize}
-		  %	\item Objects are grouped into classes.
-		  	\item \small{A \alert{class} is a set of objects with common characteristics and behaviour.}
-		  	\item \small{An \alert{object} is called an \alert{Instance} of a class.}
-		  	% It can also be described as a pattern or template that is used to create objects.
-			\item \textit{Members} of a class:
-		    	\begin{itemize}
-				\item \footnotesize{\alert{Properties}: Data describing an object.}
-				\item \footnotesize{\alert{Methods}: What an object can do.}%Something that can be done to object. % o procedimiento perteneciente a un objeto.
-					% modo en que se comunican los objetos entre síi. 
-		  	    \end{itemize}
-			% \item Property = Member, attribute, variable, etc.
-		  \end{itemize}
- 		\column{.4\textwidth}
-	  	 	\begin{figure}[t]
-			\begin{center}
-			    \includegraphics[width=0.97\linewidth]{figs/object2}\\
-				\tiny{Source: http://www.teachitza.com/delphi/oop.htm}
-			\end{center}
-  	 		\end{figure}
-    \end{columns}
+\begin{frame}[plain]{Constructors (II)}
+	\vspace{-0.3cm}
+	\begin{exampleblock}{}
+	\vspace{-0.3cm}
+		\lstinputlisting{code/Time2.py}
+	\end{exampleblock}
 \end{frame}
 
 
-%Diapositiva del Main
-%\begin{frame}{Programación Orientada a Objetos(I) - Definiciones (VI)}{}
-%	\begin{block}{Main}
-%		 \justifying Módulo principal muy util para la realización de pruebas. Permite incluir solamente los fragmentos de código que quieran ser probados.
-%  	\end{block}	
-%		\vspace{1cm}
-%		\centering\includegraphics[scale=0.1]{figs/main}
+
+%\begin{frame}{Object-Oriented Programming}{Synthesizing OOP terminology}
+% 		  \begin{itemize}
+%			\item \small{Software objects mimics physical objects.} % un  individuo o ejemplar de una clase 
+%		   	\begin{itemize}
+%				\item \footnotesize{An object contains \textit{attributes} (state) and a \textit{behaviour}}. % behavior u operaciones
+%				\item \footnotesize{Example: A dog has a name (state) and may be a bit (behaviour).}
+%		  	\end{itemize}
+		  %	\item Objects are grouped into classes.
+%		  	\item \small{A \alert{class} is a set of objects with common characteristics and behaviour.}
+%		  	\item \small{An \alert{object} is called an \alert{Instance} of a class.}
+		  	% It can also be described as a pattern or template that is used to create objects.
+%			\item \textit{Members} of a class:
+%		    	\begin{itemize}
+%				\item \footnotesize{\alert{Properties}: Data describing an object.}
+%				\item \footnotesize{\alert{Methods}: What an object can do.}%Something that can be done to object. % o procedimiento perteneciente a un objeto.
+					% modo en que se comunican los objetos entre síi. 
+%		  	    \end{itemize}
+			% \item Property = Member, attribute, variable, etc.
+%		  \end{itemize}
 %\end{frame}
 
+\begin{frame}[plain]{Object-Oriented Programming}{Synthesizing OOP terminology}
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{figs/pacman}\\
+	\smallskip
+	\tiny{\href{http://blog.sklambert.com/introduction-to-oop-for-game-development/}{(Source)}}
+	\end{center}
+\end{frame}
+
+\begin{frame}[plain]%{Object-Oriented Programming}{Code example}
+    \vspace{-0.3cm}
+
+    \begin{columns}
+ 	   \column{.7\textwidth}
+			\begin{exampleblock}{dogs.py}
+			\vspace{-0.3cm} 
+				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dogs.py}
+			\end{exampleblock}
+
+ 	   \column{.3\textwidth}
+			\begin{exampleblock}{Output}
+			\vspace{-0.3cm} 
+				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dogs-output.txt}
+			\end{exampleblock}
+
+		\href{https://gist.github.com/dfbarrero/9b30c749986885373c8c250b3901ec9d}{(Source code)}
+
+        \bigskip
+
+        \pause
+
+        \centering UML class diagram
+
+        \begin{tikzpicture}
+        \umlclass{Dog}
+            {+ name : str\\ + age : int} 
+            {+ bit ()  :  void\\ +describe () : void}
+        \end{tikzpicture}
+
+    \end{columns}
+\end{frame}
+
+\begin{frame}[plain]{Object-Oriented Programming}{Game example}
+	\begin{center}
+    	\centering \includegraphics[width=0.8\linewidth]{figs/gameObjects}\\
+		\smallskip
+		\tiny{\href{http://blog.nuclex-games.com/2010/01/game-architecture-day-2/}{(Source)}}
+	\end{center}
+\end{frame}
 
 \subsection{Characteristics}
 
 \begin{frame}{Characteristics}{Inheritance}
 \vspace{-0.2cm}
-	\begin{block}{Concept}
-	Mechanism of \alert{reusing} code in OOP. Consists of generating child classes from other existing (\alert{super-class}) allowing the use and adaptation of the attributes and methods of the parent class to the child class. 
+	\begin{block}{Inheritance}
+	Mechanism of \alert{reusing} code in OOP. Consists of generating child classes from other existing (\alert{super-class}) allowing the use and adaptation of the attributes and methods of the parent class to the child class
   	\end{block}	
 \vspace{-0.2cm}
 \begin{block}{}
 \begin{itemize}
-		\item \small{\textit{Superclass}: ``Father'' of a class.}
-		\item \small{\textit{Subclass}: ``Child'' of a class.}
-		\item \small{A subclass inherits all the fields and methods from its superclass.}
-		\begin{itemize}
-		\item \footnotesize \textit{Fields}: Variable that is part of an object.
-		\end{itemize}
-		\item \small{A subclass has \alert{one} superclass.}
-		\item \small{A superclass has \alert{at least one} subclass.}
-		\item \small{\textit{Class hierarchy}: A set of classes related by inheritance.}
+		\item {\textit{Superclass}: ``Father'' of a class}
+		\item {\textit{Subclass}: ``Child'' of a class}
+		\item {A subclass inherits all the attributes and methods from its superclass}
+		\item {\textit{Class hierarchy}: A set of classes related by inheritance}
 \end{itemize}
 	\end{block}
 \end{frame}
@@ -315,18 +351,42 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \end{frame}
 
 \begin{frame}{Characteristics}{Examples of simple inheritance (I)}
-    \begin{columns}
-    % cambiar figura poniendo fields y methods también
- 	   \column{.40\textwidth}
-	    \centering\includegraphics[width=0.9\linewidth]{figs/concepts-bicycleObject2}
-	  
-	    \column{.60\textwidth}
-	  \centering \includegraphics[width=0.9\linewidth]{figs/concepts-bikeHierarchy2}\\
-	
-    \end{columns}
-    \bigskip
-	\centering \tiny{Source: http://docs.oracle.com/javase/tutorial/java/concepts/object.html}\\
-	\centering \tiny{Source: http://docs.oracle.com/javase/tutorial/java/concepts/inheritance.html}\\
+    \begin{tikzpicture}
+    \umlclass{Dog}
+        {+ name : str\\ + age : int} 
+        {+ bit()  :  void\\ +describe() : void}
+
+    \umlclass[x=3]{Cat}
+        {+ name : str\\ + age : int} 
+        {+ bit()  :  void\\ +describe() : void}
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Characteristics}{Examples of simple inheritance (II)}
+    \begin{tikzpicture}
+    \umlclass{Animal}
+        {+ name : str\\ + age : int} 
+        {+describe() : void}
+    \umlclass[x=-2, y=-3]{Dog}
+        {+ fleas : int} 
+        {+ bit()  :  void}
+
+    \umlclass[x=2, y=-3]{Cat}
+        {} 
+        {+ scratch() : void}
+
+    \umlinherit[geometry=|-]{Dog}{Animal}
+    \umlinherit[geometry=|-]{Cat}{Animal}
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+	\begin{exampleblock}{}
+	\vspace{-0.3cm} 
+		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animals.py}
+	\end{exampleblock}
+
+	\href{https://gist.github.com/dfbarrero/9b30c749986885373c8c250b3901ec9d}{(Source code)}
 \end{frame}
 
 \begin{frame}{Characteristics}{Examples of simple inheritance (II)}
@@ -336,9 +396,7 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{figure}
 \end{frame}
 
-
-
-\begin{frame}{Characteristics}{Multiple Inheritance}
+\begin{frame}{Characteristics}{Multiple inheritance}
 	\begin{figure}
 		\includegraphics[scale=0.5]{figs/herencia2}
 		\caption{{\scriptsize Example of multiple Inheritance in OOP. Obtained from: \url{http://www.avizora.com}}}
@@ -364,12 +422,21 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Characteristics}{Polymorphism (II)}
-	\begin{figure}
-		\includegraphics[scale=0.57]{figs/polimorfismo2}
-		\vspace{-0.1cm}
-		\caption{{\scriptsize Example of polymorphism. Obtained from: \url{http://datateca.unad.edu.co}}}
-	\end{figure}
+%\begin{frame}{Characteristics}{Polymorphism (II)}
+%	\begin{figure}
+%		\includegraphics[scale=0.57]{figs/polimorfismo2}
+%		\vspace{-0.1cm}
+%		\caption{{\scriptsize Example of polymorphism. Obtained from: \url{http://datateca.unad.edu.co}}}
+%	\end{figure}
+%\end{frame}
+
+\begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+	\begin{exampleblock}{}
+	\vspace{-0.3cm} 
+		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animalsPolymorphism.py}
+	\end{exampleblock}
+
+	\href{https://gist.github.com/dfbarrero/0b401926b92a5e36ad08a3eae5fbd16c}{(Source code)}
 \end{frame}
 
 
@@ -387,33 +454,38 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Characteristics}{Abstraction and encapsulation (II)}
+\begin{frame}{Characteristics}{Encapsulation (I)}
 	\begin{block}{Encapsulation}
-		Mechanism use to provide an access level to methods and attributes for avoiding unexpected state changes. This mechanism is used to limit the visibility of the attributes and to create methods controlling them (\texttt{set()} y \texttt{get()}).
+		Mechanism use to provide an access level to methods and attributes for avoiding unexpected state changes
   	\end{block}	
-	
-The most common access levels are:
+
+	\begin{figure}
+		\includegraphics[scale=0.35]{figs/abstraccion2}
+		\scriptsize \href{http://www.onlinebuff.com}{(Source)}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Characteristics}{Encapsulation (II)}
+    The most common access levels are:
 	
 	\begin{itemize}
-		\item \textbf{public}: visible for everyone  [default level in Python].
+		\item \textbf{public}: visible for everyone  [default in Python].
 		\item \textbf{private}: visible for the creator class [start with a double underscore and does not end in the same manner].
 		\item \textbf{protected}: visible for the creator class and its descendents \alert{[not exist in Python]}. 
 	\end{itemize}
+
+     Methods geters and setters to control the access to attributes
 \end{frame}
 
-\begin{frame}{Characteristics}{Abstraction and encapsulation (III). Example 1}
-	\begin{figure}
-		\includegraphics[scale=0.4]{figs/abstraccion1}
-		\caption{{\scriptsize Example of abstraction and encapsulation.Obtained from: \url{https://binalparekh.wordpress.com}}}
-	\end{figure}
+\begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+	\begin{exampleblock}{}
+	\vspace{-0.3cm} 
+		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access.py}
+	\end{exampleblock}
+
+	\href{https://gist.github.com/dfbarrero/a6ebc6632fb9fe06a2c8c6a47a465ab5}{(Source code)}
 \end{frame}
 
-\begin{frame}{Characteristics(III)}{Abstraction and encapsulation (IV). Example 2}
-	\begin{figure}
-		\includegraphics[scale=0.45]{figs/abstraccion2}
-		\caption{{\scriptsize Example of abstraction and encapsulation. Obtained from: \url{http://www.onlinebuff.com}}}
-	\end{figure}
-\end{frame}
 
 \section{Classes in Python}
    \subsection{Sintax}
@@ -468,76 +540,76 @@ The most common access levels are:
 %\end{frame}
 
 
-\begin{frame}{Classes in Python}{Syntax (I)}
-\vspace{-0.2cm}
-\begin{itemize}			
-		\item \small{\textbf{Class}: Start with the word \alert{class} followed by class name written in \alert{capital letter} and a colon [Substantives].}
-		\item \small{\textbf{Attributes}: A lowercase noun.}
-		\begin{itemize}
-		\item \footnotesize{There is no need to declare attributes.}
-		\end{itemize}
+%\begin{frame}{Classes in Python}{Syntax (I)}
+%\vspace{-0.2cm}
+%\begin{itemize}			
+%		\item \small{\textbf{Class}: Start with the word \alert{class} followed by class name written in \alert{capital letter} and a colon [Substantives].}
+%		\item \small{\textbf{Attributes}: A lowercase noun.}
+%		\begin{itemize}
+%		\item \footnotesize{There is no need to declare attributes.}
+%		\end{itemize}
 		
-		\item \small{\textbf{Inherited class}: Similar to a class but the class name followed by the class father in brackets.}
-		\item \small{\textbf{Instance}: Object in lower case followed by the class assignment.}
-			\vspace{-0.2cm} 
-  	   \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{\small{coche.py}}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/coche.py} % contar elementos
-				\vspace{-0.2cm} 
-			\end{block}
-	\end{columns}		
-\end{itemize}			
-\end{frame}
+%		\item \small{\textbf{Inherited class}: Similar to a class but the class name followed by the class father in brackets.}
+%		\item \small{\textbf{Instance}: Object in lower case followed by the class assignment.}
+%			\vspace{-0.2cm} 
+ % 	   \begin{columns}
+% 	   \column{0.8\textwidth}
+%			\begin{block}{\small{coche.py}}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/coche.py} % contar elementos
+%				\vspace{-0.2cm} 
+%			\end{block}
+%	\end{columns}		
+%\end{itemize}			
+%\end{frame}
 
-\begin{frame}{Classes in Python}{Syntax (II)}
-\begin{itemize}
-		\item \textbf{Method}: Start with the word \alert{def}, and later the method, a verb, in lower case is written. Next, the parameter in brackets and a colon (\texttt{print\_name()}).
-   \begin{itemize}
-   \item Methods receive automatically a reference to the object (usually named \texttt{self}).
-   \end{itemize}
-		\item \textbf{Constructor}: Method whose name is \texttt{\_\_init\_\_()}, the first attribute is \texttt{self} and then the class attributes are written.
+%\begin{frame}{Classes in Python}{Syntax (II)}
+%\begin{itemize}
+%		\item \textbf{Method}: Start with the word \alert{def}, and later the method, a verb, in lower case is written. Next, the parameter in brackets and a colon (\texttt{print\_name()}).
+%   \begin{itemize}
+%   \item Methods receive automatically a reference to the object (usually named \texttt{self}).
+%   \end{itemize}
+%		\item \textbf{Constructor}: Method whose name is \texttt{\_\_init\_\_()}, the first attribute is \texttt{self} and then the class attributes are written.
 
-		\item \textbf{main}: Method defined with \texttt{def main():}. In it, the wished commands are specified and after it, an exit condition is created. The \texttt{sys} module  is required to be imported at the beginning. 
-		\item All methods and attributes are public.
-			\begin{itemize}
-				\item By convention, private members begin with double underscore (\texttt{\_\_varName}, \texttt{\_\_method\_name()})
-			\end{itemize}
-\end{itemize}			
-\end{frame}
+%		\item \textbf{main}: Method defined with \texttt{def main():}. In it, the wished commands are specified and after it, an exit condition is created. The \texttt{sys} module  is required to be imported at the beginning. 
+%		\item All methods and attributes are public.
+%			\begin{itemize}
+%				\item By convention, private members begin with double underscore (\texttt{\_\_varName}, \texttt{\_\_method\_name()})
+%			\end{itemize}
+%\end{itemize}			
+%\end{frame}
 
 
-\begin{frame}{Classes in Python}{Syntax (III). Example 1}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{main.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/main.py} % contar elementos
-			\end{block}
-	\end{columns}				 	
-\end{frame}
+%\begin{frame}{Classes in Python}{Syntax (III). Example 1}
+%    \begin{columns}
+ %	   \column{0.8\textwidth}
+%			\begin{block}{main.py}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/main.py} % contar elementos
+%			\end{block}
+%	\end{columns}				 	
+%\end{frame}
 
-\begin{frame}{Classes in Python}{Syntax (IV). Example 2}
-\vspace{-0.2cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{bicicleta.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/bicicleta.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}				 	
-\end{frame}
+%\begin{frame}{Classes in Python}{Syntax (IV). Example 2}
+%\vspace{-0.2cm}
+%    \begin{columns}
+% 	   \column{0.8\textwidth}
+%			\begin{block}{bicicleta.py}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/bicicleta.py} % contar elementos
+%			\vspace{-0.3cm} 
+%			\end{block}
+%	\end{columns}				 	
+%\end{frame}
 
-\begin{frame}{Classes in Python}{Syntax (V). Example 3}
-	\vspace{-0.2cm}
-	\begin{block}{Time.py}
-	\vspace{-0.3cm}
-		\lstinputlisting{code/Time.py}
-	\vspace{-0.3cm} 
-	\end{block}
-\end{frame}
+%\begin{frame}{Classes in Python}{Syntax (V). Example 3}
+%	\vspace{-0.2cm}
+%	\begin{block}{Time.py}
+%	\vspace{-0.3cm}
+%		\lstinputlisting{code/Time.py}
+%	\vspace{-0.3cm} 
+%	\end{block}
+%\end{frame}
 
 \subsection{Class objects}
 \begin{frame}[fragile]{Classes in Python}{Class objects}
@@ -587,14 +659,6 @@ time = Time()
 		\end{itemize}
 \end{frame}
 
-\begin{frame}[plain]{Constructors (II)}
-	\vspace{-0.3cm}
-	\begin{block}{Time.py with constructor}
-	\vspace{-0.3cm}
-		\lstinputlisting{code/Time2.py}
-	\end{block}
-\end{frame}
-
 \subsection{More about methods}
 
 \begin{frame}{Other special methods}
@@ -613,7 +677,8 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 \end{frame}
 
 
-\begin{frame}[shrink]{Overriding methods (I)}
+\begin{frame}{Overriding methods (I)}
+
 	Often we need to adapt an inheritanced method: \alert{Overriding}
 
 	\begin{block}{Overriding example}
