@@ -93,7 +93,8 @@
 		\begin{enumerate}
 		\item Introduce basic programming concepts.
 		\item Understand the main characteristics of Object-Oriented Programming (OOP).
-		\item Use Python to implement hierarchies of basic classes.
+		\item Use Python to implement class hierarchies
+		\item Use class libraries
 		\end{enumerate}
 	\end{block}
 \end{frame}
@@ -231,7 +232,50 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 		\end{figure}				
 \end{frame}
 
-\begin{frame}{Object-Oriented Programming}{Concepts (V)}
+\begin{frame}[plain]{Object-Oriented Programming}{Concepts (V)}
+	\begin{center}
+	\includegraphics[width=0.6\linewidth]{figs/pacman}\\
+	\smallskip
+	\tiny{\href{http://blog.sklambert.com/introduction-to-oop-for-game-development/}{(Source)}}
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Object-Oriented Programming}{Concepts (VI)}
+	\centering {Two operations on classes}
+    \begin{columns}
+ 	   \column{.50\textwidth}
+	   		\begin{block}{Attribute references}
+			Accesses an attribute value\\
+			Standard dot syntax\\
+			\bigskip
+			\centering{\texttt{obj.name}}\\
+	   		\end{block}
+	   		\begin{exampleblock}{Example}
+\begin{verbatim}
+time.hour = 4
+print(time.hour)
+hour = time.hour
+\end{verbatim}
+	   		\end{exampleblock}
+
+ 	   \column{.50\textwidth}
+	   		\begin{block}{Instantiation}
+			Creates a new object\\
+			Standard functional notation\\
+			\bigskip
+			\centering{\texttt{x = MyClass()}}\\
+	   		\end{block}
+	   		\begin{exampleblock}{Example}
+\begin{verbatim}
+time = Time()
+\end{verbatim}
+	   		\end{exampleblock}
+	\end{columns}
+\end{frame}
+
+\subsection{Constructors}
+
+\begin{frame}{Object-Oriented Programming}{Constructors (I)}
 	\begin{block}{Constructor}
 		 Method called when an object is created. It allows the initialization of attributes. 
   	\end{block}	
@@ -240,7 +284,20 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 		\end{figure}				
 \end{frame}
 
-\begin{frame}[plain]{Constructors (II)}
+\begin{frame}{Concepts of OOP}{Constructors (II)}
+		Instantiation creates empty objects
+		\begin{itemize}
+			\item We usually need to initialize attributes
+			\item Initialization operations
+		\end{itemize}
+		\alert{Constructor}: Method called when an object is created
+		\begin{itemize}
+			\item In Python, it is the \texttt{\_\_init\_\_()}
+			\item A constructor can get arguments
+		\end{itemize}
+\end{frame}
+
+\begin{frame}{Object-Oriented Programming}{Constructors (III)}
 	\vspace{-0.3cm}
 	\begin{exampleblock}{}
 	\vspace{-0.3cm}
@@ -270,14 +327,6 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 			% \item Property = Member, attribute, variable, etc.
 %		  \end{itemize}
 %\end{frame}
-
-\begin{frame}[plain]{Object-Oriented Programming}{Synthesizing OOP terminology}
-	\begin{center}
-	\includegraphics[width=0.6\linewidth]{figs/pacman}\\
-	\smallskip
-	\tiny{\href{http://blog.sklambert.com/introduction-to-oop-for-game-development/}{(Source)}}
-	\end{center}
-\end{frame}
 
 \begin{frame}[plain]%{Object-Oriented Programming}{Code example}
     \vspace{-0.3cm}
@@ -312,6 +361,8 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
     \end{columns}
 \end{frame}
 
+\subsection{Game example}
+
 \begin{frame}[plain]{Object-Oriented Programming}{Game example}
 	\begin{center}
     	\centering \includegraphics[width=0.8\linewidth]{figs/gameObjects}\\
@@ -320,9 +371,10 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{center}
 \end{frame}
 
-\subsection{Characteristics}
+\section{Inheritance}
+\subsection{Definition}
 
-\begin{frame}{Characteristics}{Inheritance}
+\begin{frame}{Inheritance}{Definition}
 \vspace{-0.2cm}
 	\begin{block}{Inheritance}
 	Mechanism of \alert{reusing} code in OOP. Consists of generating child classes from other existing (\alert{super-class}) allowing the use and adaptation of the attributes and methods of the parent class to the child class
@@ -338,8 +390,9 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{block}
 \end{frame}
 
-\begin{frame}{Characteristics}{Inheritance (II)}
+\subsection{Types of inheritance}
 
+\begin{frame}{Inheritance}{Types of inheritance}
 	\begin{block}{Types of inheritance}
 	\begin{itemize}
 		\item If the child class inherits from a single class is called \alert{single inheritance}.
@@ -350,7 +403,8 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	   \textit{Python allows both; simple and multiple inheritance.}
 \end{frame}
 
-\begin{frame}{Characteristics}{Examples of simple inheritance (I)}
+\subsection{Examples}
+\begin{frame}{Inheritance}{Examples of simple inheritance (I)}
     \begin{tikzpicture}
     \umlclass{Dog}
         {+ name : str\\ + age : int} 
@@ -362,7 +416,7 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
     \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Characteristics}{Examples of simple inheritance (II)}
+\begin{frame}{Inheritance}{Examples of simple inheritance (II)}
     \begin{tikzpicture}
     \umlclass{Animal}
         {+ name : str\\ + age : int} 
@@ -389,21 +443,25 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\href{https://gist.github.com/dfbarrero/9b30c749986885373c8c250b3901ec9d}{(Source code)}
 \end{frame}
 
-\begin{frame}{Characteristics}{Examples of simple inheritance (II)}
+\begin{frame}{Inheritance}{Examples of simple inheritance (III)}
 	\begin{figure}
 		\includegraphics[scale=0.33]{figs/herencia1}
 		\caption{{\scriptsize Example of simple Inheritance in OOP. Obtained from: \url{http://android.scenebeta.com}}}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Characteristics}{Multiple inheritance}
+\subsection{Example of multiple inheritance}
+\begin{frame}{Inheritance}{Example of multiple inheritance}
 	\begin{figure}
 		\includegraphics[scale=0.5]{figs/herencia2}
 		\caption{{\scriptsize Example of multiple Inheritance in OOP. Obtained from: \url{http://www.avizora.com}}}
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Characteristics}{Polymorphism (I)}
+\section{Concepts of OOP}
+\subsection{Polymorphism}
+
+\begin{frame}{Concepts of OOP}{Polymorphism (I)}
 \vspace{-0.2cm}
 	\begin{block}{Polymorphism}
 		Mechanism of object-oriented programming that allows to invoke a method whose implementation will depend on the object that does it.
@@ -439,8 +497,9 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\href{https://gist.github.com/dfbarrero/0b401926b92a5e36ad08a3eae5fbd16c}{(Source code)}
 \end{frame}
 
+\subsection{Abstraction}
 
-\begin{frame}{Characteristics}{Abstraction and encapsulation (I)}
+\begin{frame}{Concepts of OOP}{Abstraction}
 	\begin{block}{Abstraction}
 		Mechanism that allows the isolation of the not relevant information to a level of knowledge.
   	\end{block}	
@@ -454,7 +513,9 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Characteristics}{Encapsulation (I)}
+\subsection{Encapsulation}
+
+\begin{frame}{Concepts of OOP}{Encapsulation (I)}
 	\begin{block}{Encapsulation}
 		Mechanism use to provide an access level to methods and attributes for avoiding unexpected state changes
   	\end{block}	
@@ -465,7 +526,7 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Characteristics}{Encapsulation (II)}
+\begin{frame}{Concepts of OOP}{Encapsulation (I)}
     The most common access levels are:
 	
 	\begin{itemize}
@@ -486,9 +547,8 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\href{https://gist.github.com/dfbarrero/a6ebc6632fb9fe06a2c8c6a47a465ab5}{(Source code)}
 \end{frame}
 
-
-\section{Classes in Python}
-   \subsection{Sintax}
+%\section{Classes in Python}
+% \subsection{Syntax}
 %Sintaxis básica
 %\begin{frame}{Nomeclatura de Python}{Sintaxis(I)}
 %	\begin{itemize}
@@ -611,57 +671,9 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 %	\end{block}
 %\end{frame}
 
-\subsection{Class objects}
-\begin{frame}[fragile]{Classes in Python}{Class objects}
-	\centering {Two operations on classes}
-    \begin{columns}
- 	   \column{.50\textwidth}
-	   		\begin{block}{Attribute references}
-			Accesses an attribute value\\
-			Standard dot syntax\\
-			\bigskip
-			\centering{\texttt{obj.name}}\\
-	   		\end{block}
-	   		\begin{exampleblock}{Example}
-\begin{verbatim}
-time.hour = 4
-print(time.hour)
-hour = time.hour
-\end{verbatim}
-	   		\end{exampleblock}
-
- 	   \column{.50\textwidth}
-	   		\begin{block}{Instantiation}
-			Creates a new object\\
-			Standard functional notation\\
-			\bigskip
-			\centering{\texttt{x = MyClass()}}\\
-	   		\end{block}
-	   		\begin{exampleblock}{Example}
-\begin{verbatim}
-time = Time()
-\end{verbatim}
-	   		\end{exampleblock}
-	\end{columns}
-\end{frame}
-
-\subsection{Constructors}
-\begin{frame}{Constructors (I)}
-		Instantiation creates empty objects
-		\begin{itemize}
-			\item We usually need to initialize attributes
-			\item Initialization operations
-		\end{itemize}
-		\alert{Constructor}: Method called when an object is created
-		\begin{itemize}
-			\item In Python, it is the \texttt{\_\_init\_\_()}
-			\item A constructor can get arguments
-		\end{itemize}
-\end{frame}
-
 \subsection{More about methods}
 
-\begin{frame}{Other special methods}
+\begin{frame}{Concepts of OOP}{Other special methods}
 In addition to special method \texttt{\_\_init\_\_}, there are several others, including:\\
 	\begin{block}{}
 		\vspace{-0.15cm}
@@ -676,8 +688,9 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 	\end{block}	
 \end{frame}
 
+\subsection{Overriding methods}
 
-\begin{frame}{Overriding methods (I)}
+\begin{frame}{Concepts of OOP}{Overriding methods (I)}
 
 	Often we need to adapt an inheritanced method: \alert{Overriding}
 
@@ -688,7 +701,7 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 	\end{block}
 \end{frame}
 	
-\begin{frame}{Overriding methods (II)}
+\begin{frame}{Concepts of OOP}{Overriding methods (II)}
 		Still possible to get superclass' method with \texttt{super()}
 
 	\begin{block}{\texttt{super()} example}
@@ -698,179 +711,168 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 	\end{block}
 \end{frame}
 
-\subsection{Solved exercises}
+\section{Arcade}
 
-\begin{frame}{Exercise statement}{\texttt{Animal} class}
-	\begin{enumerate}
-		\item Create the \texttt{animal} class. 
-		\item Create the constructor. The class will have the attributes \texttt{tipo} and \texttt{patas}.
-		%con las variables tipo de animal y número de 		patas.
-		\item Create the get methods from both attributes which receive like own parameter the animal through \texttt{self} and return respectively the \texttt{tipo} and \texttt{patas}. 
-		\item Create two instances of animals using the constructor.
-		\item Print the attributes of both instances.
-	\end{enumerate}	
+\begin{frame}[plain]
+	\begin{exampleblock}{}
+		\vspace{-0.2cm}
+		\lstinputlisting{code/arcade-1.py}
+		\vspace{-0.2cm}
+	\end{exampleblock}
 \end{frame}
 
-\begin{frame}{Solved exercise}{\texttt{Animal} class}
-	\vspace{-0.2cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{animales.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animales.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}
+\begin{frame}[plain]
+	\begin{exampleblock}{}
+		\vspace{-0.2cm}
+		\lstinputlisting{code/arcade-2.py}
+		\vspace{-0.2cm}
+	\end{exampleblock}
 \end{frame}
 
-\begin{frame}{Solved exercise}{\texttt{Animal} class}
-	\begin{enumerate}
-		\item Create a \texttt{gato} class in the same file which inherits from the \texttt{animal} class. 
-		\item Create the constructor and add the \texttt{sonido} attribute. 
-		\item Create the method \texttt{maullar} which prints the sound MIAU. 
-		\item Create a instance and check the methods.
-	\end{enumerate}	
-\end{frame}
+\begin{frame}{Arcade}
+	The \texttt{arcade.Window} class.
 
-\begin{frame}{Solved exercise}{Class \texttt{Animals}}
-	\vspace{-0.4cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{animales.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/gato.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}
-\end{frame}
-% añadir otro ejemplo de clases GIS , pickle de clases y más referencias
-\begin{frame}{Exercise statement}{Class \texttt{Parcela}}
-	\begin{enumerate}
-		\item Create a script containing the class \texttt{Parcela}. 
-		\item Create the constructor. The class will have the attributes \texttt{uso\_suelo} and \texttt{valor}.
-		%con las variables tipo de animal y número de 		patas.
-		\item Create the \texttt{valoracion} method to calculate the tax associated with the parcel as follows: 
+	\begin{block}{}
+		\vspace{-0.15cm}
 		\begin{itemize}
-		\item For single-family residential: \textit{tasa = 0.05 * valor}
-		\item For multifamily residential: \textit{tasa = 0.04 * valor}
-		\item For all other land uses: \textit{tasa = 0.02 * valor}
+		\item \footnotesize{\texttt{on\_draw()}}. Override this function to add your custom drawing code
+		\item \footnotesize{\texttt{on\_update(delta\_time: float)}}. Move everything. Perform collision checks. Do all the game logic here
+		\item \footnotesize{\texttt{on\_key\_release(symbol: int, modifiers: int)}} 
+		\item \footnotesize{\texttt{on\_mouse\_release(x: float, y: float, button: int, modifiers: int)}}. Override this function to add mouse button functionality
+		\item \footnotesize{\texttt{set\_viewport(left: float, right: float, bottom: float, top: float)}}. Set the coordinates we can see
 		\end{itemize}
-		\item Use the class from another \textit{script} named \texttt{tasaparcela.py} which you create una instance of \texttt{Parcela} named \texttt{miparcela} using the constructor.
-		\item Print the attribute  \texttt{uso\_suelo} of the instance.
-		\item Use the method \texttt{valoracion} of \texttt{Parcel} to calculate the assessment of \texttt{miparcela}.
-	\end{enumerate}	
+		\vspace{-0.2cm}
+	\end{block}	
+
+	Check out \href{https://arcade.academy/arcade.html\#arcade.Window}{(reference documentation)}
 \end{frame}
 
-\begin{frame}{Solved exercise}{Class \texttt{Parcela}}
-	\vspace{-0.26cm}
-  %  \begin{columns}
- %	   \column{0.8\textwidth}
-			\begin{block}{claseparcela.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/claseparcela.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
+%\begin{frame}{Exercise statement}{\texttt{Animal} class}
+%	\begin{enumerate}
+%		\item Create the \texttt{animal} class. 
+%		\item Create the constructor. The class will have the attributes \texttt{tipo} and \texttt{patas}.
+%		%con las variables tipo de animal y número de 		patas.
+%		\item Create the get methods from both attributes which receive like own parameter the animal through \texttt{self} and return respectively the \texttt{tipo} and \texttt{patas}. 
+%		\item Create two instances of animals using the constructor.
+%		\item Print the attributes of both instances.
+%	\end{enumerate}	
+%\end{frame}
+
+%\begin{frame}{Solved exercise}{\texttt{Animal} class}
+%	\vspace{-0.2cm}
+%    \begin{columns}
+% 	   \column{0.8\textwidth}
+%			\begin{block}{animales.py}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animales.py} % contar elementos
+%			\vspace{-0.3cm} 
+%			\end{block}
 %	\end{columns}
-%	\tiny{\href{http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=276&moduleID=0}{Source}}
-\end{frame}
+%\end{frame}
 
-\begin{frame}{Solved exercise}{Use of \texttt{Parcela}}
-	\vspace{-0.4cm}
-    \begin{columns}
- 	   \column{0.8\textwidth}
-			\begin{block}{tasaparcela.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela.py} % contar elementos
-			\vspace{-0.3cm} 
-			\end{block}
-	\end{columns}
-		\tiny{\href{http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=276&moduleID=0}{Source}}
-\end{frame}
+%\begin{frame}{Solved exercise}{\texttt{Animal} class}
+%	\begin{enumerate}
+%		\item Create a \texttt{gato} class in the same file which inherits from the \texttt{animal} class. 
+%		\item Create the constructor and add the \texttt{sonido} attribute. 
+%		\item Create the method \texttt{maullar} which prints the sound MIAU. 
+%		\item Create a instance and check the methods.
+%	\end{enumerate}	
+%\end{frame}
 
-\begin{frame}[plain]{Solved exercise. Serializando objetos \texttt{Parcela}}{}
+%\begin{frame}{Solved exercise}{Class \texttt{Animals}}
 %	\vspace{-0.4cm}
-  %  \begin{columns}
- %	   \column{0.8\textwidth}
-			\begin{block}{\footnotesize{tasaparcela\_pickle.py}}
-			\vspace{-0.2cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela_pickle.py} % contar elementos
-			\vspace{-0.2cm} 
-			\end{block}
+%    \begin{columns}
+% 	   \column{0.8\textwidth}
+%			\begin{block}{animales.py}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/gato.py} % contar elementos
+%			\vspace{-0.3cm} 
+%			\end{block}
 %	\end{columns}
+%\end{frame}
+% añadir otro ejemplo de clases GIS , pickle de clases y más referencias
+%\begin{frame}{Exercise statement}{Class \texttt{Parcela}}
+%	\begin{enumerate}
+%		\item Create a script containing the class \texttt{Parcela}. 
+%		\item Create the constructor. The class will have the attributes \texttt{uso\_suelo} and \texttt{valor}.
+%		%con las variables tipo de animal y número de 		patas.
+%		\item Create the \texttt{valoracion} method to calculate the tax associated with the parcel as follows: 
+%		\begin{itemize}
+%		\item For single-family residential: \textit{tasa = 0.05 * valor}
+%		\item For multifamily residential: \textit{tasa = 0.04 * valor}
+%		\item For all other land uses: \textit{tasa = 0.02 * valor}
+%		\end{itemize}
+%		\item Use the class from another \textit{script} named \texttt{tasaparcela.py} which you create una instance of \texttt{Parcela} named \texttt{miparcela} using the constructor.
+%		\item Print the attribute  \texttt{uso\_suelo} of the instance.
+%		\item Use the method \texttt{valoracion} of \texttt{Parcel} to calculate the assessment of \texttt{miparcela}.
+%	\end{enumerate}	
+%\end{frame}
+
+%\begin{frame}{Solved exercise}{Class \texttt{Parcela}}
+%	\vspace{-0.26cm}
+%  %  \begin{columns}
+% %	   \column{0.8\textwidth}
+%			\begin{block}{claseparcela.py}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/claseparcela.py} % contar elementos
+%			\vspace{-0.3cm} 
+%			\end{block}
+%%	\end{columns}
+%%	\tiny{\href{http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=276&moduleID=0}{Source}}
+%\end{frame}
+
+%\begin{frame}{Solved exercise}{Use of \texttt{Parcela}}
+%	\vspace{-0.4cm}
+%    \begin{columns}
+% 	   \column{0.8\textwidth}
+%			\begin{block}{tasaparcela.py%}
+%			\vspace{-0.3cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela.py} % contar elementos
+%			\vspace{-0.3cm} 
+%			\end{block}
+%	\end{columns}
+%		\tiny{\href{http://esripress.esri.com/display/index.cfm?fuseaction=display&websiteID=276&moduleID=0}{Source}}
+%\end{frame}
+
+%\begin{frame}[plain]{Solved exercise. Serializando objetos \texttt{Parcela}}{}
+%%	\vspace{-0.4cm}
+%  %  \begin{columns}
+% %	   \column{0.8\textwidth}
+%			\begin{block}{\footnotesize{tasaparcela\_pickle.py}}
+%			\vspace{-0.2cm} 
+%				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/tasaparcela_pickle.py} % contar elementos
+%			\vspace{-0.2cm} 
+%			\end{block}
+%%	\end{columns}
 	
-\end{frame}
+%\end{frame}
 
-\subsection{Approach to a final problem}
-\begin{frame}{Exercise statement}{\texttt{Rio} class}
-\vspace{-0.24cm}
-	\begin{enumerate}
-		\item Create the \texttt{Rio} class. 
-		\item Create the constructor and add the \texttt{nombre} and \texttt{longitud} attributes.
-		\item \texttt{Longitud} attribute must be private.
-		\item Create the \texttt{setLongitud} method which receives self and \texttt{longitudR} and allows the set of any value for \texttt{longitud}.
-		\item Create the \texttt{getNombre} method which obtains the name of the river.
-		\item Create the \texttt{getLongitud} method which obtains the river length.		 
-		\item Create an instance and check the methods.
-		\item Try to do an assignment of \texttt{rio.nombre} and other assignment with  \texttt{rio.longitud} What happen? It is correct  to invoke the method named \texttt{rio.getLongitud()} out of the classes? How do you explain that?
-	\end{enumerate}	
-\end{frame}
+%\subsection{Approach to a final problem}
+%\begin{frame}{Exercise statement}{\texttt{Rio} class}
+%\vspace{-0.24cm}
+%	\begin{enumerate}
+%		\item Create the \texttt{Rio} class. 
+%		\item Create the constructor and add the \texttt{nombre} and \texttt{longitud} attributes.
+%		\item \texttt{Longitud} attribute must be private.
+%		\item Create the \texttt{setLongitud} method which receives self and \texttt{longitudR} and allows the set of any value for \texttt{longitud}.
+%		\item Create the \texttt{getNombre} method which obtains the name of the river.
+%		\item Create the \texttt{getLongitud} method which obtains the river length.		 
+%		\item Create an instance and check the methods.
+%		\item Try to do an assignment of \texttt{rio.nombre} and other assignment with  \texttt{rio.longitud} What happen? It is correct  to invoke the method named \texttt{rio.getLongitud()} out of the classes? How do you explain that?
+%	\end{enumerate}	
+%\end{frame}
 
-\begin{frame}{Exercise statement}{Establishment of hierarchies from \texttt{Rio} class}
-\vspace{-0.24cm}
-	\begin{enumerate}
-		\item Add to the \texttt{Rio} class the attribute \texttt{caudal} and the method \texttt{trasvasar} which receives two rivers and transfers 5 liters from the first to the second.
-		\item Create the \texttt{Afluente} class which inherits from \texttt{Rio}.		
-		\item Create the method \texttt{\_\_init\_\_} of \texttt{Afluente} which initializes its \texttt{nombre} and \texttt{longitud} and, also,  \texttt{afluenteDeRio}, new attribute initialized with the name of the river which the affluent starts.
-		\item Is there any polymorphism in this sample?
-		\item Create the main and exit condition and try it. Does the main position affect to the application? 
-		\item Experiment now with conditions and iterative structures limiting when a river can transfer water or try to do some transfer at the same time.
+%\begin{frame}{Exercise statement}{Establishment of hierarchies from \texttt{Rio} class}
+%\vspace{-0.24cm}
+%	\begin{enumerate}
+%		\item Add to the \texttt{Rio} class the attribute \texttt{caudal} and the method \texttt{trasvasar} which receives two rivers and transfers 5 liters from the first to the second.
+%		\item Create the \texttt{Afluente} class which inherits from \texttt{Rio}.		
+%		\item Create the method \texttt{\_\_init\_\_} of \texttt{Afluente} which initializes its \texttt{nombre} and \texttt{longitud} and, also,  \texttt{afluenteDeRio}, new attribute initialized with the name of the river which the affluent starts.
+%		\item Is there any polymorphism in this sample?
+%		\item Create the main and exit condition and try it. Does the main position affect to the application? 
+%		\item Experiment now with conditions and iterative structures limiting when a river can transfer water or try to do some transfer at the same time.
 
-	\end{enumerate}	
-\end{frame}
-
-\begin{frame}{Y más\dots}{}
-Aprende más: \cite{Dusty}
-\end{frame}
-
-
-\appendix
-\section<Bibliographic references>*{\appendixname}
-\subsection<Bibliographic references>*{Bibliographic references}
-
-\begin{frame}[t, allowframebreaks, plain]
-  \frametitle<presentation>{Bibliographic references}
-
-  \begin{thebibliography}{2}
-  
-  \beamertemplatebookbibitems
-  % libro
-  
-   \bibitem{Dpto-CCIA-U.A}[1]
-    Lenguajes de programacion, capítulo 1.
-    \newblock \emph{Lenguajes de programacion}.
-  \newblock \url{http://rua.ua.es/dspace/bitstream/10045/4030/1/tema01.pdf}
-  
-  % libro
-   \bibitem{Downey}[2]
-   Downey, A and Elkner, J and MEYER, C.
-    \newblock \emph{Aprenda a Pensar como un Programador con Python, capitulos 14 y 16}.
-    \newblock Green Tea Press, 2002.
-    
-    \bibitem{vanRossum}[3]
-    G. van Rossum, Jr. Fred L. Drake.
-    \newblock \emph{Python Tutorial Release 3.2.3, chapter 9}.
-    \newblock Python Software Foundation, 2012. 
-    
-     \bibitem{Dusty}[4]
-    Dusty Phillips
-    \newblock \emph{Python 3 Object Oriented Programming}.
-    \newblock Packt Publishing, 2010.
-   
-   % \bibitem{Swaroop}[Swaroop, 2008]
-   %  C. H. Swaroop.
-   % \newblock \emph{A byte of Python}.
-   % \newblock Creative Commons Atribucion-NoComercial 3.0, 2008.
-  \end{thebibliography}
-\end{frame}
+%	\end{enumerate}	
+%\end{frame}
 
 \end{document}
