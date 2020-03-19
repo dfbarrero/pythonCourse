@@ -147,14 +147,15 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 		Describes, by a set of instructions that change the \alert{program state}, \alert{how} the task should be implemented.  
   	\end{block}
   	\begin{itemize}
-  		\item \textbf{Procedural}: organizes the program using collections of subroutines related by means of invocations (\textit{C, Python}).
-  		\begin{itemize}
-  			\item Example: \textit{The cooking process consists of 20 lines of code. When it is used, it only calls the function (1 line).} 
-  		\end{itemize}
-  		\item \textbf{Structural}: is based on nesting, loops, conditionals and subroutines. \texttt{GOTO} command is forbidden 				 \textit{(C, Pascal)}.
+  		%\item \textbf{Procedural}: organizes the program using collections of subroutines related by means of invocations (\textit{C, Python}).
+  		%\begin{itemize}
+  		%	\item Example: \textit{The cooking process consists of 20 lines of code. When it is used, it only calls the function (1 line).} 
+  		%\end{itemize}
+  		\item \textbf{Structural}: is based on nesting, loops, conditionals and subroutines. \texttt{GOTO} command is forbidden 				 \textit{(C, Pascal, Python)}.
   		\begin{itemize}
   			\item Example: \textit{reviewing products of a shopping list and add the item X to the shopping if it is available.} 
   		\end{itemize}
+        \item \textbf{Object-Oriented Programming}
   	\end{itemize}
 \end{frame}
 
@@ -244,6 +245,19 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\centering {Two operations on classes}
     \begin{columns}
  	   \column{.50\textwidth}
+	   		\begin{block}{Instantiation}
+			Creates a new object\\
+			Standard functional notation\\
+			\bigskip
+			\centering{\texttt{x = MyClass()}}\\
+	   		\end{block}
+	   		\begin{exampleblock}{Example}
+\begin{verbatim}
+time = Time()
+\end{verbatim}
+	   		\end{exampleblock}
+
+ 	   \column{.50\textwidth}
 	   		\begin{block}{Attribute references}
 			Accesses an attribute value\\
 			Standard dot syntax\\
@@ -255,19 +269,6 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 time.hour = 4
 print(time.hour)
 hour = time.hour
-\end{verbatim}
-	   		\end{exampleblock}
-
- 	   \column{.50\textwidth}
-	   		\begin{block}{Instantiation}
-			Creates a new object\\
-			Standard functional notation\\
-			\bigskip
-			\centering{\texttt{x = MyClass()}}\\
-	   		\end{block}
-	   		\begin{exampleblock}{Example}
-\begin{verbatim}
-time = Time()
 \end{verbatim}
 	   		\end{exampleblock}
 	\end{columns}
@@ -407,12 +408,12 @@ time = Time()
 \begin{frame}{Inheritance}{Examples of simple inheritance (I)}
     \begin{tikzpicture}
     \umlclass{Dog}
-        {+ name : str\\ + age : int} 
-        {+ bit()  :  void\\ +describe() : void}
+        {+ name : str\\ + age : int\\ + fleas : int} 
+        {+ bit()  :  void\\ + describe() : void}
 
     \umlclass[x=3]{Cat}
         {+ name : str\\ + age : int} 
-        {+ bit()  :  void\\ +describe() : void}
+        {+ scratch()  :  void\\ + describe() : void}
     \end{tikzpicture}
 \end{frame}
 
@@ -420,7 +421,7 @@ time = Time()
     \begin{tikzpicture}
     \umlclass{Animal}
         {+ name : str\\ + age : int} 
-        {+describe() : void}
+        {+ describe() : void}
     \umlclass[x=-2, y=-3]{Dog}
         {+ fleas : int} 
         {+ bit()  :  void}
@@ -530,12 +531,12 @@ time = Time()
     The most common access levels are:
 	
 	\begin{itemize}
-		\item \textbf{public}: visible for everyone  [default in Python].
-		\item \textbf{private}: visible for the creator class [start with a double underscore and does not end in the same manner].
-		\item \textbf{protected}: visible for the creator class and its descendents \alert{[not exist in Python]}. 
+		\item \textbf{public}: visible for everyone  [default in Python]
+		\item \textbf{private}: visible for the creator class [start with a double underscore and does not end in the same manner]
+		\item \textbf{protected}: visible for the creator class and its descendents \alert{[does not exist in Python]}
 	\end{itemize}
 
-     Methods geters and setters to control the access to attributes
+     Methods ``geters'' and ``setters'' to control the access to attributes
 \end{frame}
 
 \begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
@@ -746,6 +747,56 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 
 	Check out \href{https://arcade.academy/arcade.html\#arcade.Window}{(reference documentation)}
 \end{frame}
+
+\section{Exercises}
+\subsection{Exercise 1: Asteroids}
+	\begin{frame}{Exercise 1: Asteroids}
+	\vspace{-0.3cm}
+    \begin{columns}
+ 	   \column{.6\textwidth}
+		\centering \includegraphics[width=\linewidth]{figs/asteroids.png}\\
+		\tiny{\href{http://gamedevelopment.tutsplus.com/tutorials/quick-tip-intro-to-object-oriented-programming-for-game-development--gamedev-1805}{(Source)}}
+		\column{.4\textwidth}
+	\begin{enumerate}
+	\item Identify the classes in the Asteroids videogame
+	\item Identify attributes contained in the previous classes
+	\item Identify methods contained in the previous classes
+	\end{enumerate}
+	\end{columns}
+\end{frame}
+
+\subsection{Exercise 2: Tetris}
+	\begin{frame}{Exercise 2: Tetris}
+    \begin{columns}
+ 	   \column{.4\textwidth}
+		\centering \includegraphics[width=\linewidth]{figs/tetris.png}\\
+		\tiny{\href{http://gamedevelopment.tutsplus.com/tutorials/quick-tip-intro-to-object-oriented-programming-for-game-development--gamedev-1805}{(Source)}}
+		\column{.4\textwidth}
+	\begin{enumerate}
+	\item Identify the classes in the Tetris videogame
+	\item Identify attributes contained in the previous classes
+	\item Identify methods contained in the previous classes
+	\end{enumerate}
+	\end{columns}
+\end{frame}
+
+\subsection{Exercise 3: Pac-Man}
+	\begin{frame}{Exercise 3: Pac-Man}
+    \begin{columns}
+ 	   \column{.5\textwidth}
+		\centering \includegraphics[width=\linewidth]{figs/pacman2.png}\\
+		\tiny{\href{http://gamedevelopment.tutsplus.com/tutorials/quick-tip-intro-to-object-oriented-programming-for-game-development--gamedev-1805}{(Source)}}
+		\column{.5\textwidth}
+	\begin{enumerate}
+	\item Identify the classes in the Pac-Man videogame
+	\item Identify attributes contained in the previous classes
+	\item Identify methods contained in the previous classes
+	\end{enumerate}
+	\end{columns}
+\end{frame}
+
+
+
 
 %\begin{frame}{Exercise statement}{\texttt{Animal} class}
 %	\begin{enumerate}
