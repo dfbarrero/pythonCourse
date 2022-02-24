@@ -91,8 +91,13 @@
 	\begin{block}{Objectives}
 		\begin{enumerate}
 		\item Understand the need to store information in data structures.
-		\item Understand the need to use the type of data structure most appropriate according to data processing to be performed in the script.
-		\item Know how to use the different types of existing data structure in Python.
+		\item Identify most appropriate data structure according to the problem.
+        \IfStrEq{\modo}{videojuegos}{
+            \item Understand the role of lists in Arcade.
+            \item Basic usage of sprites in Arcade.
+        } {
+		    \item Know how to use the different types of existing data structure in Python.
+        }
 		\end{enumerate}
 	\end{block}
 \end{frame}
@@ -621,7 +626,7 @@
     Locating sprites in the game is a tought work
     \begin{itemize}
         \item Closely related to \alert{level design}
-        \item There are tools that eases this task
+        \item There are tools that ease this task
     \end{itemize}
     \href{https://www.mapeditor.org/}{(Tiled Map Editor)}
 \end{frame}
