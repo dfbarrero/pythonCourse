@@ -123,7 +123,7 @@
 \end{frame}
 
 \subsection{Array}
-\begin{frame}[fragile]{Java Collections}{Array}
+\begin{frame}[fragile]{Data structures}{Array}
     \begin{columns}
  	   \column{.50\textwidth}
 		\begin{center}
@@ -175,7 +175,10 @@
 		Disadvantajes:
 		\begin{itemize}
 			\item Fixed size
-            \item Nor supported in Python \textit{by default}
+            \item Not supported in Python \textit{by default}
+		        \begin{itemize}
+			    \item \texttt{NumPy}
+		        \end{itemize}
 		\end{itemize}
 	\end{columns}
 \end{frame}
@@ -407,7 +410,230 @@
 		\end{columns}
 \end{frame}
 
-\section{Data structures in Python}
+\IfStrEq{\modo}{videojuegos}{
+
+\section{Data structures in Arcade}
+\subsection{Sprites}
+
+\begin{frame}{Data structures in Arcade}{Sprites (I)}
+    \begin{columns}
+ 	   \column{.50\textwidth}
+	   \begin{block}{Sprite}
+       A sprite is a 2D image used in videogames
+	   \end{block}
+   \end{columns}
+
+    \bigskip
+
+    \begin{columns}
+ 	   \column{.20\textwidth}
+			\includegraphics[width=\linewidth]{figs/mario.jpg}\\
+ 	   \column{.20\textwidth}
+			\includegraphics[width=\linewidth]{figs/zelda.png}\\
+ 	   \column{.50\textwidth}
+			\includegraphics[width=\linewidth]{figs/mario-screenshot.png}
+   \end{columns}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites (II)}
+    \begin{columns}
+ 	   \column{.50\textwidth}
+    A videogame contains many sprites
+        \begin{itemize}
+        \item Difficult maintenance
+        \item Solution: Spritesheets
+	    \end{itemize}
+
+ 	   \column{.50\textwidth}
+    Advantages
+        \begin{itemize}
+        \item One file contains many sprites
+        \item Less I/O operations $\Rightarrow$ Better performance
+        \item Less memory consumption
+	    \end{itemize}
+   \end{columns}
+
+    \centering
+
+    \begin{columns}
+ 	   \column{.50\textwidth}
+		\includegraphics[width=\linewidth]{figs/mario-spritesheet.png}
+
+ 	   \column{.50\textwidth}
+		\includegraphics[width=\linewidth]{figs/blocks1.png}
+   \end{columns}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites (III)}
+    In genenal, any data can be stored in three forms
+        \begin{itemize}
+        \item Not compressed
+        \item Compressed with loss
+        \item Compressed without loss
+	    \end{itemize}
+
+    \begin{table}
+    \centering
+    \begin{tabular}{l|c|c|c}
+                            & Image format & Sound format & Binary data\\\hline
+    Not compressed          & BMP          & WAV  &  \\
+    Compressed with loss    & JPG          & MP3  &  \\
+    Compressed without loss & PNG, GIF     & -    & ZIP, bzip, rar, ... 
+    \end{tabular}
+    \end{table}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites (IV)}
+    Attending to what information is stored in image format, there are two types of image formats:
+        \begin{itemize}
+            \item Bitmap: stores each pixel
+                \begin{itemize}
+                \item Scales bad
+                \item Formats: JPG, PNG, BMP, GIF
+                \end{itemize}
+
+            \item Vectorial: stores coordinates
+                \begin{itemize}
+                \item Scales well
+                \item Not supported by Arcade
+                \item Formats: SVG, EPS
+                \end{itemize}
+	    \end{itemize}
+
+    Many open assets for your games!
+        \begin{itemize}
+        \item \href{https://kenney.nl/assets}{(Kenney)}
+        \end{itemize}
+\end{frame}
+
+\subsection{Sprites in Arcade}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (I)}
+    You will need to provide a \alert{path} to the file
+    \begin{itemize}
+        \item \textit{Absolute path}: Starts from the root directory
+            \begin{itemize}
+            \item Example (Windows): \texttt{c:\textbackslash\textbackslash Users\textbackslash atreides\textbackslash Desktop\textbackslash mygame\textbackslash assets\textbackslash sprites\textbackslash mario.png}
+            \item Example (Linux): \texttt{/home/atreides/mygame/assets/sprites/mario.png}
+            \end{itemize}
+        \item \textit{Relative path}: Relative to the project's directory
+            \begin{itemize}
+            \item Example (Windows): \texttt{assets\textbackslash sprites\textbackslash mario.png}
+            \item Example (linux): \texttt{assets/sprites/mario.png}
+            \end{itemize}
+    \end{itemize}
+
+    \textbf{Always} use relative paths in your projects!!!
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (II)}
+	Sprites are a fundamental concept in Arcade
+    
+    \begin{columns}
+ 	   \column{\textwidth}
+		\begin{exampleblock}{Creating a sprite}
+        \texttt{
+        character = arcade.Sprite('images/character.png')
+        }
+		\end{exampleblock}
+    \end{columns}
+
+    \begin{columns}
+ 	   \column{.50\textwidth}
+		\begin{exampleblock}{Placing a sprite}
+        \texttt{
+        character.center\_x = 300\\
+        character.center\_y = 200}
+		\end{exampleblock}
+
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (II)}
+	Arcade stores sprites in lists
+    
+		\begin{exampleblock}{}
+        \texttt{
+        wall\_list = arcade.SpriteList()\\
+        wall = arcade.Sprite('images/boxCrate\_double.png')\\
+        wall.center\_x = 300\\
+        wall.center\_y = 300}
+		\end{exampleblock}
+
+       Lists are manipulated as a whole
+
+		\begin{exampleblock}{}
+        \texttt{
+        wall.draw()
+        }
+		\end{exampleblock}
+
+    And sprites can be removed from the list
+		\begin{exampleblock}{}
+        \texttt{
+        wall.remove\_from\_sprite\_lists()
+        }
+		\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (III)}
+	Arcade stores sprites in lists
+    
+		\begin{exampleblock}{}
+        \texttt{
+        wall\_list = arcade.SpriteList()\\
+        wall = arcade.Sprite('images/boxCrate\_double.png')\\
+        wall.center\_x = 300\\
+        wall.center\_y = 300}
+		\end{exampleblock}
+
+       Lists are manipulated as a whole
+
+		\begin{exampleblock}{}
+        \texttt{
+        wall.draw()
+        }
+		\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (IV)}
+    Lists in Arcade implements \alert{collision detection} and handling
+		\begin{exampleblock}{}
+        \texttt{
+            hit\_list = arcade.check\_for\_collision\_with\_list(player\_sprite,
+                                                              coin\_list)
+        }
+		\end{exampleblock}
+
+    And sprites can be removed from the list
+		\begin{exampleblock}{}
+        \texttt{
+        wall.remove\_from\_sprite\_lists()
+        }
+		\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (III)}
+    Functional example in \href{https://gist.github.com/dfbarrero/83294a5ea218ca866b68558d4d64ba46}{(example)}
+\end{frame}
+
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (IV)}
+    Locating sprites in the game is a tought work
+    \begin{itemize}
+        \item Closely related to \alert{level design}
+        \item There are tools that eases this task
+    \end{itemize}
+    \href{https://www.mapeditor.org/}{(Tiled Map Editor)}
+\end{frame}
+
+
+
+}{
+
+
+\section{Lists in Arcade}
+
+\section{Lists in Arcade}
 \subsection{Overview}
 \begin{frame}{Data structures in Python}{Overview}
 	High-level, language-defined data structures:
@@ -418,8 +644,6 @@
 		\item Dictionaries (associative arrays).
 	\end{itemize}
 \end{frame}
-
-\subsection{Lists}
 
 \begin{frame}[fragile]{Data structures in Python}{Lists (I)}
     \begin{columns}
@@ -871,49 +1095,7 @@ Dictionary& Yes & No & \texttt{dic = \{'abc' : 1, 'bca' : 2\}} \\\hline
 \end{tabular}
 \end{frame}
 
-\end{document}
-
-% inmersión en python
-\appendix
-\section<Bibliographic references>*{\appendixname}
-\subsection<Bibliographic references>*{Bibliographic references}
-
-\begin{frame}[plain,allowframebreaks]
-  \frametitle<presentation>{Bibliographic references}
-
-  \begin{thebibliography}{4}
-
-  \beamertemplatebookbibitems
-  % libro
-   \bibitem{vanRosum}[van Rosum, 2012]
-    G. van Rossum, Jr. Fred L. Drake.
-    \newblock \emph{Python Tutorial Release 3.2.3, chapter 5}.
-    \newblock Python Software Foundation, 2012. 
-  % libro
-   \bibitem{Marzal}[Marzal, 2014]
-     A. Marzal Varó, I. Gracia Luengo, P. García Sevilla.
-    \newblock \emph{Introducción a la programación con Python 3, capítulo 5}.
-    \newblock Universidad Jaime I.
-    
-     \bibitem{Bahit}[Bahit, 2008]
-     E. Bahit.
-    \newblock \emph{Curso: Python para principiantes}.
-    \newblock Creative Commons Atribución-NoComercial 3.0, 2012.
-    
-  % libro
-   
-
-  \bibitem{Pilgrim}[Pilgrim, 2004]
-  M. Pilgrim.
-    \newblock \emph{Dive into Python}.
-    \newblock Ed. Prentice Hall, 2004.
-   
-    
- 
-  \end{thebibliography}
-\end{frame}
-
-
+}
 
 
 \end{document}
