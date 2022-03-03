@@ -1,5 +1,5 @@
 # Customize these two lines
-TARGETS=mcyte muii videojuegos # Courses to compile
+TARGETS=videojuegos # Courses to compile
 NAME=oop
 
 # Do not touch

@@ -10,7 +10,7 @@ class MyGame(arcade.Window):
         """ Initializer """
 
         # Call the parent class initializer
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Lab 7 - User Control")
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "My Game")
 
     def on_draw(self):
         arcade.start_render()

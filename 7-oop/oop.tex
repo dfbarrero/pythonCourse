@@ -25,6 +25,8 @@
 \usepackage{xcolor}
 \usepackage{xstring}
 \usepackage{listings}
+\usepackage{multicol}
+\usepackage{standalone}
 \usepackage{tikz}
 \usepackage{tikz-uml}
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,shapes}
@@ -99,11 +101,14 @@
 	\end{block}
 \end{frame}
 
+
 {
 \disableNavigation{white}
 \begin{frame}[shrink]{Table of Contents}
  \frametitle{Table of Contents}
- \tableofcontents
+    \begin{multicols}{2}
+        \tableofcontents
+    \end{multicols}
   % You might wish to add the option [pausesections]
 \end{frame}
 }
@@ -119,7 +124,7 @@
 			\begin{block}{Programming language}
 				Set of rules and instructions based on a familiar syntax and later translated into machine language which allow the elaboration of a program to solve a problem.			\end{block}
 			\begin{block}{Paradigm}
-Set of rules, patterns and styles of programming that are used by programming languages \cite{Dpto-CCIA-U.A}.
+Set of rules, patterns and styles of programming that are used by programming languages.
 %	Conjunto de estandares, teorias y metodos para representar un modo de organizar el pensamiento. % Forma de entender la realidad. 
 			\end{block}
 \end{frame}
@@ -161,7 +166,7 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 
 \begin{frame}{Programming paradigms types (III)}{}
 	\begin{block}{Object-Oriented Programming}
-		Evolves from imperative programming. It is based on \alert{objects} that allow express the \alert{characteristics} and \alert{behavior} in a closer way to real life (Java, Python, C++). 
+		Evolves from imperative programming. It is based on \alert{objects} that allow express the \alert{characteristics} and \alert{behavior} in a closer way to real life. 
   	\end{block}
   	\begin{itemize}
   		\item \textbf{Main characteristics}: abstraction, encapsulation, polymorphism, inheritance, modularity, etc.
@@ -172,11 +177,12 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \end{frame}
 
 \begin{frame}{Programming paradigms types (IV)}{Classification}
-	\includegraphics[scale=0.4]{figs/paradigmas}
+    \input{figs/paradigmas.tex}
+	%\includegraphics[scale=0.4]{figs/paradigmas}
 	%\caption{http://www.computer.org/csdl/mags/it/2011/05/mit2011050030-abs.html}
 	
-	\centering\textit{\alert{Python supports the three major paradigms, although it stands out for the OOP and Imperative paradigms.}
-}\end{frame}
+	\centering Python supports the three major paradigms, although it stands out for the OOP
+\end{frame}
 
 \section[Object-Oriented Programming]{Object-Oriented Programming}
 
@@ -188,8 +194,8 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
   	\item \textbf{Extensibility}: Ease of adapting software products to specification changes.
   	\item \textbf{Maintainability}: Amount of effort necessary for a product to maintain its normal functionality.   
   	\item \textbf{Usability}: Ease of using the tool.
-  	\item \textbf{Robustness}: Ability of software systems to react appropriately to exceptional conditions.   
-  	\item \textbf{Correction}: Ability of software products to perform their tasks accurately, as defined in their specifications.
+ % 	\item \textbf{Robustness}: Ability of software systems to react appropriately to exceptional conditions.   
+ % 	\item \textbf{Correction}: Ability of software products to perform their tasks accurately, as defined in their specifications.
   	\end{itemize} 	
 \end{frame}
 
@@ -302,7 +308,7 @@ hour = time.hour
 	\vspace{-0.3cm}
 	\begin{exampleblock}{}
 	\vspace{-0.3cm}
-		\lstinputlisting{code/Time2.py}
+		\lstinputlisting{code/Time3.py}
 	\end{exampleblock}
 \end{frame}
 
@@ -380,35 +386,22 @@ hour = time.hour
 	\begin{block}{Inheritance}
 	Mechanism of \alert{reusing} code in OOP. Consists of generating child classes from other existing (\alert{super-class}) allowing the use and adaptation of the attributes and methods of the parent class to the child class
   	\end{block}	
-\vspace{-0.2cm}
-\begin{block}{}
-\begin{itemize}
+
+    \bigskip
+
+		A subclass inherits all the attributes and methods from its superclass
+        \begin{itemize}
 		\item {\textit{Superclass}: ``Father'' of a class}
 		\item {\textit{Subclass}: ``Child'' of a class}
-		\item {A subclass inherits all the attributes and methods from its superclass}
-		\item {\textit{Class hierarchy}: A set of classes related by inheritance}
-\end{itemize}
-	\end{block}
-\end{frame}
-
-\subsection{Types of inheritance}
-
-\begin{frame}{Inheritance}{Types of inheritance}
-	\begin{block}{Types of inheritance}
-	\begin{itemize}
-		\item If the child class inherits from a single class is called \alert{single inheritance}.
-		\item if it inherits from more classes is \alert{multiple inheritance}.
-	\end{itemize}
-	\end{block}
-	\medskip
-	   \textit{Python allows both; simple and multiple inheritance.}
+        \end{itemize}
 \end{frame}
 
 \subsection{Examples}
 \begin{frame}{Inheritance}{Examples of simple inheritance (I)}
     \begin{tikzpicture}
     \umlclass{Dog}
-        {+ name : str\\ + age : int\\ + fleas : int} 
+        {+ name : str\\ + age : int} 
+        %{+ name : str\\ + age : int\\ + fleas : int} 
         {+ bit()  :  void\\ + describe() : void}
 
     \umlclass[x=3]{Cat}
@@ -423,7 +416,8 @@ hour = time.hour
         {+ name : str\\ + age : int} 
         {+ describe() : void}
     \umlclass[x=-2, y=-3]{Dog}
-        {+ fleas : int} 
+        %{+ fleas : int} 
+        {} 
         {+ bit()  :  void}
 
     \umlclass[x=2, y=-3]{Cat}
@@ -445,14 +439,27 @@ hour = time.hour
 \end{frame}
 
 \begin{frame}{Inheritance}{Examples of simple inheritance (III)}
+	\textit{Class hierarchy}: A set of classes related by inheritance  \\
 	\begin{figure}
 		\includegraphics[scale=0.33]{figs/herencia1}
 		\caption{{\scriptsize Example of simple Inheritance in OOP. Obtained from: \url{http://android.scenebeta.com}}}
 	\end{figure}
 \end{frame}
 
-\subsection{Example of multiple inheritance}
-\begin{frame}{Inheritance}{Example of multiple inheritance}
+\subsection{Types of inheritance}
+
+\begin{frame}{Inheritance}{Types of inheritance (I)}
+	\begin{block}{Types of inheritance}
+	\begin{itemize}
+		\item If the child class inherits from a single class is called \alert{single inheritance}.
+		\item if it inherits from more classes is \alert{multiple inheritance}.
+	\end{itemize}
+	\end{block}
+	\medskip
+	   \textit{Python allows both; simple and multiple inheritance.}
+\end{frame}
+
+\begin{frame}{Inheritance}{Types of inheritance (II)}
 	\begin{figure}
 		\includegraphics[scale=0.5]{figs/herencia2}
 		\caption{{\scriptsize Example of multiple Inheritance in OOP. Obtained from: \url{http://www.avizora.com}}}
@@ -463,7 +470,9 @@ hour = time.hour
 \subsection{Polymorphism}
 
 \begin{frame}{Concepts of OOP}{Polymorphism (I)}
-\vspace{-0.2cm}
+    \begin{columns}
+ 	   \column{.4\textwidth}
+
 	\begin{block}{Polymorphism}
 		Mechanism of object-oriented programming that allows to invoke a method whose implementation will depend on the object that does it.
   	\end{block}	
@@ -473,12 +482,35 @@ hour = time.hour
 %			\item \justifying\textbf{Polimorfismo paramétrico}: mismo nombre diferentes 							  tipos de datos. 
 %			\item \justifying\textbf{Polimorfismo de subtipado}: Permite invocar un método 						  de una clase especializada a partir de la clase padre.
 %		\end{itemize}
-	\begin{figure}
-	  \vspace{-0.2cm}
-		\includegraphics[width=4.6cm]{figs/polimorfismo1}
-		\vspace{-0.2cm}
-		\caption{\scriptsize{Example of polymorphism. Obtained from: \url{http://virtual.uaeh.edu.mx}}}
-	\end{figure}
+%	\begin{figure}
+
+ 	   \column{.6\textwidth}
+
+    \begin{tikzpicture}
+    \umlclass{Animal}
+        {+ name : str\\ + age : int} 
+        {+ describe() : void\\+ attack() : void}
+    \umlclass[x=-2, y=-3]{Dog}
+        %{+ fleas : int} 
+        {} 
+        {+ attack()  :  void}
+
+    \umlclass[x=2, y=-3]{Cat}
+        {} 
+        {+ attack() : void}
+
+    \umlinherit[geometry=|-]{Dog}{Animal}
+    \umlinherit[geometry=|-]{Cat}{Animal}
+    \end{tikzpicture}
+
+
+    \end{columns}
+
+	  %\vspace{-0.2cm}
+%		\includegraphics[width=4.6cm]{figs/polimorfismo1}
+%		\vspace{-0.2cm}
+%		\caption{\scriptsize{Example of polymorphism. Obtained from: \url{http://virtual.uaeh.edu.mx}}}
+%	\end{figure}
 \end{frame}
 
 %\begin{frame}{Characteristics}{Polymorphism (II)}
@@ -498,21 +530,21 @@ hour = time.hour
 	\href{https://gist.github.com/dfbarrero/0b401926b92a5e36ad08a3eae5fbd16c}{(Source code)}
 \end{frame}
 
-\subsection{Abstraction}
+%\subsection{Abstraction}
 
-\begin{frame}{Concepts of OOP}{Abstraction}
-	\begin{block}{Abstraction}
-		Mechanism that allows the isolation of the not relevant information to a level of knowledge.
-  	\end{block}	
+%\begin{frame}{Concepts of OOP}{Abstraction}
+%	\begin{block}{Abstraction}
+%		Mechanism that allows the isolation of the not relevant information to a level of knowledge.
+%  	\end{block}	
 	
-	\begin{itemize}
-		\item \textit{A driver does not need to know how the carburetor works.} 
-		\item \textit{To talk on the phone does not need to know how the voice is transferred.} 
-		\item \textit{To use a computer do not need to know the internal composition of their materials}. 							  
-		
-%		\vfill\item \textit{\alert{En Python no existen de manera nativa las clases 					abstractas pero si mediante el módulo ABC \cite{PythonTeam}.}}
-	\end{itemize}
-\end{frame}
+%	\begin{itemize}
+%		\item \textit{A driver does not need to know how the carburetor works.} 
+%		\item \textit{To talk on the phone does not need to know how the voice is transferred.} 
+%		\item \textit{To use a computer do not need to know the internal composition of their materials}. 							  
+%		
+%%		\vfill\item \textit{\alert{En Python no existen de manera nativa las clases 					abstractas pero si mediante el módulo ABC \cite{PythonTeam}.}}
+%	\end{itemize}
+%\end{frame}
 
 \subsection{Encapsulation}
 
@@ -527,7 +559,7 @@ hour = time.hour
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Concepts of OOP}{Encapsulation (I)}
+\begin{frame}{Concepts of OOP}{Encapsulation (II)}
     The most common access levels are:
 	
 	\begin{itemize}
@@ -681,9 +713,9 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 		\begin{itemize}
 		\item \footnotesize{\texttt{\_\_str\_\_(self)} It should return a string with \texttt{self} information.  When \texttt{print()} is invoked with the object, if the method \texttt{\_\_str\_\_()} is defined, Python shows the result of running this method on the object.}
 		\item \footnotesize{\texttt{\_\_len\_\_(self)} It should return the length or ``size'' of object (number of elements if is a \textit{set} or \textit{queue}).}
-		\item \footnotesize{\texttt{\_\_add\_\_(self, otro\_obj)} It allows to apply the addition operator (+) to objects of the class in which it is defined.}
-		\item \footnotesize{\texttt{\_\_mul\_\_(self, otro\_obj)} It allows to apply the multiplication operator (*) to objects of the class in which it is defined.}
-		\item \footnotesize{\texttt{\_\_comp\_\_(self, otro\_obj)} It allows to apply the comparison operators (<, >, <=, >=, ==, !=) to objects of the class in which it is defined. It should return 0 if they are equal, -1 if \texttt {self} is smaller than \texttt{other\_obj} and 1 if \texttt{self} is greater than \texttt{other\_obj}.}
+		%\item \footnotesize{\texttt{\_\_add\_\_(self, otro\_obj)} It allows to apply the addition operator (+) to objects of the class in which it is defined.}
+		%\item \footnotesize{\texttt{\_\_mul\_\_(self, otro\_obj)} It allows to apply the multiplication operator (*) to objects of the class in which it is defined.}
+		%\item \footnotesize{\texttt{\_\_comp\_\_(self, otro\_obj)} It allows to apply the comparison operators (<, >, <=, >=, ==, !=) to objects of the class in which it is defined. It should return 0 if they are equal, -1 if \texttt {self} is smaller than \texttt{other\_obj} and 1 if \texttt{self} is greater than \texttt{other\_obj}.}
 		\end{itemize}
 		\vspace{-0.2cm}
 	\end{block}	

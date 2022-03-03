@@ -22,7 +22,5 @@ if __name__ == '__main__':
     snoopy.bit()
 
     snoopy.describe()
-    print()
+    print() # Print empty line
     laika.describe()
-
-
