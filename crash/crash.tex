@@ -196,6 +196,7 @@
 			\begin{itemize}
 			\item PyCharm, Komodo, PyDev, ...
 			\item \url{http://wiki.python.org/moin/PythonEditors}
+            \item \textit{Notebooks} are also very popular, particularly in AI
 			\end{itemize}
 	\end{itemize}
     \begin{columns}
@@ -231,10 +232,10 @@
 			\end{itemize}
 
 		\vspace{-0.2cm}
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.2cm}
 			\lstinputlisting[basicstyle=\scriptsize]{code/interprete.txt}
-		\end{block}
+		\end{exampleblock}
 		The programmer executes as he writes code down.
 \end{frame}
 
@@ -256,18 +257,18 @@
  	   \column{.50\textwidth}
 	
 		\vspace{-0.2cm}
-		\begin{block}{script.py}
+		\begin{exampleblock}{script.py}
 		\vspace{-0.2cm}
 			\lstinputlisting{code/script.py}
-		\end{block}
+		\end{exampleblock}
 
  	   \column{.50\textwidth}
-    	\begin{block}{}
+    	\begin{exampleblock}{}
 \begin{verbatim}
 python script.py
 ./script.py
 \end{verbatim}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
@@ -299,7 +300,7 @@ variable = value
 \begin{frame}[fragile]{Variables}{Numbers (II)}
    	\begin{columns}
    	\column{.40\textwidth}
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\begin{verbatim}
 >> integer = 4
 >> float = 2.3
@@ -313,20 +314,20 @@ variable = value
 >>> type(integer)
 <type 'int'>
 \end{verbatim}
-		\end{block}
+		\end{exampleblock}
 
    	\column{.60\textwidth}
 
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\lstinputlisting{code/operdemo.py}
-		\end{block}
-
+		\end{exampleblock}
 
 	    \bigskip
         New Python elements:
         \begin{itemize}
             \item The \texttt{input()} function.
 		    \item The \texttt{int()} and \texttt{float()} functions.
+            \item The \texttt{type()} function.
         \end{itemize}
    \end{columns}
 \end{frame}
@@ -335,84 +336,55 @@ variable = value
 
 \begin{frame}[fragile]{An informal introduction}{Strings (I)}
 	Of course, variables can contain strings.
-	\begin{block}{}
+	\begin{exampleblock}{}
 		\begin{verbatim}
 >>> text = "hello"
 >>> text = 'hello'
 >>> print(text)
 hello
 \end{verbatim}
-	\end{block}
+	\end{exampleblock}
 
-	\begin{columns}
+	\begin{columns}[T]
  	   			\column{.40\textwidth}
 		Strings contatenation
-				\begin{block}{}
+				\begin{exampleblock}{}
 				\begin{verbatim}
 >>> "hello" + " there"
 'hello there'
 >>> "hello" "there"
 'hellothere'
 \end{verbatim}
-				\end{block}
+				\end{exampleblock}
 
  	   			\column{.30\textwidth}
 		Variables with strings
-				\begin{block}{}
+				\begin{exampleblock}{}
 				\begin{verbatim}
 >>> a = "hello"
 >>> b = " there"
 >>> a + b
 'hello there'
 \end{verbatim}
-				\end{block}
+				\end{exampleblock}
 
  	   			\column{.30\textwidth}
 		String length
-				\begin{block}{}
+				\begin{exampleblock}{}
 				\begin{verbatim}
 >>> len("hello")
 5
 \end{verbatim}
-				\end{block}
+				\end{exampleblock}
 		\end{columns}
-
 \end{frame}
 
 \begin{frame}[fragile]{An informal introduction}{Strings (II)}
 	\vspace{-0.2cm}
-	Strings can be used as a sequence of characters: \alert{Slice notation}.
-	\begin{itemize}
-	\item Quite common in Python data structures.
-	\item It uses indices (as an array). First index is $0$.
-	\end{itemize}
-	\vspace{-0.3cm}
-	\begin{columns}
- 	   			\column{.40\textwidth}
-				\begin{block}{}
-				\begin{verbatim}
->>> a = "hello"
->>> a[2]
-'l'
->>> a[2:]
-'llo'
->>> a[:2]
-'he'
->>> a[2:] + a[:2]
-'llohe'
->>> a[2:4]
-'ll'
-\end{verbatim}
-				\end{block}
-		\end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{An informal introduction}{Strings (III)}
-	\vspace{-0.2cm}
 	F-strings: From Python 3.6
 	\vspace{-0.3cm}
 	\begin{columns}
-\column{.50\textwidth}
+\column{.70\textwidth}
 \begin{block}{}
 \begin{verbatim}
 >>> name = 'John'
@@ -424,6 +396,44 @@ hello
 \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{An informal introduction}{Strings (III)}
+	\vspace{-0.3cm}
+	\begin{columns}
+ 		\column{.60\textwidth}
+	        Strings are a sequence of characters: \alert{Slice notation}.
+	        \begin{itemize}
+	            \item Quite common in Python data structures.
+	            \item It uses indices (as an array). First index is $0$.
+	        \end{itemize}
+
+            \begin{block}{Slice notation}
+                variable[start:stop:step]
+            \end{block}
+
+   	    \column{.40\textwidth}
+			\begin{exampleblock}{}
+            \vspace{-0.3cm}
+		    \begin{verbatim}
+>>> a = "hello"
+>>> a[2]
+'l'
+>>> a[2:]
+'llo'
+>>> a[:2]
+'he'
+>>> a[2:] + a[:2]
+'llohe'
+>>> a[2:4]
+'ll'
+>>> a[::2]
+'hlo'
+>>> a[::-1]
+'olleh'
+\end{verbatim}
+            \vspace{-0.2cm}
+				\end{exampleblock}
+		\end{columns}
+\end{frame}
 
 
 \subsection{Lists}
@@ -446,37 +456,82 @@ variable = [data1, data2, ..., dataN]
 \end{frame}
 
 \begin{frame}[fragile]{An informal introduction}{Lists (II)}
+    \vspace{-0.7cm}
 	\begin{columns}
- 	   	\column{.40\textwidth}
-		Definition example
+ 	   	\column{.30\textwidth}
+		Initialization
 
-   		\column{.60\textwidth}
-		\begin{block}{}
+   		\column{.70\textwidth}
+		\begin{exampleblock}{}
 		\begin{verbatim}
 >>> a = ['spam', 'eggs', 123]
 >>> a
 ['spam', 'eggs', 123]
 \end{verbatim}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 
 	\begin{columns}
- 	   	\column{.40\textwidth}
-		Slice notation and the \texttt{len()} function work on lists
+ 	   	\column{.30\textwidth}
+		Slice notation, \texttt{len()} and $+$ work on lists
 
-   		\column{.60\textwidth}
-		\begin{block}{}
+   		\column{.70\textwidth}
+		\begin{exampleblock}{}
 		\begin{verbatim}
 >>> a[2]
 123
 >>> a[1:]
 ['eggs', 123]
->>> a + a[2:len(a)]
-['spam', 'eggs', 123, 123]
+>>> a + a
+['spam', 'eggs', 123, 'spam', 'eggs', 123]
+>>> len(a)
+3
 \end{verbatim}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
+
+\begin{frame}[fragile,shrink]{Data structures in Python}{Lists (III)}
+    \begin{columns}
+ 	   \column{.40\textwidth}
+	   Lists are objects: they have methods
+	\begin{itemize}
+		\item \texttt{list.append(x)}
+		\item \texttt{list.insert(i, x)}
+		\item \texttt{list.remove(x)}
+		\item \texttt{list.pop()}
+		\item \texttt{list.index(x)}
+		\item \texttt{list.count(x)}
+		\item \texttt{list.sort()}
+		\item \texttt{list.reverse()}
+	\end{itemize}
+
+ 	   \column{.60\textwidth}
+        \scriptsize{
+		\begin{exampleblock}{}
+		\vspace{-0.4cm}
+		\lstinputlisting{code/lists.txt}
+		\vspace{-0.2cm}
+		\end{exampleblock}
+		}
+   \end{columns}
+\end{frame}
+
+% uso de len(lista)
+% uso de rodajas o slices
+%\begin{frame}[shrink]{Data structures in Python}{Lists (IV)}
+%Slice notation can be used in lists
+%    \begin{columns}
+% 	   \column{.40\textwidth}
+%\scriptsize{
+%		\begin{exampleblock}{}
+%		\vspace{-0.4cm}
+%		\lstinputlisting{code/list-slices.py}
+%		\vspace{-0.2cm}
+%		\end{exampleblock}
+%		}
+%    \end{columns}
+%\end{frame}
 
 \section{Control flow}
 \subsection{Conditions}
@@ -527,16 +582,15 @@ else:
 
 \subsection{While loop}
 \begin{frame}{Control flow}{While loop}
-	\begin{block}{Fibonacci series}
+	\begin{exampleblock}{Fibonacci series}
 	\vspace{-0.2cm}
 		\lstinputlisting[basicstyle=\scriptsize]{code/fibo.py}
-	\end{block}
+	\end{exampleblock}
 
     New Python elements:
 	\begin{itemize}
 	\item Multiple assignments.
 	\end{itemize}
-	
 \end{frame}
 
 \subsection{for Statements}
@@ -556,15 +610,14 @@ else:
 
     \begin{columns}
     \column{.60\textwidth}
-		\begin{block}{for Statement example}
+		\begin{exampleblock}{for Statement example}
 		\lstinputlisting{code/for.py}
-		\end{block}
-
+		\end{exampleblock}
 
     \column{.40\textwidth}
-		\begin{block}{for Statement example}
+		\begin{exampleblock}{for Statement example}
 		\lstinputlisting{code/for-string.py}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
@@ -576,14 +629,14 @@ else:
 
     \begin{columns}
     \column{.50\textwidth}
-		\begin{block}{\texttt{range()} example}
+		\begin{exampleblock}{\texttt{range()} example}
 		\lstinputlisting{code/for-range.py}
-		\end{block}
+		\end{exampleblock}
 		
     \column{.50\textwidth}
-		\begin{block}{Alternative notation}
+		\begin{exampleblock}{Alternative notation}
 		\lstinputlisting{code/for-range2.py}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
@@ -598,11 +651,11 @@ else:
 		\item Code reuse
 		\end{itemize}
     \column{.5\textwidth}
-		\begin{block}{Function 1}
+		\begin{exampleblock}{Function 1}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/function-1.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 
     \begin{columns}
@@ -613,11 +666,11 @@ else:
 		\end{itemize}
 
     \column{.5\textwidth}
-		\begin{block}{Function 2}
+		\begin{exampleblock}{Function 2}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/function-2.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 	\bigskip
 	\centering \alert{Hint: If you have to use code more than once, place it in a function}
@@ -626,14 +679,11 @@ else:
 % grados farenheit y centígrados definición de funciones
 
 \begin{frame}{Functions}{Defining functions (V)}
-Example:
-    
-		\begin{block}{Conversion of degrees}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/conversion-grados.py}
-		\vspace{-0.2cm}
-		\end{block}
-
+	\begin{exampleblock}{Conversion of degrees}
+	\vspace{-0.2cm}
+	\lstinputlisting{code/conversion-grados.py}
+	\vspace{-0.2cm}
+	\end{exampleblock}
 \end{frame}
 
 \subsection{Default argument values}
@@ -647,11 +697,11 @@ Example:
 		\end{itemize}
 		\vspace{-0.2cm}
     \column{0.5\textwidth}
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/default.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 	Function arguments can be named:
 		\begin{itemize}
@@ -661,82 +711,35 @@ Example:
 		\vspace{-0.2cm}
     \begin{columns}
     \column{0.4\textwidth}
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/keyword.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 
 	\column{0.6\textwidth}
-		\begin{block}{}
+		\begin{exampleblock}{}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/keyword-2.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
 
 \section{Data structures}
-\subsection{Introduction}
+%\subsection{Introduction}
 
-\begin{frame}{Data structures in Python}{Overview}
-	High-level, language-defined data structures:
-	\begin{itemize}
-		\item Lists.
-		\item Tuples and sequences.
-		\item Sets.
-		\item Dictionaries (associative arrays).
-	\end{itemize}
-\end{frame}
+%\begin{frame}{Data structures in Python}{Overview}
+%	High-level, language-defined data structures:
+%	\begin{itemize}
+%		\item Lists.
+%		\item Tuples and sequences.
+%		\item Sets.
+%		\item Dictionaries (associative arrays).
+%	\end{itemize}
+%\end{frame}
 
-\subsection{Lists}
-\begin{frame}[fragile]{Data structures in Python}{Lists (I)}
-    \begin{columns}
- 	   \column{.50\textwidth}
-	   \begin{block}{List initialization}
-\begin{verbatim}
-list = [item1, ..., itemN]
-\end{verbatim}
-	   \end{block}
-	   Lists are objects
- 	   \column{.50\textwidth}
-	Methods:
-	\begin{itemize}
-		\item \texttt{list.append(x)}
-		\item \texttt{list.insert(i, x)}
-		\item \texttt{list.remove(x)}
-		\item \texttt{list.pop()}
-		\item \texttt{list.index(x)}
-		\item \texttt{list.count(x)}
-		\item \texttt{list.sort()}
-		\item \texttt{list.reverse()}
-	\end{itemize}
-   \end{columns}
-\end{frame}
-
-\begin{frame}[shrink]{Data structures in Python}{Lists (II)}
-\scriptsize{
-		\begin{block}{}
-		\vspace{-0.4cm}
-		\lstinputlisting{code/lists.txt}
-		\vspace{-0.2cm}
-		\end{block}
-		}
-\end{frame}
-
-% uso de len(lista)
-% uso de rodajas o slices
-\begin{frame}[shrink]{Data structures in Python}{Lists (III)}
-Just as strings
-\scriptsize{
-		\begin{block}{}
-		\vspace{-0.4cm}
-		\lstinputlisting{code/list-slices.py}
-		\vspace{-0.2cm}
-		\end{block}
-		}
-\end{frame}
 
 \subsection{Tuples}
 \begin{frame}{Data structures in Python}{Tuples}
@@ -752,20 +755,20 @@ Just as strings
 	    \begin{columns}
  	   \column{.38\textwidth}
  	   \scriptsize{
-		\begin{block}{Creation}
+		\begin{exampleblock}{Creation}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/tuple-declaration.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 		}
        \vspace{4cm}
  	   \column{.62\textwidth}
  	   \scriptsize{
-		\begin{block}{Manipulation}
+		\begin{exampleblock}{Manipulation}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/tuple-manipulation.py}
 		\vspace{-0.3cm}	
-		\end{block}
+		\end{exampleblock}
 		}
 		\vspace{2.9 cm}
 
@@ -785,31 +788,29 @@ Just as strings
     \begin{columns}
  	   \column{.45\textwidth}
  	   \scriptsize{
-		\begin{block}{Creation (I)}
+		\begin{exampleblock}{Creation (I)}
 		\vspace{-0.2cm}
 		
 		\lstinputlisting{code/set-declaration.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 		}
 		
 
  	   \column{.55\textwidth}
  	  \scriptsize{
- 	   \begin{block}{Creation (II)}
+ 	   \begin{exampleblock}{Creation (II)}
 		\vspace{-0.2cm}
 		
 		\lstinputlisting{code/set-manipulation1.py}
 		\vspace{-0.2cm}
 		
-		\end{block}
+		\end{exampleblock}
 		\vspace{0.3cm}
 		}
 	\end{columns}
 	\vspace{0.1cm}
 \small{\textbf{Sequence}: All types that behaves like sequences: Strings, lists and tuples.}
-
-
 \end{frame}
 
 %\begin{frame}{Other data structures in Python}{Sets (II)}
@@ -833,22 +834,22 @@ Just as strings
 		\item Key: Numbers, strings, tuples and any inmutable type.
 		\end{itemize}
 
-		\vspace{-0.3cm}
+	%	\vspace{-0.3cm}
     \begin{columns}
  	   \column{.50\textwidth}
-		\begin{block}{Creation}
+		\begin{exampleblock}{Creation}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/dict-declaration.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 		\vspace{0.7cm}
 
  	   \column{.50\textwidth}
-		\begin{block}{Manipulation}
+		\begin{exampleblock}{Manipulation}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/dict-manipulation.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 
 	\end{columns}
 \end{frame}
@@ -864,11 +865,11 @@ Just as strings
 
     \begin{columns}
  	   \column{1.1\textwidth}
-		\begin{block}{Dictionary iteration}
+		\begin{exampleblock}{Dictionary iteration}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/dict-iteration.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
@@ -888,7 +889,7 @@ Dictionary& \texttt{dic = \{'abc' : 1, 'bca' : 2\}} \\\hline
 \end{frame}
 
 \section{Modules}
-
+\subsection{Introduction}
 \begin{frame}{Modules}{Introduction (I)}
 		You loose everything when exit the interpreter
 			\begin{itemize}
@@ -910,6 +911,38 @@ Dictionary& \texttt{dic = \{'abc' : 1, 'bca' : 2\}} \\\hline
 			\end{itemize}
 \end{frame}
 
+\IfStrEq{\modo}{mcyte}{
+\begin{frame}{Modules}{Introduction (II)}
+    Lots of packages for space!!!
+    \bigskip
+
+    \begin{columns}
+       \column{.30\textwidth}
+            \centering \includegraphics[width=\linewidth]{figs/astropy.png}
+            \href{https://www.astropy.org/}{(AstroPy)}
+       \column{.30\textwidth}
+            \centering \includegraphics[width=\linewidth]{figs/sunpy.jpg}
+            \href{https://sunpy.org/}{(SunPy)}
+       \column{.30\textwidth}
+            \centering \includegraphics[width=\linewidth]{figs/spacepy.jpg}
+            \href{https://github.com/spacepy/spacepy}{(SpacePy)}
+    \end{columns}
+
+    \bigskip
+
+    \begin{columns}
+       \column{.30\textwidth}
+            \centering \includegraphics[width=\linewidth]{figs/astroml.png}
+            \href{https://www.astroml.org/}{(AstroML)}
+       \column{.30\textwidth}
+            \centering \includegraphics[width=\linewidth]{figs/poliastro.png}
+            \href{https://docs.poliastro.space/en/stable/index.html}{(Poliastro)}
+    \end{columns}
+\end{frame}
+
+}{}
+
+\subsection{Installing packages}
 \begin{frame}[fragile]{Modules}{Installing packages}
 	Command-line automatic tool:\texttt{pip} 
 		\begin{itemize}
@@ -932,21 +965,96 @@ $ pip3 install SomePackage
     \href{http://recursospython.com/guias-y-manuales/instalacion-y-utilizacion-de-pip-en-windows-linux-y-os-x/}{(More info)}
 \end{frame}
 
+\begin{frame}[fragile]{Modules}{Namespaces (I)}
+    \vspace{-0.5cm}
+	\begin{columns}
+ 	   \column{.60\textwidth}
+	\begin{block}{Importing packages}
+	\begin{verbatim}
+import <package> [as <name>]
+\end{verbatim}
+	\end{block}
+    \end{columns}
+
+    \smallskip
+
+	A module can import other modules
+		\begin{itemize}
+		\item Name conflicts may arise: Each module has a symbol table
+		\item It means you should invoke it as \texttt{modname.itemname}
+        \item The module name can be changed with the keywork \textit{as}
+		\end{itemize}
+
+	\begin{columns}
+ 	   \column{.40\textwidth}
+	\begin{exampleblock}{}
+	\begin{verbatim}
+>>> import math
+>>> math.log(10)
+2.302585092994046
+\end{verbatim}
+	\end{exampleblock}
+
+ 	   \column{.40\textwidth}
+	\begin{exampleblock}{}
+	\begin{verbatim}
+>>> import math as m
+>>> m.log(10)
+2.302585092994046
+\end{verbatim}
+	\end{exampleblock}
+    \end{columns}
+
+\end{frame}
+
+\subsection{Namespaces}
+\begin{frame}[fragile]{Modules}{Namespaces (II)}
+ 	It is possible to import items directly
+		\begin{itemize}
+		\item \texttt{from module import name1, name2}
+		\item \texttt{from module import *}
+		\item It uses the global symbol table (no need to use the modname)
+			\end{itemize}
+	
+	\begin{columns}
+ 	   \column{.40\textwidth}
+	\begin{exampleblock}{}
+	\begin{verbatim}
+>>> from math import log
+>>> log(10)
+2.302585092994046
+\end{verbatim}
+	\end{exampleblock}
+
+ 	   \column{.40\textwidth}
+	\begin{exampleblock}{}
+	\begin{verbatim}
+>>> from math import *
+>>> log(10)
+2.302585092994046
+\end{verbatim}
+	\end{exampleblock}
+ 
+    \end{columns}
+\end{frame}
+
+\subsection{Examples}
+
 \begin{frame}{Modules}{Example 1: Open a web browser}
 	\vspace{-0.2cm}
-	\begin{block}{browser.py}
+	\begin{exampleblock}{browser.py}
 	\vspace{-0.2cm}
 	\lstinputlisting{code/browser.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 
     also 
 
-	\begin{block}{browser2.py}
+	\begin{exampleblock}{browser2.py}
 	\vspace{-0.2cm}
 	\lstinputlisting{code/browser2.py}
 	\vspace{-0.2cm}
-	\end{block}
+	\end{exampleblock}
 
 \end{frame}
 
@@ -955,11 +1063,11 @@ $ pip3 install SomePackage
  	   \column{.60\textwidth}
 
 		\vspace{-0.2cm}
-		\begin{block}{thumbnail.py}
+		\begin{exampleblock}{thumbnail.py}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/thumbnail.py}
 		\vspace{-0.2cm}
-		\end{block}
+		\end{exampleblock}
 
   		\column{.50\textwidth}
 		\vspace{-0.2cm}
@@ -970,26 +1078,22 @@ $ pip3 install SomePackage
 	\centering \tiny{\href{http://www.pythonforbeginners.com/gui/how-to-use-pillow}{(Source)}}
 \end{frame}
 
-\begin{frame}[fragile]{Modules}{Namespaces}
-	A module can import other modules
-		\begin{itemize}
-		\item Name conflicts may arise: Each module has a symbol table
-		\item It means you should invoke it as \texttt{modname.itemname}
-		\end{itemize}
- 	It is possible to import items directly
-		\begin{itemize}
-		\item \texttt{from module import name1, name2}
-		\item \texttt{from module import *}
-		\item It uses the global symbol table (no need to use the modname)
-			\end{itemize}
-	
-	\begin{block}{}
-	\begin{verbatim}
->>> from fibo import fib, fib2
->>> fib(100)
-1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
-\end{verbatim}
-	\end{block}
+\begin{frame}{Modules}{Example 3: Plot}
+	\begin{columns}
+ 	   \column{.60\textwidth}
+
+		\vspace{-0.2cm}
+		\begin{exampleblock}{plot.py}
+		\vspace{-0.2cm}
+		\lstinputlisting{code/plot.py}
+		\vspace{-0.2cm}
+		\end{exampleblock}
+
+  		\column{.50\textwidth}
+		\vspace{-0.2cm}
+		\centering \includegraphics[width=\linewidth]{figs/plot.png}\\
+	\end{columns}
+		\vspace{-0.2cm}
 \end{frame}
 
 \section{Classes in Python}
