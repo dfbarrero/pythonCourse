@@ -1,5 +1,5 @@
 # Customize these two lines
-TARGETS=videojuegos # Courses to compile
+TARGETS=videojuegos  # Courses to compile
 NAME=datastructures
 
 # Do not touch
