@@ -1,4 +1,2 @@
-string = "Hello word"
-
-for x in string:
+for x in "Hello word":
 	print(x)

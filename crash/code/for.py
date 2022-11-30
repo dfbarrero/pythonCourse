@@ -1,4 +1,2 @@
-list = ['cat', 'window', 'dog']
-
-for x in list:
+for x in ['cat', 'window', 'dog']:
 	print(x)

@@ -1,5 +1,5 @@
-list_mix = ['a', True, 33]
->>> set_mix =  set(list_mix)
+>>> set1 = {"red", "blue"}
+>>> set_mix =  set(['a', True, 33])
 >>> set_mix
 {'a', True, 33}
 >>>  len(set_mix)

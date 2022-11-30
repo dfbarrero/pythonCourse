@@ -302,16 +302,16 @@ variable = value
    	\column{.40\textwidth}
 		\begin{exampleblock}{}
 		\begin{verbatim}
->> integer = 4
->> float = 2.3
->> integer + float
+>> numberA = 4
+>> numberB = 2.3
+>> numberA + numberB
 6.3
 >> string = "Spam"
 >> boolean = True
 >> a = b = c = 0
 >> b
 0
->>> type(integer)
+>>> type(numberA)
 <type 'int'>
 \end{verbatim}
 		\end{exampleblock}
@@ -465,7 +465,6 @@ variable = [data1, data2, ..., dataN]
 		\begin{exampleblock}{}
 		\begin{verbatim}
 >>> a = ['spam', 'eggs', 123]
->>> a
 ['spam', 'eggs', 123]
 \end{verbatim}
 		\end{exampleblock}
@@ -548,12 +547,24 @@ variable = [data1, data2, ..., dataN]
  	   	\column{.40\textwidth}
 	\begin{block}{\texttt{if} statement}
 		\begin{verbatim}
-if condition:
+if <condition>:
     # Some code
 else:
     # Some other code
 \end{verbatim}
 		\end{block}
+
+ 	   	\column{.10\textwidth}
+ 	   	\column{.40\textwidth}
+	\begin{exampleblock}{Example}
+		\begin{verbatim}
+if age > 18:
+    # Some code
+else:
+    # Some other code
+\end{verbatim}
+		\end{exampleblock}
+	
 	\end{columns}
 
    New Python elements:
@@ -563,6 +574,26 @@ else:
 	\end{itemize}
 	
 \end{frame}
+
+\begin{frame}[fragile]{Control flow}{Conditions (II)}
+	\begin{columns}
+ 	   	\column{.80\textwidth}
+	\begin{exampleblock}{Nested condition}
+		\begin{verbatim}
+if age == 18:
+    print("You are 18 years old")
+elif age < 18:
+    print("You are younger than 18 years old")
+elif age > 18:
+    print("You are older than 18 years old")
+else:
+    print("You should not be reading this")
+\end{verbatim}
+		\end{exampleblock}
+	\end{columns}
+	
+\end{frame}
+
 
 \begin{frame}[fragile]{Control flow}{Conditions (III)}
 	\centering \begin{tabular}{cl|cl}\hline
@@ -575,9 +606,15 @@ else:
 	<= 	& Lower or equal 		& 	& \\\hline
 	\end{tabular}
 
-	\bigskip
-
-	Example: \texttt{((age > 18) or (name == 'Biggus Dickus'))}
+	\begin{columns}
+ 	   	\column{.80\textwidth}
+	\begin{exampleblock}{Nested condition}
+		\begin{verbatim}
+if (age > 18) and (name == "Biggus Dickus"):
+    print("Hi Biggus")
+\end{verbatim}
+		\end{exampleblock}
+	\end{columns}
 \end{frame}
 
 \subsection{While loop}
@@ -594,7 +631,7 @@ else:
 \end{frame}
 
 \subsection{for Statements}
-\begin{frame}{Control flow}{\texttt{for} Statements (I)}
+\begin{frame}{Control flow}{\texttt{for} statements (I)}
 	\begin{itemize}
 		\item Sometimes we have to repeat a task: Loops
 			\begin{itemize}
@@ -610,18 +647,18 @@ else:
 
     \begin{columns}
     \column{.60\textwidth}
-		\begin{exampleblock}{for Statement example}
+		\begin{exampleblock}{for statement example}
 		\lstinputlisting{code/for.py}
 		\end{exampleblock}
 
     \column{.40\textwidth}
-		\begin{exampleblock}{for Statement example}
+		\begin{exampleblock}{for statement example}
 		\lstinputlisting{code/for-string.py}
 		\end{exampleblock}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Control flow}{\texttt{for} Statements (II)}
+\begin{frame}{Control flow}{\texttt{for} statements (II)}
 	Sometimes, we need to iterate over a sequence of numbers
 	\begin{itemize}
 		\item \texttt{range(n)}: It returns a sequence $0$, ..., $n-1$
@@ -640,7 +677,39 @@ else:
 	\end{columns}
 \end{frame}
 
+\begin{frame}{Control flow}{\texttt{for} statements (III)}
+	List comprehensions are a concise way to create lists
+	\begin{itemize}
+		\item Widely used and convenient
+        \item It does not return a list!
+	\end{itemize}
+
+    \begin{columns}
+    \column{.40\textwidth}
+		\begin{exampleblock}{List with squares}
+		\lstinputlisting{code/for-square.py}
+		\end{exampleblock}
+		
+    \column{.60\textwidth}
+		\begin{exampleblock}{Alternative notation}
+		\lstinputlisting{code/for-square-comprehension.py}
+		\end{exampleblock}
+	\end{columns}
+
+    \bigskip
+
+    List comprehensions support conditions
+
+    \begin{columns}
+    \column{.70\textwidth}
+		\begin{exampleblock}{}
+		\lstinputlisting{code/for-square-comprehension-if.py}
+		\end{exampleblock}
+    \end{columns}
+\end{frame}
+
 \section{Functions}
+
 \subsection{Defining functions}
 \begin{frame}{Functions}{Defining functions (I)}
     \begin{columns}
@@ -678,12 +747,17 @@ else:
 
 % grados farenheit y centígrados definición de funciones
 
-\begin{frame}{Functions}{Defining functions (V)}
-	\begin{exampleblock}{Conversion of degrees}
+\begin{frame}{Functions}{Defining functions (II)}
+    A function can return a value with the keywork \alert{return}
+	\begin{exampleblock}{}
 	\vspace{-0.2cm}
 	\lstinputlisting{code/conversion-grados.py}
 	\vspace{-0.2cm}
 	\end{exampleblock}
+    New Python feature:
+    \begin{itemize}
+        \item Docstrings
+    \end{itemize}
 \end{frame}
 
 \subsection{Default argument values}
@@ -726,20 +800,7 @@ else:
 	\end{columns}
 \end{frame}
 
-
 \section{Data structures}
-%\subsection{Introduction}
-
-%\begin{frame}{Data structures in Python}{Overview}
-%	High-level, language-defined data structures:
-%	\begin{itemize}
-%		\item Lists.
-%		\item Tuples and sequences.
-%		\item Sets.
-%		\item Dictionaries (associative arrays).
-%	\end{itemize}
-%\end{frame}
-
 
 \subsection{Tuples}
 \begin{frame}{Data structures in Python}{Tuples}
@@ -754,6 +815,11 @@ else:
 	
 	    \begin{columns}
  	   \column{.38\textwidth}
+		\begin{block}{Tuple initialization}
+        tuple = (item1, item2, ..., itemN)\\
+        tuple = item1, item2, ..., itemN
+		\end{block}
+
  	   \scriptsize{
 		\begin{exampleblock}{Creation}
 		\vspace{-0.2cm}
@@ -782,24 +848,28 @@ else:
 		\begin{itemize}
 		\item \small{Membership testing.}
 		\item \small{Eliminating duplicate entries.}
-		\item \small{Math operations: \texttt{union()}, \texttt{intersection()} and \texttt{difference()}.}
+%		\item \small{Math operations: \texttt{union()}, \texttt{intersection()} and \texttt{difference()}.}
 		\end{itemize}
 \vspace{-0.2cm}
     \begin{columns}
  	   \column{.45\textwidth}
- 	   \scriptsize{
-		\begin{exampleblock}{Creation (I)}
-		\vspace{-0.2cm}
+
+		\begin{block}{Set initialization}
+        set = {item1, item2, ..., itemN}
+		\end{block}
+
+% 	   \scriptsize{
+%		\begin{exampleblock}{Creation (I)}
+%		\vspace{-0.2cm}
 		
-		\lstinputlisting{code/set-declaration.py}
-		\vspace{-0.2cm}
-		\end{exampleblock}
-		}
-		
+%		\lstinputlisting{code/set-declaration.py}
+%		\vspace{-0.2cm}
+%		\end{exampleblock}
+%		}
 
  	   \column{.55\textwidth}
  	  \scriptsize{
- 	   \begin{exampleblock}{Creation (II)}
+ 	   \begin{exampleblock}{Creation}
 		\vspace{-0.2cm}
 		
 		\lstinputlisting{code/set-manipulation1.py}
@@ -834,23 +904,29 @@ else:
 		\item Key: Numbers, strings, tuples and any inmutable type.
 		\end{itemize}
 
-	%	\vspace{-0.3cm}
     \begin{columns}
- 	   \column{.50\textwidth}
+	    \column{.50\textwidth}
+
+        \begin{block}{Dictionary initialization}
+        dict = \{key1: value1, key2:value2\}
+		\end{block}
+
+ 	    \scriptsize{
 		\begin{exampleblock}{Creation}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/dict-declaration.py}
 		\vspace{-0.2cm}
 		\end{exampleblock}
 		\vspace{0.7cm}
-
+        }
  	   \column{.50\textwidth}
+ 	    \scriptsize{
 		\begin{exampleblock}{Manipulation}
 		\vspace{-0.2cm}
 		\lstinputlisting{code/dict-manipulation.py}
 		\vspace{-0.2cm}
 		\end{exampleblock}
-
+        }
 	\end{columns}
 \end{frame}
 % alguna cuestión más sobre su manipulación. Por ejemplo, se pueden borrar todos sus elementos con clear()
