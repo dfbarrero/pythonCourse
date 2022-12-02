@@ -32,7 +32,9 @@
 
 ## Notebooks
 
-0.- [Python crash course (by J.R. Johansson)](crash/crashPython.ipynb)
+* [Python crash course with exercises](crash/crash.ipynb)
+
+* [Python crash course (by J.R. Johansson)](crash/crashPython.ipynb)
 
 ## Compilation
 
