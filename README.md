@@ -20,6 +20,8 @@
 
 * [Python exercises (by Julia Clemente)](assignments/notebooks/PythonExercises.ipynb)
 
+* [Google Python Course exercises](assignments/notebooks/googleExercises.ipynb)
+
 * [Práctica 1: Ejercicios básicos de Python](assignments/p1.pdf)
 
 * [Práctica 2: Sentencias de control](assignments/p2.pdf)
