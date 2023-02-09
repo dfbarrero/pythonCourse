@@ -662,6 +662,18 @@ if (age > 18) and (name == "Biggus Dickus"):
 		\lstinputlisting{code/for-range2.py}
 		\end{exampleblock}
 	\end{columns}
+
+    \begin{columns}
+    \column{.30\textwidth}
+	    Iterate over a sequence of numbers with indices
+	    \begin{itemize}
+		    \item \texttt{enumerate(list)}
+	    \end{itemize}
+    \column{.70\textwidth}
+		\begin{exampleblock}{\texttt{enumerate()} example}
+		\lstinputlisting{code/enumerate.py}
+		\end{exampleblock}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Control flow}{\texttt{for} statements (III)}
@@ -806,7 +818,7 @@ if (age > 18) and (name == "Biggus Dickus"):
 \subsection{Tuples}
 \begin{frame}{Data structures in Python}{Tuples}
 
-	\textbf{Tuple}: A sequence of items, very similar to lists.
+	\textbf{Tuple}: Ordered sequence of items, very similar to lists.
 		\begin{itemize}
 		\item \small However they are not the same.
 		\item \small Lists are \textit{mutable}, tuples are \textit{inmutable}.
@@ -856,7 +868,7 @@ if (age > 18) and (name == "Biggus Dickus"):
  	   \column{.45\textwidth}
 
 		\begin{block}{Set initialization}
-        set = {item1, item2, ..., itemN}
+        set = \{item1, item2, ..., itemN\}
 		\end{block}
 
 % 	   \scriptsize{
