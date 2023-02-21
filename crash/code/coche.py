@@ -7,7 +7,7 @@ class Car(Vehicle):
 		Vehicle.__init__(self, wheels)
 		self.model = model
 
+myBike = Vehicle(2)
 ford = Car(4, "mondeo")
-myBike = Car(2)
 
 	
