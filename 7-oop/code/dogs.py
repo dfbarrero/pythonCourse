@@ -12,7 +12,7 @@ class Dog:
 
 if __name__ == '__main__':
     snoopy = Dog() # Instanciate class Dog ...
-    laika = Dog()  # snoopy and laika are objtects
+    laika = Dog()  # snoopy and laika are objects
 
     snoopy.name = "Snoopy"
     snoopy.age = 4
