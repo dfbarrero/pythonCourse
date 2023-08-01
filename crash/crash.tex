@@ -617,19 +617,6 @@ if (age > 18) and (name == "Biggus Dickus"):
 	\end{columns}
 \end{frame}
 
-\subsection{While loop}
-\begin{frame}{Control flow}{While loop}
-	\begin{exampleblock}{Fibonacci series}
-	\vspace{-0.2cm}
-		\lstinputlisting[basicstyle=\scriptsize]{code/fibo.py}
-	\end{exampleblock}
-
-    New Python elements:
-	\begin{itemize}
-	\item Multiple assignments.
-	\end{itemize}
-\end{frame}
-
 \subsection{for Statements}
 \begin{frame}{Control flow}{\texttt{for} statements (I)}
 	\begin{itemize}
@@ -675,13 +662,24 @@ if (age > 18) and (name == "Biggus Dickus"):
 		\lstinputlisting{code/for-range2.py}
 		\end{exampleblock}
 	\end{columns}
+
+    \begin{columns}
+    \column{.30\textwidth}
+	    Iterate over a sequence of numbers with indices
+	    \begin{itemize}
+		    \item \texttt{enumerate(list)}
+	    \end{itemize}
+    \column{.70\textwidth}
+		\begin{exampleblock}{\texttt{enumerate()} example}
+		\lstinputlisting{code/enumerate.py}
+		\end{exampleblock}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Control flow}{\texttt{for} statements (III)}
 	List comprehensions are a concise way to create lists
 	\begin{itemize}
 		\item Widely used and convenient
-        \item It does not return a list!
 	\end{itemize}
 
     \begin{columns}
@@ -707,6 +705,20 @@ if (age > 18) and (name == "Biggus Dickus"):
 		\end{exampleblock}
     \end{columns}
 \end{frame}
+
+\subsection{While loop}
+\begin{frame}{Control flow}{While loop}
+	\begin{exampleblock}{Fibonacci series}
+	\vspace{-0.2cm}
+		\lstinputlisting[basicstyle=\scriptsize]{code/fibo.py}
+	\end{exampleblock}
+
+    New Python elements:
+	\begin{itemize}
+	\item Multiple assignments
+	\end{itemize}
+\end{frame}
+
 
 \section{Functions}
 
@@ -805,7 +817,7 @@ if (age > 18) and (name == "Biggus Dickus"):
 \subsection{Tuples}
 \begin{frame}{Data structures in Python}{Tuples}
 
-	\textbf{Tuple}: A sequence of items, very similar to lists.
+	\textbf{Tuple}: Ordered sequence of items, very similar to lists.
 		\begin{itemize}
 		\item \small However they are not the same.
 		\item \small Lists are \textit{mutable}, tuples are \textit{inmutable}.
@@ -855,7 +867,7 @@ if (age > 18) and (name == "Biggus Dickus"):
  	   \column{.45\textwidth}
 
 		\begin{block}{Set initialization}
-        set = {item1, item2, ..., itemN}
+        set = \{item1, item2, ..., itemN\}
 		\end{block}
 
 % 	   \scriptsize{
@@ -936,7 +948,7 @@ if (age > 18) and (name == "Biggus Dickus"):
 	Dictionaries can be iterated by key or by value
 		\begin{itemize}
 		\item Loop syntax is slightly different
-		\item \texttt{item()} method
+		\item \texttt{items()} method
 		\end{itemize}
 
     \begin{columns}
@@ -1020,7 +1032,7 @@ Dictionary& \texttt{dic = \{'abc' : 1, 'bca' : 2\}} \\\hline
 
 \subsection{Installing packages}
 \begin{frame}[fragile]{Modules}{Installing packages}
-	Command-line automatic tool:\texttt{pip} 
+	Command-line automatic tool: \texttt{pip} 
 		\begin{itemize}
 			\item Very similar to \texttt{apt-get} in Linux
 		\end{itemize}
@@ -1188,7 +1200,7 @@ import <package> [as <name>]
 			\vspace{-0.2cm} 
   	   \begin{columns}
  	   \column{0.8\textwidth}
-			\begin{block}{\small{coche.py}}
+			\begin{block}{\small{car.py}}
 			\vspace{-0.3cm} 
 				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/coche.py} % contar elementos
 				\vspace{-0.2cm} 

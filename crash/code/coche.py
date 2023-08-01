@@ -1,12 +1,13 @@
-class Vehiculo:
-	def __init__(self, ruedas):
-		self.ruedas = ruedas
+class Vehicle:
+	def __init__(self, wheels):
+		self.wheels = wheels
 
-class Coche(Vehiculo):
-	def __init__(self, ruedas, modelo):
-		Vehiculo.__init__(self, ruedas)
-		self.modelo = modelo
+class Car(Vehicle):
+	def __init__(self, wheels, model):
+		Vehicle.__init__(self, wheels)
+		self.model = model
 
-ford = Coche(4, "mondeo")
+myBike = Vehicle(2)
+ford = Car(4, "mondeo")
 
 	

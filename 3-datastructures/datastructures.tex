@@ -561,17 +561,18 @@
     
 		\begin{exampleblock}{}
         \texttt{
-        wall\_list = arcade.SpriteList()\\
         wall = arcade.Sprite('images/boxCrate.png')\\
         wall.center\_x = 300\\
-        wall.center\_y = 300}
+        wall.center\_y = 300\\
+        wall\_list = arcade.SpriteList()\\
+        wall\_list.append(wall)}
 		\end{exampleblock}
 
        Lists are manipulated as a whole
 
 		\begin{exampleblock}{}
         \texttt{
-        wall.draw()
+        wall\_list.draw()
         }
 		\end{exampleblock}
 
@@ -584,26 +585,6 @@
 \end{frame}
 
 \begin{frame}{Data structures in Arcade}{Sprites in Arcade (III)}
-	Arcade stores sprites in lists
-    
-		\begin{exampleblock}{}
-        \texttt{
-        wall\_list = arcade.SpriteList()\\
-        wall = arcade.Sprite('images/boxCrate\_double.png')\\
-        wall.center\_x = 300\\
-        wall.center\_y = 300}
-		\end{exampleblock}
-
-       Lists are manipulated as a whole
-
-		\begin{exampleblock}{}
-        \texttt{
-        wall.draw()
-        }
-		\end{exampleblock}
-\end{frame}
-
-\begin{frame}{Data structures in Arcade}{Sprites in Arcade (IV)}
     Lists in Arcade implements \alert{collision detection} and handling
 		\begin{exampleblock}{}
         \texttt{
@@ -611,16 +592,9 @@
                                                               coin\_list)
         }
 		\end{exampleblock}
-
-    And sprites can be removed from the list
-		\begin{exampleblock}{}
-        \texttt{
-        wall.remove\_from\_sprite\_lists()
-        }
-		\end{exampleblock}
 \end{frame}
 
-\begin{frame}{Data structures in Arcade}{Sprites in Arcade (V)}
+\begin{frame}{Data structures in Arcade}{Sprites in Arcade (IV)}
     Functional example in \href{https://gist.github.com/dfbarrero/83294a5ea218ca866b68558d4d64ba46}{(example)}
 \end{frame}
 
