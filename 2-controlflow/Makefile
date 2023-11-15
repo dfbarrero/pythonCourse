@@ -1,5 +1,5 @@
 # Customize these two lines
-TARGETS=mcyte muii videojuegos # Courses to compile
+TARGETS=mcyte videojuegos # Courses to compile
 NAME=controlflow
 
 # Do not touch
