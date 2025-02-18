@@ -176,13 +176,47 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \textit{\alert{There are many other paradigms such as Event-Driven programming, Concurrent, Reactive, Generic, etc.}}
 \end{frame}
 
-\begin{frame}{Programming paradigms types (IV)}{Classification}
+%\begin{frame}{Programming paradigms types (IV)}{Classification}
     %\input{figs/paradigmas.tex}
-	\includegraphics[scale=0.4]{figs/paradigmas}
+%	\includegraphics[scale=0.4]{figs/paradigmas}
 	%\caption{http://www.computer.org/csdl/mags/it/2011/05/mit2011050030-abs.html}
 	
+%	\centering Python supports the three major paradigms, although it stands out for the OOP
+%\end{frame}
+
+\begin{frame}{Programming paradigms types (IV)}{Classification}
+
+	\centering 
+
+        \begin{tikzpicture}
+            \tikzstyle{level 1}=[level distance=2cm]
+            \tikzstyle{level 2}=[level distance=5cm]
+            \tikzstyle{level 1}=[sibling distance=5cm]
+            \tikzstyle{level 2}=[sibling distance=2cm]
+
+        \node[rectangle,draw] {PARADIGMS}
+            child {node[rectangle,draw] {Declarative}
+                child {node (logic) {Logic}}
+                child {node (functional) {Functional}}
+            }
+            child {node[rectangle,draw] {Imperative} 
+                child {node (structured) {Structured}}
+                child {node (oop) {OOP}}
+            }
+    ;
+
+        \node[below of=functional] {\textit{Lisp, Haskell}};
+        \node[below of=logic] {\textit{Prolog}};
+        \node[below of=structured] {\textit{C, Pascal, shell}};
+        \node[below of=oop] {\textit{Java, C++, Python}};
+        \end{tikzpicture}
+
+    \bigskip
+
 	\centering Python supports the three major paradigms, although it stands out for the OOP
 \end{frame}
+
+
 
 \section[Object-Oriented Programming]{Object-Oriented Programming}
 
