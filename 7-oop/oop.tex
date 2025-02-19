@@ -644,16 +644,18 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
     The most common access levels are:
 	
 	\begin{itemize}
-		\item \textbf{public}: visible for everyone  [default in Python]
+		\item \textbf{public}: visible for everyone , default in Python
 		\item \textbf{private}: visible for the class 
             \begin{itemize}
-               \item By convenion in Python, start with underscore
-               \item Superprivate starts with a double underscore and does not end in the same manner
+               \item By \textit{convenion} in Python, starts with one underscore
+               \item `Superprivate' starts with a double underscore and does not end in the same manner
             \end{itemize}
-		\item \textbf{protected}: visible for the creator class and its descendents \alert{[does not exist in Python]}
+		\item \textbf{protected}: visible for the creator class and its descendents \textit{[it does not exist in Python]}
 	\end{itemize}
 
-     Methods ``geters'' and ``setters'' to control the access to attributes
+    \bigskip
+
+     ``Getters'' and ``setters'' methods to control the access to attributes
 \end{frame}
 
 \begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
@@ -661,12 +663,11 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\vspace{-0.3cm} 
 		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access.py}
 	\end{exampleblock}
-
-	\href{https://gist.github.com/dfbarrero/a6ebc6632fb9fe06a2c8c6a47a465ab5}{(Source code)}
 \end{frame}
 
-\begin{frame}{Concepts of OOP}{Encapsulation: The ``pythonic'' way}
-    getters and setters comes with some drawbacks
+\subsection{Encapsulation: The ``pythonic'' way}
+\begin{frame}{Concepts of OOP}{Encapsulation: The ``pythonic'' way (I)}
+    Getters and setters come with some drawbacks
     \begin{itemize}
         \item Verbose and repetitive code
         \item Linked to the API
@@ -674,16 +675,16 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 
     A more pythonic way to define getters and setters is using \alert{properties}
 	\begin{itemize}
-		\item It is a \alert{decorator} that transform methods into getters or setters
-		\item \textbf{$@$property}: Getter
-		\item \textbf{$@$object.setter}: Setter
+		\item It is a \alert{decorator} that transforms methods into getters or setters
+		\item[] \textbf{$@$property}: Getter
+		\item[] \textbf{$@$object.setter}: Setter
         \item Neverless, getters and setters are still used in Python under certain circumstances
 	\end{itemize}
 
     Better with an example ...
 \end{frame}
 
-\begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+\begin{frame}{Concepts of OOP}{Encapsulation: The ``pythonic'' way (II)}
 	\begin{exampleblock}{}
 	\vspace{-0.3cm} 
 		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access-pythonic.py}
@@ -691,15 +692,6 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \end{frame}
 
 
-
-% TODO: Explicar el estilo pythoniso con propiedades
-%\begin{frame}[plain]{Concepts of OOP}{Encapsulation: The pythonic way}
-%    The pythonic way is to use properties
-%	\begin{exampleblock}{}
-%	\vspace{-0.3cm} 
-%		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access-pythonic.py}
-%	\end{exampleblock}
-%\end{frame}
 
 
 %\section{Classes in Python}
@@ -842,9 +834,12 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 		\vspace{-0.2cm}
 	\end{block}	
 
+		\vspace{-0.2cm}
+
 	\begin{exampleblock}{}
 	\vspace{-0.3cm} 
-		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dog-str.py}
+		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/inventory-len.py}
+	\vspace{-0.2cm}
 	\end{exampleblock}
 \end{frame}
 

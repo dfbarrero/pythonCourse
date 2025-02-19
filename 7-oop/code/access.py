@@ -1,7 +1,7 @@
 class Dog:
-    def __init__(self):
-        self._name = "Unknown"
-        self.__age = 10
+    def __init__(self, name="Unknown", age=10):
+        self._name = name
+        self.__age = age
 
     def setName(self, name):
         self._name = name
@@ -21,6 +21,6 @@ if __name__ == '__main__':
     snoopy.setName("Snoopy")
     print(snoopy.getName())
     
-    snoopy._name = "Laika" # No error, do not do this
+    snoopy._name = "Laika" # No error, but please, DON'T do this
     
     print(snoopy.__name) # Error!

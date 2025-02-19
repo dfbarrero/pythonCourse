@@ -13,7 +13,8 @@ class Dog:
 
 if __name__ == '__main__':
     snoopy = Dog()
-    snoopy.name = "Snoopy" ## Calls setter
+    snoopy.name = "Snoopy" # Calls setter
 
-    print(snoopy.name)     ## Calls getter
+    print(snoopy.name)     # Calls getter
+                           # prints 'SNOOPY'
 
