@@ -489,14 +489,14 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	\end{center}
 \end{frame}
 
-\begin{frame}{Inheritance}{Examples of simple inheritance (V)}
+\begin{frame}[plain]{Inheritance}{Examples of simple inheritance (V)}
 
     \begin{columns}
  	   \column{.3\textwidth}
     \begin{tikzpicture}
     \umlclass{Weapon}
         {- name : str\\ - damage : int\\- sprite : Image} 
-        {+ describe() : void\\ + draw() : void\\ + use(): void}
+        {+ draw() : void\\ + use(): void}
 
     \umlclass[x=-3, y=-3]{Bow}
         {+ arrows : int} 
@@ -504,15 +504,15 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 
     \umlclass[x=0, y=-3]{Sword}
         {+ resistance : int} 
-        {+ use()  :  void}
+        {+ use()  :  void\\+ charge() : void}
 
     \umlclass[x=3, y=-3]{Wand}
         {+ mana : int} 
-        {+ use() : void}
+        {+ use() : void\\+ castSpell(str)}
 
     \umlclass[x=5, y=1]{Character}
         {+ name : str\\ + life : int\\+ skill : int\\+ weapon : Weapon} 
-        {+ move(x,y) : void\\+ attack() : void}
+        {+ move(x,y) : void\\+ attack(Character) : void\\ + combat(Character) : void}
 
     \umlinherit[geometry=|-]{Bow}{Weapon}
     \umlinherit[geometry=--]{Sword}{Weapon}
