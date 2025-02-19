@@ -1,7 +1,6 @@
 class Dog:
     def __init__(self, name="Unknown", age=0):
         self._name = name
-        self._age = age
 
     @property
     def name(self):
@@ -14,10 +13,7 @@ class Dog:
 
 if __name__ == '__main__':
     snoopy = Dog()
+    snoopy.name = "Snoopy" ## Calls setter
 
-    print(snoopy.name)
-
-    snoopy.name="Snoopy"
-
-    print(snoopy.name)
+    print(snoopy.name)     ## Calls getter
 

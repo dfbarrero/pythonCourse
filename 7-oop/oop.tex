@@ -293,7 +293,8 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 	   		\end{block}
 	   		\begin{exampleblock}{Example}
 \begin{verbatim}
-time = Time()
+>>> snoopy = Dog()
+>>> laika = Dog("Laika")
 \end{verbatim}
 	   		\end{exampleblock}
 
@@ -306,9 +307,9 @@ time = Time()
 	   		\end{block}
 	   		\begin{exampleblock}{Example}
 \begin{verbatim}
-time.hour = 4
-print(time.hour)
-hour = time.hour
+>>> snoopy.name = "Snoopy"
+>>> print(snoopy.name)
+>>> name = snoopy.name
 \end{verbatim}
 	   		\end{exampleblock}
 	\end{columns}
@@ -338,13 +339,13 @@ hour = time.hour
 		\end{itemize}
 \end{frame}
 
-\begin{frame}{Object-Oriented Programming}{Constructors (III)}
-	\vspace{-0.3cm}
-	\begin{exampleblock}{}
-	\vspace{-0.3cm}
-		\lstinputlisting{code/Time3.py}
-	\end{exampleblock}
-\end{frame}
+%\begin{frame}{Object-Oriented Programming}{Constructors (III)}
+%	\vspace{-0.3cm}
+%	\begin{exampleblock}{}
+%	\vspace{-0.3cm}
+%		\lstinputlisting{code/Time3.py}
+%	\end{exampleblock}
+%\end{frame}
 
 
 
@@ -374,9 +375,9 @@ hour = time.hour
 
     \begin{columns}
  	   \column{.7\textwidth}
-			\begin{exampleblock}{dogs.py}
+			\begin{exampleblock}{dog.py}
 			\vspace{-0.3cm} 
-				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dogs.py}
+				\lstinputlisting[numbers=left,basicstyle=\ttfamily\scriptsize]{code/dogs.py}
 			\end{exampleblock}
 
  	   \column{.3\textwidth}
@@ -402,9 +403,9 @@ hour = time.hour
     \end{columns}
 \end{frame}
 
-\subsection{Game example}
+\subsection{OO game example}
 
-\begin{frame}[plain]{Object-Oriented Programming}{Game example}
+\begin{frame}[plain]{Object-Oriented Programming}{OO game example}
 	\begin{center}
     	\centering \includegraphics[width=0.8\linewidth]{figs/gameObjects}\\
 		\smallskip
@@ -479,6 +480,52 @@ hour = time.hour
 		\caption{{\scriptsize Example of simple Inheritance in OOP. Obtained from: \url{http://android.scenebeta.com}}}
 	\end{figure}
 \end{frame}
+
+\begin{frame}{Inheritance}{Examples of simple inheritance (IV)}
+	\begin{center}
+    	\centering \includegraphics[width=0.5\linewidth]{figs/class-diagram.png}\\
+		\smallskip
+		\tiny{\href{https://amysgamedevelopmentblog.wordpress.com/2016/10/17/requirements-for-a-game-why-is-planning-important/}{(Source)}}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Inheritance}{Examples of simple inheritance (V)}
+
+    \begin{columns}
+ 	   \column{.3\textwidth}
+    \begin{tikzpicture}
+    \umlclass{Weapon}
+        {- name : str\\ - damage : int\\- sprite : Image} 
+        {+ describe() : void\\ + draw() : void\\ + use(): void}
+
+    \umlclass[x=-3, y=-3]{Bow}
+        {+ arrows : int} 
+        {+ use()  :  void}
+
+    \umlclass[x=0, y=-3]{Sword}
+        {+ resistance : int} 
+        {+ use()  :  void}
+
+    \umlclass[x=3, y=-3]{Wand}
+        {+ mana : int} 
+        {+ use() : void}
+
+    \umlclass[x=5, y=1]{Character}
+        {+ name : str\\ + life : int\\+ skill : int\\+ weapon : Weapon} 
+        {+ move(x,y) : void\\+ attack() : void}
+
+    \umlinherit[geometry=|-]{Bow}{Weapon}
+    \umlinherit[geometry=--]{Sword}{Weapon}
+    \umlinherit[geometry=|-]{Wand}{Weapon}
+    \umlaggreg[geometry=--, mult1=1, mult2=*]{Character}{Weapon}
+
+    \end{tikzpicture}
+
+ 	   \column{.7\textwidth}
+    
+    \end{columns}
+\end{frame}
+
 
 \subsection{Types of inheritance}
 
@@ -598,7 +645,11 @@ hour = time.hour
 	
 	\begin{itemize}
 		\item \textbf{public}: visible for everyone  [default in Python]
-		\item \textbf{private}: visible for the creator class [start with a double underscore and does not end in the same manner]
+		\item \textbf{private}: visible for the class 
+            \begin{itemize}
+               \item By convenion in Python, start with underscore
+               \item Superprivate starts with a double underscore and does not end in the same manner
+            \end{itemize}
 		\item \textbf{protected}: visible for the creator class and its descendents \alert{[does not exist in Python]}
 	\end{itemize}
 
@@ -613,6 +664,33 @@ hour = time.hour
 
 	\href{https://gist.github.com/dfbarrero/a6ebc6632fb9fe06a2c8c6a47a465ab5}{(Source code)}
 \end{frame}
+
+\begin{frame}{Concepts of OOP}{Encapsulation: The ``pythonic'' way}
+    getters and setters comes with some drawbacks
+    \begin{itemize}
+        \item Verbose and repetitive code
+        \item Linked to the API
+    \end{itemize}
+
+    A more pythonic way to define getters and setters is using \alert{properties}
+	\begin{itemize}
+		\item It is a \alert{decorator} that transform methods into getters or setters
+		\item \textbf{$@$property}: Getter
+		\item \textbf{$@$object.setter}: Setter
+        \item Neverless, getters and setters are still used in Python under certain circumstances
+	\end{itemize}
+
+    Better with an example ...
+\end{frame}
+
+\begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+	\begin{exampleblock}{}
+	\vspace{-0.3cm} 
+		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access-pythonic.py}
+	\end{exampleblock}
+\end{frame}
+
+
 
 % TODO: Explicar el estilo pythoniso con propiedades
 %\begin{frame}[plain]{Concepts of OOP}{Encapsulation: The pythonic way}
@@ -755,14 +833,19 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 	\begin{block}{}
 		\vspace{-0.15cm}
 		\begin{itemize}
-		\item \footnotesize{\texttt{\_\_str\_\_(self)} It should return a string with \texttt{self} information.  When \texttt{print()} is invoked with the object, if the method \texttt{\_\_str\_\_()} is defined, Python shows the result of running this method on the object.}
-		\item \footnotesize{\texttt{\_\_len\_\_(self)} It should return the length or ``size'' of object (number of elements if is a \textit{set} or \textit{queue}).}
+		\item \footnotesize{\texttt{\_\_str\_\_(self)} It should return a string with information}
+		\item \footnotesize{\texttt{\_\_len\_\_(self)} It should return the length or ``size'' of object (number of elements if is a \textit{set} or \textit{queue})}
 		%\item \footnotesize{\texttt{\_\_add\_\_(self, otro\_obj)} It allows to apply the addition operator (+) to objects of the class in which it is defined.}
 		%\item \footnotesize{\texttt{\_\_mul\_\_(self, otro\_obj)} It allows to apply the multiplication operator (*) to objects of the class in which it is defined.}
 		%\item \footnotesize{\texttt{\_\_comp\_\_(self, otro\_obj)} It allows to apply the comparison operators (<, >, <=, >=, ==, !=) to objects of the class in which it is defined. It should return 0 if they are equal, -1 if \texttt {self} is smaller than \texttt{other\_obj} and 1 if \texttt{self} is greater than \texttt{other\_obj}.}
 		\end{itemize}
 		\vspace{-0.2cm}
 	\end{block}	
+
+	\begin{exampleblock}{}
+	\vspace{-0.3cm} 
+		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dog-str.py}
+	\end{exampleblock}
 \end{frame}
 
 \subsection{Overriding methods}

@@ -1,7 +1,8 @@
 class Dog:
-    def __init__(self): # Constructor
-        self.name = "Unknown" # Attribute
-        self.age = 10         # Attribute
+    def __init__(self, name="Unknown", age=0): 
+        # Constructor
+        self.name = name      # Attribute
+        self.age = age        # Attribute
 
     def bit(self):            # Method
         print(self.name + " has bitten")
@@ -12,15 +13,15 @@ class Dog:
 
 if __name__ == '__main__':
     snoopy = Dog() # Instanciate class Dog ...
-    laika = Dog()  # snoopy and laika are objects
+    laika = Dog("Laika")  
+    # snoopy and laika are objects
 
     snoopy.name = "Snoopy"
     snoopy.age = 4
 
-    laika.name = "Laika"
-
     snoopy.bit()
-
     snoopy.describe()
+
     print() # Print empty line
+    laika.age = 10
     laika.describe()
