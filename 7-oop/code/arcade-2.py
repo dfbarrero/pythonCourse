@@ -10,11 +10,11 @@ class MyGame(arcade.Window):
         self.ball_y = 50
 
     def on_draw(self):
-        arcade.start_render()
+        self.clear()
 
         arcade.draw_circle_filled(self.ball_x, self.ball_y, 15, arcade.color.AUBURN)
 
-    def update(self, delta_time):
+    def on_update(self, delta_time):
         self.ball_x += 1
         self.ball_y += 1
 

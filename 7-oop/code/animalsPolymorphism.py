@@ -27,4 +27,3 @@ if __name__ == '__main__':
 
     for animal in (snoopy, garfield):
         animal.attack()
-

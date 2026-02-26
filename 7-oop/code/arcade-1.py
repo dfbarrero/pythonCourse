@@ -13,7 +13,7 @@ class MyGame(arcade.Window):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "My Game")
 
     def on_draw(self):
-        arcade.start_render()
+        self.clear()
 
 
 def main():

@@ -31,6 +31,10 @@
 \usepackage{tikz-uml}
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows,shapes}
 
+\usepackage{minted} % Soporte para resaltado de sintaxis chula
+\setminted{fontsize=\footnotesize,breaklines,linenos,highlightcolor=grisUAH}
+\newcommand{\python}[2][\footnotesize]{\mintinline[fontsize=#1]{python}{#2}}
+
 \usetheme{UAH}
 \usecolortheme{UAH}
 \setbeamertemplate{navigation symbols}{} 
@@ -59,7 +63,7 @@
 %% Descomentar para habilitar logotipo en pié de página de portada
 %\renewcommand{\logoDos}{Images/CCLogo.png}
 %% Descomentar para habilitar logotipo en pié de página de portada
-\renewcommand{\logoTres}{Images/ALogo.png}
+%\renewcommand{\logoTres}{Images/ALogo.png}
 %% Descomentar para habilitar logotipo en pié de página de portada
 %\renewcommand{\logoCuatro}{Images/ELogo.png}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -381,13 +385,14 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
     \begin{columns}
  	   \column{.7\textwidth}
 			\begin{exampleblock}{dog.py}
-			\vspace{-0.3cm} 
-				\lstinputlisting[numbers=left,basicstyle=\ttfamily\scriptsize]{code/dogs.py}
+			%\vspace{-0.2cm} 
+                \inputminted[fontsize=\scriptsize]{python}{code/dogs.py}
+				%\lstinputlisting[numbers=left,basicstyle=\ttfamily\scriptsize]{code/dogs.py}
 			\end{exampleblock}
 
  	   \column{.3\textwidth}
 			\begin{exampleblock}{Output}
-			\vspace{-0.3cm} 
+			\vspace{-0.2cm} 
 				\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/dogs-output.txt}
 			\end{exampleblock}
 
@@ -470,12 +475,14 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \end{frame}
 
 \begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
-	\begin{exampleblock}{}
-	\vspace{-0.3cm} 
-		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animals.py}
-	\end{exampleblock}
-
-	\href{https://gist.github.com/dfbarrero/9b30c749986885373c8c250b3901ec9d}{(Source code)}
+    \begin{columns}
+ 	   \column{.7\textwidth}
+			\begin{exampleblock}{dog.py}
+			%\vspace{-0.2cm} 
+                \inputminted[fontsize=\scriptsize, highlightlines={10,14}]{python}{code/animals.py}
+			\end{exampleblock}
+    \end{columns}
+    \centering \small \href{https://gist.github.com/dfbarrero/9b30c749986885373c8c250b3901ec9d}{(Source code)}
 \end{frame}
 
 \begin{frame}{Inheritance}{Examples of simple inheritance (III)}
@@ -608,12 +615,14 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 %\end{frame}
 
 \begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+    \begin{columns}
+ 	   \column{.8\textwidth}
 	\begin{exampleblock}{}
-	\vspace{-0.3cm} 
-		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/animalsPolymorphism.py}
+        \inputminted[fontsize=\scriptsize, highlightlines={28,29}]{python}{code/animalsPolymorphism.py}
 	\end{exampleblock}
+    \end{columns}
 
-	\href{https://gist.github.com/dfbarrero/0b401926b92a5e36ad08a3eae5fbd16c}{(Source code)}
+	\centering \href{https://gist.github.com/dfbarrero/0b401926b92a5e36ad08a3eae5fbd16c}{(Source code)}
 \end{frame}
 
 %\subsection{Abstraction}
@@ -664,10 +673,12 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \end{frame}
 
 \begin{frame}[plain]%{Characteristics}{Examples of simple inheritance (III)}
+    \begin{columns}
+ 	   \column{.7\textwidth}
 	\begin{exampleblock}{}
-	\vspace{-0.3cm} 
-		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access.py}
+        \inputminted[fontsize=\scriptsize]{python}{code/access.py}
 	\end{exampleblock}
+    \end{columns}
 \end{frame}
 
 \subsection{Encapsulation: The ``pythonic'' way}
@@ -690,10 +701,12 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \end{frame}
 
 \begin{frame}{Concepts of OOP}{Encapsulation: The ``pythonic'' way (II)}
+    \begin{columns}
+ 	   \column{.6\textwidth}
 	\begin{exampleblock}{}
-	\vspace{-0.3cm} 
-		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/access-pythonic.py}
+                \inputminted[fontsize=\scriptsize, highlightlines={5,9}]{python}{code/access-pythonic.py}
 	\end{exampleblock}
+    \end{columns}
 \end{frame}
 
 
@@ -826,9 +839,9 @@ Describe \alert{what} is used to calculate through conditions, propositions, sta
 \subsection{More about methods}
 
 \begin{frame}{Concepts of OOP}{Other special methods}
-In addition to special method \texttt{\_\_init\_\_}, there are several others, including:\\
-	\begin{block}{}
-		\vspace{-0.15cm}
+Several special methods, including:
+	%\begin{block}{}
+	%	\vspace{-0.15cm}
 		\begin{itemize}
 		\item \footnotesize{\texttt{\_\_str\_\_(self)} It should return a string with information}
 		\item \footnotesize{\texttt{\_\_len\_\_(self)} It should return the length or ``size'' of object (number of elements if is a \textit{set} or \textit{queue})}
@@ -836,16 +849,20 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 		%\item \footnotesize{\texttt{\_\_mul\_\_(self, otro\_obj)} It allows to apply the multiplication operator (*) to objects of the class in which it is defined.}
 		%\item \footnotesize{\texttt{\_\_comp\_\_(self, otro\_obj)} It allows to apply the comparison operators (<, >, <=, >=, ==, !=) to objects of the class in which it is defined. It should return 0 if they are equal, -1 if \texttt {self} is smaller than \texttt{other\_obj} and 1 if \texttt{self} is greater than \texttt{other\_obj}.}
 		\end{itemize}
-		\vspace{-0.2cm}
-	\end{block}	
+	%	\vspace{-0.2cm}
+	%\end{block}	
 
 		\vspace{-0.2cm}
 
+    \begin{columns}
+ 	   \column{.6\textwidth}
 	\begin{exampleblock}{}
-	\vspace{-0.3cm} 
-		\lstinputlisting[basicstyle=\ttfamily\scriptsize]{code/inventory-len.py}
+	%\vspace{-0.3cm} 
+
+        \inputminted[fontsize=\scriptsize, highlightlines={13,14}]{python}{code/inventory-len.py}
 	\vspace{-0.2cm}
 	\end{exampleblock}
+    \end{columns}
 \end{frame}
 
 \subsection{Overriding methods}
@@ -854,38 +871,36 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 
 	Often we need to adapt an inheritanced method: \alert{Overriding}
 
+    \begin{columns}
+ 	   \column{.6\textwidth}
 	\begin{exampleblock}{Overriding example}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/Overriding.py}
-		\vspace{-0.2cm}
+        \inputminted{python}{code/Overriding.py}
 	\end{exampleblock}
+    \end{columns}
 \end{frame}
 	
 \begin{frame}{Concepts of OOP}{Overriding methods (II)}
 		Still possible to get superclass' method with \texttt{super()}
-
-	\begin{exampleblock}{\texttt{super()} example}
-		\vspace{-0.2cm}
-		\lstinputlisting{code/Overriding2.py}
-		\vspace{-0.2cm}
+    \begin{columns}
+ 	   \column{.6\textwidth}
+	\begin{exampleblock}{Overriding example}
+        \inputminted{python}{code/Overriding2.py}
 	\end{exampleblock}
+    \end{columns}
 \end{frame}
 
 \section{Arcade}
 
 \begin{frame}[plain]
 	\begin{exampleblock}{}
-		\vspace{-0.2cm}
-		\lstinputlisting[numbers=left]{code/arcade-1.py}
-		\vspace{-0.2cm}
+        \inputminted{python}{code/arcade-1.py}
 	\end{exampleblock}
 \end{frame}
 
 \begin{frame}[plain]
 	\begin{exampleblock}{}
-		\vspace{-0.2cm}
+        \inputminted{python}{code/arcade-2.py}
 		\lstinputlisting[numbers=left]{code/arcade-2.py}
-		\vspace{-0.2cm}
 	\end{exampleblock}
 \end{frame}
 
@@ -897,9 +912,10 @@ In addition to special method \texttt{\_\_init\_\_}, there are several others, i
 		\begin{itemize}
 		\item \footnotesize{\texttt{on\_draw()}}. Override this function to add your custom drawing code
 		\item \footnotesize{\texttt{on\_update(delta\_time: float)}}. Move everything. Perform collision checks. Do all the game logic here
+        \item[]
 		\item \footnotesize{\texttt{on\_key\_release(symbol: int, modifiers: int)}} 
 		\item \footnotesize{\texttt{on\_mouse\_release(x: float, y: float, button: int, modifiers: int)}}. Override this function to add mouse button functionality
-		\item \footnotesize{\texttt{set\_viewport(left: float, right: float, bottom: float, top: float)}}. Set the coordinates we can see
+		%\item \footnotesize{\texttt{set\_viewport(left: float, right: float, bottom: float, top: float)}}. Set the coordinates we can see
 		\end{itemize}
 	%	\vspace{-0.2cm}
 	\end{block}	
